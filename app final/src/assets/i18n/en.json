@@ -1,0 +1,14 @@
+{
+  "IDIOMA": {
+    "TITULO": "Choose a language"
+  },
+
+  "LOGIN": {
+    "NOMBRE": "Name",
+    "APELLIDO": "Last Name",
+    "DOCUMENTO_IDENTIDAD": "ID Number",
+    "EMAIL": "Email",
+    "CONTRASENA": "Password",
+    "REPETIR": "Repeat Password"
+  }
+}

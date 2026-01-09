@@ -14,7 +14,9 @@ import { provideAuth, getAuth } from '@angular/fire/auth';
 import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { importProvidersFrom } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { provideTranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 bootstrapApplication(AppComponent, {
   providers: [
@@ -25,8 +27,23 @@ bootstrapApplication(AppComponent, {
     provideRouter(routes, withPreloading(PreloadAllModules)),
     provideAuth(() => getAuth()),
     importProvidersFrom(IonicModule.forRoot({}),
+      HttpClientModule,
+      TranslateModule.forRoot({
+        defaultLanguage: 'es'
+      }),
+
+    
+    
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
-    AngularFirestoreModule), provideAnimationsAsync()
+    AngularFirestoreModule), provideAnimationsAsync(),
+
+    // 👇 ESTO ES LO QUE TE FALTABA
+    provideTranslateHttpLoader({
+      prefix: 'assets/i18n/',
+      suffix: '.json'
+    })
+
+    
   ]
 });

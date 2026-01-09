@@ -1,5 +1,6 @@
 import { IonicModule, Platform } from '@ionic/angular';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { Component, Inject, inject, OnInit } from '@angular/core';
 import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import {
@@ -42,6 +43,7 @@ import firebase from 'firebase/compat/app';
     IonicModule,
     FontAwesomeModule,
     ReactiveFormsModule,
+    RouterModule,
   ],
   providers: [GooglePlus]
 })

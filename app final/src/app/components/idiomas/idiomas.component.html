@@ -1,0 +1,14 @@
+<h2>{{ 'IDIOMA.TITULO' | translate }}</h2>
+
+<button (click)="cambiarIdioma('es')">Español</button>
+<button (click)="cambiarIdioma('en')">English</button>
+<button (click)="cambiarIdioma('de')">Deutsch</button>
+<button (click)="cambiarIdioma('fr')">Français</button>
+<button (click)="cambiarIdioma('pt')">Português</button>
+<button (click)="cambiarIdioma('ru')">Русский</button>
+
+<div class="back-button">
+  <button (click)="moverAlLogin()">
+    <fa-icon [icon]="faArrowLeft"></fa-icon>
+  </button>
+</div>

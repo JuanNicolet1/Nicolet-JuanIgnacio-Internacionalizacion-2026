@@ -1,0 +1,21 @@
+.back-button {
+  position: fixed;
+  bottom: 25px;
+  left: 25px;
+  z-index: 100;
+
+  button {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: rgba(30, 30, 30, 0.9);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+    font-size: 1.4rem;
+    transition: all 0.3s;
+
+    &:active {
+      transform: scale(0.92);
+    }
+  }
+}

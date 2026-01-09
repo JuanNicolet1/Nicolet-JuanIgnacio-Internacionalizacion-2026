@@ -19,6 +19,11 @@ export const routes: Routes = [
       import('./components/home/home.component').then((m) => m.HomeComponent),
   },
   {
+    path: 'idiomas',
+    loadComponent: () =>
+      import('./components/idiomas/idiomas.component').then((m) => m.IdiomasComponent),
+  },
+  {
     path: 'alta-cliente',
     loadComponent: () =>
       import('./components/alta-cliente/alta-cliente.component').then(

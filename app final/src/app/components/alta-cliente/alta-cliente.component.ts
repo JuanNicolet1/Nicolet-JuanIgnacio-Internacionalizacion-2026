@@ -17,6 +17,7 @@ import {
   ValidatorFn,
   Validators,
 } from '@angular/forms';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { Router, RouterLink } from '@angular/router';
 import { Unsubscribe } from 'firebase/auth';
 import { AuthService } from 'src/app/services/auth.service';
@@ -60,7 +61,7 @@ import firebase from 'firebase/compat/app';
     FontAwesomeModule,
     ReactiveFormsModule,
     BarcodeScanningModalComponent,
-    RouterLink,
+    RouterLink,TranslateModule
   ],
 })
 export class AltaClienteComponent implements OnInit {

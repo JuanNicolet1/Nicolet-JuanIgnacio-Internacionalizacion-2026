@@ -1,0 +1,14 @@
+{
+  "IDIOMA": {
+    "TITULO": "Elige un idioma"
+  },
+
+  "LOGIN": {
+    "NOMBRE": "Nombre",
+    "APELLIDO": "Apellido",
+    "DOCUMENTO_IDENTIDAD": "DNI",
+    "EMAIL": "Correo",
+    "CONTRASENA": "Contraseña",
+    "REPETIR": "Repetir Contraseña"
+  }
+}
