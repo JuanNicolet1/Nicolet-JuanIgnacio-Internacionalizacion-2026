@@ -1,17 +1,17 @@
 <div *ngIf="isLoading" class="spinner-overlay">
   <div class="spinner-container">
     <img src="assets/icono.png" class="spinning-logo">
-    <p>Cargando Carta...</p>
+    <p>{{ 'PRODUCTOS.CARGANDO' | translate }}...</p>
   </div>
 </div>
 
 <div class="address-header" (click)="abrirMapa()">
     <fa-icon [icon]="faMapMarkerAlt" class="map-icon"></fa-icon>
       <div class="address-info">
-        <span class="label">Enviar a:</span>
+        <span class="label">{{ 'MENU_DELIVERY.ENVIAR' | translate }}:</span>
         <span class="address-text">{{ direccionActual }}</span>
       </div>
-    <span class="edit-label">CAMBIAR</span>
+    <span class="edit-label">{{ 'MENU_DELIVERY.CAMBIAR' | translate }}</span>
 </div>
 
 <div class="body-snap">
@@ -23,11 +23,11 @@
           <fa-icon [icon]="faArrowLeft"></fa-icon>
         </button>
 
-        <h1 class="main-title">NUESTRA CARTA</h1>
+        <h1 class="main-title">{{ 'PRODUCTOS.CARTA' | translate }}</h1>
      </div>
 
      <div class="category-content" *ngIf="productsComida.length > 0">
-        <h2>🍔 Comidas</h2>
+        <h2>🍔 {{ 'PRODUCTOS.COMIDA' | translate }}</h2>
         <div class="cards-scroller">
           <div class="food-card" *ngFor="let p of productsComida;" (click)="abrirModal(p)"> 
             <div class="card-image-conteiner">
@@ -73,7 +73,7 @@
 
   <div class="snap-page" *ngIf="productsBebida.length > 0">
     <div class="category-content">
-      <h2>🥤 Bebidas</h2>
+      <h2>🥤 {{ 'PRODUCTOS.BEBIDA' | translate }}</h2>
       <div class="cards-scroller">
         <div class="food-card" *ngFor="let p of productsBebida;" (click)="abrirModal(p)">
           <div class="card-image-conteiner">
@@ -112,7 +112,7 @@
 
   <div class="snap-page" *ngIf="productsPostres.length > 0">
     <div class="category-content">
-      <h2>🥞 Postres</h2>
+      <h2>🥞 {{ 'PRODUCTOS.POSTRE' | translate }}</h2>
       <div class="cards-scroller">
         <div class="food-card" *ngFor="let p of productsPostres;" (click)="abrirModal(p)">
           <div class="card-image-conteiner">
@@ -160,18 +160,18 @@
       <span class="total-price">${{ totalPrecio }}</span>
     </div>
     <div class="time-row">
-      <small>Espera máx: <strong>{{ tiempoEstimado }} min</strong></small>
+      <small>{{ 'PRODUCTOS.ESPERAMAX' | translate }}: <strong>{{ tiempoEstimado }} {{ 'PRODUCTOS.MINUTOS' | translate }}</strong></small>
     </div>
   </div>
   <button class="confirm-btn" (click)="guardarPedido()">
-    CONFIRMAR PEDIDO
+    {{ 'PRODUCTOS.CONFIRMAR_PEDIDO' | translate }}
   </button>
 </div>
 
 <div class="modal-overlay" *ngIf="isModalOpen && productoDestacado">
   <div class="modal-content-sensor">
     <button class="close-modal-btn" (click)="cerrarModal()">
-      <fa-icon [icon]="faArrowLeft"></fa-icon> Volver
+      <fa-icon [icon]="faArrowLeft"></fa-icon> {{ 'PRODUCTOS.VOLVER' | translate }}
     </button>
     <h2 class="modal-title">{{ productoDestacado.name }}</h2>
     <div class="big-image-container loading-bg">
@@ -190,7 +190,7 @@
           <span class="qty-modal">{{ productoDestacado.cantidad }}</span>
           <button class="btn-qty-modal" (click)="modificarCantidad(productoDestacado, 1)">+</button>
        </div>
-       <button class="btn-add-modal" (click)="cerrarModal()">Listo</button>
+       <button class="btn-add-modal" (click)="cerrarModal()">{{ 'PRODUCTOS.LISTO' | translate }}</button>
     </div>
   </div>
 </div>

@@ -1,10 +1,10 @@
 <div class="body">
-  <h2 class="title">Encuesta de Satisfacción</h2>
+  <h2 class="title">{{ 'CLIENTE_ENCUESTAS.TITULO' | translate }}</h2>
   <div class="survey-form">
     <form [formGroup]="formEncuesta">
       <div class="form-group">
         <label for="service-rating" class="titulo-input"
-          >¿Cómo calificarías la atención?</label
+          >¿{{ 'CLIENTE_ENCUESTAS.P1' | translate }}?</label
         >
         <input
           type="range"
@@ -24,7 +24,7 @@
       }
       <div class="form-group">
         <label for="food-rating" class="titulo-input"
-          >¿Cómo calificarías el sabor de la comida?</label
+          >¿{{ 'CLIENTE_ENCUESTAS.P2' | translate }}?</label
         >
         <input
           type="range"
@@ -45,7 +45,7 @@
       }
 
       <div class="form-group">
-        <label class="titulo-input">¿La comida estaba caliente?</label>
+        <label class="titulo-input">¿{{ 'CLIENTE_ENCUESTAS.P3' | translate }}?</label>
         <label>
           <input
             type="radio"
@@ -53,7 +53,7 @@
             value="si"
             formControlName="comidaCaliente"
           />
-          Sí
+          {{ 'CLIENTE_ENCUESTAS.SI' | translate }}
         </label>
         <label>
           <input
@@ -62,7 +62,7 @@
             value="no"
             formControlName="comidaCaliente"
           />
-          No
+          {{ 'CLIENTE_ENCUESTAS.NO' | translate }}
         </label>
       </div>
       @if (errorCaliente){
@@ -72,7 +72,7 @@
       }
 
       <div class="form-group">
-        <label class="titulo-input">¿Las porciones fueron adecuadas?</label>
+        <label class="titulo-input">¿{{ 'CLIENTE_ENCUESTAS.P4' | translate }}?</label>
         <label>
           <input
             type="radio"
@@ -80,7 +80,7 @@
             value="Muy grandes"
             formControlName="porcionesAdecuadas"
           />
-          Muy grandes
+          {{ 'CLIENTE_ENCUESTAS.GRANDES' | translate }}
         </label>
         <label>
           <input
@@ -89,7 +89,7 @@
             value="Adecuadas"
             formControlName="porcionesAdecuadas"
           />
-          Adecuadas
+          {{ 'CLIENTE_ENCUESTAS.ADECUADAS' | translate }}
         </label>
 
         <label>
@@ -99,7 +99,7 @@
             value="Muy pequeñas"
             formControlName="porcionesAdecuadas"
           />
-          Muy pequeñas
+          {{ 'CLIENTE_ENCUESTAS.PEQUENAS' | translate }}
         </label>
       </div>
       @if (errorPorciones){
@@ -110,7 +110,7 @@
 
       <div class="form-group">
         <label class="titulo-input"
-          >¿La presentación de los platillos fue atractiva?</label
+          >¿{{ 'CLIENTE_ENCUESTAS.P5' | translate }}?</label
         >
         <label>
           <input
@@ -119,7 +119,7 @@
             value="si"
             formControlName="presentacionAtractiva"
           />
-          Sí
+          {{ 'CLIENTE_ENCUESTAS.SI' | translate }}
         </label>
         <label>
           <input
@@ -128,7 +128,7 @@
             value="no"
             formControlName="presentacionAtractiva"
           />
-          No
+          {{ 'CLIENTE_ENCUESTAS.NO' | translate }}
         </label>
       </div>
 
@@ -140,7 +140,7 @@
 
       <div class="form-group">
         <label class="titulo-input"
-          >¿Qué tipos de menú prefiere en el restaurante?</label
+          >¿{{ 'CLIENTE_ENCUESTAS.P6' | translate }}?</label
         >
         <div class="checkbox-group">
           <div class="checkbox-item">
@@ -150,7 +150,7 @@
               value="vegetariano"
               (change)="onCheckboxChange($event)"
             />
-            <label for="vegetariano">Vegetariano</label>
+            <label for="vegetariano">{{ 'CLIENTE_ENCUESTAS.VEGETARIANO' | translate }}</label>
           </div>
           <div class="checkbox-item">
             <input
@@ -159,7 +159,7 @@
               value="vegano"
               (change)="onCheckboxChange($event)"
             />
-            <label for="vegano">Vegano</label>
+            <label for="vegano">{{ 'CLIENTE_ENCUESTAS.VEGANO' | translate }}</label>
           </div>
           <div class="checkbox-item">
             <input
@@ -168,7 +168,7 @@
               value="gluten-free"
               (change)="onCheckboxChange($event)"
             />
-            <label for="gluten-free">Libre de gluten</label>
+            <label for="gluten-free">{{ 'CLIENTE_ENCUESTAS.GLUTEN' | translate }}</label>
           </div>
           <div class="checkbox-item">
             <input
@@ -177,7 +177,7 @@
               value="organico"
               (change)="onCheckboxChange($event)"
             />
-            <label for="organico">Orgánico</label>
+            <label for="organico">{{ 'CLIENTE_ENCUESTAS.ORGANICO' | translate }}</label>
           </div>
         </div>
       </div>
@@ -190,7 +190,7 @@
 
       <div class="form-group">
         <label for="wait-time" class="titulo-input"
-          >¿Cuánto tiempo esperó por la comida?</label
+          >¿{{ 'CLIENTE_ENCUESTAS.P7' | translate }}?</label
         >
         <select
           id="wait-time"
@@ -198,11 +198,11 @@
           required
           formControlName="tiempoEspera"
         >
-          <option value="">Seleccione...</option>
-          <option value="menos de 15 minutos">Menos de 15 minutos</option>
-          <option value="15-30 minutos">15-30 minutos</option>
-          <option value="30-45 minutos">30-45 minutos</option>
-          <option value="más de 45 minutos">Más de 45 minutos</option>
+          <option value="">{{ 'CLIENTE_ENCUESTAS.SELECCIONE' | translate }}...</option>
+          <option value="menos de 15 minutos">{{ 'CLIENTE_ENCUESTAS.MENOS' | translate }}</option>
+          <option value="15-30 minutos">{{ 'CLIENTE_ENCUESTAS.MIN15' | translate }}</option>
+          <option value="30-45 minutos">{{ 'CLIENTE_ENCUESTAS.MIN30' | translate }}</option>
+          <option value="más de 45 minutos">{{ 'CLIENTE_ENCUESTAS.MAS45' | translate }}</option>
         </select>
       </div>
       @if (errorTiempo){
@@ -213,7 +213,7 @@
 
       <div class="form-group">
         <label for="comments" class="titulo-input"
-          >Comentarios adicionales:</label
+          >{{ 'CLIENTE_ENCUESTAS.COMENTARIOS' | translate }}:</label
         >
         <textarea
           id="comments"
@@ -223,7 +223,7 @@
         ></textarea>
       </div>
 
-      <button (click)="guardarEncuesta()">Enviar</button>
+      <button (click)="guardarEncuesta()">{{ 'CLIENTE_ENCUESTAS.ENVIAR' | translate }}</button>
     </form>
   </div>
 </div>

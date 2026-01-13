@@ -13,13 +13,14 @@ import { pushService } from 'src/app/services/serviciosPush/push-notifications.s
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Subscription } from 'rxjs';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-pedir-cuenta',
   templateUrl: './pedir-cuenta.component.html',
   styleUrls: ['./pedir-cuenta.component.scss'],
   standalone: true,
-  imports: [FontAwesomeModule, RouterLink, CommonModule, FormsModule, IonicModule],
+  imports: [FontAwesomeModule, RouterLink, CommonModule, FormsModule, IonicModule, TranslateModule],
 })
 export class PedirCuentaComponent implements OnInit {
   

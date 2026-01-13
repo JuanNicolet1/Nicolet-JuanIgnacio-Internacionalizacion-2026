@@ -10,13 +10,14 @@ import { AuthService } from 'src/app/services/auth.service';
 import { DatabaseService } from 'src/app/services/database.service';
 import Swal from 'sweetalert2';
 import emailjs from 'emailjs-com';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-confirmar-reserva',
   templateUrl: './confirmar-reserva.component.html',
   styleUrls: ['./confirmar-reserva.component.scss'],
   standalone: true,
-  imports: [FontAwesomeModule, RouterLink, CommonModule, DatePipe],
+  imports: [FontAwesomeModule, RouterLink, CommonModule, DatePipe, TranslateModule],
 })
 export class ConfirmarReservaComponent implements OnInit {
  

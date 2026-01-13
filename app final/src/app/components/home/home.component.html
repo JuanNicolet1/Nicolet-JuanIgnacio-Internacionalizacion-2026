@@ -52,42 +52,42 @@
       <button class="custom-button" [routerLink]="['/agregar-empleado']">
         <img src="assets/alta-empleado.png" alt="" />
       </button>
-      <a [routerLink]="['/agregar-empleado']">Agregar empleado</a>
+      <a [routerLink]="['/agregar-empleado']">{{ 'DUENO.AGREGAR_EMPLEADO' | translate }}</a>
     </div>
 
     <div class="card-opcion">
       <button class="custom-button" [routerLink]="['/alta-cliente']">
         <img src="assets/iconos/alta_cliente.png" alt="" />
       </button>
-      <a [routerLink]="['/alta-cliente']">Agregar cliente</a>
+      <a [routerLink]="['/alta-cliente']">{{ 'DUENO.AGREGAR_CLIENTE' | translate }}</a>
     </div>
 
     <div class="card-opcion">
       <button class="custom-button" [routerLink]="['/listado-clientes']">
         <img src="assets/iconos/listado_clientes.png" alt="" />
       </button>
-      <a [routerLink]="['/listado-clientes']">Aceptar clientes</a>
+      <a [routerLink]="['/listado-clientes']">{{ 'DUENO.ACEPTAR' | translate }}</a>
     </div>
 
     <div class="card-opcion">
       <button class="custom-button" [routerLink]="['/alta-mesa']">
         <img src="assets/iconos/dinner-table.png" alt="" />
       </button>
-      <a [routerLink]="['/alta-mesa']">Crear mesa</a>
+      <a [routerLink]="['/alta-mesa']">{{ 'DUENO.MESA' | translate }}</a>
     </div>
 
     <div class="card-opcion">
       <button class="custom-button" [routerLink]="['/listado-confirmar-reserva']">
         <img class="custom-icon" src="assets/iconos/reloj.png" alt="" />
       </button>
-      <a [routerLink]="['/listado-confirmar-reserva']">Aceptar reservas</a>
+      <a [routerLink]="['/listado-confirmar-reserva']">{{ 'DUENO.RESERVA' | translate }}</a>
     </div>
 
     <div class="card-opcion">
       <button class="custom-button" [routerLink]="['/confirmar-delivery']">
         <img src="assets/iconos/confirmar-delivery.png" alt="" />
       </button>
-      <a [routerLink]="['/confirmar-delivery']">Delivery</a>
+      <a [routerLink]="['/confirmar-delivery']">{{ 'DUENO.DELIVERY' | translate }}</a>
     </div>
 
   } 
@@ -99,21 +99,21 @@
     <button class="custom-button" (click)="starScan()">
       <img src="assets/iconos/dinner-table.png" alt="" />
     </button>
-    <a (click)="starScan()">Pedir mesa</a>
+    <a (click)="starScan()">{{ 'CLIENTE.PEDIR_MESA' | translate }}</a>
   </div>
 
   <div class="card-opcion">
     <button class="custom-button" [routerLink]="['/reserva-mesa']">
       <img class="custom-icon" src="assets/iconos/reloj.png" alt="" />
     </button>
-    <a [routerLink]="['/reserva-mesa']">Reservar mesa</a>
+    <a [routerLink]="['/reserva-mesa']">{{ 'CLIENTE.RESERVAR_MESA' | translate }}</a>
   </div>
 
   <div class="card-opcion">
     <button class="custom-button" [routerLink]="['/delivery']">
       <img class="custom-icon" src="assets\iconos\delivery.png" alt="" />
     </button>
-    <a [routerLink]="['/delivery']">Pedir delivery</a>
+    <a [routerLink]="['/delivery']">{{ 'CLIENTE.PEDIR_DELIVERY' | translate }}</a>
   </div>
   
   } @else if (this.auth.usuarioIngresado.tipoCliente === "anonimo"){
@@ -121,7 +121,7 @@
       <button class="custom-button" (click)="starScan()">
         <img src="assets/iconos/dinner-table.png" alt="" />
       </button>
-      <a (click)="starScan()">Pedir mesa</a>
+      <a (click)="starScan()">{{ 'CLIENTE.PEDIR_MESA' | translate }}</a>
     </div>
 
   } @else if (this.auth.usuarioIngresado.tipoCliente === "maitre"){
@@ -141,14 +141,14 @@
   <button (click)="starScan()" class="custom-button">
     <img src="assets/iconos/chat.png" alt="" />
   </button>
-  <a (click)="starScan()">Chat con clientes</a>
+  <a (click)="starScan()">{{ 'MESERO.CHAT' | translate }}</a>
   </div>
 
   <div class="card-opcion">
   <button [routerLink]="['/confirmar-pedidos']" class="custom-button">
     <img src="assets/iconos/confirmar-pedid.png" alt="" />
   </button>
-  <a [routerLink]="['/confirmar-pedidos']">Aceptar pedidos</a>
+  <a [routerLink]="['/confirmar-pedidos']">{{ 'MESERO.ACEPTAR_PEDIDO' | translate }}</a>
   </div>
 
   <div class="card-opcion">
@@ -158,7 +158,7 @@
   >
     <img src="assets/iconos/productos-pendientes.png" alt="" />
   </button>
-  <a [routerLink]="['/listado-productos-pendientes-mesero']">Entregar pedidos</a>
+  <a [routerLink]="['/listado-productos-pendientes-mesero']">{{ 'MESERO.ENTREGAR_PEDIDO' | translate }}</a>
   </div>
 
   <div class="card-opcion">
@@ -168,7 +168,7 @@
       alt=""
     />
   </button>
-  <a [routerLink]="['/confirmar-pago']">Cobros</a>
+  <a [routerLink]="['/confirmar-pago']">{{ 'MESERO.COBROS' | translate }}</a>
   </div>
 
   } @else if (this.auth.usuarioIngresado.tipoCliente === "chef"){
@@ -177,21 +177,21 @@
   <button [routerLink]="['/cocina']" class="custom-button">
     <img src="assets/iconos/comidas.png" alt="" />
   </button>
-  <a [routerLink]="['/cocina']">Avisar comida lista</a>
+  <a [routerLink]="['/cocina']">{{ 'CHEF.AVISAR' | translate }}</a>
   </div>
 
    <div class="card-opcion">
   <button [routerLink]="['/cocina-delivery']" class="custom-button">
     <img src="assets\iconos\comida-delivery.png" alt="" />
   </button>
-  <a [routerLink]="['/cocina-delivery']">Comida delivery</a>
+  <a [routerLink]="['/cocina-delivery']">{{ 'CHEF.COMIDA_DELIVERY' | translate }}</a>
   </div>
 
    <div class="card-opcion">
   <button class="custom-button" [routerLink]="['/alta-comida']">
     <img src="assets/iconos/dinner-table.png" alt="" />
   </button>
-  <a [routerLink]="['/alta-comida']">Crear comida</a>
+  <a [routerLink]="['/alta-comida']">{{ 'CHEF.CREAR' | translate }}</a>
   </div>
   
   } @else if (this.auth.usuarioIngresado.tipoCliente === "bartender"){
@@ -200,21 +200,21 @@
   <button [routerLink]="['/bar']" class="custom-button">
     <img src="assets/iconos/bebidas.png" alt="" />
   </button>
-  <a [routerLink]="['/bar']">Avisar bebida lista</a>
+  <a [routerLink]="['/bar']">{{ 'BARTENDER.AVISAR' | translate }}</a>
   </div>
 
   <div class="card-opcion">
   <button [routerLink]="['/bar-delivery']" class="custom-button">
     <img src="assets\iconos\bebida.delivery.png" alt="" />
   </button>
-  <a [routerLink]="['/bar-delivery']">Bebida delivery</a>
+  <a [routerLink]="['/bar-delivery']">{{ 'BARTENDER.COMIDA_DELIVERY' | translate }}</a>
   </div>
 
    <div class="card-opcion">
   <button class="custom-button" [routerLink]="['/alta-bebida']">
     <img src="assets/iconos/dinner-table.png" alt="" />
   </button>
-  <a [routerLink]="['/alta-bebida']">Crear bebida</a>
+  <a [routerLink]="['/alta-bebida']">{{ 'BARTENDER.CREAR' | translate }}</a>
   </div>
   
   }@else if (this.auth.usuarioIngresado.tipoCliente === "delivery"){
@@ -223,7 +223,7 @@
   <button [routerLink]="['/listado-delivery']" class="custom-button">
     <img src="assets/iconos/listado_clientes.png" alt="" />
   </button>
-  <a [routerLink]="['/listado-delivery']">Envíos pendientes</a>
+  <a [routerLink]="['/listado-delivery']">{{ 'DELIVERY.ENVIOS' | translate }}</a>
   </div>
 
    <div class="card-opcion">
@@ -234,7 +234,7 @@
       alt=""
     />
   </button>
-  <a [routerLink]="['/confirmar-pago']">Cobros</a>
+  <a [routerLink]="['/confirmar-pago']">{{ 'DELIVERY.COBRROS' | translate }}</a>
   </div>
 }
 

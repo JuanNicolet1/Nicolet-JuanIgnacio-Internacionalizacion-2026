@@ -42,19 +42,19 @@
       
       <div class="input-row">
         <ion-item class="custom-item">
-          <ion-label position="floating">Nombre</ion-label>
+          <ion-label position="floating">{{ 'LOGIN.NOMBRE' | translate }}</ion-label>
           <ion-input type="text" formControlName="nombre"></ion-input>
         </ion-item>
 
         <ion-item class="custom-item">
-          <ion-label position="floating">Apellido</ion-label>
+          <ion-label position="floating">{{ 'LOGIN.APELLIDO' | translate }}</ion-label>
           <ion-input type="text" formControlName="apellido"></ion-input>
         </ion-item>
       </div>
 
       <div class="input-row">
         <ion-item class="custom-item">
-          <ion-label position="floating">DNI</ion-label>
+          <ion-label position="floating">{{ 'LOGIN.DOCUMENTO_IDENTIDAD' | translate }}</ion-label>
           <ion-input type="text" formControlName="dni" (ionInput)="formatearDocumento($event)" maxlength="11"></ion-input>
         </ion-item>
 
@@ -65,18 +65,18 @@
       </div>
 
       <ion-item class="custom-item">
-        <ion-label position="floating">Correo Electrónico</ion-label>
+        <ion-label position="floating">{{ 'LOGIN.EMAIL' | translate }}</ion-label>
         <ion-input type="email" formControlName="email"></ion-input>
       </ion-item>
 
       <div class="input-row">
         <ion-item class="custom-item">
-          <ion-label position="floating">Contraseña</ion-label>
+          <ion-label position="floating">{{ 'LOGIN.CONTRASENA' | translate }}</ion-label>
           <ion-input type="password" formControlName="contraseña"></ion-input>
         </ion-item>
 
         <ion-item class="custom-item">
-          <ion-label position="floating">Repetir</ion-label>
+          <ion-label position="floating">{{ 'LOGIN.REPETIR' | translate }}</ion-label>
           <ion-input type="password" formControlName="repetir_contraseña"></ion-input>
         </ion-item>
       </div>
@@ -88,10 +88,10 @@
       <div class="input-row">
         
         <ion-item class="custom-item">
-          <ion-label position="floating">Rol</ion-label>
+          <ion-label position="floating">{{ 'ROL.ROL' | translate }}</ion-label>
           <ion-select formControlName="tipoEmpleado" (ionChange)="onTipoEmpleadoChange($event)">
-            <ion-select-option value="cocinero">Cocinero/Bar</ion-select-option> <ion-select-option value="mesero">Mesero</ion-select-option>
-            <ion-select-option value="maitre">Maitre</ion-select-option>
+            <ion-select-option value="cocinero">{{ 'ROL.COCINERO' | translate }}</ion-select-option> <ion-select-option value="mesero">{{ 'ROL.MESERO' | translate }}</ion-select-option>
+            <ion-select-option value="maitre">{{ 'ROL.MAITRE' | translate }}</ion-select-option>
           </ion-select>
         </ion-item>
 
@@ -106,7 +106,7 @@
       </div>
 
       <button class="btn-register" type="submit" [disabled]="!clienteForm.valid">
-        REGISTRAR EMPLEADO
+        {{ 'DUENO.REGISTRAR' | translate }}
       </button>
 
     </form>

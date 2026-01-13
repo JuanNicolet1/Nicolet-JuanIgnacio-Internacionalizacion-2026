@@ -41,18 +41,18 @@
       <div class="step" [class.active]="pasoActual >= 1">
         <div class="circle"><fa-icon [icon]="faCheck"></fa-icon></div>
         <div class="line"></div>
-        <p>En Lista de Espera</p>
+        <p>{{ 'CLIENTE_ESPERA.ESPERA' | translate }}</p>
       </div>
 
       <div class="step" [class.active]="pasoActual >= 2">
         <div class="circle"><fa-icon [icon]="faChair"></fa-icon></div>
         <div class="line"></div>
-        <p>Mesa Asignada</p>
+        <p>{{ 'CLIENTE_ESPERA.MESA_ASIGNADA' | translate }}</p>
       </div>
 
       <div class="step" [class.active]="pasoActual >= 3">
         <div class="circle"><fa-icon [icon]="faQrcode"></fa-icon></div>
-        <p>Confirmar (QR)</p>
+        <p>{{ 'CLIENTE_ESPERA.CONFIRMAR' | translate }}
       </div>
 
     </div>
@@ -62,12 +62,12 @@
     
     <button class="action-btn scan" *ngIf="pasoActual === 2" (click)="starScan()">
       <fa-icon [icon]="faQrcode"></fa-icon>
-      <span>Escanear QR Mesa</span>
+      <span>{{ 'CLIENTE_ESPERA.ESCANEAR' | translate }}</span>
     </button>
 
     <button class="action-btn survey" (click)="verEncuestas()">
       <fa-icon [icon]="faClipboardList"></fa-icon>
-      <span>Ver Encuestas</span>
+      <span>{{ 'CLIENTE_ESPERA.ENCUESTAS' | translate }}</span>
     </button>
 
   </div>

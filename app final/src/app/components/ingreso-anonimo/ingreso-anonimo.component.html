@@ -28,12 +28,12 @@
       
       <div class="input-row">
         <ion-item class="custom-item">
-          <ion-label position="floating">Nombre</ion-label>
+          <ion-label position="floating">{{ 'LOGIN.NOMBRE' | translate }}</ion-label>
           <ion-input type="text" formControlName="nombre"></ion-input>
         </ion-item>
 
       <button class="btn-register" type="submit" [disabled]="!anonimoForm.valid">
-        Iniciar Anónimo
+        {{ 'LOGIN.ANONIMO' | translate }}
       </button>
 
       </div>

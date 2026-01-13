@@ -50,11 +50,11 @@
 </section>
 <section class="opciones">
     @if(estadoJuego) {
-        <button class="button-19" (click)="mayorQue()">Mas alta</button>
-        <button class="button-19" (click)="menorQue()">Mas baja</button>
+        <button class="button-19" (click)="mayorQue()">{{ 'JUEGOS.ALTA' | translate }}</button>
+        <button class="button-19" (click)="menorQue()">{{ 'JUEGOS.BAJA' | translate }}</button>
     }
     @else {
-        <button class="button-19" (click)="comenzarAJugar()">Comenzar</button>
+        <button class="button-19" (click)="comenzarAJugar()">{{ 'JUEGOS.COMENZAR' | translate }}</button>
         
     }
     

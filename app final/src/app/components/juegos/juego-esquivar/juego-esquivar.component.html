@@ -3,12 +3,12 @@
       <!-- Pantalla de Overlay (Inicio / Fin) -->
       <div *ngIf="!isPlaying" class="overlay">
         
-        <h2 *ngIf="gameState === 'start'">¡Ayuda al Mozo!</h2>
-        <h2 *ngIf="gameState === 'win'" class="text-green-500">¡Pedido Entregado! 🎉</h2>
-        <h2 *ngIf="gameState === 'lose'" class="text-red-500">¡Se cayó el pedido! 😱</h2>
+        <h2 *ngIf="gameState === 'start'">¡{{ 'MOZO.TITULO' | translate }}!</h2>
+        <h2 *ngIf="gameState === 'win'" class="text-green-500">¡{{ 'MOZO.GANASTE' | translate }}! 🎉</h2>
+        <h2 *ngIf="gameState === 'lose'" class="text-red-500">¡{{ 'MOZO.PERDISTE' | translate }}! 😱</h2>
         
         <p class="description" *ngIf="gameState === 'start'">
-          Lleva la pizza a la mesa inclinando el celular.<br>
+          {{ 'MOZO.OBJETIVO' | translate }}<br>
         </p>
 
         <button (click)="startGame()" class="play-btn">

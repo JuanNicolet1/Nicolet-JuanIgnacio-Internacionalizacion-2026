@@ -7,13 +7,14 @@ import { AuthService } from 'src/app/services/auth.service';
 import { DatabaseService } from 'src/app/services/database.service';
 import Swal from 'sweetalert2';
 import { CommonModule } from '@angular/common';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-bar',
   templateUrl: './bar.component.html',
   styleUrls: ['./bar.component.scss'], // Usa el mismo SCSS o uno nuevo
   standalone: true,
-  imports: [FontAwesomeModule, RouterLink, CommonModule],
+  imports: [FontAwesomeModule, RouterLink, CommonModule, TranslateModule],
 })
 export class BarComponent implements OnInit { 
   

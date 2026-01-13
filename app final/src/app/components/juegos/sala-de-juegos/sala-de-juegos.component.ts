@@ -6,13 +6,14 @@ import { ModalController, Platform } from '@ionic/angular';
 import { AuthService } from 'src/app/services/auth.service';
 import { DatabaseService } from 'src/app/services/database.service';
 import { pushService } from 'src/app/services/serviciosPush/push-notifications.service';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-sala-de-juegos',
   templateUrl: './sala-de-juegos.component.html',
   styleUrls: ['./sala-de-juegos.component.scss'],
   standalone:true,
-  imports:[FontAwesomeModule, RouterLink]
+  imports:[FontAwesomeModule, RouterLink, TranslateModule]
 })
 export class SalaDeJuegosComponent  implements OnInit {
 

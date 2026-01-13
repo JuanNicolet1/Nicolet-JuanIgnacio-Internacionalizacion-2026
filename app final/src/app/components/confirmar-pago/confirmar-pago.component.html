@@ -22,13 +22,13 @@
 <div *ngIf="isLoading" class="spinner-overlay">
   <div class="spinner-container">
     <img src="assets/icono.png" class="spinning-logo">
-    <p>Procesando Pago...</p>
+    <p>{{ 'COBROS.PROCESANDO' | translate }}...</p>
   </div>
 </div>
 
 <div class="container">
   
-  <h1 class="title">CAJA - COBROS</h1>
+  <h1 class="title">{{ 'COBROS.CAJA' | translate }}</h1>
 
   <div class="cards-list" *ngIf="cuentas && cuentas.length > 0; else noCuentas">
     
@@ -40,7 +40,7 @@
             <fa-icon [icon]="faUtensils"></fa-icon> Mesa {{ cuenta.mesa }}
           </h3>
           <h3 *ngIf="!cuenta.mesa">
-            <fa-icon [icon]="faMotorcycle"></fa-icon> Delivery
+            <fa-icon [icon]="faMotorcycle"></fa-icon> {{ 'COBROS.DELIVERY' | translate }}
           </h3>
           
           <span class="client-name">{{ cuenta.cliente }}</span>
@@ -54,7 +54,7 @@
       <div class="card-body">
         
         <div class="items-container">
-          <p class="section-title">Consumo:</p>
+          <p class="section-title">{{ 'COBROS.CONSUMO' | translate }}:</p>
           <ul>
             <li *ngFor="let prod of cuenta.productos">
               <span class="qty">{{ prod.cantidad }}x</span>
@@ -68,15 +68,15 @@
 
         <div class="money-breakdown">
           <div class="row">
-            <span>Subtotal:</span>
+            <span>{{ 'COBROS.SUBTOTAL' | translate }}:</span>
             <span>{{ cuenta.subTotal | currency }}</span>
           </div>
           <div class="row" *ngIf="cuenta.descuento > 0">
-            <span class="discount-label">Descuento:</span>
+            <span class="discount-label">{{ 'COBROS.DESCUENTO' | translate }}:</span>
             <span class="discount-val">- {{ cuenta.descuento | currency }}</span>
           </div>
           <div class="row tip-row">
-            <span>Propina:</span>
+            <span>{{ 'COBROS.PROPINA' | translate }}:</span>
             <span>{{ cuenta.propina || 0 | currency }}</span>
           </div>
         </div>
@@ -85,7 +85,7 @@
 
       <div class="card-actions">
         <button class="btn-confirm" (click)="mostrarDetalle(cuenta); confirmarCuenta()">
-          <fa-icon [icon]="faCheckCircle"></fa-icon> CONFIRMAR COBRO
+          <fa-icon [icon]="faCheckCircle"></fa-icon> {{ 'COBROS.CONFIRMAR' | translate }}
         </button>
       </div>
 
@@ -96,7 +96,7 @@
   <ng-template #noCuentas>
     <div class="empty-state">
       <fa-icon [icon]="faWallet" size="4x"></fa-icon>
-      <p>No hay cobros pendientes.</p>
+      <p>{{ 'COBROS.NCOBROS' | translate }}</p>
     </div>
   </ng-template>
 

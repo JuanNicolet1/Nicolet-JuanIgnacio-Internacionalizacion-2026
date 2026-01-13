@@ -47,7 +47,8 @@ import { BarcodeScanner, LensFacing } from '@capacitor-mlkit/barcode-scanning';
 import { faQrcode } from '@fortawesome/free-solid-svg-icons';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import Swal from 'sweetalert2';
-import { Subscription } from 'rxjs'; 
+import { Subscription } from 'rxjs';
+import { TranslateModule, TranslateService } from '@ngx-translate/core'; 
 
 @Component({
   selector: 'app-ingreso-anonimo',
@@ -61,6 +62,7 @@ import { Subscription } from 'rxjs';
     FontAwesomeModule,
     ReactiveFormsModule,
     RouterLink,
+    TranslateModule,
   ],
 })
 export class IngresoAnonimoComponent implements OnDestroy { 

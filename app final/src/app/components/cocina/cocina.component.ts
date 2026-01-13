@@ -7,13 +7,14 @@ import { AuthService } from 'src/app/services/auth.service';
 import { DatabaseService } from 'src/app/services/database.service';
 import Swal from 'sweetalert2';
 import { CommonModule } from '@angular/common';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-cocina',
   templateUrl: './cocina.component.html',
   styleUrls: ['./cocina.component.scss'],
   standalone: true,
-  imports: [FontAwesomeModule, RouterLink, CommonModule],
+  imports: [FontAwesomeModule, RouterLink, CommonModule, TranslateModule],
 })
 export class CocinaComponent implements OnInit {
   

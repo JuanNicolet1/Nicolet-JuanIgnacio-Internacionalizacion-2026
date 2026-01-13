@@ -18,13 +18,13 @@
 <div *ngIf="isLoading" class="spinner-overlay">
   <div class="spinner-container">
     <img src="assets/icono.png" class="spinning-logo">
-    <p>Buscando Pedidos Listos...</p>
+    <p>{{ 'ENTREGAR_PEDIDOS.BUSCANDO' | translate }}...</p>
   </div>
 </div>
 
 <div class="container">
   
-  <h1 class="title">LISTOS PARA ENTREGAR</h1>
+  <h1 class="title">{{ 'ENTREGAR_PEDIDOS.LISTO' | translate }}</h1>
 
   <div class="cards-list" *ngIf="pedidos.length > 0; else noPedidos">
     
@@ -32,16 +32,16 @@
       
       <div class="card-header">
         <div class="header-info">
-          <div class="mesa-badge">Mesa {{ pedido.mesa }}</div>
+          <div class="mesa-badge">{{ 'CONFIRMAR_PEDIDOS.MESA' | translate }} {{ pedido.mesa }}</div>
           <div class="client-info">
             <h3>{{ pedido.cliente }}</h3>
-            <span class="total-price">Total: ${{ pedido.total }}</span>
+            <span class="total-price">{{ 'PRODUCTOS.TOTAL' | translate }}: ${{ pedido.total }}</span>
           </div>
         </div>
       </div>
 
       <div class="card-body">
-        <p class="section-title"><fa-icon [icon]="faUtensils"></fa-icon> Pedido:</p>
+        <p class="section-title"><fa-icon [icon]="faUtensils"></fa-icon> {{ 'ENTREGAR_PEDIDOS.PEDIDO' | translate }}:</p>
         <ul class="items-list">
           <li *ngFor="let prod of pedido.productos">
             <span class="qty">x{{ prod.cantidad }}</span>
@@ -52,7 +52,7 @@
 
       <div class="card-actions">
         <button class="btn-deliver" (click)="confirmarEntrega(pedido)">
-          <fa-icon [icon]="faCheckCircle"></fa-icon> ENTREGAR A MESA
+          <fa-icon [icon]="faCheckCircle"></fa-icon> {{ 'ENTREGAR_PEDIDOS.ENTREGAR' | translate }}
         </button>
       </div>
 
@@ -62,7 +62,7 @@
   <ng-template #noPedidos>
     <div class="empty-state">
       <fa-icon [icon]="faClipboardList" size="4x" style="color: #555; margin-bottom: 15px;"></fa-icon>
-      <p>No hay pedidos listos para entregar.</p>
+      <p>{{ 'ENTREGAR_PEDIDOS.NLISTO' | translate }}.</p>
     </div>
   </ng-template>
 

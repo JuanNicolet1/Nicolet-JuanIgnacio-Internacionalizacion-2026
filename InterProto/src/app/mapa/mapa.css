@@ -1,0 +1,123 @@
+.map-wrapper {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #1a1a1a; /* Fondo para evitar destellos blancos */
+}
+
+/* El mapa debe ser absoluto para que no empuje a los otros DIVs */
+#map {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* El mapa se queda al fondo */
+}
+
+/* --- BARRA SUPERIOR --- */
+.top-bar {
+  position: absolute;
+  top: 50px; 
+  left: 0;
+  width: 100%;
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  /* El Z-INDEX debe ser mayor a 400 (que es lo que usa Leaflet por defecto) */
+  z-index: 1000; 
+  pointer-events: none; /* Permite clickear el mapa a través de la barra */
+}
+
+/* Volvemos a habilitar clicks para los elementos internos de la barra */
+.icon-btn, .search-box {
+  pointer-events: auto; 
+}
+
+.search-box {
+  flex: 1;
+  background-color: #222;
+  border-radius: 25px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding: 0 5px 0 15px;
+  border: 1px solid #444;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+.search-box input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: #fff;
+  outline: none;
+}
+
+/* --- BARRA INFERIOR --- */
+.bottom-bar {
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  width: 100%;
+  padding: 0 20px;
+  z-index: 1001; /* Un poco más alto que la top-bar */
+}
+
+.info-card {
+  background-color: #1a1a1a;
+  border-radius: 20px;
+  padding: 20px;
+  border: 1px solid #d84f45;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+}
+
+.info-card h3 {
+  color: white;
+  margin: 5px 0 0;
+  font-size: 1.1rem;
+}
+
+/* IMPORTANTE: Evita que el mapa se rompa si hay transiciones */
+.leaflet-container {
+  outline: 0;
+}
+
+/* --- ESTILO DARK MODE PARA EL MAPA --- */
+/* Si usas tiles claros pero quieres que el mapa se vea oscuro: */
+.leaflet-tile-pane {
+    filter: brightness(0.6) invert(1) contrast(3) hue-rotate(200deg) saturate(0.3);
+}
+
+/* --- LIMPIEZA DE CONTROLES DE LEAFLET --- */
+/* Como tienes una barra superior, movemos los controles de zoom si los habilitas */
+.leaflet-top.leaflet-left {
+    top: 110px; /* Bajarlos para que no se solapen con tu buscador */
+    left: 20px;
+}
+
+.leaflet-control-zoom {
+    border: none !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5) !important;
+}
+
+.leaflet-control-zoom-in, .leaflet-control-zoom-out {
+    background-color: #222 !important;
+    color: #fff !important;
+    border: 1px solid #444 !important;
+}
+
+/* --- ARREGLO DE ATRIBUCIÓN --- */
+.leaflet-control-attribution {
+    background: rgba(0, 0, 0, 0.7) !important;
+    color: #888 !important;
+    font-size: 9px !important;
+}
+
+/* --- ARREGLO DEL MARCADOR --- */
+/* Evita que el marcador se vea gigante o se desfase */
+.leaflet-marker-icon {
+    filter: drop-shadow(0 4px 4px rgba(0,0,0,0.5));
+}

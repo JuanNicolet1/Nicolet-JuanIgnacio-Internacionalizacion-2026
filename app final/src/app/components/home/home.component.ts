@@ -21,13 +21,14 @@ import { pushService } from 'src/app/services/serviciosPush/push-notifications.s
 import { LocalNotifications } from '@capacitor/local-notifications';
 import { ViewWillEnter, ViewDidLeave } from '@ionic/angular';
 import { CommonModule } from '@angular/common';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
   standalone: true,
-  imports: [FontAwesomeModule, RouterLink, CommonModule, IonicModule],
+  imports: [FontAwesomeModule, RouterLink, CommonModule, IonicModule, TranslateModule],
 })
 export class HomeComponent implements ViewWillEnter, ViewDidLeave {
 

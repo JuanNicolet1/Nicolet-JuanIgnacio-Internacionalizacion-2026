@@ -15,7 +15,7 @@
           <fa-icon [icon]="faArrowLeft"></fa-icon>
         </button>
 
-        <h1 class="main-title">NUESTRA CARTA</h1>
+        <h1 class="main-title">{{ 'PRODUCTOS.CARTA' | translate }}</h1>
 
         <button class="nav-icon-btn right" (click)="viajarChat()">
           <fa-icon [icon]="faRightFromBracket" style="transform: rotate(180deg);"></fa-icon> 💬
@@ -23,7 +23,7 @@
     </div>
 
     <div class="category-content" *ngIf="productsComida.length > 0">
-      <h2>🍔 Comidas</h2>
+      <h2>🍔 {{ 'PRODUCTOS.COMIDA' | translate }}</h2>
       <div class="cards-scroller">
         <div class="food-card" *ngFor="let p of productsComida; let i = index" 
           (click)="abrirModal(p)" [id]="'comida-' + i"> 
@@ -69,7 +69,7 @@
   </div> 
   <div class="snap-page" *ngIf="productsBebida.length > 0">
     <div class="category-content">
-      <h2>🥤 Bebidas</h2>
+      <h2>🥤 {{ 'PRODUCTOS.BEBIDA' | translate }}</h2>
       <div class="cards-scroller">
         <div class="food-card" *ngFor="let p of productsBebida; let i = index"
           (click)="abrirModal(p)" [id]="'bebida-' + i">
@@ -111,7 +111,7 @@
 
   <div class="snap-page" *ngIf="productsPostres.length > 0">
     <div class="category-content">
-      <h2>🥞 Postres</h2>
+      <h2>🥞 {{ 'PRODUCTOS.POSTRE' | translate }}</h2>
       <div class="cards-scroller">
         <div class="food-card" *ngFor="let p of productsPostres; let i = index"
           (click)="abrirModal(p)" [id]="'postre-' + i">
@@ -158,15 +158,15 @@
 <div class="cart-footer" *ngIf="totalPrecio > 0">
   <div class="cart-details">
     <div class="total-row">
-      <span>Total:</span>
+      <span>{{ 'PRODUCTOS.TOTAL' | translate }}:</span>
       <span class="total-price">${{ totalPrecio }}</span>
     </div>
     <div class="time-row">
-      <small>Espera máx: <strong>{{ tiempoEstimado }} min</strong></small>
+      <small>{{ 'PRODUCTOS.ESPERAMAX' | translate }}: <strong>{{ tiempoEstimado }} {{ 'PRODUCTOS.MINUTOS' | translate }}</strong></small>
     </div>
   </div>
   <button class="confirm-btn" (click)="guardarPedido()">
-    CONFIRMAR
+    {{ 'CLIENTE_RESERVA.CONFIRMAR' | translate }}
   </button>
 </div>
 
@@ -180,7 +180,7 @@
   <div class="modal-content-sensor">
     <div >
       <button class="close-modal-btn" (click)="cerrarModal()">
-      <fa-icon [icon]="faArrowLeft"></fa-icon> Volver
+      <fa-icon [icon]="faArrowLeft"></fa-icon> {{ 'PRODUCTOS.VOLVER' | translate }}
     </button>
     </div>
     
@@ -215,8 +215,8 @@
                  [style.color]="sensorFotosActivo ? '#2ecc71' : '#fff'"
                  [style.animation]="sensorFotosActivo ? 'tilt-shaking 1.5s infinite' : 'none'">
       </fa-icon>
-      <span *ngIf="!sensorFotosActivo">Toca para activar sensor</span>
-      <span *ngIf="sensorFotosActivo" style="color: #2ecc71; font-weight: bold;">¡Mueve el celular!</span>
+      <span *ngIf="!sensorFotosActivo">{{ 'PRODUCTOS.ACTIVAR' | translate }}</span>
+      <span *ngIf="sensorFotosActivo" style="color: #2ecc71; font-weight: bold;">{{ 'PRODUCTOS.MOVER' | translate }}</span>
     </div>
 
     <div class="modal-details">
@@ -227,7 +227,7 @@
          <span class="qty-modal">{{ productoDestacado.cantidad }}</span>
          <button class="btn-qty-modal" (click)="modificarCantidad(productoDestacado, 1)">+</button>
       </div>
-      <button class="btn-add-modal" (click)="cerrarModal()">Listo</button>
+      <button class="btn-add-modal" (click)="cerrarModal()">{{ 'PRODUCTOS.LISTO' | translate }}</button>
     </div>
 
   </div>

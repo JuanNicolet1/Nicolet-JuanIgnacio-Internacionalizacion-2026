@@ -31,6 +31,7 @@ import { DatabaseService } from 'src/app/services/database.service';
 import { GooglePlus } from '@ionic-native/google-plus/ngx';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import firebase from 'firebase/compat/app';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-iniciar-sesion',
@@ -44,6 +45,7 @@ import firebase from 'firebase/compat/app';
     FontAwesomeModule,
     ReactiveFormsModule,
     RouterModule,
+    TranslateModule,
   ],
   providers: [GooglePlus]
 })

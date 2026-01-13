@@ -11,12 +11,13 @@ import { EncuestasService } from 'src/app/services/encuestas.service';
 import { LensFacing } from '@capacitor-mlkit/barcode-scanning';
 import Swal from 'sweetalert2';
 import firebase from 'firebase/compat/app';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-recibe-pedido',
   templateUrl: './recibe-pedido.component.html',
   styleUrls: ['./recibe-pedido.component.scss'],
-  imports: [FontAwesomeModule, RouterLink],
+  imports: [FontAwesomeModule, RouterLink, TranslateModule],
   standalone: true,
 })
 export class RecibePedidoComponent {

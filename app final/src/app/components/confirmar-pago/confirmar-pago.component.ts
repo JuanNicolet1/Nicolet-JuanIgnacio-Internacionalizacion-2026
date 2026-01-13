@@ -20,6 +20,7 @@ import emailjs from 'emailjs-com';
 import { getStorage, ref, uploadString, getDownloadURL } from "firebase/storage";
 import pdfMake from 'pdfmake/build/pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-confirmar-pago',
@@ -31,7 +32,7 @@ import pdfFonts from 'pdfmake/build/vfs_fonts';
     FormsModule,
     IonicModule,
     FontAwesomeModule,
-    RouterLink,
+    RouterLink, TranslateModule
   ],
 })
 export class ConfirmarPagoComponent {

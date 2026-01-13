@@ -25,11 +25,11 @@
     <div class="icon-header-rejected">
       <fa-icon [icon]="faBan"></fa-icon>
     </div>
-    <h2 class="rejected-title">PEDIDO RECHAZADO</h2>
+    <h2 class="rejected-title">{{ 'CLIENTE_PEDIDO.RECHAZO' | translate }}</h2>
     <div class="rejected-content">
-      <p>El mozo no pudo procesar tu pedido.</p>
+      <p>{{ 'CLIENTE_PEDIDO.NPROCESAR' | translate }}.</p>
       <div class="reason-box">
-        <strong>Motivo:</strong>
+        <strong>{{ 'CLIENTE_PEDIDO.MOTIVO' | translate }}:</strong>
         <span>{{ motivoRechazo }}</span>
       </div>
     </div>
@@ -49,21 +49,21 @@
       <div class="step" [class.active]="pasoActual >= 1">
         <div class="circle"><fa-icon [icon]="faCheck"></fa-icon></div>
         <div class="line"></div>
-        <p>Enviado</p>
+        <p>{{ 'CLIENTE_PEDIDO.ENVIADO' | translate }}</p>
       </div>
       <div class="step" [class.active]="pasoActual >= 2">
         <div class="circle"><fa-icon [icon]="faUtensils"></fa-icon></div>
         <div class="line"></div>
-        <p>Cocinando</p>
+        <p>{{ 'CLIENTE_PEDIDO.COCINANDO' | translate }}</p>
       </div>
       <div class="step" [class.active]="pasoActual >= 3">
         <div class="circle"><fa-icon [icon]="faBell"></fa-icon></div>
         <div class="line"></div>
-        <p>Entregado</p>
+        <p>{{ 'CLIENTE_PEDIDO.ENTREGADO' | translate }}</p>
       </div>
       <div class="step" [class.active]="pasoActual >= 4">
         <div class="circle"><fa-icon [icon]="faFlagCheckered"></fa-icon></div>
-        <p>Disfrutando</p>
+        <p>{{ 'CLIENTE_PEDIDO.DISFRUTANDO' | translate }}</p>
       </div>
     </div>
   </div>
@@ -73,20 +73,20 @@
 
     <button class="action-btn scan" *ngIf="pasoActual === 3" (click)="starScan()">
       <fa-icon [icon]="faUtensils"></fa-icon>
-      <span>Confirmar Recepción (QR)</span>
+      <span>{{ 'CLIENTE_PEDIDO.CONFIRMAR_RECEPCION' | translate }}</span>
     </button>
 
     <button class="action-btn game" 
       *ngIf="pasoActual >= 2 && pasoActual < 4 && auth.usuarioIngresado.tipoCliente === 'cliente'" 
       routerLink="/juego">
       <fa-icon [icon]="faGamepad"></fa-icon>
-      <span>Jugar mientras espero</span>
+      <span>{{ 'CLIENTE_PEDIDO.JUGAR' | translate }}</span>
     </button>
 
  
     <button class="action-btn survey" *ngIf="mostrarEncuesta" routerLink="/resultado-encuestas-cliente">
       <fa-icon [icon]="faClipboardList"></fa-icon>
-      <span>Ver Encuestas</span>
+      <span>{{ 'CLIENTE_ESPERA.ENCUESTAS' | translate }}</span>
     </button>
 
   </div>

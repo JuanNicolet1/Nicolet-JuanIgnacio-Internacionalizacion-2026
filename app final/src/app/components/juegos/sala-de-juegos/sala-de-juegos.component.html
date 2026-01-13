@@ -38,14 +38,14 @@
     <button class="custom-button" [routerLink]="['/ahorcado']">
       <img src="assets\iconos\juego-del-ahorcado.png" alt="" />
     </button>
-    <h2>Ahorcado</h2>
+    <h2>{{ 'JUEGOS.AHORCADO' | translate }}</h2>
     </div>
 
     <div class="card-opcion">
     <button [routerLink]="['/mayormenor']" class="custom-button">
       <img src="assets\HIGHER-removebg-preview.png" alt="" />
     </button>
-    <h2>Mayor o Menor</h2>
+    <h2>{{ 'JUEGOS.MAYOR' | translate }}</h2>
     </div>
 
     <div class="card-opcion">
@@ -55,14 +55,14 @@
     >
       <img src="assets\superheroeicono.png" alt="" />
     </button>
-    <h2>Juego Superheroe</h2>
+    <h2>{{ 'JUEGOS.SUPERHEROE' | translate }}</h2>
     </div>
 
     <div class="card-opcion">
       <button class="custom-button" [routerLink]="['/juego-esquiva']">
       <img src="assets\iconos\iconoJuego.png" alt="" />
     </button>
-    <h2>Ayudar al Mozo</h2>
+    <h2>{{ 'JUEGOS.MOZO' | translate }}</h2>
     </div>
   </div>
 </div>  

@@ -17,14 +17,14 @@ import { Subscription } from 'rxjs';
 import { pushService } from 'src/app/services/serviciosPush/push-notifications.service';
 import firebase from 'firebase/compat/app';
 import { GoogleMapsModule } from '@angular/google-maps';
-
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-delivery',
   templateUrl: './delivery.component.html',
   styleUrls: ['./delivery.component.scss'],
   standalone:true,
-  imports: [IonicModule, FormsModule, CommonModule, FontAwesomeModule, GoogleMapsModule, RouterLinkActive],
+  imports: [IonicModule, FormsModule, CommonModule, FontAwesomeModule, GoogleMapsModule, RouterLinkActive, TranslateModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class DeliveryComponent implements  ViewWillEnter, ViewDidLeave {

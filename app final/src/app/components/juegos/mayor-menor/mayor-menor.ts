@@ -8,10 +8,11 @@ import { AuthService } from 'src/app/services/auth.service';
 import { DatabaseService } from 'src/app/services/database.service';
 import Swal from 'sweetalert2';
 import { PedidoService } from 'src/app/services/pedido.service';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 // import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-mayor-menor',
-  imports: [RouterLink, FontAwesomeModule],
+  imports: [RouterLink, FontAwesomeModule, TranslateModule],
   standalone:true,
   templateUrl: './mayor-menor.html',
   styleUrl: './mayor-menor.scss'

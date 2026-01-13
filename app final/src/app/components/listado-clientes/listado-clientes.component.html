@@ -7,7 +7,7 @@
 
 <div class="container">
   
-  <h1 class="title">SOLICITUDES DE ACCESO</h1>
+  <h1 class="title">{{ 'SOLICITUD.SOLICITUD' | translate }}</h1>
 
   <div class="cards-list" *ngIf="clientes.length > 0; else noClients">
     
@@ -18,10 +18,10 @@
           <img [src]="cliente.foto" class="avatar" alt="Foto">
           <div class="text-info">
             <h3>{{ cliente.nombre }} {{ cliente.apellido }}</h3>
-            <p class="dni">DNI: {{ cliente.dni }}</p>
+            <p class="dni">{{ 'LOGIN.DOCUMENTO_IDENTIDAD' | translate }}: {{ cliente.dni }}</p>
           </div>
         </div>
-        <span class="badge-pendiente">Pendiente</span>
+        <span class="badge-pendiente">{{ 'SOLICITUD.PENDIENTE' | translate }}</span>
       </div>
 
       <div class="card-body">
@@ -32,10 +32,10 @@
 
       <div class="card-actions">
         <button class="btn-deny" (click)="cambiarEstadoAcceso(cliente, 'denegado')">
-          <fa-icon [icon]="faUserSlash"></fa-icon> DENEGAR
+          <fa-icon [icon]="faUserSlash"></fa-icon> {{ 'SOLICITUD.DENEGAR' | translate }}
         </button>
         <button class="btn-accept" (click)="cambiarEstadoAcceso(cliente, 'permitido')">
-          <fa-icon [icon]="faUserCheck"></fa-icon> PERMITIR
+          <fa-icon [icon]="faUserCheck"></fa-icon> {{ 'SOLICITUD.PERMITIR' | translate }}
         </button>
       </div>
 
@@ -45,7 +45,7 @@
 
   <ng-template #noClients>
     <div class="empty-state">
-      <p>No hay solicitudes pendientes.</p>
+      <p>{{ 'SOLICITUD.NSOLICITUD' | translate }}.</p>
     </div>
   </ng-template>
 

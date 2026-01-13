@@ -38,7 +38,6 @@ bootstrapApplication(AppComponent, {
     AngularFireAuthModule,
     AngularFirestoreModule), provideAnimationsAsync(),
 
-    // 👇 ESTO ES LO QUE TE FALTABA
     provideTranslateHttpLoader({
       prefix: 'assets/i18n/',
       suffix: '.json'

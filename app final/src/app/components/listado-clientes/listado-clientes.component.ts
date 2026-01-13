@@ -11,12 +11,13 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { IonicModule } from '@ionic/angular';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 @Component({
   selector: 'app-listado-clientes',
   templateUrl: './listado-clientes.component.html',
   styleUrls: ['./listado-clientes.component.scss'],
   standalone: true,
-  imports: [FontAwesomeModule, IonicModule, RouterLink, CommonModule],
+  imports: [FontAwesomeModule, IonicModule, RouterLink, CommonModule, TranslateModule],
 })
 export class ListadoClientesComponent {
 

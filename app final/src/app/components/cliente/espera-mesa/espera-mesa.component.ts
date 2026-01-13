@@ -19,12 +19,13 @@ import { DatabaseService } from 'src/app/services/database.service';
 import { Subscription } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { pushService } from 'src/app/services/serviciosPush/push-notifications.service';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-espera-mesa',
   templateUrl: './espera-mesa.component.html',
   styleUrls: ['./espera-mesa.component.scss'],
-  imports: [RouterLink, FontAwesomeModule, CommonModule, IonicModule],
+  imports: [RouterLink, FontAwesomeModule, CommonModule, IonicModule, TranslateModule],
   standalone: true,
 })
 export class EsperaMesaComponent implements OnInit, ViewDidLeave {

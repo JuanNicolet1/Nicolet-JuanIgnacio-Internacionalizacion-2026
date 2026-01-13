@@ -7,7 +7,7 @@
 
 <div class="container">
   
-  <h1 class="title">NUEVOS PEDIDOS</h1>
+  <h1 class="title">{{ 'DUENO_DELIVERY.PEDIDOS' | translate }}</h1>
   
   <div class="cards-list" *ngIf="pedidosPendientes.length > 0; else noPendientes">
     <div class="delivery-card" *ngFor="let p of pedidosPendientes">
@@ -49,12 +49,11 @@
   </div>
   
   <ng-template #noPendientes>
-    <div class="empty-state"><p>No hay pedidos nuevos.</p></div>
+    <div class="empty-state"><p>{{ 'DUENO_DELIVERY.NPEDIDOS' | translate }}.</p></div>
   </ng-template>
 
 
-  <h1 class="title listos">LISTOS PARA REPARTIR</h1>
-
+  <h1 class="title listos">{{ 'DUENO_DELIVERY.LISTOS' | translate }}</h1>
   <div class="cards-list" *ngIf="pedidosListos.length > 0; else noListos">
     <div class="delivery-card ready" *ngFor="let p of pedidosListos">
       
@@ -74,7 +73,7 @@
 
       <div class="card-actions">
         <button class="btn-deliver" (click)="entregarAlDelivery(p)">
-            <fa-icon [icon]="faMotorcycle"></fa-icon> ENTREGAR A DELIVERY
+            <fa-icon [icon]="faMotorcycle"></fa-icon> {{ 'DUENO_DELIVERY.ENTREGAR' | translate }}
         </button>
       </div>
 
@@ -82,7 +81,7 @@
   </div>
   
   <ng-template #noListos>
-    <div class="empty-state"><p>Nada listo para entregar aún.</p></div>
+    <div class="empty-state"><p>{{ 'DUENO_DELIVERY.NLISTOS' | translate }}.</p></div>
   </ng-template>
 
 </div>

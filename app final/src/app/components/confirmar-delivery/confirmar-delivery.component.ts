@@ -9,13 +9,14 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faArrowLeft, faMapMarkerAlt, faClock, faUtensils, faMotorcycle } from '@fortawesome/free-solid-svg-icons'; 
 import { RouterLink } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-confirmar-delivery',
   templateUrl: './confirmar-delivery.component.html',
   styleUrls: ['./confirmar-delivery.component.scss'],
   standalone: true,
-  imports: [CommonModule, FontAwesomeModule, RouterLink, IonicModule]
+  imports: [CommonModule, FontAwesomeModule, RouterLink, IonicModule, TranslateModule]
 })
 export class ConfirmarDeliveryComponent implements OnInit {
 

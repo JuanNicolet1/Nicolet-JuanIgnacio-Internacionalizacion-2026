@@ -11,6 +11,7 @@ import { DatabaseService } from 'src/app/services/database.service';
 import Swal from 'sweetalert2';
 import { getDownloadURL, getStorage, ref, uploadString } from 'firebase/storage';
 import { QRCodeComponent } from 'angularx-qrcode';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-alta-mesa',
@@ -25,6 +26,7 @@ import { QRCodeComponent } from 'angularx-qrcode';
     ReactiveFormsModule,
     RouterLink,
     QRCodeComponent,
+    TranslateModule,
   ],
 })
 export class AltaMesaComponent {

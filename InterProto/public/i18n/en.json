@@ -1,0 +1,14 @@
+{
+    "INICIO": {
+        "BIENVENIDO": "Welcome to InterProto",
+        "CAMBIAR_IDIOMA": "Cambiar idioma",
+        "PEDIR_COMIDA": "Pedir Comida",
+        "VER_MAPA": "Ver Mapa"
+    },
+
+    "MENU": {
+        "COMIDA": "COMIDAS",
+        "BEBIDAS": "BEBIDAS",
+        "POSTRES": "POSTRES"
+    }
+}

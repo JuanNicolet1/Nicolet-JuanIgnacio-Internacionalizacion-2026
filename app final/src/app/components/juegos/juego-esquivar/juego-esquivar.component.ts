@@ -6,6 +6,7 @@ import { AuthService } from 'src/app/services/auth.service';
 import { DatabaseService } from 'src/app/services/database.service';
 import { ViewDidEnter, ViewDidLeave, ViewWillEnter } from '@ionic/angular';
 import { PedidoService } from 'src/app/services/pedido.service';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 interface GameObject {
   x: number; y: number; width: number; height: number;
@@ -18,7 +19,7 @@ interface GameObject {
   templateUrl: './juego-esquivar.component.html',
   styleUrls: ['./juego-esquivar.component.scss'],
   standalone: true,
-  imports:[CommonModule]
+  imports:[CommonModule, TranslateModule]
 })
 export class JuegoEsquivarComponent  implements ViewDidLeave, ViewWillEnter {
  @ViewChild('gameArea') gameAreaRef!: ElementRef;

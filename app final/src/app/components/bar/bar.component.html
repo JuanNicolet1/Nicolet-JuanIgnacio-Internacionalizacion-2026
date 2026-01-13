@@ -1,13 +1,13 @@
 <div *ngIf="isLoading" class="spinner-overlay">
   <div class="spinner-container">
     <img src="assets/icono.png" class="spinning-logo">
-    <p>Cargando Bebidas...</p>
+    <p>{{ 'BAR.CARGANDO' | translate }}...</p>
   </div>
 </div>
 
 <div class="container">
   
-  <h1 class="title">BARRA - SALÓN</h1>
+  <h1 class="title">{{ 'BAR.BARRA' | translate }}</h1>
 
   <div class="cards-list" *ngIf="pedidos.length > 0; else noPedidos">
     
@@ -23,7 +23,7 @@
       </div>
 
       <div class="card-body">
-        <p class="section-title"><fa-icon [icon]="faGlassMartiniAlt"></fa-icon> A Preparar:</p>
+        <p class="section-title"><fa-icon [icon]="faGlassMartiniAlt"></fa-icon> {{ 'COCINA.PREPARAR' | translate }}:</p>
         <ul class="items-list">
           <ng-container *ngFor="let prod of p.productos">
             <li *ngIf="prod.tipoProducto === 'bebida'">
@@ -36,7 +36,7 @@
 
       <div class="card-actions">
         <button class="btn-finish" (click)="finalizarPedido(p)">
-          <fa-icon [icon]="faCheckCircle"></fa-icon> MARCAR COMO LISTO
+          <fa-icon [icon]="faCheckCircle"></fa-icon> {{ 'BAR.MARCAR' | translate }}
         </button>
       </div>
 
@@ -45,7 +45,7 @@
 
   <ng-template #noPedidos>
     <div class="empty-state">
-      <p>No hay bebidas pendientes.</p>
+      <p>{{ 'BAR.NBEBIDAS' | translate }}.</p>
     </div>
   </ng-template>
 

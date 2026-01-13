@@ -19,13 +19,13 @@
 <div *ngIf="isLoading" class="spinner-overlay">
   <div class="spinner-container">
     <img src="assets/icono.png" class="spinning-logo">
-    <p>Buscando Pedidos...</p>
+    <p>{{ 'CONFIRMAR_PEDIDOS.BUSCANDO' | translate }}...</p>
   </div>
 </div>
 
 <div class="container">
   
-  <h1 class="title">PEDIDOS DE MESAS</h1>
+  <h1 class="title">{{ 'CONFIRMAR_PEDIDOS.PEDIDOS' | translate }}</h1>
   
   <div class="cards-list" *ngIf="pedidosPendientes.length > 0; else noPendientes">
     
@@ -33,7 +33,7 @@
         
         <div class="card-header">
             <div class="user-info">
-                <div class="mesa-badge">Mesa {{ p.mesa }}</div>
+                <div class="mesa-badge">{{ 'CONFIRMAR_PEDIDOS.MESA' | translate }} {{ p.mesa }}</div>
                 <div class="client-info">
                     <h3>{{ p.cliente }}</h3>
                     <span class="time-badge">
@@ -55,8 +55,8 @@
         </div>
 
         <div class="card-actions">
-            <button class="btn-reject" (click)="rechazarPedido(p)">RECHAZAR</button>
-            <button class="btn-accept" (click)="confirmarPedido(p)">ACEPTAR</button>
+            <button class="btn-reject" (click)="rechazarPedido(p)">{{ 'CONFIRMAR_PEDIDOS.RECHAZAR' | translate }}</button>
+            <button class="btn-accept" (click)="confirmarPedido(p)">{{ 'CONFIRMAR_PEDIDOS.ACEPTAR' | translate }}</button>
         </div>
 
     </div>
@@ -65,7 +65,7 @@
   <ng-template #noPendientes>
     <div class="empty-state">
         <fa-icon [icon]="faClipboardList" size="4x" style="color: #555; margin-bottom: 15px;"></fa-icon>
-        <p>No hay pedidos pendientes de confirmación.</p>
+        <p>{{ 'CONFIRMAR_PEDIDOS.NPEDIDOS' | translate }}.</p>
     </div>
   </ng-template>
 

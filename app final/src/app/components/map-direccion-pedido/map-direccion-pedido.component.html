@@ -23,11 +23,11 @@
   <div class="bottom-bar" *ngIf="coordenadaSeleccionada">
     <div class="info-card">
       <div class="text-info">
-        <small>Ubicación seleccionada</small>
+        <small>{{ 'MAPA_CLIENTE.UBICACION_SELECCIONADA' | translate }}</small>
         <h3>{{ direccion || 'Punto en el mapa' }}</h3>
       </div>
       <button class="confirm-btn" (click)="confirmarUbicacion()">
-        CONFIRMAR
+        {{ 'CLIENTE_RESERVA.CONFIRMAR' | translate }}
       </button>
     </div>
   </div>

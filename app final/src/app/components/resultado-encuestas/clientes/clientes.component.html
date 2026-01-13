@@ -1,50 +1,50 @@
 <div class="body">
   <div class="button-container" id="snapContainer">
   <div class="card-opcion">
-    <H2>¿Cómo calificarías la atención?</H2>
+    <H2>{{ 'ENCUESTA.E1' | translate }}</H2>
     <div class="pieContainer">
       <canvas id="myPieChart"></canvas>
     </div>
   </div>
 
   <div class="card-opcion">
-    <H2>¿Cómo calificarías el sabor de la comida?</H2>
+    <H2>{{ 'ENCUESTA.E2' | translate }}</H2>
     <div class="pieContainer">
       <canvas id="myPieChart2"></canvas>
     </div>
   </div>
   <div class="card-opcion">
-    <H2>¿La comida estaba caliente?</H2>
+    <H2>{{ 'ENCUESTA.E3' | translate }}</H2>
     <div class="pieContainer">
       <canvas id="myPieChart3"></canvas>
     </div>
   </div>
   <div class="card-opcion">
-    <H2>¿Las porciones fueron adecuadas?</H2>
+    <H2>{{ 'ENCUESTA.E4' | translate }}</H2>
     <div class="pieContainer">
       <canvas id="myPieChart4"></canvas>
     </div>
   </div>
   <div class="card-opcion form-small">
-    <H2>¿La presentación fue buena?</H2>
+    <H2>{{ 'ENCUESTA.E5' | translate }}</H2>
     <div class="pieContainer">
       <canvas id="myPieChart5"></canvas>
     </div>
   </div>
   <div class="card-opcion">
-    <H2>¿Qué tipos de menú prefiere en el restaurante?</H2>
+    <H2>{{ 'ENCUESTA.E6' | translate }}</H2>
     <div class="pieContainer">
       <canvas id="myPieChart6"></canvas>
     </div>
   </div>
   <div class="card-opcion">
-    <H2>¿Cuánto tiempo esperó por la comida?</H2>
+    <H2>{{ 'ENCUESTA.E7' | translate }}</H2>
     <div class="pieContainer">
       <canvas id="myPieChart7"></canvas>
     </div>
 </div>
   <div class="snap-section comentarios">
-  <H2>COMENTARIOS</H2>
+  <H2>{{ 'ENCUESTA.COMENTARIOS' | translate }}</H2>
 
   <ul class="comment-list">
     @for (com of comentarios; track $index) {

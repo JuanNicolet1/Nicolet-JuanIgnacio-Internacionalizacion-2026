@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faArrowLeft, faSearch, faMapMarkerAlt, faLocationArrow } from '@fortawesome/free-solid-svg-icons';
 import * as L from 'leaflet';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 
 delete (L.Icon.Default.prototype as any)._getIconUrl;
@@ -24,7 +25,8 @@ L.Icon.Default.mergeOptions({
   imports: [
     CommonModule,
     FormsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    TranslateModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

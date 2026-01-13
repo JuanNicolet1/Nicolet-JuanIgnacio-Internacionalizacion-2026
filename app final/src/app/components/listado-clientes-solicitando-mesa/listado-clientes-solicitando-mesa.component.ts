@@ -8,14 +8,15 @@ import { Mesa } from 'src/app/classes/mesa';
 import { AuthService } from 'src/app/services/auth.service';
 import { DatabaseService } from 'src/app/services/database.service';
 import Swal from 'sweetalert2';
-import { CommonModule } from '@angular/common'; 
+import { CommonModule } from '@angular/common';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-listado-clientes-solicitando-mesa',
   templateUrl: './listado-clientes-solicitando-mesa.component.html',
   styleUrls: ['./listado-clientes-solicitando-mesa.component.scss'],
   standalone: true,
-  imports: [FontAwesomeModule, RouterLink, CommonModule],
+  imports: [FontAwesomeModule, RouterLink, CommonModule, TranslateModule],
 })
 export class ListadoClientesSolicitandoMesaComponent implements OnInit {
 

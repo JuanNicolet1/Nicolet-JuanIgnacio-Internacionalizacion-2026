@@ -18,13 +18,13 @@
 <div *ngIf="isLoading" class="spinner-overlay">
   <div class="spinner-container">
     <img src="assets/icono.png" class="spinning-logo">
-    <p>Procesando...</p>
+    <p>{{ 'CUENTA.PROCESANDO' | translate }}...</p>
   </div>
 </div>
 
 <div class="container">
   
-  <h1 class="title">RESERVAS PENDIENTES</h1>
+  <h1 class="title">{{ 'DUENO_RESERVA.RESERVA' | translate }}</h1>
 
   <div class="cards-list" *ngIf="clientes.length > 0; else noReservas">
     
@@ -35,7 +35,7 @@
           <img [src]="cliente.foto" class="avatar" alt="Foto">
           <div class="text-info">
             <h3>{{ cliente.nombre }} {{ cliente.apellido }}</h3>
-            <p class="dni">DNI: {{ cliente.dni }}</p>
+            <p class="dni">{{ 'LOGIN.DOCUMENTO_IDENTIDAD' | translate }}: {{ cliente.dni }}</p>
           </div>
         </div>
       </div>
@@ -47,20 +47,20 @@
         </div>
         <div class="info-row">
           <fa-icon [icon]="faUsers"></fa-icon>
-          <span>{{ cliente.cantidadComensales }} Comensales</span>
+          <span>{{ cliente.cantidadComensales }} {{ 'DUENO_RESERVA.COMENSALES' | translate }}</span>
         </div>
         <div class="info-row">
           <fa-icon [icon]="faCalendarCheck"></fa-icon>
-          <span>Preferencia: {{ cliente.tipoMesa | titlecase }}</span>
+          <span>{{ 'DUENO_RESERVA.PREFERENCIA' | translate }}: {{ cliente.tipoMesa | titlecase }}</span>
         </div>
       </div>
 
       <div class="card-actions">
         <button class="btn-reject" (click)="rechazarReserva(cliente)">
-          <fa-icon [icon]="faBan"></fa-icon> RECHAZAR
+          <fa-icon [icon]="faBan"></fa-icon> {{ 'DUENO_RESERVA.RECHAZAR' | translate }}
         </button>
         <button class="btn-accept" (click)="abrirSelectorMesa(cliente)">
-          <fa-icon [icon]="faCheckCircle"></fa-icon> APROBAR
+          <fa-icon [icon]="faCheckCircle"></fa-icon> {{ 'DUENO_RESERVA.ACEPTAR' | translate }}
         </button>
       </div>
 
@@ -70,7 +70,7 @@
   <ng-template #noReservas>
     <div class="empty-state">
       <fa-icon [icon]="faCalendarCheck" size="4x" style="color: #555; margin-bottom: 15px;"></fa-icon>
-      <p>No hay reservas pendientes.</p>
+      <p>{{ 'DUENO_RESERVA.NRESERVA' | translate }}.</p>
     </div>
   </ng-template>
 
@@ -81,10 +81,10 @@
   <div class="modal-content" (click)="$event.stopPropagation()">
     
     <div class="modal-header">
-      <h2>Asignar Mesa</h2>
-      <p>Para {{ usuarioSeleccionado?.nombre }}</p>
+      <h2>{{ 'DUENO_RESERVA.ASIGNAR' | translate }}</h2>
+      <p>{{ 'DUENO_RESERVA.PARA' | translate }} {{ usuarioSeleccionado?.nombre }}</p>
       <p class="preference" *ngIf="usuarioSeleccionado?.tipoMesa">
-         Preferencia: <strong style="color: #f7b267;">{{ usuarioSeleccionado?.tipoMesa | titlecase }}</strong>
+         {{ 'DUENO_RESERVA.PREFERENCIA' | translate }}: <strong style="color: #f7b267;">{{ usuarioSeleccionado?.tipoMesa | titlecase }}</strong>
       </p>
     </div>
 
@@ -110,7 +110,7 @@
 
     </div>
 
-    <button class="btn-close-modal" (click)="cerrarSelectorMesa()">Cancelar</button>
+    <button class="btn-close-modal" (click)="cerrarSelectorMesa()">{{ 'DUENO_RESERVA.CANCELAR' | translate }}</button>
   </div>
 
 </div>

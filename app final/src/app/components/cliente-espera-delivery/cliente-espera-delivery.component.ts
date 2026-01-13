@@ -10,13 +10,14 @@ import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faCheck, faUtensils, faMotorcycle, faFlagCheckered, faGamepad, faClipboardList, faReceipt, faCommentDots, faBan } from '@fortawesome/free-solid-svg-icons';
 import { PedidoService } from 'src/app/services/pedido.service';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-cliente-espera-delivery',
   templateUrl: './cliente-espera-delivery.component.html',
   styleUrls: ['./cliente-espera-delivery.component.scss'],
   standalone: true,
-  imports: [RouterLink, CommonModule, FontAwesomeModule] 
+  imports: [RouterLink, CommonModule, FontAwesomeModule, TranslateModule] 
 })
 export class ClienteEsperaDeliveryComponent  implements ViewWillEnter, ViewDidLeave {
   

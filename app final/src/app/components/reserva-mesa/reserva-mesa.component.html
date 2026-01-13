@@ -2,19 +2,19 @@
   <div class="modal-overlay" id="modalOverlay">
   <div class="modal-content">
     <div class="button-grid">
-          <label for="fecha">Seleccioná fecha y hora:</label>
+          <label for="fecha">{{ 'CLIENTE_RESERVA.SELECCIONAR' | translate }}:</label>
           <input type="datetime-local" [(ngModel)]="fechaSeleccionada" />
-          <label for="fecha">Tipo de Mesa:</label>
+          <label for="fecha">{{ 'SOLICITUD.TIPO_MESA' | translate }}:</label>
           <ion-select [(ngModel)]="tipoMesa" name="tipo">
-            <ion-select-option value="vip">Vip</ion-select-option>
-            <ion-select-option value="estandar">Estandar</ion-select-option>
-            <ion-select-option value="movilidad reducida">Movilidad reducida</ion-select-option>
+            <ion-select-option value="vip">{{ 'SOLICITUD.VIP' | translate }}</ion-select-option>
+            <ion-select-option value="estandar">{{ 'SOLICITUD.ESTANDAR' | translate }}</ion-select-option>
+            <ion-select-option value="movilidad reducida">{{ 'SOLICITUD.MOVILIDAD' | translate }}</ion-select-option>
           </ion-select>
-          <label for="fecha">Cantidad de comensales:</label>
+          <label for="fecha">{{ 'CLIENTE_RESERVA.COMENSALES' | translate }}:</label>
           <ion-input type="number" required name="cantidadComensales" [(ngModel)]="cantidadComensales"></ion-input>
 
         <div class="botones">
-          <button (click)="confirmarReserva()">Confirmar</button>
+          <button (click)="confirmarReserva()">{{ 'CLIENTE_RESERVA.CONFIRMAR' | translate }}</button>
         </div>
       </div>
     </div>

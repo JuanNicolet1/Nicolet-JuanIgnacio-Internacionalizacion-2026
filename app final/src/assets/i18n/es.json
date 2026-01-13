@@ -9,6 +9,286 @@
     "DOCUMENTO_IDENTIDAD": "DNI",
     "EMAIL": "Correo",
     "CONTRASENA": "Contraseña",
-    "REPETIR": "Repetir Contraseña"
+    "REPETIR": "Repetir Contraseña",
+    "CREAR": "Registrarse",
+    "INICIAR": "Iniciar Sesión",
+    "GOOGLE": "Iniciar Sesión con Google",
+    "ANONIMO": "Iniciar Anónimo"
+  },
+
+  "DUENO": {
+    "AGREGAR_EMPLEADO": "AGREGAR EMPLEADO",
+    "AGREGAR_CLIENTE": "AGREGAR CLIENTE",
+    "ACEPTAR": "ACEPTAR CLIENTES",
+    "MESA": "Crear Mesa",
+    "RESERVA": "Aceptar Reserva",
+    "DELIVERY": "Delivery",
+    "REGISTRAR": "Resgistrar Empleado",
+    "REGISTRAR_MESA": "Registrar Mesa"
+  },
+
+  "ROL": {
+    "ROL": "Rol",
+    "COCINERO": "Cocinero/Bar",
+    "MESERO": "Mesero",
+    "MAITRE": "Maitre"
+  },
+
+  "SOLICITUD": {
+    "SOLICITUD": "SOLICITUDES DE ACCESO",
+    "NSOLICITUD": "No hay solicitudes pendientes",
+    "PENDIENTE": "Pendiente",
+    "PERMITIR": "Permitir",
+    "DENEGAR": "Denegar",
+    "MESA": "N° Mesa",
+    "COMENSALES": "Comensales",
+    "TIPO_MESA": "Tipo de Mesa",
+    "ESTANDAR": "Estandar",
+    "VIP": "VIP",
+    "MOVILIDAD": "Movilidad Reducida",
+    "SOLICITUDES_MESA": "SOLICITUDES DE MESA",
+    "ESPERANDO": "Esperando mesa",
+    "NESPERANDO": "No hay clientes esperando mesa",
+    "ASIGNAR": "ASIGNAR MESA",
+    "ELEGIR": "Elegir Mesa",
+    "PARA": "Para",
+    "CANCELAR": "Cancelar"
+  },
+
+  "DUENO_RESERVA": {
+    "RESERVA": "RESERVAS PENDIENTES",
+    "NRESERVA": "No hay reservas pendientes",
+    "ACEPTAR": "ACEPTAR RESERVA",
+    "RECHAZAR": "RECHAZAR RESERVA",
+    "ASIGNAR": "Asignar Mesa",
+    "PARA": "Para",
+    "COMENSALES": "Comensales",
+    "PREFERENCIA": "Preferencia",
+    "CANCELAR": "Cancelar"
+  },
+
+  "DUENO_DELIVERY": {
+    "PEDIDOS": "NUEVOS PEDIDOS",
+    "NPEDIDOS": "No hay pedidos nuevos",
+    "ACEPTAR": "ACEPTAR PEDIDO",
+    "RECHAZAR": "RECHAZAR PEDIDO",
+    "LISTOS": "LISTOS PARA REPARTIR",
+    "NLISTOS": "Nada pedidos listos para entregar",
+    "ENTREGAR": "ENTREGAR A DELIVERY"
+  },
+
+  "MESERO": {
+    "CHAT": "CHAT CON CLIENTES",
+    "ACEPTAR_PEDIDO": "ACEPTAR PEDIDOS",
+    "ENTREGAR_PEDIDO": "ENTREGAR PEDIDOS",
+    "COBROS": "COBROS"
+  },
+  
+  "CHEF": {
+    "AVISAR": "AVISAR COMIDA LISTA",
+    "COMIDA_DELIVERY": "COMIDA DELIVERY",
+    "CREAR": "CREAR COMIDA"
+  },
+
+  "BARTENDER": {
+    "AVISAR": "AVISAR BEBIDA LISTA",
+    "COMIDA_DELIVERY": "BEBIDA DELIVERY",
+    "CREAR": "CREAR BEBIDA"
+  },
+
+  "MAITRE": {
+    "ASIGNAR_MESA": "ASIGNAR MESA"
+  },
+
+  "DELIVERY": {
+    "ENVIOS": "ENVIOS PENDIENTES",
+    "COBROS": "COBROS"
+  },
+
+  "MENU_DELIVERY": {
+    "ENVIAR": "Enviar a",
+    "CAMBIAR": "Cambiar"
+  },
+
+  "MAPA_CLIENTE": {
+    "UBICACION_SELECCIONADA": "Ubicación seleccionada"
+  },
+
+  "CLIENTE": {
+    "PEDIR_MESA": "PEDIR MESA",
+    "RESERVAR_MESA": "RESERVAR MESA",
+    "PEDIR_DELIVERY": "HPEDIR DELIVERY"
+  },
+
+  "CLIENTE_RESERVA": {
+    "SELECCIONAR": "Seleccionar fecha y hora",
+    "COMENSALES": "Cantidad de comensales",
+    "CONFIRMAR": "Confirmar"
+  },
+
+  "CLIENTE_ESPERA": {
+    "ESPERA": "En Lista de Espera",
+    "MESA_ASIGNADA": "Mesa Asignada",
+    "CONFIRMAR": "Confirmar (QR)",
+    "ESCANEAR": "Escanear QR Mesa",
+    "ENCUESTAS": "Ver Encuestas"
+  },
+
+  "CLIENTE_DELIVERY": {
+    "ACTUALIZANDO": "Actualizando estado",
+    "MOTIVO_RECHAZO": "Motivo del rechazo",
+    "VOLVER_LISTADO": "Volver al listado producto",
+    "PEDIDO_ENVIADO": "Pedido Enviado",
+    "PREPARACION": "En Preparación",
+    "CAMINO": "En Camino",
+    "ENTREGADO": "Entregado",
+    "CHAT": "Chat con Repartidor",
+    "PEDIR": "Pedir Cuenta",
+    "ENCUESTA": "Encuesta",
+    "ABURRIDO": "Aburrido de esperar",
+    "JUGAR": "Jugar un rato"
+  },
+
+  "ENCUESTA": {
+    "E1": "¿Cómo calificarías la atención?",
+    "E2": "¿Cómo calificarías el sabor de la comida?",
+    "E3": "¿La comida estaba caliente?",
+    "E4": "¿Las porciones fueron adecuadas?",
+    "E5": "¿La presentación fue buena?",
+    "E6": "¿Qué tipos de menú prefiere en el restaurante?",
+    "E7": "¿Cuánto tiempo esperó por la comida?",
+    "COMENTARIOS": "COMENTARIOS"
+  },
+
+  "PRODUCTOS": {
+    "CARGANDO": "Cargando Carta",
+    "CARTA": "NUESTRA CARTA",
+    "COMIDA": "COMIDAS",
+    "BEBIDA": "BEBIDAS",
+    "POSTRE": "POSTRES",
+    "ACTIVAR": "Toca para activar el sensor",
+    "MOVER": "¡Mueve tu dispositivo!",
+    "LISTO": "Listo",
+    "VOLVER": "Volver",
+    "TOTAL": "Total",
+    "ESPERAMAX": "Espera máx",
+    "MINUTOS": "minutos",
+    "CONFIRMAR_PEDIDO": "CONFIRMAR PEDIDO"
+  },
+
+  "CLIENTE_PEDIDO": {
+    "RECHAZO": "PEDIDO RECHAZADO",
+    "NPROCESAR": "El mozo no pudo procesar tu pedido",
+    "MOTIVO": "Motivo",
+    "ENIVADO": "Enviado",
+    "COCINANDO": "Cocinando",
+    "ENTREGADO": "Entregado",
+    "DISFRUTANDO": "Disfrutando",
+    "CONFIRAMR_RECEPCION": "Confirmar Recepción (QR)",
+    "JUGAR": "Jugar mientras espero"
+  },
+
+  "CONFIRMAR_PEDIDOS": {
+    "BUSCANDO": "BUSCANDO PEDIDOS",
+    "PEDIDOS": "PEDIDOS DE MESA",
+    "MESA": "Mesa",
+    "ACEPTAR": "ACEPTAR",
+    "RECHAZAR": "RECHAZAR",
+    "NPEDIDOS": "No hay pedidos pendientes de confirmación"
+  },
+
+  "COCINA": {
+    "CARGANDO": "Cargando Comandas",
+    "COCINA": "COCINA - SALÓN",
+    "PREPARAR": "A PREPARAR",
+    "FINALIZAR": "FINALIZAR",
+    "NCOCINA": "No hay pedidos pendientes en cocina"
+  },
+
+  "BAR": {
+    "CARGANDO": "Cargando Bebidas",
+    "BARRA": "BARRA - SALÓN",
+    "MARCAR": "MARCAR COMO LISTO",
+    "NBEBIDAS": "No hay bebidas pendientes"
+  },
+
+  "ENTREGAR_PEDIDOS": {
+    "LISTO": "LISTOS PARA ENTREGAR",
+    "BUSCANDO": "Buscando Pedidos Listos",
+    "PEDIDO": "Pedido",
+    "ENTREGAR": "ENTREGAR A MESA",
+    "NLISTO": "No hay pedidos listos para entregar"
+  },
+  
+  "COBROS": {
+    "PROCESANDO": "Procesando Pago",
+    "CAJA": "CAJA - COBROS",
+    "DELIVERY": "Delivery",
+    "CONSUMO": "Consumo",
+    "SUBTOTAL": "Subtotal",
+    "DESCUENTO": "Descuento",
+    "PROPINA": "Propina",
+    "CONFIRMAR": "Confirmar Cobro",
+    "NCOBROS": "No hay cobros pendientes"
+  },
+
+  "JUEGOS": {
+    "AHORCADO": "Ahorcado",
+    "MAYOR": "MAYOR O MENOR",
+    "SUPERHEROE": "JUEGO SUPERHEROE",
+    "MOZO": "AYUDA AL MOZO",
+    "COMENZAR": "Comenzar",
+    "ALTA": "Mas alta",
+    "BAJA": "Mas baja"
+  },
+
+  "MOZO": {
+    "TITULO": "Ayuda al Mozo",
+    "OBJETIVO": "Lleva la pizza a la mesa inclinando el celular",
+    "GANASTE": "Pedido Entregado",
+    "PERDISTE": "Se cayó el pedido"
+  },
+
+  "RECIBE_PEDIDO": {
+    "ENCUESTA": "ENCUESTA",
+    "PEDIR": "PEDIR CUENTA",
+    "JUEGOS": "JUEGOS"
+  },
+
+  "CLIENTE_ENCUESTAS": {
+    "TITULO": "Encuesta de Satisfacción",
+    "P1": "Cómo calificarías la atención",
+    "P2": "Cómo calificarías el sabor de la comida",
+    "P3": "La comida estaba caliente",
+    "P4": "Las porciones fueron adecuadas",
+    "P5": "La presentación de los platillos fue buena",
+    "P6": "Qué tipos de menú prefiere en el restaurante",
+    "P7": "Cuánto tiempo esperó por la comida",
+    "COMENTARIOS": "Comentarios adicionales",
+    "SI": "Si",
+    "NO": "No",
+    "GRANDES": "Muy grandes",
+    "ADECUADAS": "Adecuadas",
+    "PEQUENAS": "Muy pequeñas",
+    "VEGETARIANO": "Vegetariano",
+    "VEGANO": "Vegano",
+    "GLUTEN": "Libre de gluten",
+    "ORGANICO": "Orgánico",
+    "SELECCIONE": "Seleccione",
+    "MENOS": "Menos de 15 minutos",
+    "MIN15": "15-30 minutos",
+    "MIN30": "30-45 minutos",
+    "MAS45": "Más de 45 minutos",
+    "ENVIAR": "Enviar"
+  },
+  
+  "CUENTA": {
+    "PROCESANDO": "Procesando",
+    "CUENTA": "Cuenta Solicitada",
+    "PREPARANDO": "Estamos preparando tu cuenta",
+    "BREVE": "El mozo o repartidor te enviará el detalle en breve",
+    "DESCUENTO": "Descuento",
+    "PROPINA": "Propina (Scan)",
+    "PAGAR": "PAGAR AHORA"
   }
 }

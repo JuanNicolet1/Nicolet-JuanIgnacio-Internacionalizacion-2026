@@ -21,6 +21,7 @@ import { CameraResultType, CameraSource, Camera } from '@capacitor/camera';
 import { BarcodeScanningModalComponent } from './barcode-scanning-modal.component';
 import { BarcodeScanner, LensFacing } from '@capacitor-mlkit/barcode-scanning';
 import Swal from 'sweetalert2';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-agregar-empleado',
@@ -34,6 +35,7 @@ import Swal from 'sweetalert2';
     FontAwesomeModule,
     ReactiveFormsModule,
     RouterLink,
+    TranslateModule,
   ],
 })
 export class AgregarEmpleadoComponent implements OnInit {

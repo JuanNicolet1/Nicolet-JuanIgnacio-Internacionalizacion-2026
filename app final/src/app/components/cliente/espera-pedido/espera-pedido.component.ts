@@ -13,12 +13,13 @@ import { pushService } from 'src/app/services/serviciosPush/push-notifications.s
 import { PedidoService } from 'src/app/services/pedido.service';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-espera-pedido',
   templateUrl: './espera-pedido.component.html',
   styleUrls: ['./espera-pedido.component.scss'],
-  imports: [FontAwesomeModule, RouterLink, CommonModule, IonicModule],
+  imports: [FontAwesomeModule, RouterLink, CommonModule, IonicModule, TranslateModule],
   standalone: true,
 })
 export class EsperaPedidoComponent implements ViewWillEnter, ViewDidLeave {

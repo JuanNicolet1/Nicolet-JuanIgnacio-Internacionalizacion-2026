@@ -25,12 +25,14 @@ import {
 import { AuthService } from 'src/app/services/auth.service';
 import { DatabaseService } from 'src/app/services/database.service';
 import { EncuestasService } from 'src/app/services/encuestas.service';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
+
 @Component({
   selector: 'app-clientes',
   standalone: true,
   imports: [FontAwesomeModule, RouterLink, FormsModule,
         CommonModule,
-          IonicModule,],
+          IonicModule, TranslateModule],
   templateUrl: './clientes.component.html',
   styleUrls: ['./clientes.component.scss'],
 })

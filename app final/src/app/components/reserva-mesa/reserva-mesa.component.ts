@@ -12,15 +12,14 @@ import firebase from 'firebase/compat/app';
 import { FormsModule, NgModel } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-reserva-mesa',
   templateUrl: './reserva-mesa.component.html',
   styleUrls: ['./reserva-mesa.component.scss'],
   standalone: true,
-  imports: [FontAwesomeModule, RouterLink, FormsModule,
-      CommonModule,
-        IonicModule,],
+  imports: [FontAwesomeModule, RouterLink, FormsModule, CommonModule, IonicModule, TranslateModule],
 })
 export class ReservaMesaComponent {
   isLoading:boolean = false;

@@ -34,7 +34,7 @@
           }
         </div>
         <button class="button login__submit" (click)="this.IniciarSesion()">
-          <span class="button__text">Ingresar</span>
+          <span class="button__text">{{ 'LOGIN.INICIAR' | translate }}</span>
           <fa-icon
             [icon]="['fas', 'chevron-right']"
             class="button__icon"
@@ -42,7 +42,7 @@
         </button>
       
         <button class="button login__submit" (click)="this.ingresarCliente()">
-          <span class="button__text">Crear Cliente</span>
+          <span class="button__text">{{ 'LOGIN.CREAR' | translate }}</span>
           <fa-icon
             [icon]="['fas', 'chevron-right']"
             class="button__icon"
@@ -61,7 +61,7 @@
             <path fill="#4CAF50" d="M11.37 28.5c-.24-.715-.37-1.46-.37-2.225s.13-1.51.37-2.225V20.18H6.28c-.46 1.09-.72 2.254-.72 3.485s.26 2.395.72 3.485l5.09 3.87z"></path>
             <path fill="#1976D2" d="M24 10.8c3.15 0 5.92.93 8.13 2.8l4.4-4.4C33.86 5.86 29.23 4 24 4c-7.7 0-14.41 4.54-17.72 11.05l5.09 3.87c1.76-5.51 6.74-9.5 12.63-9.5z"></path>
           </svg>
-          <span class="button__text">Iniciar sesión con Google</span>
+          <span class="button__text">{{ 'LOGIN.GOOGLE' | translate }}</span>
         </button>
 
         @if (usuarioNoEncontrado){

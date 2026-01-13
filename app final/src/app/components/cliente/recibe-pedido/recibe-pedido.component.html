@@ -23,20 +23,20 @@
 <button class="custom-button" (click)="verificarAcceso()">
     <img src="assets/iconos/espera-mesa/encuesta.png" alt="" />
   </button>
-  <h2>Encuesta</h2>
+  <h2>{{ 'RECIBE_PEDIDO.ENCUESTA' | translate }}</h2>
   </div>
   <div class="card-opcion">
   <button class="custom-button" (click)="pedirCuenta()">
     <img src="assets/iconos/pedir_la_cuenta.png" alt="" />
   </button>
-  <h2>Pedir cuenta</h2>
+  <h2>{{ 'RECIBE_PEDIDO.PEDIR' | translate }}</h2>
   </div>
   @if(this.auth.usuarioIngresado.tipoCliente === 'cliente'){
     <div class="card-opcion">
     <button class="custom-button" routerLink="/juego">
         <img src="assets\iconos\juegoss.png" alt="" />
   </button>
-  <h2>Juegos</h2>
+  <h2>{{ 'RECIBE_PEDIDO.JUEGOS' | translate }}</h2>
   </div>
   }
   

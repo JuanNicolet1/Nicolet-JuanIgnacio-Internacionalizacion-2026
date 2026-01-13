@@ -9,6 +9,14 @@
     "DOCUMENTO_IDENTIDAD": "ID Number",
     "EMAIL": "Email",
     "CONTRASENA": "Password",
-    "REPETIR": "Repeat Password"
+    "REPETIR": "Repeat Password",
+    "CREAR": "Sign up",
+    "INICIAR": "Sign In"
+  },
+
+  "DUENO": {
+    "AGREGAR_EMPLEADO": "AGREGAR EMPLEADO",
+    "AGREGAR_CLIENTE": "AGREGAR CLIENTE",
+    "ACEPTAR": "ACEPTAR CLIENTES"
   }
 }

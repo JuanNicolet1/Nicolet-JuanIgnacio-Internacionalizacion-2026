@@ -39,27 +39,27 @@
       
       <div class="input-row">
         <ion-item class="custom-item">
-          <ion-label position="floating">N° Mesa</ion-label>
+          <ion-label position="floating">{{ 'SOLICITUD.MESA' | translate }}</ion-label>
           <ion-input type="number" name="numero" [(ngModel)]="nuevaMesa.numero" required></ion-input>
         </ion-item>
 
         <ion-item class="custom-item">
-          <ion-label position="floating">Comensales</ion-label>
+          <ion-label position="floating">{{ 'SOLICITUD.COMENSALES' | translate }}</ion-label>
           <ion-input type="number" name="cantidadComensales" [(ngModel)]="nuevaMesa.cantidadComensales" required></ion-input>
         </ion-item>
       </div>
 
       <ion-item class="custom-item">
-        <ion-label position="floating">Tipo de Mesa</ion-label>
+        <ion-label position="floating">{{ 'SOLICITUD.TIPO_MESA' | translate }}</ion-label>
         <ion-select name="tipo" [(ngModel)]="nuevaMesa.tipo" required>
-          <ion-select-option value="estandar">Estándar</ion-select-option>
-          <ion-select-option value="vip">VIP</ion-select-option>
-          <ion-select-option value="movilidad reducida">Movilidad reducida</ion-select-option>
+          <ion-select-option value="estandar">{{ 'SOLICITUD.ESTANDAR' | translate }}</ion-select-option>
+          <ion-select-option value="vip">{{ 'SOLICITUD.VIP' | translate }}</ion-select-option>
+          <ion-select-option value="movilidad reducida">{{ 'SOLICITUD.MOVILIDAD' | translate }}</ion-select-option>
         </ion-select>
       </ion-item>
 
       <button class="btn-register" type="submit" [disabled]="!formMesa.form.valid || !selectedImage">
-        REGISTRAR MESA
+        {{ 'DUENO.REGISTRAR_MESA' | translate }}
       </button>
 
     </form>

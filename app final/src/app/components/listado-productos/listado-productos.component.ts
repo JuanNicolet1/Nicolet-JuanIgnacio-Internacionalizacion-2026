@@ -15,13 +15,14 @@ import { AuthService } from 'src/app/services/auth.service';
 import { DatabaseService } from 'src/app/services/database.service';
 import Swal from 'sweetalert2';
 import { pushService } from 'src/app/services/serviciosPush/push-notifications.service';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-listado-productos',
   templateUrl: './listado-productos.component.html',
   styleUrls: ['./listado-productos.component.scss'],
   standalone: true,
-  imports: [IonicModule, FormsModule, CommonModule, FontAwesomeModule],
+  imports: [IonicModule, FormsModule, CommonModule, FontAwesomeModule, TranslateModule],
   providers: [DeviceMotion],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })

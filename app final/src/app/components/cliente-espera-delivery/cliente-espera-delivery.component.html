@@ -29,12 +29,12 @@
     <h2>{{ mensajeEstado }}</h2>
     
     <div class="reason-box">
-      <p><strong>Motivo del rechazo:</strong></p>
+      <p><strong>{{ 'CLIENTE_DELIVERY.MOTIVO_RECHAZO' | translate }}:</strong></p>
       <p>{{ motivoRechazo }}</p>
     </div>
 
     <button class="action-btn back" (click)="volverAlListado()">
-       Volver al listado producto
+       {{ 'CLIENTE_DELIVERY.VOLVER_LISTADO' | translate }}
     </button>
   </div>
 
@@ -53,24 +53,24 @@
       <div class="step" [class.active]="pasoActual >= 1">
         <div class="circle"><fa-icon [icon]="faCheck"></fa-icon></div>
         <div class="line"></div>
-        <p>Pedido Enviado</p>
+        <p>{{ 'CLIENTE_DELIVERY.PEDIDO_ENVIADO' | translate }}</p>
       </div>
 
       <div class="step" [class.active]="pasoActual >= 2">
         <div class="circle"><fa-icon [icon]="faUtensils"></fa-icon></div>
         <div class="line"></div>
-        <p>En Preparación</p>
+        <p>{{ 'CLIENTE_DELIVERY.PREPARACION' | translate }}</p>
       </div>
 
       <div class="step" [class.active]="pasoActual >= 3">
         <div class="circle"><fa-icon [icon]="faMotorcycle"></fa-icon></div>
         <div class="line"></div>
-        <p>En Camino</p>
+        <p>{{ 'CLIENTE_DELIVERY.CAMINO' | translate }}</p>
       </div>
 
       <div class="step" [class.active]="pasoActual >= 4">
         <div class="circle"><fa-icon [icon]="faFlagCheckered"></fa-icon></div>
-        <p>Entregado</p>
+        <p>{{ 'CLIENTE_DELIVERY.ENTREGADO' | translate }}</p>
       </div>
 
     </div>
@@ -80,28 +80,28 @@
     
     <button class="action-btn chat" *ngIf="pasoActual === 3 || pasoActual === 4" routerLink="/chat-delivery">
       <fa-icon [icon]="faCommentDots"></fa-icon>
-      <span>Chat con Repartidor</span>
+      <span>{{ 'CLIENTE_DELIVERY.CHAT' | translate }}</span>
     </button>
 
     <div class="grid-buttons" *ngIf="pasoActual === 4">
       
       <button class="action-btn pay" (click)="pedirCuenta()">
         <fa-icon [icon]="faReceipt"></fa-icon>
-        <span>Pedir Cuenta</span>
+        <span>{{ 'CLIENTE_DELIVERY.PEDIR' | translate }}</span>
       </button>
 
       <button class="action-btn survey" (click)="verificarAcceso()">
         <fa-icon [icon]="faClipboardList"></fa-icon>
-        <span>Encuesta</span>
+        <span>{{ 'CLIENTE_DELIVERY.ENCUESTA' | translate }}</span>
       </button>
 
     </div>
 
     <div class="entertainment-section" *ngIf="pasoActual < 4">
-      <p>¿Aburrido de esperar?</p>
+      <p>¿{{ 'CLIENTE_DELIVERY.ABURRIDO' | translate }}?</p>
       <button class="action-btn game" routerLink="/juego">
         <fa-icon [icon]="faGamepad"></fa-icon>
-        <span>Jugar un rato</span>
+        <span>{{ 'CLIENTE_DELIVERY.JUGAR' | translate }}</span>
       </button>
     </div>
 
