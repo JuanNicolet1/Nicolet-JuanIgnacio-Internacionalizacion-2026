@@ -2,21 +2,111 @@
   "IDIOMA": {
     "TITULO": "Choose a language"
   },
-
   "LOGIN": {
-    "NOMBRE": "Name",
+    "NOMBRE": "First Name",
     "APELLIDO": "Last Name",
     "DOCUMENTO_IDENTIDAD": "ID Number",
     "EMAIL": "Email",
     "CONTRASENA": "Password",
     "REPETIR": "Repeat Password",
-    "CREAR": "Sign up",
-    "INICIAR": "Sign In"
+    "CREAR": "Sign Up",
+    "INICIAR": "Log In",
+    "GOOGLE": "Log In with Google",
+    "ANONIMO": "Log In as Guest"
+  },
+  "DUENO": {
+    "AGREGAR_EMPLEADO": "ADD EMPLOYEE",
+    "AGREGAR_CLIENTE": "ADD CUSTOMER",
+    "ACEPTAR": "ACCEPT CUSTOMERS",
+    "MESA": "Create Table",
+    "RESERVA": "Accept Reservation",
+    "DELIVERY": "Delivery",
+    "REGISTRAR": "Register Employee",
+    "REGISTRAR_MESA": "Register Table"
+  },
+  "ROL": {
+    "ROL": "Role",
+    "COCINERO": "Chef/Bar",
+    "MESERO": "Waiter",
+    "MAITRE": "Maitre"
+  },
+  "SOLICITUD": {
+    "SOLICITUD": "ACCESS REQUESTS",
+    "NSOLICITUD": "No pending requests",
+    "PENDIENTE": "Pending",
+    "PERMITIR": "Allow",
+    "DENEGAR": "Deny",
+    "MESA": "Table No.",
+    "COMENSALES": "Guests",
+    "TIPO_MESA": "Table Type",
+    "ESTANDAR": "Standard",
+    "VIP": "VIP",
+    "MOVILIDAD": "Reduced Mobility",
+    "SOLICITUDES_MESA": "TABLE REQUESTS",
+    "ESPERANDO": "Waiting for table",
+    "NESPERANDO": "No customers waiting for a table",
+    "ASIGNAR": "ASSIGN TABLE",
+    "ELEGIR": "Choose Table",
+    "PARA": "For",
+    "CANCELAR": "Cancel",
+    "CARGANDO": "Loading List",
+    "CARGANDO2": "Loading"
   },
 
-  "DUENO": {
-    "AGREGAR_EMPLEADO": "AGREGAR EMPLEADO",
-    "AGREGAR_CLIENTE": "AGREGAR CLIENTE",
-    "ACEPTAR": "ACEPTAR CLIENTES"
+  "DUENO_RESERVA": {
+    "RESERVA": "PENDING RESERVATIONS",
+    "NRESERVA": "No pending reservations",
+    "ACEPTAR": "ACCEPT RESERVATION",
+    "RECHAZAR": "REJECT RESERVATION",
+    "ASIGNAR": "Assign Table",
+    "PARA": "For",
+    "COMENSALES": "Guests",
+    "PREFERENCIA": "Preference",
+    "CANCELAR": "Cancel"
+  },
+  "DUENO_DELIVERY": {
+    "PEDIDOS": "NEW ORDERS",
+    "NPEDIDOS": "No new orders",
+    "ACEPTAR": "ACCEPT ORDER",
+    "RECHAZAR": "REJECT ORDER",
+    "LISTOS": "READY FOR DELIVERY",
+    "NLISTOS": "No orders ready for delivery",
+    "ENTREGAR": "HAND OVER TO DELIVERY"
+  },
+  "MESERO": {
+    "CHAT": "CUSTOMER CHAT",
+    "ACEPTAR_PEDIDO": "ACCEPT ORDERS",
+    "ENTREGAR_PEDIDO": "DELIVER ORDERS",
+    "COBROS": "PAYMENTS"
+  },
+  "CHEF": {
+    "AVISAR": "NOTIFY FOOD READY",
+    "COMIDA_DELIVERY": "DELIVERY FOOD",
+    "CREAR": "CREATE FOOD"
+  },
+  "CHEF_DELIVERY": {
+    "CARGANDO": "Loading Tickets",
+    "COCINA": "KITCHEN - DELIVERY",
+    "Cliente": "Customer",
+    "Preparar": "To Prepare",
+    "LISTO": "MARK AS READY",
+    "NCOCINA": "No pending orders in kitchen"
+  },
+  "CHEF_CREAR": {
+    "GUARDANDO": "Saving",
+    "FOTO_PRODUCTO": "Product Photos (Tap to add)",
+    "NOMBRE_PLATO": "Dish Name",
+    "DESCRIPCION": "Description",
+    "PRECIO": "Price",
+    "TIEMPO": "Time (min)",
+    "TIPO": "Product Type",
+    "COMIDA": "Food",
+    "Postre": "Dessert",
+    "CREAR": "CREATE DISH"
+  },
+  "BARTENDER": {
+    "AVISAR": "NOTIFY DRINK READY",
+    "COMIDA_DELIVERY": "DELIVERY DRINK",
+    "CREAR": "CREATE DRINK"
   }
 }

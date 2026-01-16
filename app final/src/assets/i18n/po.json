@@ -1,0 +1,112 @@
+{
+  "IDIOMA": {
+    "TITULO": "Escolha um idioma"
+  },
+  "LOGIN": {
+    "NOMBRE": "Nome",
+    "APELLIDO": "Sobrenome",
+    "DOCUMENTO_IDENTIDAD": "Documento",
+    "EMAIL": "E-mail",
+    "CONTRASENA": "Senha",
+    "REPETIR": "Repetir Senha",
+    "CREAR": "Registrar-se",
+    "INICIAR": "Iniciar Sessão",
+    "GOOGLE": "Entrar com Google",
+    "ANONIMO": "Entrar como Anônimo"
+  },
+  "DUENO": {
+    "AGREGAR_EMPLEADO": "ADICIONAR FUNCIONÁRIO",
+    "AGREGAR_CLIENTE": "ADICIONAR CLIENTE",
+    "ACEPTAR": "ACEITAR CLIENTES",
+    "MESA": "Criar Mesa",
+    "RESERVA": "Aceitar Reserva",
+    "DELIVERY": "Delivery",
+    "REGISTRAR": "Registrar Funcionário",
+    "REGISTRAR_MESA": "Registrar Mesa"
+  },
+  "ROL": {
+    "ROL": "Função",
+    "COCINERO": "Cozinheiro/Bar",
+    "MESERO": "Garçom",
+    "MAITRE": "Maitre"
+  },
+  "SOLICITUD": {
+    "SOLICITUD": "SOLICITAÇÕES DE ACESSO",
+    "NSOLICITUD": "Nenhuma solicitação pendente",
+    "PENDIENTE": "Pendente",
+    "PERMITIR": "Permitir",
+    "DENEGAR": "Recusar",
+    "MESA": "Nº Mesa",
+    "COMENSALES": "Clientes",
+    "TIPO_MESA": "Tipo de Mesa",
+    "ESTANDAR": "Padrão",
+    "VIP": "VIP",
+    "MOVILIDAD": "Mobilidade Reduzida",
+    "SOLICITUDES_MESA": "SOLICITAÇÕES DE MESA",
+    "ESPERANDO": "Aguardando mesa",
+    "NESPERANDO": "Não há clientes aguardando mesa",
+    "ASIGNAR": "ATRIBUIR MESA",
+    "ELEGIR": "Escolher Mesa",
+    "PARA": "Para",
+    "CANCELAR": "Cancelar",
+    "CARGANDO": "Carregando Lista",
+    "CARGANDO2": "Carregando"
+  },
+  
+  "DUENO_RESERVA": {
+    "RESERVA": "RESERVAS PENDENTES",
+    "NRESERVA": "Não há reservas pendentes",
+    "ACEPTAR": "ACEITAR RESERVA",
+    "RECHAZAR": "RECUSAR RESERVA",
+    "ASIGNAR": "Atribuir Mesa",
+    "PARA": "Para",
+    "COMENSALES": "Clientes",
+    "PREFERENCIA": "Preferência",
+    "CANCELAR": "Cancelar"
+  },
+  "DUENO_DELIVERY": {
+    "PEDIDOS": "NOVOS PEDIDOS",
+    "NPEDIDOS": "Não há novos pedidos",
+    "ACEPTAR": "ACEITAR PEDIDO",
+    "RECHAZAR": "RECUSAR PEDIDO",
+    "LISTOS": "PRONTOS PARA ENTREGA",
+    "NLISTOS": "Nenhum pedido pronto para entrega",
+    "ENTREGAR": "ENTREGAR AO DELIVERY"
+  },
+  "MESERO": {
+    "CHAT": "CHAT COM CLIENTES",
+    "ACEPTAR_PEDIDO": "ACEITAR PEDIDOS",
+    "ENTREGAR_PEDIDO": "ENTREGAR PEDIDOS",
+    "COBROS": "COBRANÇAS"
+  },
+  "CHEF": {
+    "AVISAR": "AVISAR COMIDA PRONTA",
+    "COMIDA_DELIVERY": "COMIDA DELIVERY",
+    "CREAR": "CRIAR COMIDA"
+  },
+  "CHEF_DELIVERY": {
+    "CARGANDO": "Carregando Comandas",
+    "COCINA": "COZINHA - DELIVERY",
+    "Cliente": "Cliente",
+    "Preparar": "A Preparar",
+    "LISTO": "MARCAR COMO PRONTO",
+    "NCOCINA": "Não há pedidos pendentes na cozinha"
+  },
+  "CHEF_CREAR": {
+    "GUARDANDO": "Salvando",
+    "FOTO_PRODUCTO": "Fotos do Produto (Toque para adicionar)",
+    "NOMBRE_PLATO": "Nome do Prato",
+    "DESCRIPCION": "Descrição",
+    "PRECIO": "Preço",
+    "TIEMPO": "Tempo (min)",
+    "TIPO": "Tipo de Produto",
+    "COMIDA": "Comida",
+    "Postre": "Sobremesa",
+    "CREAR": "CRIAR PRATO"
+  },
+  "BARTENDER": {
+    "AVISAR": "AVISAR BEBIDA PRONTA",
+    "COMIDA_DELIVERY": "BEBIDA DELIVERY",
+    "CREAR": "CRIAR BEBIDA"
+  }
+}

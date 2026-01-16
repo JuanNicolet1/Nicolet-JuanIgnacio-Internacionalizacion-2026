@@ -18,7 +18,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   templateUrl: './chat.component.html',
   styleUrls: ['./chat.component.scss'],
   standalone: true,
-  imports: [CommonModule, FormsModule, IonicModule, FontAwesomeModule],
+  imports: [CommonModule, FormsModule, IonicModule, FontAwesomeModule,TranslateModule],
 })
 export class ChatComponent implements OnInit {
   private translate = inject(TranslateService)

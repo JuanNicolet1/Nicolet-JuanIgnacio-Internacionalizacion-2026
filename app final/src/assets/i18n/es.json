@@ -679,5 +679,18 @@
   "NOTIFICACION_RESERVA": {
     "CUENTA": "Cuenta confirmada",
     "PIDIO": "pidió una reserva para el"
+  },
+
+  "NOTIFICACION_DELIVERY": {
+    "NUEVO_PEDIDO": "Nuevo Pedido",
+    "DELIVERY": "Cliente realizo un delivery"
+  },
+
+  "INFO": {
+    "PEDIDO": "Tu Pedido",
+    "PREPARACION": "En Preparación",
+    "ESPERA": "Espera estimada",
+    "DETALLE": "Detalle",
+    "TOTAL": "TOTAL"
   }
 }

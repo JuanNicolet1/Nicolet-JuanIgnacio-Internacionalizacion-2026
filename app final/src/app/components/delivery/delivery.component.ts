@@ -275,13 +275,13 @@ export class DeliveryComponent implements  ViewWillEnter, ViewDidLeave {
       try{
         this.db.guardarObjeto(pedido, 'delivery')
         await this.db.enviarNotificacion('dueño', {
-            titulo: 'Nuevo pedido',
-            cuerpo: `Cliente realizo un delivery`,
+            titulo: this.translate.instant('NOTIFICACION_DELIVERY.NUEVO_PEDIDO'),
+            cuerpo: `${this.translate.instant('NOTIFICACION_DELIVERY.DELIVERY')}`,
           });
 
         await this.db.enviarNotificacion('supervisor', {
-              titulo: 'Nuevo pedido',
-              cuerpo: `Cliente realizo un delivery`,
+              titulo: this.translate.instant('NOTIFICACION_DELIVERY.NUEVO_PEDIDO'),
+              cuerpo: `${this.translate.instant('NOTIFICACION_DELIVERY.DELIVERY')}`,
             });
 
         this.auth.usuarioIngresado.tipoPedido = 'delivery';

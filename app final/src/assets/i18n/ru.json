@@ -1,0 +1,111 @@
+{
+  "IDIOMA": {
+    "TITULO": "Выберите язык"
+  },
+  "LOGIN": {
+    "NOMBRE": "Имя",
+    "APELLIDO": "Фамилия",
+    "DOCUMENTO_IDENTIDAD": "Номер документа",
+    "EMAIL": "Электронная почта",
+    "CONTRASENA": "Пароль",
+    "REPETIR": "Повторите пароль",
+    "CREAR": "Зарегистрироваться",
+    "INICIAR": "Войти",
+    "GOOGLE": "Войти через Google",
+    "ANONIMO": "Войти анонимно"
+  },
+  "DUENO": {
+    "AGREGAR_EMPLEADO": "ДОБАВИТЬ СОТРУДНИКА",
+    "AGREGAR_CLIENTE": "ДОБАВИТЬ КЛИЕНТА",
+    "ACEPTAR": "ПРИНЯТЬ КЛИЕНТОВ",
+    "MESA": "Создать стол",
+    "RESERVA": "Принять бронь",
+    "DELIVERY": "Доставка",
+    "REGISTRAR": "Зарегистрировать сотрудника",
+    "REGISTRAR_MESA": "Зарегистрировать стол"
+  },
+  "ROL": {
+    "ROL": "Роль",
+    "COCINERO": "Повар/Бар",
+    "MESERO": "Официант",
+    "MAITRE": "Метрдотель"
+  },
+  "SOLICITUD": {
+    "SOLICITUD": "ЗАПРОСЫ HA ДОСТУП",
+    "NSOLICITUD": "Нет ожидающих запросов",
+    "PENDIENTE": "Ожидание",
+    "PERMITIR": "Разрешить",
+    "DENEGAR": "Отказать",
+    "MESA": "Стол №",
+    "COMENSALES": "Гости",
+    "TIPO_MESA": "Тип стола",
+    "ESTANDAR": "Стандарт",
+    "VIP": "VIP",
+    "MOVILIDAD": "Ограниченная мобильность",
+    "SOLICITUDES_MESA": "ЗАПРОСЫ HA СТОЛЫ",
+    "ESPERANDO": "Ожидание стола",
+    "NESPERANDO": "Нет клиентов в очереди",
+    "ASIGNAR": "НАЗНАЧИТЬ СТОЛ",
+    "ELEGIR": "Выбрать стол",
+    "PARA": "Для",
+    "CANCELAR": "Отмена",
+    "CARGANDO": "Загрузка списка",
+    "CARGANDO2": "Загрузка"
+  },
+  "DUENO_RESERVA": {
+    "RESERVA": "ОЖИДАЮЩИЕ БРОНИРОВАНИЯ",
+    "NRESERVA": "Нет ожидающих бронирований",
+    "ACEPTAR": "ПОДТВЕРДИТЬ БРОНЬ",
+    "RECHAZAR": "ОТКЛОНИТЬ БРОНЬ",
+    "ASIGNAR": "Назначить стол",
+    "PARA": "Для",
+    "COMENSALES": "Гости",
+    "PREFERENCIA": "Предпочтение",
+    "CANCELAR": "Отмена"
+  },
+  "DUENO_DELIVERY": {
+    "PEDIDOS": "НОВЫЕ ЗАКАЗЫ",
+    "NPEDIDOS": "Нет новых заказов",
+    "ACEPTAR": "ПРИНЯТЬ 3AKA3",
+    "RECHAZAR": "ОТКЛОНИТЬ 3AKA3",
+    "LISTOS": "ГОТОВО K ДОСТАВКЕ",
+    "NLISTOS": "Нет заказов, готовых к доставке",
+    "ENTREGAR": "ПЕРЕДАТЬ KУPЬEPУ"
+  },
+  "MESERO": {
+    "CHAT": "ЧАТ C КЛИЕНТАМИ",
+    "ACEPTAR_PEDIDO": "ПРИНЯТЬ ЗАКАЗЫ",
+    "ENTREGAR_PEDIDO": "ДОСТАВИТЬ ЗАКАЗЫ",
+    "COBROS": "ОПЛАТА"
+  },
+  "CHEF": {
+    "AVISAR": "СООБЩИТЬ O ГОТОВНОСТИ ЕДЫ",
+    "COMIDA_DELIVERY": "ЕДА HA ДОСТАВКУ",
+    "CREAR": "СОЗДАТЬ БЛЮДО"
+  },
+  "CHEF_DELIVERY": {
+    "CARGANDO": "Загрузка заказов",
+    "COCINA": "КУХНЯ - ДОСТАВКА",
+    "Cliente": "Клиент",
+    "Preparar": "Подготовить",
+    "LISTO": "ОТМЕТИТЬ KAK ГОТОВОЕ",
+    "NCOCINA": "Ha кухне нет ожидающих заказов"
+  },
+  "CHEF_CREAR": {
+    "GUARDANDO": "Сохранение",
+    "FOTO_PRODUCTO": "Фото продукта (Нажмите, чтобы добавить)",
+    "NOMBRE_PLATO": "Название блюда",
+    "DESCRIPCION": "Описание",
+    "PRECIO": "Цена",
+    "TIEMPO": "Время (мин)",
+    "TIPO": "Тип продукта",
+    "COMIDA": "Еда",
+    "Postre": "Десерт",
+    "CREAR": "СОЗДАТЬ БЛЮДО"
+  },
+  "BARTENDER": {
+    "AVISAR": "СООБЩИТЬ O ГОТОВНОСТИ НАПИТКА",
+    "COMIDA_DELIVERY": "НАПИТОК HA ДОСТАВКУ",
+    "CREAR": "СОЗДАТЬ НАПИТОК"
+  }
+}

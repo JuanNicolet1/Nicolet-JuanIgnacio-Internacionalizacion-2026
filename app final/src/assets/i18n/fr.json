@@ -1,0 +1,112 @@
+{
+  "IDIOMA": {
+    "TITULO": "Choisissez une langue"
+  },
+  "LOGIN": {
+    "NOMBRE": "Prénom",
+    "APELLIDO": "Nom",
+    "DOCUMENTO_IDENTIDAD": "Identité",
+    "EMAIL": "Email",
+    "CONTRASENA": "Mot de passe",
+    "REPETIR": "Répéter le mot de passe",
+    "CREAR": "S'inscrire",
+    "INICIAR": "Se connecter",
+    "GOOGLE": "Se connecter avec Google",
+    "ANONIMO": "Connexion Anonyme"
+  },
+  "DUENO": {
+    "AGREGAR_EMPLEADO": "AJOUTER EMPLOYÉ",
+    "AGREGAR_CLIENTE": "AJOUTER CLIENT",
+    "ACEPTAR": "ACCEPTER CLIENTS",
+    "MESA": "Créer Table",
+    "RESERVA": "Accepter Réservation",
+    "DELIVERY": "Livraison",
+    "REGISTRAR": "Enregistrer Employé",
+    "REGISTRAR_MESA": "Enregistrer Table"
+  },
+  "ROL": {
+    "ROL": "Rôle",
+    "COCINERO": "Cuisinier/Bar",
+    "MESERO": "Serveur",
+    "MAITRE": "Maître d'hôtel"
+  },
+  "SOLICITUD": {
+    "SOLICITUD": "DEMANDES D'ACCÈS",
+    "NSOLICITUD": "Aucune demande en attente",
+    "PENDIENTE": "En attente",
+    "PERMITIR": "Autoriser",
+    "DENEGAR": "Refuser",
+    "MESA": "Table N°",
+    "COMENSALES": "Couverts",
+    "TIPO_MESA": "Type de Table",
+    "ESTANDAR": "Standard",
+    "VIP": "VIP",
+    "MOVILIDAD": "Mobilité Réduite",
+    "SOLICITUDES_MESA": "DEMANDES DE TABLE",
+    "ESPERANDO": "En attente de table",
+    "NESPERANDO": "Aucun client n'attend de table",
+    "ASIGNAR": "ASSIGNER TABLE",
+    "ELEGIR": "Choisir Table",
+    "PARA": "Pour",
+    "CANCELAR": "Annuler",
+    "CARGANDO": "Chargement de la Liste",
+    "CARGANDO2": "Chargement"
+  },
+
+  "DUENO_RESERVA": {
+    "RESERVA": "RÉSERVATIONS EN ATTENTE",
+    "NRESERVA": "Aucune réservation en attente",
+    "ACEPTAR": "ACCEPTER RÉSERVATION",
+    "RECHAZAR": "REFUSER RÉSERVATION",
+    "ASIGNAR": "Assigner Table",
+    "PARA": "Pour",
+    "COMENSALES": "Couverts",
+    "PREFERENCIA": "Préférence",
+    "CANCELAR": "Annuler"
+  },
+  "DUENO_DELIVERY": {
+    "PEDIDOS": "NOUVELLES COMMANDES",
+    "NPEDIDOS": "Aucune nouvelle commande",
+    "ACEPTAR": "ACCEPTER COMMANDE",
+    "RECHAZAR": "REFUSER COMMANDE",
+    "LISTOS": "PRÊT POUR LIVRAISON",
+    "NLISTOS": "Aucune commande prête à livrer",
+    "ENTREGAR": "REMETTRE AU LIVREUR"
+  },
+  "MESERO": {
+    "CHAT": "CHAT CLIENTS",
+    "ACEPTAR_PEDIDO": "ACCEPTER COMMANDES",
+    "ENTREGAR_PEDIDO": "LIVRER COMMANDES",
+    "COBROS": "PAIEMENTS"
+  },
+  "CHEF": {
+    "AVISAR": "SIGNALER REPAS PRÊT",
+    "COMIDA_DELIVERY": "REPAS LIVRAISON",
+    "CREAR": "CRÉER REPAS"
+  },
+  "CHEF_DELIVERY": {
+    "CARGANDO": "Chargement des Bons",
+    "COCINA": "CUISINE - LIVRAISON",
+    "Cliente": "Client",
+    "Preparar": "À Préparer",
+    "LISTO": "MARQUER COMME PRÊT",
+    "NCOCINA": "Aucune commande en attente en cuisine"
+  },
+  "CHEF_CREAR": {
+    "GUARDANDO": "Enregistrement",
+    "FOTO_PRODUCTO": "Photos du Produit (Appuyez pour ajouter)",
+    "NOMBRE_PLATO": "Nom du Plat",
+    "DESCRIPCION": "Description",
+    "PRECIO": "Prix",
+    "TIEMPO": "Temps (min)",
+    "TIPO": "Type de Produit",
+    "COMIDA": "Nourriture",
+    "Postre": "Dessert",
+    "CREAR": "CRÉER PLAT"
+  },
+  "BARTENDER": {
+    "AVISAR": "SIGNALER BOISSON PRÊTE",
+    "COMIDA_DELIVERY": "BOISSON LIVRAISON",
+    "CREAR": "CRÉER BOISSON"
+  }
+}

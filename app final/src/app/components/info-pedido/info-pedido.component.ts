@@ -3,11 +3,12 @@ import { PedidoService } from 'src/app/services/pedido.service';
 import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faClock, faReceipt, faUtensils } from '@fortawesome/free-solid-svg-icons';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-info-pedido',
   standalone: true,
-  imports: [CommonModule, FontAwesomeModule],
+  imports: [CommonModule, FontAwesomeModule, TranslateModule],
   templateUrl: './info-pedido.component.html',
   styleUrls: ['./info-pedido.component.scss']
 })

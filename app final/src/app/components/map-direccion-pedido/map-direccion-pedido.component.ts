@@ -177,7 +177,10 @@ export class MapDireccionPedidoComponent implements AfterViewInit {
       
       const data = await response.json();
       console.log("Datos recibidos:", data); 
-
+      const countryCode = data.address?.country_code;
+        if (countryCode) {
+          this.cambiarIdiomaPorPais(countryCode.toLowerCase());
+        }
       if (data && data.display_name) {
         const calle = data.address.road || '';
         const altura = data.address.house_number || '';
@@ -195,6 +198,36 @@ export class MapDireccionPedidoComponent implements AfterViewInit {
     } catch (error) {
       console.error('Error obteniendo dirección:', error);
       this.direccion = this.translate.instant('MAPA_DELIVERY.ERROR');
+    }
+  }
+
+  cambiarIdiomaPorPais(codigo: string) {
+    let nuevoIdioma = 'es'; // Por defecto español
+
+    switch (codigo) {
+      case 'us': case 'gb': case 'ca': case 'au':
+        nuevoIdioma = 'en';
+        break;
+      case 'br': case 'pt':
+        nuevoIdioma = 'pt';
+        break;
+      case 'ru': case 'by': case 'kz':
+        nuevoIdioma = 'ru';
+        break;
+      case 'fr': case 'be': case 'ch':
+        nuevoIdioma = 'fr';
+        break;
+      case 'de': case 'at':
+        nuevoIdioma = 'de';
+        break;
+      default:
+        nuevoIdioma = 'es'; // Para Argentina (ar) y el resto de Latinoamérica
+        break;
+    }
+
+    if (this.translate.currentLang !== nuevoIdioma) {
+      this.translate.use(nuevoIdioma);
+      console.log("Idioma cambiado automáticamente por GPS a:", nuevoIdioma);
     }
   }
 }

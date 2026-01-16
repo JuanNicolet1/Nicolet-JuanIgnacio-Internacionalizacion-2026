@@ -11,8 +11,8 @@
     <button class="btn-close" (click)="cerrarModal()">✕</button>
 
     <div class="modal-header">
-      <h3>Tu Pedido</h3>
-      <div class="status-badge">En Preparación</div>
+      <h3>{{ 'INFO.PEDIDO' | translate }}</h3>
+      <div class="status-badge">{{ 'INFO.PREPARACION' | translate }}</div>
     </div>
 
     <div class="modal-body" *ngIf="pedidoActual">
@@ -20,14 +20,14 @@
       <!-- Tiempo Estimado -->
       <div class="info-row time">
         <fa-icon [icon]="faClock"></fa-icon>
-        <span>Espera estimada: <strong>{{ pedidoActual.tiempoEstimado || '?' }} min</strong></span>
+        <span>{{ 'INFO.ESPERA' | translate }}: <strong>{{ pedidoActual.tiempoEstimado || '?' }} {{ 'PRODUCTOS.MINUTOS' | translate }}</strong></span>
       </div>
 
       <div class="divider"></div>
 
       <!-- Lista de Productos -->
       <div class="products-list">
-        <p class="list-title"><fa-icon [icon]="faUtensils"></fa-icon> Detalle:</p>
+        <p class="list-title"><fa-icon [icon]="faUtensils"></fa-icon> {{ 'INFO.DETALLE' | translate }}:</p>
         <ul>
           <li *ngFor="let prod of pedidoActual.productos">
             <span class="qty">{{ prod.cantidad }}x</span>
@@ -41,7 +41,7 @@
 
       <!-- Total -->
       <div class="total-row">
-        <span>TOTAL</span>
+        <span>{{ 'INFO.TOTAL' | translate }}</span>
         <span class="total-amount">${{ pedidoActual.total }}</span>
       </div>
 
