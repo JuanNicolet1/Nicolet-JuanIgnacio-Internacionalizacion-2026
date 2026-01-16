@@ -2,7 +2,7 @@
 <div *ngIf="isLoading" class="spinner-overlay">
   <div class="spinner-container">
     <img src="assets/icono.png" class="spinning-logo">
-    <p>Calculando ruta...</p>
+    <p>{{ 'MAPA_DELIVERY.CALCULANDO_RUTA' | translate }}...</p>
   </div>
 </div>
 
@@ -23,7 +23,7 @@
             <fa-icon [icon]="faMotorcycle"></fa-icon>
         </div>
         <div class="text">
-            <small>Destino Actual</small>
+            <small>{{ 'MAPA_DELIVERY.DESTINO' | translate }}</small>
             <h3>{{ clienteNombre || 'Cliente' }}</h3>
             <p class="address"><fa-icon [icon]="faMapMarkerAlt"></fa-icon> {{ direccionCliente }}</p>
         </div>
@@ -31,11 +31,11 @@
     <div class="action-buttons">
         <button class="btn-action chat" (click)="irAlChat()">
             <fa-icon [icon]="faCommentDots"></fa-icon>
-            <span>Chat</span>
+            <span>{{ 'MAPA_DELIVERY.CHAT' | translate }}</span>
         </button>
         <button class="btn-action finish" (click)="toggleModalEntrega()">
             <fa-icon [icon]="faFlagCheckered"></fa-icon>
-            <span>Finalizar</span>
+            <span>{{ 'MAPA_DELIVERY.FINALIZAR' | translate }}</span>
         </button>
     </div>
   </div>
@@ -46,14 +46,14 @@
         <div class="drag-handle"></div>
     </div>
     <div class="sheet-content">
-        <h2>Confirmar Entrega</h2>
+        <h2>{{ 'MAPA_DELIVERY.CONFIRMAR' | translate }}</h2>
         
         <div class="orders-list" *ngIf="!pedidoSeleccionado">
-            <p class="hint">Selecciona el pedido a entregar:</p>
+            <p class="hint">{{ 'MAPA_DELIVERY.SELECCIONAR' | translate }}:</p>
             <div class="mini-card" *ngFor="let p of pedidos" (click)="seleccionarParaEntregar(p)">
                 <div class="info">
                     <h4>{{ p.cliente }}</h4>
-                    <span>Total: ${{ p.total }}</span>
+                    <span>{{ 'MAPA_DELIVERY.TOTAL' | translate }}: ${{ p.total }}</span>
                 </div>
                 <fa-icon [icon]="faArrowLeft" style="transform: rotate(180deg); color: #fff"></fa-icon>
             </div>
@@ -63,15 +63,15 @@
             <div class="summary-box">
                 <fa-icon [icon]="faBoxOpen" class="big-icon"></fa-icon>
                 <h3>{{ pedidoSeleccionado.cliente }}</h3>
-                <p class="total">Total: <span>${{ pedidoSeleccionado.total }}</span></p>
+                <p class="total">{{ 'MAPA_DELIVERY.TOTAL' | translate }}: <span>${{ pedidoSeleccionado.total }}</span></p>
                 <ul class="products">
                     <li *ngFor="let prod of pedidoSeleccionado.productos">
                         <strong>{{ prod.cantidad }}x</strong> {{ prod.name }}
                     </li>
                 </ul>
             </div>
-            <button class="btn-confirm-final" (click)="entregarProducto()">ENTREGAR PEDIDO</button>
-            <button class="btn-cancel" (click)="toggleModalEntrega()">Cancelar</button>
+            <button class="btn-confirm-final" (click)="entregarProducto()">{{ 'MAPA_DELIVERY.ENTREGAR' | translate }}</button>
+            <button class="btn-cancel" (click)="toggleModalEntrega()">{{ 'MAPA_DELIVERY.CANCELAR' | translate }}</button>
         </div>
     </div>
   </div>

@@ -1,4 +1,4 @@
-import { Component, NgZone} from '@angular/core';
+import { Component, inject, NgZone} from '@angular/core';
 import { RouterLink, Router} from '@angular/router';
 import { ViewDidLeave, ViewWillEnter, ViewWillLeave } from '@ionic/angular';
 import { Subscription } from 'rxjs';
@@ -20,6 +20,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   imports: [RouterLink, CommonModule, FontAwesomeModule, TranslateModule] 
 })
 export class ClienteEsperaDeliveryComponent  implements ViewWillEnter, ViewDidLeave {
+  private translate = inject(TranslateService)
   
   mostrarNotificacion = true;
   faCheck = faCheck;
@@ -39,7 +40,7 @@ export class ClienteEsperaDeliveryComponent  implements ViewWillEnter, ViewDidLe
 
 
   pasoActual: number = 0; 
-  mensajeEstado: string = 'Esperando confirmación...';
+  mensajeEstado: string = this.translate.instant('DELIVERY_ESTADO.ESPERANDO');
 
   motivoRechazo: string = '';
 
@@ -124,28 +125,28 @@ export class ClienteEsperaDeliveryComponent  implements ViewWillEnter, ViewDidLe
         // 2. Lógica paso a paso
         if (estadoD === 'cancelado') {
             this.pasoActual = -1;
-            this.mensajeEstado = 'Tu pedido de delivery fue rechazado.';
-            this.motivoRechazo = this.delivery.motivoRechazo || 'Sin motivo especificado.';
+            this.mensajeEstado = this.translate.instant('DELIVERY_ESTADO.RECHAZADO');
+            this.motivoRechazo = this.delivery.motivoRechazo || this.translate.instant('DELIVERY_ESTADO.NMOTIVO');
         }
         else if (estadoD === 'pendiente') {
           this.pasoActual = 1;
-          this.mensajeEstado = 'El local está revisando tu pedido.';
+          this.mensajeEstado = this.translate.instant('DELIVERY_ESTADO.REVISANDO');
         } 
         // Agregamos 'aceptado' aquí explícitamente
         else if (estadoD === 'aceptado' || estadoP === 'enPreparacion' || estadoD === 'confirmado') {
           this.pasoActual = 2;
-          this.mensajeEstado = '¡Manos a la obra! Cocinando...';
+          this.mensajeEstado = this.translate.instant('DELIVERY_ESTADO.COCINANDO');
           this.pedidoService.setMostrarInfo(true);
           this.pedidoService.setPedidoActual(this.delivery);
     
         } 
         else if (estadoP === 'enCamino' || estadoD === 'enCamino') {
           this.pasoActual = 3;
-          this.mensajeEstado = 'Tu pedido está en camino.';
+          this.mensajeEstado = this.translate.instant('DELIVERY_ESTADO.CAMINO');
         } 
         else if (estadoP === 'pedidoEntregado' || estadoD === 'entregado' || estadoP === 'cuentaSolicitada') {
           this.pasoActual = 4;
-          this.mensajeEstado = '¡Pedido Entregado! Que lo disfrutes.';
+          this.mensajeEstado = this.translate.instant('DELIVERY_ESTADO.ENTREGADO');
           this.pedidoService.setMostrarInfo(false);
           this.pedidoService.setPedidoActual(this.delivery);
         }
@@ -200,8 +201,8 @@ export class ClienteEsperaDeliveryComponent  implements ViewWillEnter, ViewDidLe
     this.db.ModificarObjeto(this.auth.usuarioIngresado, 'clientes');
     
     this.db.enviarNotificacion('delivery', {
-        titulo: 'Cuenta solicitada',
-        cuerpo: `El cliente ${this.auth.usuarioIngresado.nombre} solicitó la cuenta`,
+        titulo: this.translate.instant('NOTIFICACIONES_CLIDEL.CUENTA'),
+        cuerpo: `${this.translate.instant('NOTIFICACIONES_CLIDEL.CLIENTE')} ${this.auth.usuarioIngresado.nombre} ${this.translate.instant('NOTIFICACIONES_CLIDEL.SOLICITO')}`,
         noRedirigir: true,
         cliente: this.auth.usuarioIngresado.nombre,
         pedido: this.delivery
@@ -227,8 +228,8 @@ export class ClienteEsperaDeliveryComponent  implements ViewWillEnter, ViewDidLe
     if (this.auth.usuarioIngresado.encuestaCompletada) {
       Swal.fire({
         heightAuto: false,
-        title: 'Encuesta ya completada',
-        text: '¿Quieres ver los resultados?',
+        title: this.translate.instant('SWAL_CLIENTED.ENCUESTA'),
+        text: this.translate.instant('SWAL_CLIENTED.RESULTADOS'),
         icon: 'info',
         background: '#333',
         color: '#fff',

@@ -1,4 +1,4 @@
-import { Component, NgZone } from '@angular/core'; 
+import { Component, inject, NgZone } from '@angular/core'; 
 import { faArrowLeft, faCheck, faUtensils, faBell, faFlagCheckered, faGamepad, faClipboardList, faBan } from '@fortawesome/free-solid-svg-icons';
 import { Subscription } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
@@ -23,6 +23,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   standalone: true,
 })
 export class EsperaPedidoComponent implements ViewWillEnter, ViewDidLeave {
+  private translate = inject(TranslateService)
 
   faArrowLeft = faArrowLeft;
   faCheck = faCheck;
@@ -35,7 +36,7 @@ export class EsperaPedidoComponent implements ViewWillEnter, ViewDidLeave {
 
   isLoading: boolean = true; 
   pasoActual: number = 0; 
-  mensajeEstado: string = 'Enviando pedido...';
+  mensajeEstado: string = this.translate.instant('PRODUCTO_ESTADO.ENVIANDO');
   motivoRechazo: string = '';
 
   scanResult = '';
@@ -123,23 +124,23 @@ export class EsperaPedidoComponent implements ViewWillEnter, ViewDidLeave {
     this.pasoActual = this.getPasoNumero(estado);
 
     if (this.pasoActual === -1) {
-        this.mensajeEstado = 'Lo sentimos, tu pedido fue rechazado.';
-        this.motivoRechazo = pedido.motivoRechazo || 'Sin motivo especificado.';
+        this.mensajeEstado = this.translate.instant('PRODUCTO_ESTADO.RECHAZADO');
+        this.motivoRechazo = pedido.motivoRechazo || this.translate.instant('PRODUCTO_ESTADO.NMOTIVO');
     }
     else if (this.pasoActual === 1) {
-      this.mensajeEstado = 'El mozo confirmará tu pedido pronto.';
+      this.mensajeEstado = this.translate.instant('PRODUCTO_ESTADO.MOZO');
     } 
     else if (this.pasoActual === 2) {
-      this.mensajeEstado = '¡En la cocina! Preparando tus platos.';
+      this.mensajeEstado = this.translate.instant('PRODUCTO_ESTADO.COCINA');
       this.pedidoService.setMostrarInfo(true);
       this.pedidoService.setPedidoActual(pedido);
     }
     else if (this.pasoActual === 3) { 
-        this.mensajeEstado = '¡Pedido en la mesa! Disfruta.';
+        this.mensajeEstado = this.translate.instant('PRODUCTO_ESTADO.LISTO');
         this.mostrarEncuesta = true;
     }
     else if (this.pasoActual === 4) {
-        this.mensajeEstado = 'Disfrutando la comida.';
+        this.mensajeEstado = this.translate.instant('PRODUCTO_ESTADO.DISFRUTANDO');
         this.mostrarEncuesta = true;
     }
   }
@@ -211,8 +212,8 @@ export class EsperaPedidoComponent implements ViewWillEnter, ViewDidLeave {
 
             Swal.fire({
                 icon: 'success',
-                title: '¡A comer!',
-                text: 'Confirmaste la recepción.',
+                title: this.translate.instant('SWAL_ESPERA.COMER'),
+                text: this.translate.instant('SWAL_ESPERA.CONFIRMASTE'),
                 timer: 1500,
                 showConfirmButton: false,
                 background: '#333', color: '#fff'
@@ -221,14 +222,14 @@ export class EsperaPedidoComponent implements ViewWillEnter, ViewDidLeave {
             });
         } else {
             this.isLoading = false;
-            Swal.fire({ title: 'Mesa Correcta', text: 'Pero tu pedido aún no llega.', icon: 'info', background:'#333', color:'#fff' });
+            Swal.fire({ title: this.translate.instant('SWAL_ESPERA.MESA'), text: this.translate.instant('SWAL_ESPERA.NLLEGA'), icon: 'info', background:'#333', color:'#fff' });
         }
 
       } else {
         this.isLoading = false;
         Swal.fire({
-          title: 'Mesa Incorrecta',
-          text: `Esta no es tu mesa asignada (${this.auth.usuarioIngresado.estadoMesa}).`,
+          title: this.translate.instant('SWAL_ESPERA.NMESA'),
+          text: `${this.translate.instant('SWAL_ESPERA.NASIGNADA')} (${this.auth.usuarioIngresado.estadoMesa}).`,
           icon: 'error',
           background: '#333', color: '#fff',
           confirmButtonColor: '#d33'

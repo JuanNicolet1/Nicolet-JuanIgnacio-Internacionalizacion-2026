@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { IonicModule, ModalController, Platform } from '@ionic/angular';
 import { CommonModule } from '@angular/common';
 import {
@@ -44,6 +44,8 @@ export class AgregarEmpleadoComponent implements OnInit {
   faCamera = faCamera;
   faQrcode = faQrcode;
   
+  private translate = inject(TranslateService)
+
   clienteForm: FormGroup;
   fotoUrl: string = 'assets/faceless-businessman-user-profile-icon-business-leader-profile-picture-portrait-user-member-people-i.png';
   selectedImage: string = '';
@@ -194,7 +196,7 @@ export class AgregarEmpleadoComponent implements OnInit {
         })
         .catch(err => {
           this.isLoading = false;
-          Swal.fire({ icon: 'error', title: 'Error', text: err.message, background: '#333', color: '#fff' });
+          Swal.fire({ icon: 'error', title: this.translate.instant('SWAL_GENERAL.ERROR'), text: err.message, background: '#333', color: '#fff' });
         });
     }
   }
@@ -231,20 +233,20 @@ export class AgregarEmpleadoComponent implements OnInit {
       }
 
       await this.database.enviarNotificacion('dueño', {
-        titulo: 'Nuevo Empleado',
-        cuerpo: `Se registró un ${empleadoData.tipoCliente}.`,
+        titulo: this.translate.instant('NOTIFICACIONES_CDUENO.NUEVO_EMPLEADO'),
+        cuerpo: `${this.translate.instant('NOTIFICACIONES_CDUENO.REGISTRO')} ${empleadoData.tipoCliente}.`,
       });
 
       this.isLoading = false; 
 
       Swal.fire({
         heightAuto: false,
-        title: '¡Empleado Registrado!',
+        title: this.translate.instant('SWAL_DUENO.REGISTRADO'),
         icon: 'success',
         background: '#333',
         color: '#fff',
         confirmButtonColor: '#4caf50',
-        confirmButtonText: 'Aceptar',
+        confirmButtonText: this.translate.instant('SWAL_GENERAL.ACEPTAR'),
       }).then(() => {
         this.moverAlHome();
       });

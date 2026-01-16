@@ -1,12 +1,12 @@
 <div *ngIf="isLoading" class="spinner-overlay">
   <div class="spinner-container">
     <img src="assets/icono.png" class="spinning-logo">
-    <p>Buscando Envíos...</p>
+    <p>{{ 'DELIVERY_ENVIOS.BUSCANDO' | translate }}...</p>
   </div>
 </div>
 
 <div class="container">
-  <h1 class="title">ENVÍOS PENDIENTES</h1>
+  <h1 class="title">{{ 'DELIVERY_ENVIOS.ENVIOS' | translate }}</h1>
 
   <div class="cards-list" *ngIf="pedidos.length > 0; else noPedidos">
     
@@ -35,13 +35,13 @@
         </div>
 
         <div class="total-row">
-            A cobrar: <strong>${{ p.total }}</strong>
+            {{ 'DELIVERY_ENVIOS.COBRAR' | translate }}: <strong>${{ p.total }}</strong>
         </div>
       </div>
 
       <div class="card-actions">
         <button class="btn-take" (click)="tomarPedido(p)">
-            <fa-icon [icon]="faCheckCircle"></fa-icon> TOMAR PEDIDO
+            <fa-icon [icon]="faCheckCircle"></fa-icon> {{ 'DELIVERY_ENVIOS.TOMAR' | translate }}
         </button>
       </div>
 
@@ -50,7 +50,7 @@
 
   <ng-template #noPedidos>
     <div class="empty-state">
-        <p>No hay pedidos para entregar por ahora.</p>
+        <p>{{ 'DELIVERY_ENVIOS.NENVIOS' | translate }}.</p>
     </div>
   </ng-template>
 

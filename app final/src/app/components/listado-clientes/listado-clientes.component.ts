@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, inject, Inject, OnInit } from '@angular/core';
 import { EmailComposer } from '@awesome-cordova-plugins/email-composer/ngx';
 import { Subscription } from 'rxjs';
 import { Cliente } from 'src/app/classes/cliente';
@@ -21,6 +21,8 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 })
 export class ListadoClientesComponent {
 
+  private translate = inject(TranslateService)
+  
   faArrowLeft = faArrowLeft;
   faUserCheck = faUserCheck;
   faUserSlash = faUserSlash;
@@ -61,17 +63,17 @@ export class ListadoClientesComponent {
 
 
   async cambiarEstadoAcceso(cliente: any, estado: 'permitido' | 'denegado') {
-    const texto = estado === 'permitido' ? 'Permitir' : 'Denegar';
+    const texto = estado === 'permitido' ? this.translate.instant('SWAL_DUENO.PERMITIR') : this.translate.instant('SWAL_DUENO.DENEGAR');
     const colorBtn = estado === 'permitido' ? '#4caf50' : '#d33';
 
     const confirm = await Swal.fire({
-      title: `¿${texto} acceso?`,
-      text: `Cliente: ${cliente.nombre} ${cliente.apellido}`,
+      title: `${texto} ` + this.translate.instant('SWAL_DUENO.ACCESO'),
+      text: this.translate.instant('SWAL_DUENO.CLIENTE') + `: ${cliente.nombre} ${cliente.apellido}`,
       icon: 'question',
       showCancelButton: true,
-      confirmButtonText: `Sí, ${texto}`,
+      confirmButtonText: this.translate.instant('SWAL_GENERAL.SI') +`, ${texto}`,
       confirmButtonColor: colorBtn,
-      cancelButtonText: 'Cancelar',
+      cancelButtonText: this.translate.instant('SWAL_GENERAL.CANCELAR'),
       background: '#333',
       color: '#fff',
       heightAuto: false
@@ -89,7 +91,7 @@ export class ListadoClientesComponent {
       this.isLoading = false;
 
       Swal.fire({
-        title: `Acceso ${estado}`,
+        title: this.translate.instant('SWAL_DUENO.ACCESO2') +` ${estado}`,
         icon: esAceptado ? 'success' : 'error',
         timer: 1500,
         showConfirmButton: false,

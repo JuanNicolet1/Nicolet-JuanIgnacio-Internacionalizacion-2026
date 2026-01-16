@@ -11,6 +11,7 @@ import { faArrowLeft, faLocationArrow, faPaperPlane } from '@fortawesome/free-so
 import { ChatService } from 'src/app/services/chat.service';
 import { IonicModule } from '@ionic/angular';
 import { pushService } from 'src/app/services/serviciosPush/push-notifications.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-chat-delivery',
@@ -20,6 +21,7 @@ import { pushService } from 'src/app/services/serviciosPush/push-notifications.s
   imports: [CommonModule, FormsModule, IonicModule, FontAwesomeModule],
 })
 export class ChatDeliveryComponent implements OnInit {
+  private translate = inject(TranslateService)
 
   faArrowLeft = faArrowLeft;
   faLocationArrow = faLocationArrow;
@@ -95,12 +97,12 @@ export class ChatDeliveryComponent implements OnInit {
 
     if (this.auth.usuarioIngresado.tipoCliente === 'cliente') {
         await this.db.enviarNotificacion('delivery', {
-          titulo: 'Mensaje del Cliente',
+          titulo: this.translate.instant('NOTIFICACIONES_CHAT.MENSAJE_CLIENTE'),
           cuerpo: this.mensajeInput,
         });
     } else if (this.auth.usuarioIngresado.tipoCliente === 'delivery') {
         await this.db.enviarNotificacion('cliente', {
-          titulo: 'Mensaje del Repartidor',
+          titulo: this.translate.instant('NOTIFICACIONES_CHAT.MENSAJE_Z'),
           cuerpo: this.mensajeInput,
         });
     }

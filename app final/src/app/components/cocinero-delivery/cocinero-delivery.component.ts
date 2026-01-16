@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faArrowLeft, faUtensils, faClock, faCheckCircle } from '@fortawesome/free-solid-svg-icons'; 
@@ -7,15 +7,17 @@ import { AuthService } from 'src/app/services/auth.service';
 import { DatabaseService } from 'src/app/services/database.service';
 import Swal from 'sweetalert2';
 import { CommonModule } from '@angular/common';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-cocinero-delivery',
   templateUrl: './cocinero-delivery.component.html',
   styleUrls: ['./cocinero-delivery.component.scss'],
   standalone: true,
-  imports: [FontAwesomeModule, RouterLink, CommonModule],
+  imports: [FontAwesomeModule, RouterLink, CommonModule, TranslateModule],
 })
 export class CocineroDeliveryComponent implements OnInit {
+  private translate = inject(TranslateService)
 
   faArrowLeft = faArrowLeft;
   faUtensils = faUtensils;
@@ -60,18 +62,18 @@ export class CocineroDeliveryComponent implements OnInit {
         
         
         await this.db.enviarNotificacion('dueño', {
-            titulo: 'Pedido Listo para Entregar',
-            cuerpo: `El pedido de ${pedido.cliente} está listo en cocina y barra.`,
+            titulo: this.translate.instant('NOTIFICACIONES_COCINA_DELIVERY.LISTO'),
+            cuerpo: `${this.translate.instant('NOTIFICACIONES_COCINA_DELIVERY.CUERPO1')} ${pedido.cliente} ${this.translate.instant('NOTIFICACIONES_COCINA_DELIVERY.CUERPO2')}.`,
             pedidoId: pedido.id
         });
         await this.db.enviarNotificacion('supervisor', {
-            titulo: 'Pedido Listo para Entregar',
-            cuerpo: `El pedido de ${pedido.cliente} está listo.`,
+            titulo: this.translate.instant('NOTIFICACIONES_COCINA_DELIVERY.LISTO'),
+            cuerpo: `${this.translate.instant('NOTIFICACIONES_COCINA_DELIVERY.CUERPO1')} ${pedido.cliente} ${this.translate.instant('NOTIFICACIONES_COCINA_DELIVERY.CUERPO3')}.`,
         });
 
         Swal.fire({
-            title: 'Pedido Finalizado',
-            text: 'Se ha notificado al Dueño para la entrega.',
+            title: this.translate.instant('SWAL_CHEF.PEDIDO_FINALIZADO'),
+            text: this.translate.instant('SWAL_CHEF.NOTIFICO_DUENO'),
             icon: 'success',
             timer: 2000,
             showConfirmButton: false,
@@ -81,8 +83,8 @@ export class CocineroDeliveryComponent implements OnInit {
     } else {
         
         Swal.fire({
-            title: 'Cocina Finalizada',
-            text: 'Esperando al sector de bebidas...',
+            title: this.translate.instant('SWAL_CHEF.COCINA_FINALIZADA'),
+            text: this.translate.instant('SWAL_CHEF.ESPERANDO_BEBIDAS'),
             icon: 'info',
             timer: 1500,
             showConfirmButton: false,

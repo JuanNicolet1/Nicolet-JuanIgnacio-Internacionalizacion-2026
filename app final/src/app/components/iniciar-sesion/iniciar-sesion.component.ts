@@ -51,7 +51,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 })
 export class IniciarSesionComponent {
   formInicioSesion: FormGroup;
-
+  private translate = inject(TranslateService)
   acceso: string | null = null;
 
   authSubscription?: Unsubscribe;
@@ -157,21 +157,21 @@ export class IniciarSesionComponent {
             this.auth.CerrarSesion();
             Swal.fire({
               heightAuto: false,
-              title: 'Su cuenta aún está pendiente de ser aceptada',
+              title: this.translate.instant('SWAL_LOGIN.CUENTA_PENDIENTE'),
               background: '#333',
               color: '#fff',
               confirmButtonColor: '#780000',
-              confirmButtonText: 'Aceptar',
+              confirmButtonText: this.translate.instant('SWAL_GENERAL.ACEPTAR'),
             });
           } else if (error.message === 'acceso-denegado-cliente') {
             this.auth.CerrarSesion();
             Swal.fire({
               heightAuto: false,
-              title: 'Su acceso fue denegado',
+              title: this.translate.instant('SWAL_LOGIN.DENEGADO'),
               background: '#333',
               color: '#fff',
               confirmButtonColor: '#780000',
-              confirmButtonText: 'Aceptar',
+              confirmButtonText: this.translate.instant('SWAL_LOGIN.ACEPTAR'),
             });
           }
           console.log('Este es el ERROR: ', error);

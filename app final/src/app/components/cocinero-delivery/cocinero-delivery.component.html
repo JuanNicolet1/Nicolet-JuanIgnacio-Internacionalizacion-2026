@@ -1,13 +1,13 @@
 <div *ngIf="isLoading" class="spinner-overlay">
   <div class="spinner-container">
     <img src="assets/icono.png" class="spinning-logo">
-    <p>Cargando Comandas...</p>
+    <p>{{ 'CHEF_DELIVERY.CARGANDO' | translate }}...</p>
   </div>
 </div>
 
 
 <div class="container">
-  <h1 class="title">COCINA - DELIVERY</h1>
+  <h1 class="title">{{ 'CHEF_DELIVERY.COCINA' | translate }}</h1>
 
   <div class="cards-list" *ngIf="pedidos.length > 0; else noPedidos">
     
@@ -15,7 +15,7 @@
       
       <div class="card-header">
         <div class="header-info">
-            <h3>Cliente: {{ p.cliente }}</h3>
+            <h3>{{ 'CHEF_DELIVERY.CLIENTE' | translate }}: {{ p.cliente }}</h3>
             <span class="time-badge">
                 <fa-icon [icon]="faClock"></fa-icon> {{ p.fecha | date:'shortTime' }}
             </span>
@@ -23,7 +23,7 @@
       </div>
 
       <div class="card-body">
-        <p class="section-title"><fa-icon [icon]="faUtensils"></fa-icon> A Preparar:</p>
+        <p class="section-title"><fa-icon [icon]="faUtensils"></fa-icon> {{ 'CHEF_DELIVERY.PREPARAR' }}:</p>
         <ul class="items-list">
             <ng-container *ngFor="let prod of p.productos">
                 <li *ngIf="prod.tipoProducto === 'comida'">
@@ -36,7 +36,7 @@
 
       <div class="card-actions">
         <button class="btn-finish" (click)="finalizarPedido(p)">
-            <fa-icon [icon]="faCheckCircle"></fa-icon> MARCAR COMO LISTO
+            <fa-icon [icon]="faCheckCircle"></fa-icon> {{ 'CHEF_DELIVERY.LISTO' | translate }}
         </button>
       </div>
 
@@ -45,7 +45,7 @@
 
   <ng-template #noPedidos>
     <div class="empty-state">
-        <p>No hay pedidos pendientes de cocina.</p>
+        <p>{{ 'CHEF_DELIVERY.NCOCINA' | translate }}.</p>
     </div>
   </ng-template>
 

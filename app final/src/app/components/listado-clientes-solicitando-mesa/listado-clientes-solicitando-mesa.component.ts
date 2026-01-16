@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faArrowLeft, faChair, faUtensils, faCheckCircle } from '@fortawesome/free-solid-svg-icons';
@@ -19,6 +19,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   imports: [FontAwesomeModule, RouterLink, CommonModule, TranslateModule],
 })
 export class ListadoClientesSolicitandoMesaComponent implements OnInit {
+  private translate = inject(TranslateService)
 
   faArrowLeft = faArrowLeft;
   faChair = faChair;
@@ -132,13 +133,13 @@ export class ListadoClientesSolicitandoMesaComponent implements OnInit {
     this.cerrarModalMesas(); 
 
     await this.db.enviarNotificacion('cliente', {
-        titulo: 'Mesa asignada',
-        cuerpo: `Se le asigno la mesa ${mesa.numero}`,
+        titulo: this.translate.instant('NOTIFICACIONES_MESA.ASIGNADA'),
+        cuerpo: `${this.translate.instant('NOTIFICACIONES_MESA.DISFRUTES')} ${mesa.numero}`,
     });
 
     Swal.fire({
-      title: 'Mesa Asignada',
-      text: `Mesa ${mesa.numero} para ${nombreCliente}`, 
+      title: this.translate.instant('SWAL_MAITRE.ASIGNAR_MESA'),
+      text: `${this.translate.instant('SWAL_MAITRE.MESA')} ${mesa.numero} ${this.translate.instant('SWAL_MAITRE_PARA')} ${nombreCliente}`, 
       icon: 'success',
       timer: 2000,
       showConfirmButton: false,

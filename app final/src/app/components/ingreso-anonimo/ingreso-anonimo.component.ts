@@ -5,7 +5,7 @@ import {
   IonIcon,
 } from '@ionic/angular';
 import { CommonModule } from '@angular/common';
-import { Component, OnInit, OnDestroy } from '@angular/core'; 
+import { Component, OnInit, OnDestroy, inject } from '@angular/core'; 
 import {
   AbstractControl,
   FormBuilder,
@@ -65,7 +65,9 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
     TranslateModule,
   ],
 })
-export class IngresoAnonimoComponent implements OnDestroy { 
+export class IngresoAnonimoComponent implements OnDestroy {
+  private translate = inject(TranslateService)
+  
   isLoading: boolean = false;
   faArrowLeft = faArrowLeft;
   faCamera = faCamera;
@@ -141,10 +143,10 @@ export class IngresoAnonimoComponent implements OnDestroy {
 
         Swal.fire({
           heightAuto: false,
-          title: `Cliente creado con éxito `,
+          title: `${this.translate.instant('SWAL_ANONIMO.CREADO')} `,
           background: '#333',
           color: '#fff',
-          confirmButtonText: 'Aceptar',
+          confirmButtonText: this.translate.instant('SWAL_ANONIMO.ACEPTAR'),
           confirmButtonColor: '#780000',
         }).then((resp) => {
           

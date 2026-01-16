@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { DatabaseService } from 'src/app/services/database.service';
 import Swal from 'sweetalert2';
@@ -19,6 +19,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   imports: [CommonModule, FontAwesomeModule, RouterLink, IonicModule, TranslateModule]
 })
 export class ConfirmarDeliveryComponent implements OnInit {
+  private translate = inject(TranslateService)
 
   faArrowLeft = faArrowLeft;
   faMapMarkerAlt = faMapMarkerAlt;
@@ -61,13 +62,13 @@ export class ConfirmarDeliveryComponent implements OnInit {
     
 
     const confirm = await Swal.fire({
-        title: '¿Aceptar pedido?',
-        text: `Cliente: ${pedido.cliente} - Total: $${pedido.total}`,
+        title: this.translate.instant('SWAL_DUENO.ACEPTAR_PEDIDO'),
+        text: `${this.translate.instant('SWAL_DUENO.CLIENTE')}: ${pedido.cliente} - ${this.translate.instant('SWAL_DUENO.TOTAL')}: $${pedido.total}`,
         icon: 'question',
         showCancelButton: true,
-        confirmButtonText: 'Sí, Aceptar',
+        confirmButtonText: this.translate.instant('SWAL_LOGIN.SI')+ ', ' + this.translate.instant('SWAL_GENERAL.ACEPTAR'),
         confirmButtonColor: '#4caf50',
-        cancelButtonText: 'Cancelar',
+        cancelButtonText: this.translate.instant('SWAL_LOGIN.CANCELAR'),
         cancelButtonColor: '#d33',
         background: '#333',
         color: '#fff',
@@ -81,14 +82,14 @@ export class ConfirmarDeliveryComponent implements OnInit {
     try {
         
         await this.db.enviarNotificacion('chef', {
-            titulo: 'Nuevo Delivery',
-            cuerpo: `Hay un pedido de delivery para preparar.`,
+            titulo: this.translate.instant('NOTIFICACIONES_DELIVERY.NUEVO_DELIVERY'),
+            cuerpo: `${this.translate.instant('NOTIFICACIONES_DELIVERY.CUERPO')}.`,
         });
 
         
         await this.db.enviarNotificacion('bartender', {
-            titulo: 'Nuevo Delivery',
-            cuerpo: `Hay bebidas de delivery para preparar.`,
+            titulo: this.translate.instant('NOTIFICACIONES_DELIVERY.NUEVO_DELIVERY'),
+            cuerpo: `${this.translate.instant('NOTIFICACIONES_DELIVERY.BEBIDAS')}.`,
         });
 
        
@@ -105,7 +106,7 @@ export class ConfirmarDeliveryComponent implements OnInit {
         await this.db.ModificarObjeto(pedido, 'delivery');
 
         Swal.fire({
-            title: '¡Pedido Enviado a Cocina!',
+            title: this.translate.instant('SWAL_DUENO.PEDIDO_ENVIADO'),
             icon: 'success',
             timer: 1500,
             showConfirmButton: false,
@@ -122,11 +123,11 @@ export class ConfirmarDeliveryComponent implements OnInit {
 
   async rechazarPedido(pedido: any) {
       const { value: motivo } = await Swal.fire({
-          title: 'Rechazar Delvery',
+          title: this.translate.instant('SWAL_DUENO.RECHAZAR_DELIVERY'),
           input: 'text',
-          inputPlaceholder: 'Ej: Falta de stock / Cocina cerrada',
+          inputPlaceholder: this.translate.instant('SWAL_DUENO.INPUT'),
           showCancelButton: true,
-          confirmButtonText: 'Rechazar',
+          confirmButtonText: this.translate.instant('SWAL_GENERAL.RECHAZAR'),
           confirmButtonColor: '#d33',
           background: '#333', color: '#fff'
       });
@@ -136,8 +137,8 @@ export class ConfirmarDeliveryComponent implements OnInit {
       this.isLoading = true;
 
       await this.db.enviarNotificacion('cliente', {
-        titulo: 'Pedido Rechazado',
-        cuerpo: `Motivo: ${motivo}. Por favor modifique su pedido.`,
+        titulo: this.translate.instant('NOTIFICACIONES_DELIVERY.RECHAZADO'),
+        cuerpo: `${this.translate.instant('NOTIFICACIONES_DELIVERY.MOTIVO')}: ${motivo}. ${this.translate.instant('NOTIFICACIONES_DELIVERY.MODIFIQUE')}.`,
         cliente: pedido.cliente 
     });
 
@@ -181,11 +182,11 @@ export class ConfirmarDeliveryComponent implements OnInit {
   async entregarAlDelivery(pedido: any) {
     
     const confirm = await Swal.fire({
-        title: '¿Entregar al repartidor?',
-        text: `El pedido de ${pedido.cliente} está listo.`,
+        title: this.translate.instant('SWAL_DUENO.ENTREGAR_PREGUNTA'),
+        text: `${this.translate.instant('SWAL_DUENO.TEXTO_DELIVERY1')} ${pedido.cliente} ${this.translate.instant('SWAL_DUENO.TEXTO_DELIVERY2')}.`,
         icon: 'warning',
         showCancelButton: true,
-        confirmButtonText: 'Sí, Entregar',
+        confirmButtonText: this.translate.instant('SWAL_LOGIN.SI') +', ' + this.translate.instant('SWAL_DUENO.ENTREGAR'),
         confirmButtonColor: '#d84f45',
         background: '#333',
         color: '#fff',
@@ -205,12 +206,12 @@ export class ConfirmarDeliveryComponent implements OnInit {
 
        
         await this.db.enviarNotificacion('delivery', {
-            titulo: '¡Pedido Listo!',
-            cuerpo: `Tienes un pedido nuevo para retirar y entregar a ${pedido.cliente}.`,
+            titulo: this.translate.instant('NOTIFICACIONES_DELIVERY.LISTO'),
+            cuerpo: `${this.translate.instant('NOTIFICACIONES_DELIVERY.ENTREGAR')} ${pedido.cliente}.`,
         });
 
         Swal.fire({
-            title: '¡Entregado al Delivery!',
+            title: this.translate.instant('SWAL_DUENO.ENTREGADO'),
             icon: 'success',
             timer: 1500,
             showConfirmButton: false,

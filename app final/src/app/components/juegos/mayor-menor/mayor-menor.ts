@@ -18,6 +18,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   styleUrl: './mayor-menor.scss'
 })
 export class MayorMenor implements ViewWillEnter, ViewDidLeave {
+  private translate = inject(TranslateService)
 
   faRightFromBracket = faRightFromBracket;
     faComent = faComment;
@@ -141,10 +142,10 @@ mayorQue() {
       if(this.auth.usuarioIngresado.descuento === 0){
         if(this.puntos > 699 && this.puntajePerder === 1){
            Swal.fire({
-                      title: '¡Felicidades!',
-                      text: 'Has conseguido mas de 700 puntos!!! Ganaste un descuento de 15%!!!',
+                      title: this.translate.instant('SWAL_JUEGOS.FELICIDADES'),
+                      text: this.translate.instant('SWAL_JUEGOS.DESCUENTOS15'),
                       icon: 'success',
-                      confirmButtonText: 'Nueva partida',
+                      confirmButtonText: this.translate.instant('SWAL_DUENO.NUEVA_PARTIDA'),
                       allowOutsideClick: false,
                       allowEscapeKey: false
                       }).then(() => {
@@ -155,10 +156,10 @@ mayorQue() {
           this.db.ModificarObjeto(this.auth.usuarioIngresado, 'clientes');
         }else{
            Swal.fire({
-                      title: '¡Muy bien!',
-                      text: 'Has conseguido '+this.puntos+ ' mejor suerte la proxima!',
+                      title: this.translate.instant('SWAL_JUEGOS.BIEN'),
+                      text: `${this.translate.instant('SWAL_JUEGOS.CONSEGUIDO')} `+this.puntos+ ` ${this.translate.instant('SWAL_JUEGOS.SUERTE')}`,
                       icon: 'success',
-                      confirmButtonText: 'Nueva partida',
+                      confirmButtonText: this.translate.instant('SWAL_JUEGOS.NUEVA_PARTIDA'),
                       allowOutsideClick: false,
                       allowEscapeKey: false
                       }).then(() => {
@@ -168,10 +169,10 @@ mayorQue() {
       }else{
         console.log('ya tenes descuento papi');
         Swal.fire({
-                      title: '¡Muy bien!',
-                      text: 'Has conseguido '+this.puntos+ ' mejor suerte la proxima!',
+                      title: this.translate.instant('SWAL_JUEGOS.BIEN'),
+                      text: `${this.translate.instant('SWAL_JUEGOS.CONSEGUIDO') }`+this.puntos+ ` ${this.translate.instant('SWAL_JUEGOS.SUERTE')}`,
                       icon: 'success',
-                      confirmButtonText: 'Nueva partida',
+                      confirmButtonText: this.translate.instant('SWAL_JUEGOS.NUEVA_PARTIDA'),
                       allowOutsideClick: false,
                       allowEscapeKey: false
                       }).then(() => {
@@ -220,10 +221,10 @@ menorQue() {
       if(this.auth.usuarioIngresado.descuento === 0){
         if(this.puntos > 699 && this.puntajePerder === 1){
            Swal.fire({
-                      title: '¡Felicidades!',
-                      text: 'Has conseguido mas de 700 puntos!!! Ganaste un descuento de 15%!!!',
+                      title: this.translate.instant('SWAL_JUEGOS.FELICIDADES'),
+                      text: this.translate.instant('SWAL_JUEGOS.DESCUENTO15'),
                       icon: 'success',
-                      confirmButtonText: 'Nueva partida',
+                      confirmButtonText: this.translate.instant('SWAL_JUEGOS.NUEVA_PARTIDA'),
                       allowOutsideClick: false,
                       allowEscapeKey: false
                       }).then(() => {
@@ -235,10 +236,10 @@ menorQue() {
         }else{
           
            Swal.fire({
-                      title: '¡Muy bien!',
-                      text: 'Has conseguido '+this.puntos+ ' mejor suerte la proxima!',
+                      title: this.translate.instant('SWAL_JUEGOS.BIEN'),
+                      text: `${this.translate.instant('SWAL_JUEGOS.CONSEGUIDO')} `+this.puntos+ ` ${this.translate.instant('SWAL_JUEGOS.SUERTE')}`,
                       icon: 'success',
-                      confirmButtonText: 'Nueva partida',
+                      confirmButtonText: this.translate.instant('SWAL_JUEGOS.NUEVA_PARTIDA'),
                       allowOutsideClick: false,
                       allowEscapeKey: false
                       }).then(() => {
@@ -248,10 +249,10 @@ menorQue() {
       }else{
         console.log('ya tenes descuento papi');
         Swal.fire({
-                      title: '¡Muy bien!',
-                      text: 'Has conseguido '+this.puntos+ ' mejor suerte la proxima!',
+                      title: this.translate.instant('SWAL_JUEGOS.BIEN'),
+                      text: this.translate.instant('SWAL_JUEGOS.CONSEGUIDO') + ' '+this.puntos+ ' ' + this.translate.instant('SWAL_JUEGOS.SUERTE'),
                       icon: 'success',
-                      confirmButtonText: 'Nueva partida',
+                      confirmButtonText: this.translate.instant('SWAL_JUEGOS.NUEVA_PARTIDA'),
                       allowOutsideClick: false,
                       allowEscapeKey: false
                       }).then(() => {

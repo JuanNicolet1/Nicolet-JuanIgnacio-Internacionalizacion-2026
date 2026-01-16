@@ -5,7 +5,7 @@ import {
   IonIcon,
 } from '@ionic/angular';
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import {
   AbstractControl,
   FormBuilder,
@@ -69,6 +69,8 @@ export class AltaClienteComponent implements OnInit {
   faArrowLeft = faArrowLeft;
   faQrcode = faQrcode;
   faCamera = faCamera;
+
+  private translate = inject(TranslateService)
 
   clienteForm: FormGroup;
   anonimoForm: FormGroup;
@@ -236,19 +238,19 @@ export class AltaClienteComponent implements OnInit {
 
         await this.database.GuardarCliente(clienteData);
          await this.database.enviarNotificacion('dueño', {
-          titulo: 'Nuevo cliente',
-          cuerpo: 'Se registró un nuevo cliente',
+          titulo: this.translate.instant('NOTIFICACIONES_ACLIENTE.NUEVO_CLIENTE'),
+          cuerpo: this.translate.instant('NOTIFICACIONES_ACLIENTE.REGISTRO'),
         });
 
         this.isLoading = false;
         
         Swal.fire({
           heightAuto: false,
-          title: `Cliente creado con éxito `,
+          title: this.translate.instant('SWAL_DUENO.CLIENTE_CREADO'),
           background: '#333',
           color: '#fff',
           confirmButtonColor: '#780000',
-          confirmButtonText: 'Aceptar',
+          confirmButtonText: this.translate.instant('SWAL_GENERAL.ACEPTAR'),
         });
         if (
           this.authService.usuarioIngresado === 'dueño'

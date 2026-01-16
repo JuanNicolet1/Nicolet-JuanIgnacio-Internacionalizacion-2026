@@ -7,12 +7,6 @@ import { provideTranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { routes } from './app.routes'; // ajusta si es necesario
 
-
-// import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
-// import { getAuth, provideAuth } from '@angular/fire/auth';
-// import { getFirestore, provideFirestore } from '@angular/fire/firestore';
-// import { environment } from '../environments/environment';
-
 export const appConfig: ApplicationConfig = {
   providers: [
     provideHttpClient(),                    // Necesario para HttpLoader

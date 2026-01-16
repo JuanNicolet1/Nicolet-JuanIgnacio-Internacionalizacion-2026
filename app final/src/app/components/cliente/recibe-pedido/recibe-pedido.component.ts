@@ -1,5 +1,5 @@
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { Observable, Subscription } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
@@ -21,6 +21,8 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   standalone: true,
 })
 export class RecibePedidoComponent {
+  private translate = inject(TranslateService)
+  
   faArrowLeft = faArrowLeft;
   scanResult = '';
   subscription: Subscription | null = null;
@@ -68,11 +70,11 @@ export class RecibePedidoComponent {
       ) {
         Swal.fire({
           heightAuto: false,
-          title: `Esta no es la mesa asignada, su mesa es: ${this.auth.usuarioIngresado.estadoMesa}`,
+          title: `${this.translate.instant('RECIBE_PEDIDO.NMESA')}: ${this.auth.usuarioIngresado.estadoMesa}`,
           background: '#333',
           color: '#fff',
           confirmButtonColor: '#780000',
-          confirmButtonText: 'Aceptar',
+          confirmButtonText: this.translate.instant('RECIBE_PEDIDO.ACEPTAR'),
         });
       }
     }
@@ -82,14 +84,14 @@ export class RecibePedidoComponent {
     if (this.auth.usuarioIngresado.encuestaCompletada) {
       Swal.fire({
         heightAuto: false,
-        title: `Ya completó la encuesta`,
+        title: `${this.translate.instant('RECIBE_PEDIDO.ENCUESTA_COMPLETADA')}`,
         background: '#333',
         color: '#fff',
         cancelButtonColor: '#bf813f',
         confirmButtonColor: '#780000',
         showCancelButton: true,
-        cancelButtonText: 'Ver resultados',
-        confirmButtonText: 'Aceptar',
+        cancelButtonText: this.translate.instant('RECIBE_PEDIDO.RESULTADOS'),
+        confirmButtonText: this.translate.instant('RECIBE_PEDIDO.ACEPTAR'),
       }).then((resp) => {
         console.log(resp);
         if (resp.isDismissed) {
@@ -112,8 +114,8 @@ export class RecibePedidoComponent {
     this.auth.usuarioIngresado.estadoPedido = 'cuentaSolicitada';
     this.db.ModificarObjeto(this.auth.usuarioIngresado, 'clientes');
       this.db.enviarNotificacion('mesero', {
-                    titulo: 'Cuenta solicitada',
-                    cuerpo: `La mesa ${this.auth.usuarioIngresado.estadoMesa} solicitó la cuenta`,
+                    titulo: this.translate.instant('NOTIFICACIONES_CLIDEL.CUENTA'),
+                    cuerpo: `${this.translate.instant('NOTIFICACIONES_PAGO.MESA')} ${this.auth.usuarioIngresado.estadoMesa} ${this.translate.instant('NOTIFICACIONES_CLIDEL.SOLICITO')}`,
                     mesa: this.auth.usuarioIngresado.estadoMesa,
                     noRedirigir: true,
                     cliente: this.auth.usuarioIngresado,

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {
@@ -29,6 +29,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   standalone: true,
 })
 export class EsperaMesaComponent implements OnInit, ViewDidLeave {
+  private translate = inject(TranslateService)
  
   faArrowLeft = faArrowLeft;
   faCheck = faCheck;
@@ -42,7 +43,7 @@ export class EsperaMesaComponent implements OnInit, ViewDidLeave {
 
   isLoading: boolean = true; 
   pasoActual: number = 1; 
-  mensajeEstado: string = 'Buscando mesa...';
+  mensajeEstado: string = this.translate.instant('MESA_ESTADO.BUSCANDO');
   mesaAsignada: any = null;
 
   scanResult = '';
@@ -67,10 +68,10 @@ export class EsperaMesaComponent implements OnInit, ViewDidLeave {
     const estadoMesa = this.auth.usuarioIngresado.estadoMesa;
     if (estadoMesa === 'solicitada' || estadoMesa === 'sin-pedir') {
       this.pasoActual = 1;
-      this.mensajeEstado = 'Estás en lista de espera.';
+      this.mensajeEstado = this.translate.instant('MESA_ESTADO.ESPERA');
     } else if (String(estadoMesa).includes('mesa-') || !isNaN(Number(estadoMesa))) {
       this.pasoActual = 2;
-      this.mensajeEstado = `¡Mesa asignada!`;
+      this.mensajeEstado = this.translate.instant('SWAL_MESA.MESA_ASIGNADA');
     }
 
 
@@ -95,13 +96,13 @@ export class EsperaMesaComponent implements OnInit, ViewDidLeave {
                 }
 
                 this.pasoActual = 2; 
-                this.mensajeEstado = `¡Tu mesa es la #${mesaEncontrada.numero}!`;
+                this.mensajeEstado = `¡${this.translate.instant('MESA_ESTADO.MESA')} #${mesaEncontrada.numero}!`;
                 
                 this.isLoading = false; 
                 
                 Swal.fire({
-                    title: '¡Mesa Asignada!',
-                    text: `Por favor dirígete a la Mesa ${mesaEncontrada.numero}`,
+                    title: this.translate.instant('SWAL_MESA.MESA_ASIGNADA'),
+                    text: `${this.translate.instant('SWAL_MESA.TEXTO1')} ${mesaEncontrada.numero}`,
                     icon: 'success',
                     timer: 2000,
                     showConfirmButton: false,
@@ -120,7 +121,7 @@ export class EsperaMesaComponent implements OnInit, ViewDidLeave {
 
         if(this.auth.usuarioIngresado.estadoMesa === 'solicitada') {
             this.pasoActual = 1;
-            this.mensajeEstado = 'Aguarde al Maitre...';
+            this.mensajeEstado = this.translate.instant('MESA_ESTADO.MAITRE');
             if(this.pasoActual === 1) this.isLoading = false;
         }
       }
@@ -191,8 +192,8 @@ export class EsperaMesaComponent implements OnInit, ViewDidLeave {
         
         Swal.fire({
             icon: 'success',
-            title: '¡Mesa Confirmada!',
-            text: 'Accediendo al menú...',
+            title: this.translate.instant('SWAL_MESA.CONFIRMADA'),
+            text: this.translate.instant('SWAL_MESA.ACCEDIENDO'),
             timer: 1500,
             showConfirmButton: false,
             background: '#333', color: '#fff'
@@ -204,8 +205,8 @@ export class EsperaMesaComponent implements OnInit, ViewDidLeave {
         this.isLoading = false;
         
         Swal.fire({
-          title: 'Mesa Incorrecta',
-          text: `Estás escaneando otra mesa. Tu mesa es la ${this.auth.usuarioIngresado.estadoMesa}.`,
+          title: this.translate.instant('SWAL_MESA.INCORRECTA'),
+          text: `${this.translate.instant('SWAL_MESA.ERROR')} ${this.auth.usuarioIngresado.estadoMesa}.`,
           icon: 'error',
           background: '#333', color: '#fff',
           confirmButtonColor: '#d33'

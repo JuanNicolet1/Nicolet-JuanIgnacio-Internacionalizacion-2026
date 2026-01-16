@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faArrowLeft, faUtensils, faClock, faCheckCircle } from '@fortawesome/free-solid-svg-icons';
@@ -17,6 +17,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   imports: [FontAwesomeModule, RouterLink, CommonModule, TranslateModule],
 })
 export class CocinaComponent implements OnInit {
+  private translate = inject(TranslateService)
   
   faArrowLeft = faArrowLeft;
   faUtensils = faUtensils;
@@ -64,8 +65,8 @@ export class CocinaComponent implements OnInit {
 
     
     await this.db.enviarNotificacion('mesero', {
-      titulo: 'Cocina finalizado',
-      cuerpo: `Comidas listas para enviar`,
+      titulo: this.translate.instant('NOTIFICACIONES_COCINA.FINALIZADO'),
+      cuerpo: `${this.translate.instant('NOTIFICACIONES_COCINA.LISTAS')}`,
       pedidoEnProduccion: true,
       cocinaFinalizada: true,
       barFinalizado: barFinalizado, 
@@ -84,12 +85,12 @@ export class CocinaComponent implements OnInit {
 
     Swal.fire({
       heightAuto: false,
-      title: `Comidas notificadas`,
+      title: this.translate.instant('SWAL_CHEF.COMIDAS_NOTIFICADAS'),
       icon: 'success',
       background: '#333',
       color: '#fff',
       confirmButtonColor: '#780000',
-      confirmButtonText: 'Aceptar',
+      confirmButtonText: this.translate.instant('SWAL_GENERAL.ACEPTAR'),
     });
   }
 }

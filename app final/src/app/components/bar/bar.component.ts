@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faArrowLeft, faGlassMartiniAlt, faClock, faCheckCircle } from '@fortawesome/free-solid-svg-icons';
@@ -16,7 +16,8 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   standalone: true,
   imports: [FontAwesomeModule, RouterLink, CommonModule, TranslateModule],
 })
-export class BarComponent implements OnInit { 
+export class BarComponent implements OnInit {
+  private translate = inject(TranslateService)
   
   faArrowLeft = faArrowLeft;
   faGlassMartiniAlt = faGlassMartiniAlt;
@@ -56,8 +57,8 @@ export class BarComponent implements OnInit {
     const cocinaTermino = pedido.cocinaFinalizada || !tieneComida;
 
     await this.db.enviarNotificacion('mesero', {
-      titulo: 'Bar Finalizado',
-      cuerpo: `Mesa ${pedido.mesa}: Bebidas listas.`,
+      titulo: this.translate.instant('NOTIFICACIONES_BAR.BAR'),
+      cuerpo: `${this.translate.instant('CHAT.MESA')} ${pedido.mesa}: ${this.translate.instant('NOTIFICACIONES_BAR.LISTAS')}.`,
       pedidoEnProduccion: true,
       barFinalizado: true,
       cocinaFinalizada: pedido.cocinaFinalizada,
@@ -74,7 +75,7 @@ export class BarComponent implements OnInit {
     this.isLoading = false;
 
     Swal.fire({
-      title: '¡Bebidas Listas!',
+      title: this.translate.instant('SWAL_BARTENDER.BEBIDAS_LISTAS'),
       icon: 'success',
       timer: 1500,
       showConfirmButton: false,

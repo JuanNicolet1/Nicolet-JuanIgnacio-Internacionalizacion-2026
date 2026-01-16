@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import {
   FormArray,
   FormControl,
@@ -21,6 +21,8 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   imports: [FormsModule, ReactiveFormsModule, TranslateModule],
 })
 export class ClienteComponent {
+  private translate = inject(TranslateService)
+  
   serviceRating: number = 3;
   saborComida: number = 3;
 
@@ -78,8 +80,8 @@ export class ClienteComponent {
         .then((e) => {
           Swal.fire({
             heightAuto: false,
-            title: 'Encuesta registrada',
-            confirmButtonText: 'Aceptar',
+            title: this.translate.instant('SWAL_ENCUESTA.ENCUESTA'),
+            confirmButtonText: this.translate.instant('SWAL_GENERAL.ACEPTAR'),
 
             background: '#333',
             color: '#fff',

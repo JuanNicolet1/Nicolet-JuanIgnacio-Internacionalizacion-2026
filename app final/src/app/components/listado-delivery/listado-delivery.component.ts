@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faArrowLeft, faMapMarkerAlt, faUser, faBoxOpen, faCheckCircle } from '@fortawesome/free-solid-svg-icons';
@@ -8,15 +8,17 @@ import { DatabaseService } from 'src/app/services/database.service';
 import Swal from 'sweetalert2';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-listado-delivery',
   templateUrl: './listado-delivery.component.html',
   styleUrls: ['./listado-delivery.component.scss'],
   standalone: true,
-  imports: [FontAwesomeModule, CommonModule, IonicModule]
+  imports: [FontAwesomeModule, CommonModule, IonicModule, TranslateModule]
 })
 export class ListadoDeliveryComponent implements OnInit {
+  private translate = inject(TranslateService)
 
   faArrowLeft = faArrowLeft;
   faMapMarkerAlt = faMapMarkerAlt;
@@ -49,11 +51,11 @@ export class ListadoDeliveryComponent implements OnInit {
 
   async tomarPedido(pedido: any) {
     const confirm = await Swal.fire({
-        title: '¿Tomar este pedido?',
-        text: `Llevar a: ${pedido.direccion}`,
+        title: this.translate.instant('SWAL_DELIVERY.TOMAR'),
+        text: `${this.translate.instant('SWAL_DELIVERY.LLEVAR')}: ${pedido.direccion}`,
         icon: 'question',
         showCancelButton: true,
-        confirmButtonText: 'Sí, voy yo',
+        confirmButtonText: this.translate.instant('SWAL_DELIVERY.VOY'),
         confirmButtonColor: '#4caf50',
         cancelButtonText: 'Cancelar',
         background: '#333',
@@ -77,8 +79,8 @@ export class ListadoDeliveryComponent implements OnInit {
         await this.db.ModificarObjeto(pedido, 'delivery');
         
         await this.db.enviarNotificacion('cliente', {
-            titulo: '¡Pedido en Camino!',
-            cuerpo: `${this.auth.usuarioIngresado.nombre} está llevando tu pedido.`,
+            titulo: this.translate.instant('NOTIFICACIONES_DELIVERY.CAMINO'),
+            cuerpo: `${this.auth.usuarioIngresado.nombre} ${this.translate.instant('NOTIFICACIONES_DELIVERY.LLEVANDO')}.`,
             pedidoId: pedido.id
         });
 

@@ -11,6 +11,7 @@ import { faArrowLeft, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 import { ChatService } from 'src/app/services/chat.service';
 import { IonicModule } from '@ionic/angular';
 import { pushService } from 'src/app/services/serviciosPush/push-notifications.service';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-chat',
@@ -20,6 +21,7 @@ import { pushService } from 'src/app/services/serviciosPush/push-notifications.s
   imports: [CommonModule, FormsModule, IonicModule, FontAwesomeModule],
 })
 export class ChatComponent implements OnInit {
+  private translate = inject(TranslateService)
   
   faArrowLeft = faArrowLeft;
   faPaperPlane = faPaperPlane;
@@ -83,19 +85,19 @@ export class ChatComponent implements OnInit {
 
     if (['anonimo', 'cliente'].includes(this.auth.usuarioIngresado.tipoCliente)) {
         await this.db.enviarNotificacion('mesero', {
-          titulo: 'Nuevo mensaje',
-          cuerpo: `Cliente consultó en la mesa ${numero}`,
+          titulo: this.translate.instant('NOTIFICACIONES_CHAT.NUEVO_MENSAJE'),
+          cuerpo: `${this.translate.instant('NOTIFICACIONES_CHAT.CONSULTO')} ${numero}`,
           mesa: this.db.mesa,
         });
     } else if (this.auth.usuarioIngresado.tipoCliente === 'mesero') {
         await this.db.enviarNotificacion('cliente', {
-          titulo: 'Nuevo mensaje',
-          cuerpo: `Mesero respondió en mesa ${numero}`,
+          titulo: this.translate.instant('NOTIFICACIONES_CHAT.NUEVO_MENSAJE'),
+          cuerpo: `${this.translate.instant('NOTIFICACIONES_CHAT.RESPONDIO')} ${numero}`,
           mesa: this.db.mesa,
         });
         await this.db.enviarNotificacion('anonimo', {
-          titulo: 'Nuevo mensaje',
-          cuerpo: `Mesero respondió en mesa ${numero}`,
+          titulo: this.translate.instant('NOTIFICACIONES_CHAT.NUEVO_MENSAJE'),
+          cuerpo: `${this.translate.instant('NOTIFICACIONES_CHAT.RESPONDIO')} ${numero}`,
           mesa: this.db.mesa,
         });
     }

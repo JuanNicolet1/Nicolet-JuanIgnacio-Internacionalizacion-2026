@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faComment, faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
@@ -7,6 +7,7 @@ import { AuthService } from 'src/app/services/auth.service';
 import { DatabaseService } from 'src/app/services/database.service';
 import { PedidoService } from 'src/app/services/pedido.service';
 import Swal from 'sweetalert2';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 
 @Component({
@@ -17,6 +18,7 @@ import Swal from 'sweetalert2';
   styleUrl: './ahorcado.scss'
 })
 export class Ahorcado implements ViewWillEnter, ViewDidLeave {
+  private translate = inject(TranslateService)
 
   faRightFromBracket = faRightFromBracket;
   faComent = faComment;
@@ -103,25 +105,24 @@ export class Ahorcado implements ViewWillEnter, ViewDidLeave {
     if(this.auth.usuarioIngresado.descuento === 0){
       if(this.palabra_acertada === 1 && this.vida_descuento === 1){
          Swal.fire({
-            title: '¡Felicidades!',
-            text: 'Has adivinado la palabra: ' + this.palabra +' Ganaste un descuento de 10%!!!',
+            title: this.translate.instant('SWAL_JUEGOS.FELICIDADES'),
+            text: this.translate.instant('SWAL_JUEGOS.ADIVINADO') + ', ' + this.palabra + ' ' + this.translate.instant('SWAL_JUEGOS.DESCUENTO'),
             icon: 'success',
-            confirmButtonText: 'Nueva partida',
+            confirmButtonText: this.translate.instant('SWAL_JUEGOS.NUEVA_PARTIDA'),
             allowOutsideClick: false,
             allowEscapeKey: false
             }).then(() => {
         this.reiniciarPartida()
       });
-        console.log('entre la concha tuya');
         console.log(this.auth.usuarioIngresado.descuento);
         this.auth.usuarioIngresado.descuento = 0.10;
         this.db.ModificarObjeto(this.auth.usuarioIngresado, 'clientes');  
         }else{
             Swal.fire({
-            title: '¡Muy bien!',
-            text: 'Has adivinado la palabra: ' + this.palabra,
+            title: this.translate.instant('SWAL_JUEGOS.BIEN'),
+            text: this.translate.instant('SWAL_JUEGOS.ADIVINADO') +': ' + this.palabra,
             icon: 'success',
-            confirmButtonText: 'Nueva partida',
+            confirmButtonText: this.translate.instant('SWAL_JUEGOS.NUEVA_PARTIDA'),
             allowOutsideClick: false,
             allowEscapeKey: false
             }).then(() => {
@@ -130,8 +131,8 @@ export class Ahorcado implements ViewWillEnter, ViewDidLeave {
         }
       }else{
         Swal.fire({
-        title: '¡Muy bien!',
-        text: 'Has adivinado la palabra: ' + this.palabra,
+        title: this.translate.instant('SWAL_JUEGOS.BIEN'),
+        text: this.translate.instant('SWAL_JUEGOS.ADIVINADO') + ': ' + this.palabra,
         icon: 'success',
         confirmButtonText: 'Nueva partida',
         allowOutsideClick: false,
@@ -150,7 +151,7 @@ export class Ahorcado implements ViewWillEnter, ViewDidLeave {
 
   if(this.vida === 0) {
     this.vida_descuento -= 1;
-    this.mensaje = "Perdiste. La palabra era " + this.palabra;
+    this.mensaje = this.translate.instant('JUEGOS.PERDISTE') + " " + this.palabra;
     this.reiniciar = true;
     //this.guardarAhorcado();
   }

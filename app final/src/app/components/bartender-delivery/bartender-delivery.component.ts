@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faArrowLeft, faGlassMartiniAlt, faClock, faCheckCircle } from '@fortawesome/free-solid-svg-icons'; 
@@ -7,15 +7,17 @@ import { AuthService } from 'src/app/services/auth.service';
 import { DatabaseService } from 'src/app/services/database.service';
 import Swal from 'sweetalert2';
 import { CommonModule } from '@angular/common';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-bartender-delivery',
   templateUrl: './bartender-delivery.component.html',
   styleUrls: ['./bartender-delivery.component.scss'],
   standalone: true,
-  imports: [FontAwesomeModule, RouterLink, CommonModule],
+  imports: [FontAwesomeModule, RouterLink, CommonModule, TranslateModule],
 })
 export class BartenderDeliveryComponent implements OnInit {
+  private translate = inject(TranslateService)
 
   faArrowLeft = faArrowLeft;
   faGlassMartiniAlt = faGlassMartiniAlt;
@@ -58,18 +60,18 @@ export class BartenderDeliveryComponent implements OnInit {
     if (pedido.barFinalizado && cocinaTermino) {
         
         await this.db.enviarNotificacion('dueño', {
-            titulo: 'Pedido Listo para Entregar',
-            cuerpo: `El pedido de ${pedido.cliente} está listo en barra y cocina.`,
+            titulo: this.translate.instant('NOTIFICACIONES_COCINA.FINALIZADO'),
+            cuerpo: `${this.translate.instant('NOTIFICACIONES_COCINA.CUERPO1')} ${pedido.cliente} ${this.translate.instant('NOTIFICACIONES_COCINA.CUERPO2')}.`,
             pedidoId: pedido.id
         });
         await this.db.enviarNotificacion('supervisor', {
-            titulo: 'Pedido Listo para Entregar',
-            cuerpo: `El pedido de ${pedido.cliente} está listo.`,
+            titulo: this.translate.instant('NOTIFICACIONES_COCINA.FINALIZADO'),
+            cuerpo: `${this.translate.instant('NOTIFICACIONES_COCINA.CUERPO1')} ${pedido.cliente} ${this.translate.instant('NOTIFICACIONES_COCINA.CUERPO3')}.`,
         });
 
         Swal.fire({
-            title: 'Pedido Finalizado',
-            text: 'Se ha notificado al Dueño para la entrega.',
+            title: this.translate.instant('SWAL_BARTENDER.PEDIDO_FINALIZADO'),
+            text: this.translate.instant('SWAL_BARTENDER.NOTIFICADO'),
             icon: 'success',
             timer: 2000,
             showConfirmButton: false,
@@ -79,8 +81,8 @@ export class BartenderDeliveryComponent implements OnInit {
     } else {
        
         Swal.fire({
-            title: 'Bebidas Listas',
-            text: 'Esperando al sector de cocina...',
+            title: this.translate.instant('SWAL_BARTENDER.BEBIDAS_FINALIZADAS'),
+            text: this.translate.instant('SWAL_BARTENDER.ESPERANDO'),
             icon: 'info',
             timer: 1500,
             showConfirmButton: false,

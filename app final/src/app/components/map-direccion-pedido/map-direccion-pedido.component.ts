@@ -31,6 +31,7 @@ L.Icon.Default.mergeOptions({
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class MapDireccionPedidoComponent implements AfterViewInit {
+  private translate = inject(TranslateService)
 
   faArrowLeft = faArrowLeft;
   faSearch = faSearch;
@@ -73,7 +74,7 @@ export class MapDireccionPedidoComponent implements AfterViewInit {
     this.marcarUbicacion(e.latlng);
     
 
-    this.direccion = "Buscando nombre de la calle...";
+    this.direccion = this.translate.instant('MAPA_DELIVERY.BUSCANDO');
     
    
     await this.obtenerDireccion(e.latlng.lat, e.latlng.lng);
@@ -137,10 +138,10 @@ export class MapDireccionPedidoComponent implements AfterViewInit {
     this.db.latitud = this.coordenadaSeleccionada.lat;
     this.db.longitud = this.coordenadaSeleccionada.lng;
     
-    this.db.direccion = this.direccion || 'Ubicación Mapa';
+    this.db.direccion = this.direccion || this.translate.instant('MAPA_DELIVERY.UBMAP');
 
     Swal.fire({
-      title: '¡Ubicación Guardada!',
+      title: this.translate.instant('MAPA_DELIVERY.UBICACION'),
       icon: 'success',
       timer: 1500,
       showConfirmButton: false,
@@ -188,12 +189,12 @@ export class MapDireccionPedidoComponent implements AfterViewInit {
           this.direccion = data.display_name.split(',').slice(0, 3).join(','); 
         }
       } else {
-        this.direccion = "Ubicación sin nombre exacto";
+        this.direccion = this.translate.instant('MAPA_DELIVERY.NUBICACION');
       }
 
     } catch (error) {
       console.error('Error obteniendo dirección:', error);
-      this.direccion = "Error de conexión con el servidor";
+      this.direccion = this.translate.instant('MAPA_DELIVERY.ERROR');
     }
   }
 }

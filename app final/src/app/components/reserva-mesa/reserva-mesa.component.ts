@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
@@ -22,6 +22,8 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   imports: [FontAwesomeModule, RouterLink, FormsModule, CommonModule, IonicModule, TranslateModule],
 })
 export class ReservaMesaComponent {
+  private translate = inject(TranslateService)
+  
   isLoading:boolean = false;
   faArrowLeft = faArrowLeft;
   clientes: any[] = [];
@@ -91,12 +93,12 @@ async confirmarReserva() {
   const cantidadComensales = this.cantidadComensales
 
   if (!this.fechaSeleccionada || fechaReserva <= ahora) {
-    Swal.fire('Fecha inválida', 'La reserva debe ser en el futuro.', 'error');
+    Swal.fire(this.translate.instant('SWAL_RESERVA.FECHA_INVALIDA'), this.translate.instant('SWAL_RESERVA.FUTURO'), 'error');
     return;
   }
 
   if(this.mesaSeleccionada?.estadoReserva === 'aprobada'){
-    Swal.fire('Reserva invalida', 'La mesa ya esta reservada.', 'error');
+    Swal.fire(this.translate.instant('SWAL_RESERVA.RESERVA_INVALIDA'), this.translate.instant('SWAL_RESERVA.RESERVADA'), 'error');
     return;
   }
   
@@ -122,8 +124,8 @@ async confirmarReserva() {
     await this.db.ModificarObjeto(this.auth.usuarioIngresado, 'clientes');
 
     Swal.fire({
-      title: `Solicitud enviada para el ${fechaReserva.toLocaleString()}`,
-      text: 'Esperá la confirmación del restaurante.',
+      title: `${this.translate.instant('SWAL_RESERVA.SOLICITUD')} ${fechaReserva.toLocaleString()}`,
+      text: this.translate.instant('SWAL_RESERVA.ESPERA'),
       icon: 'success',
       background: '#333',
       color: '#fff',
@@ -132,15 +134,15 @@ async confirmarReserva() {
 
     await this.db.guardarObjeto(reserva, 'reserva');
       await this.db.enviarNotificacion('dueño', {
-        titulo: 'Cuenta confirmada',
-        cuerpo: `${this.auth.usuarioIngresado.nombre} pidió una reserva para el ${fechaReserva.toLocaleString()}`,
+        titulo: this.translate.instant('NOTIFICACIONES_RESERVA.CUENTA'),
+        cuerpo: `${this.auth.usuarioIngresado.nombre} ${this.translate.instant('NOTIFICACIONES_RESERVA.PIDIO')} ${fechaReserva.toLocaleString()}`,
       });
 
 
     this.router.navigate(['/home']);
     } catch (error) {
         console.error(error);
-        Swal.fire('Error', 'Hubo un problema al reservar', 'error');
+        Swal.fire(this.translate.instant('SWAL_RESERVA.ERROR'), this.translate.instant('SWAL_RESERVA.PROBLEMA'), 'error');
     } finally {
         this.isLoading = false;
     }

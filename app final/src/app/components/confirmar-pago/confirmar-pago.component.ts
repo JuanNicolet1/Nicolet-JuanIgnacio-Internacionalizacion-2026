@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { IonicModule, ModalController, Platform } from '@ionic/angular';
 import { Subscription } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
@@ -36,6 +36,8 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   ],
 })
 export class ConfirmarPagoComponent {
+  private translate = inject(TranslateService)
+  
   faArrowLeft = faArrowLeft;
   faUtensils = faUtensils;
   faMotorcycle = faMotorcycle;
@@ -115,17 +117,17 @@ export class ConfirmarPagoComponent {
 
       if (esDelivery) {
 
-        mensajeTitulo = 'Entrega Finalizada';
-        mensajeCuerpo = 'El pago del delivery ha sido registrado con éxito.';
+        mensajeTitulo = this.translate.instant('CUENTA.FINALIZADA');
+        mensajeCuerpo = this.translate.instant('CUENTA.REGISTRADO');
         
-        await this.enviarNotificaciones(['dueño', 'supervisor', 'delivery'], 'Cuenta Confirmada', 'El delivery ha sido cobrado y finalizado.');
+        await this.enviarNotificaciones(['dueño', 'supervisor', 'delivery'], this.translate.instant('NOTIFICACIONES_PAGO.CONFIRMADA'), this.translate.instant('NOTIFICACIONES_PAGO.COBRADO'));
 
       } else {
 
-        mensajeTitulo = 'Mesa Liberada';
-        mensajeCuerpo = `La Mesa ${this.pedidoSeleccionado.mesa} ha pagado y ha sido liberada.`;
+        mensajeTitulo = this.translate.instant('SWAL_MESERO.MESA_LIBERADA');
+        mensajeCuerpo = `${this.translate.instant('SWAL_MESERO.LA_MESA')} ${this.pedidoSeleccionado.mesa} ${this.translate.instant('SWAL_MESERO.TEXTO3')}.`;
 
-        await this.enviarNotificaciones(['dueño', 'supervisor', 'mesero'], 'Cuenta Confirmada', `La mesa ${this.pedidoSeleccionado.mesa} cerró la cuenta.`);
+        await this.enviarNotificaciones(['dueño', 'supervisor', 'mesero'], this.translate.instant('NOTIFICACIONES_PAGO.CONFIRMADA'), `${this.translate.instant('NOTIFICACIONES_PAGO.MESA')} ${this.pedidoSeleccionado.mesa} ${this.translate.instant('NOTIFICACIONES_PAGO.CERRO')}.`);
         
 
         this.liberarMesa(this.pedidoSeleccionado.cliente);
@@ -146,7 +148,7 @@ export class ConfirmarPagoComponent {
     } catch (error) {
       console.error("Error confirmando cuenta:", error);
       this.isLoading = false;
-      Swal.fire({ title: 'Error', text: 'Ocurrió un error al procesar el pago.', icon: 'error' });
+      Swal.fire({ title: 'Error', text: this.translate.instant('SWAL_MESERO.ERROR'), icon: 'error' });
     }
   }
 

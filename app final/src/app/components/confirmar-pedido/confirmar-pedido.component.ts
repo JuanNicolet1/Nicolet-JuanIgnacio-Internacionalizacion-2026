@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faArrowLeft, faUtensils, faClock, faBan, faCheckCircle, faClipboardList } from '@fortawesome/free-solid-svg-icons';
@@ -17,6 +17,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   imports: [FontAwesomeModule, RouterLink, CommonModule, TranslateModule],
 })
 export class ConfirmarPedidoComponent implements OnInit {
+  private translate = inject(TranslateService)
   faArrowLeft = faArrowLeft;
   faUtensils = faUtensils;
   faClock = faClock;
@@ -65,17 +66,17 @@ export class ConfirmarPedidoComponent implements OnInit {
 
   async confirmarPedido(pedido: any) {
     const { value: tiempo } = await Swal.fire({
-      title: 'Aceptar Pedido',
-      text: `Mesa ${pedido.mesa} - Confirmar tiempo de espera:`,
+      title: this.translate.instant('SWAL_MESERO.ACEPTAR_PEDIDO'),
+      text: `${this.translate.instant('SWAL_DUENO.MESA')} ${pedido.mesa} - ${this.translate.instant('SWAL_MESERO.CONFIRMAR_PEDIDO')}:`,
       input: 'number',
       inputValue: 30,
-      inputLabel: 'Minutos',
+      inputLabel: this.translate.instant('SWAL_MESERO.MINUTOS'),
       background: '#333',
       color: '#fff',
       confirmButtonColor: '#4caf50',
-      confirmButtonText: 'Confirmar',
+      confirmButtonText: this.translate.instant('SWAL_GENERAL.CONFIRMAR'),
       showCancelButton: true,
-      cancelButtonText: 'Cancelar'
+      cancelButtonText: this.translate.instant('SWAL_GENERAL.CANCELAR')
     });
 
     if (!tiempo) return; 
@@ -85,15 +86,15 @@ export class ConfirmarPedidoComponent implements OnInit {
     try {
 
         await this.db.enviarNotificacion('chef', {
-            titulo: 'Nuevo Pedido',
-            cuerpo: `Mesa ${pedido.mesa} espera comida.`,
+            titulo: this.translate.instant('NOTIFICACIONES_PRODUCTOS.NUEVO_PEDIDO'),
+            cuerpo: `${this.translate.instant('NOTIFICACIONES_PRODUCTOS.MESA')} ${pedido.mesa} ${this.translate.instant('NOTIFICACIONES_PRODUCTOS.ESPERA')}.`,
         });
 
         const hayBebidas = pedido.productos.some((p:any) => p.tipoProducto === 'bebida');
         if(hayBebidas) {
             await this.db.enviarNotificacion('bartender', {
-                titulo: 'Nuevas Bebidas',
-                cuerpo: `Mesa ${pedido.mesa} espera bebidas.`,
+                titulo: this.translate.instant('NOTIFICACIONES_PRODUCTOS.NUEVA_BEBIDA'),
+                cuerpo: `${this.translate.instant('NOTIFICACIONES_PRODUCTOS.MESA')} ${pedido.mesa} ${this.translate.instant('NOTIFICACIONES_PRODUCTOS.ESPERA2')}.`,
             });
         }
   
@@ -107,7 +108,7 @@ export class ConfirmarPedidoComponent implements OnInit {
 
         Swal.fire({
             icon: 'success',
-            title: '¡Enviado a Cocina!',
+            title: this.translate.instant('SWAL_MESERO.ENVIADO'),
             timer: 1500,
             showConfirmButton: false,
             background: '#333', color: '#fff'
@@ -122,11 +123,11 @@ export class ConfirmarPedidoComponent implements OnInit {
 
   async rechazarPedido(pedido: any) {
     const { value: motivo } = await Swal.fire({
-        title: 'Rechazar Pedido',
+        title: this.translate.instant('SWAL_MESERO.RECHAZAR'),
         input: 'text',
-        inputPlaceholder: 'Ej: Falta de stock / Cocina cerrada',
+        inputPlaceholder: this.translate.instant('SWAL_MESERO.MOTIVO'),
         showCancelButton: true,
-        confirmButtonText: 'Rechazar',
+        confirmButtonText: this.translate.instant('SWAL_GENERAL.RECHAZAR'),
         confirmButtonColor: '#d33',
         background: '#333', color: '#fff'
     });
@@ -136,8 +137,8 @@ export class ConfirmarPedidoComponent implements OnInit {
     this.isLoading = true;
 
     await this.db.enviarNotificacion('cliente', {
-        titulo: 'Pedido Rechazado',
-        cuerpo: `Motivo: ${motivo}. Por favor modifique su pedido.`,
+        titulo: this.translate.instant('NOTIFICACIONES_PRODUCTOS.RECHAZADO'),
+        cuerpo: `${this.translate.instant('NOTIFICACIONES_PRODUCTOS.MOTIVO')}: ${motivo}. ${this.translate.instant('NOTIFICACIONES_PRODUCTOS.INDICAR_MOTIVO')}.`,
         cliente: pedido.cliente 
     });
 

@@ -52,7 +52,9 @@
     "ASIGNAR": "ASIGNAR MESA",
     "ELEGIR": "Elegir Mesa",
     "PARA": "Para",
-    "CANCELAR": "Cancelar"
+    "CANCELAR": "Cancelar",
+    "CARGANDO": "Cargando Lista",
+    "CARGANDO2": "Cargando"
   },
 
   "DUENO_RESERVA": {
@@ -90,10 +92,46 @@
     "CREAR": "CREAR COMIDA"
   },
 
+  "CHEF_DELIVERY": {
+    "CARGANDO": "Cargando Comandas",
+    "COCINA": "COCINA - DELIVERY",
+    "Cliente": "Cliente",
+    "Preparar": "A Preparar",
+    "LISTO": "MARCAR COMO LISTO",
+    "NCOCINA": "No hay pedidos pendientes en cocina"
+  },
+
+  "CHEF_CREAR": {
+    "GUARDANDO": "Guardando",
+    "FOTO_PRODUCTO": "Fotos del Producto (Toca para agregar)",
+    "NOMBRE_PLATO": "Nombre del Plato",
+    "DESCRIPCION": "Descripción",
+    "PRECIO": "Precio",
+    "TIEMPO": "Tiempo (min)",
+    "TIPO": "Tipo de Producto",
+    "COMIDA": "Comida",
+    "Postre": "Postre",
+    "CREAR": "CREAR PLATO"
+  },
+
   "BARTENDER": {
     "AVISAR": "AVISAR BEBIDA LISTA",
     "COMIDA_DELIVERY": "BEBIDA DELIVERY",
     "CREAR": "CREAR BEBIDA"
+  },
+
+  "BARTENDER_DELIVERY": {
+    "CARGANDO": "Cargando Comandas",
+    "BARRA": "BARRA - DELIVERY",
+    "NBARRA": "No hay bebidas pendientes"
+  },
+
+  "BARTENDER_CREAR": {
+    "FOTO_PRODUCTO": "Fotos de la Bebida (Toca para agregar)",
+    "NOMBRE": "Nombe de la Bebida",
+    "TIPO": "Tipo",
+    "BEBIDA": "Bebida",
+    "CREAR_BEBIDA": "CREAR BEBIDA"
   },
 
   "MAITRE": {
@@ -103,6 +141,14 @@
   "DELIVERY": {
     "ENVIOS": "ENVIOS PENDIENTES",
     "COBROS": "COBROS"
+  },
+
+  "DELIVERY_ENVIOS": {
+    "BUSCANDO": "Buscando Envíos",
+    "ENVIOS": "ENVÍOS PENDIENTES",
+    "COBRAR": "A cobrar",
+    "TOMAR": "TOMAR PEDIDO",
+    "NENVIOS": "No hay pedidos para entregar por ahora"
   },
 
   "MENU_DELIVERY": {
@@ -134,6 +180,33 @@
     "ENCUESTAS": "Ver Encuestas"
   },
 
+  "MESA_ESTADO": {
+    "BUSCANDO": "Buscando mesa...",
+    "MAITRE": "Aguarde al Maitre...",
+    "ESPERA": "Estás en lista de espera",
+    "MESA": "Tu mesa es la "
+  },
+
+  "PRODUCTO_ESTADO": {
+    "ENVIANDO": "Enviando pedido...",
+    "COCINA": "¡En la cocina! Preparando tus platos.",
+    "MOZO": "El mozo confirmará tu pedido pronto.",
+    "LISTO": "¡Pedido en la mesa! Disfruta.",
+    "DISFRUTANDO": "Disfrutando la comida.",
+    "RECHAZADO": "Lo sentimos, tu pedido fue rechazado.",
+    "NMOTIVO": "Sin motivo especificado."
+  },
+
+  "DELIVERY_ESTADO": {
+    "ESPERANDO": "Esperando confirmación...",
+    "RECHAZADO": "Tu pedido de delivery fue rechazado.",
+    "NMOTIVO": "Sin motivo especificado.",
+    "REVISANDO": "El local está revisando tu pedido.",
+    "COCINANDO": "¡Manos a la obra! Cocinando...",
+    "CAMINO": "Tu pedido está en camino.",
+    "ENTREGADO": "¡Pedido Entregado! Que lo disfrutes."
+  },
+
   "CLIENTE_DELIVERY": {
     "ACTUALIZANDO": "Actualizando estado",
     "MOTIVO_RECHAZO": "Motivo del rechazo",
@@ -141,6 +214,7 @@
     "PEDIDO_ENVIADO": "Pedido Enviado",
     "PREPARACION": "En Preparación",
     "CAMINO": "En Camino",
+    "UBICACION": "Toca para elegir ubicación",
     "ENTREGADO": "Entregado",
     "CHAT": "Chat con Repartidor",
     "PEDIR": "Pedir Cuenta",
@@ -238,6 +312,7 @@
     "SUPERHEROE": "JUEGO SUPERHEROE",
     "MOZO": "AYUDA AL MOZO",
     "COMENZAR": "Comenzar",
+    "PERDDISTE": "Perdiste. La palabra era",
     "ALTA": "Mas alta",
     "BAJA": "Mas baja"
   },
@@ -252,7 +327,16 @@
   "RECIBE_PEDIDO": {
     "ENCUESTA": "ENCUESTA",
     "PEDIR": "PEDIR CUENTA",
-    "JUEGOS": "JUEGOS"
+    "JUEGOS": "JUEGOS",
+    "NMESA": "Esta no es la mesa asignada, su mesa es",
+    "ACEPTAR": "Aceptar",
+    "ENCUESTA_COMPLETADA": "Ya completó la encuesta",
+    "RESULTADOS": "Ver resultados"
+  },
+
+  "CHAT": {
+    "MESA": "Mesa",
+    "CHAT": "Chat con el personal"
   },
 
   "CLIENTE_ENCUESTAS": {
@@ -289,6 +373,311 @@
     "BREVE": "El mozo o repartidor te enviará el detalle en breve",
     "DESCUENTO": "Descuento",
     "PROPINA": "Propina (Scan)",
-    "PAGAR": "PAGAR AHORA"
+    "PAGAR": "PAGAR AHORA",
+    "FINALIZADA": "Entrega Finalizada",
+    "REGISTRADO": "El pago del delivery ha sido registrado con éxito."
+  },
+
+  "MAPA_DELIVERY": {
+    "CALCULANDO_RUTA": "Calculando ruta",
+    "DESTINO": "Destino Actual",
+    "CHAT": "Chat",
+    "FINALIZAR": "Finalizar",
+    "CONFIRMAR": "Confirmar Entrega",
+    "SELECCIONAR": "Selecciona el pedido a entregar",
+    "TOTAL": "Total",
+    "ENTREGAR": "ENTREGAR PEDIDO",
+    "CANCELAR": "Cancelar",
+    "BUSCANDO": "Buscando nombre de la calle...",
+    "UBICACION": "¡Ubicación Guardada!",
+    "MAPA": "Ubicación Mapa",
+    "NUBICACION": "Ubicación sin nombre exacto",
+    "ERROR": "Error de conexión con el servidor",
+    "UBMAP": "Ubicación Mapa"
+  },
+
+  "SWAL_GENERAL": {
+    "ACEPTAR": "Aceptar",
+    "ERROR": "Error",
+    "RECHAZAR": "Rechazar",
+    "TOTAL": "Total",
+    "CANCELAR": "Cancelar",
+    "CONFIRMAR": "Confirmar"
+  },
+
+  "SWAL_LOGIN": {
+    "CUENTA_PENDIENTE": "Su cuenta aún está pendiente de ser aceptada",
+    "ACEPTAR": "Aceptar",
+    "DENEGADO": "Su acceso fue denegado",
+    "CANCELAR": "Cancelar",
+    "SI": "Sí"
+  },
+  
+  "SWAL_DUENO": {
+    "REGISTRADO": "¡Empleado Registrado!",
+    "CLIENTE_CREADO": "Cliente creado con éxito",
+    "CLIENTE": "Cliente",
+    "ACCESO": "acceso",
+    "ACCESO2": "Acceso",
+    "PERMITIR": "Permitir",
+    "DENEGAR": "Denegar",
+    "FALTAN": "Faltan datos",
+    "COMPLETAR": "Complete todos los campos y la foto",
+    "MESA_CREADA": "Mesa Creada",
+    "MESA": "Mesa",
+    "TEXTO_MESA": "registrada con éxito",
+    "NMESA": "No se pudo crear la mesa",
+    "RECHAZAR_RESERVA": "Rechazar Reserva",
+    "INDIQUE_MOTIVO": "Indique el motivo (ej: Sin disponibilidad)",
+    "RESERVA_RECHAZADA": "Reserva Rechazada",
+    "RESERVA_CONFIRMADA": "Reserva Confirmada",
+    "ASIGNADA": "asignada a",
+    "ACEPTAR_PEDIDO": "¿Aceptar pedido?",
+    "PEDIDO_ENVIADO": "¡Pedido Enviado a Cocina!",
+    "RECHAZAR_DELIVERY": "Rechazar Delivery",
+    "INPUT": "Ej: Falta de stock / Cocina cerrada",
+    "ENTREGAR_PREGUNTA": "¿Entregar al repartidor?",
+    "TEXTO_DELIVERY1": "El pedido de",
+    "TEXTO_DELIVERY2": "está listo",
+    "ENTREGAR": "Entregar",
+    "ENTREGADO": "¡Entregado al Delivery!"
+  },
+
+  "SWAL_ANONIMO": {
+    "CREADO":"Cliente creado con éxito",
+    "ACEPTAR": "Aceptar"
+  },
+
+  "SWAL_CHEF": {
+    "COMIDAS_NOTIFICADAS": "Comidas notificadas",
+    "PEDIDO_FINALIZADO": "Pedido Finalizado",
+    "NOTIFICO_DUENO": "Se ha notificado al Dueño para la entrega.",
+    "COCINA_FINALIZADA": "Cocina Finalizada",
+    "ESPERANDO_BEBIDAS": "Esperando al sector de bebidas...",
+    "FALTAN_DATOS": "Faltan datos",
+    "COMPLETE": "Complete los campos obligatorios.",
+    "CREADO": "Producto Creado",
+    "NCREADO": "No se pudo guardar."
+  },
+
+  "SWAL_BARTENDER": {
+    "BEBIDAS_LISTAS": "¡Bebidas Listas!",
+    "PEDIDO_FINALIZADO": "Pedido Finalizado",
+    "NOTIFICADO": "Se ha notificado al Dueño para la entrega.",
+    "BEBIDAS_FINALIZADAS": "Bebidas Listas",
+    "ESPERANDO": "Esperando al sector de cocina...",
+    "FALTAN_DATOS": "Faltan datos",
+    "BEBIDA_CREADA": "Bebida Creada"
+  },
+  
+  "SWAL_MESERO": {
+    "ACEPTAR_PEDIDO": "Aceptar Pedido",
+    "CONFIRMAR_PEDIDO": "Confirmar tiempo de espera",
+    "MINUTOS": "Minutos",
+    "ENVIADO": "¡Enviado a Cocina!",
+    "RECHAZAR": "Rechazar Pedido",
+    "MOTIVO": "Ej: Falta de stock / Cocina cerrada",
+    "PEDIDO_ENTREGADO": "¡Pedido Entregado!",
+    "TEXTO1": "El cliente de la Mesa",
+    "TEXTO2": "ya tiene su pedido",
+    "MESA_LIBERADA": "Mesa Liberada",
+    "LA_MESA": "La Mesa",
+    "TEXTO3": "ha pagado y ha sido liberada",
+    "ERROR": "Ocurrió un error al procesar el pago"
+  },
+
+  "SWAL_MAITRE": {
+    "MESA_ASIGNADA": "Mesa Asignada",
+    "MESA": "Mesa",
+    "PARA": "para"
+  },
+
+  "SWAL_DELIVERY": {
+    "TOMAR": "¿Tomar este pedido?",
+    "LLEVAR": "Llevar a",
+    "VOY": "Sí, voy yo"
+  },
+
+  "SWAL_RESERVA": {
+    "FECHA_INVALIDA": "Fecha inválida",
+    "FUTURO": "La reserva debe ser en el futuro.",
+    "RESERVA_INVALIDA": "Reserva inválida",
+    "RESERVADA": "La mesa ya está reservada.",
+    "SOLICITUD": "Solicitud enviada para el",
+    "ESPERA": "Espera la confirmación del restaurante.",
+    "ERROR": "Error",
+    "PROBLEMA": "Hubo un problema al reservar"
+  },
+
+  "SWAL_CLIENTE_DELIVERY": {
+    "CARRITO_VACIO": "Carrito vacío",
+    "AGREGAR": "Agregá productos antes de pedir.",
+    "FALTA_DIRECCION": "Falta dirección",
+    "SELECCIONAR": "Por favor seleccioná tu ubicación en el mapa arriba.",
+    "ENVIADO": "Pedido Enviado",
+    "TIEMPO": "Tiempo aproximado",
+    "ESPERA": "min. Esperá la confirmación."
+  },
+
+  "SWAL_MESA": {
+    "MESA_ASIGNADA": "¡Mesa Asignada!",
+    "TEXTO1": "Por favor dirígete a la Mesa",
+    "CONFIRMADA": "¡Mesa Confirmada!",
+    "ACCEDIENDO": "Accediendo al menú...",
+    "INCORRECTA": "Mesa Incorrecta",
+    "ERROR": "Estás escaneando otra mesa. Tu mesa es la"
+  },
+
+  "SWAL_PRODUCTOS": {
+    "MOVIMIENTO": "¡Reset por movimiento!",
+    "TEXTO1": "No se detectó el número de mesa. Escanea el QR nuevamente.",
+    "ENVIADO": "¡Pedido Enviado!",
+    "MOZO_CONFIRMAR": "El mozo lo confirmará pronto.",
+    "PROBLEMA": "Hubo un problema al guardar el pedido."
+  },
+
+  "SWAL_JUEGOS": {
+    "FELICIDADES": "¡Felicidades!",
+    "ADIVINADO": "Has adivinado la palabra",
+    "DESCUENTO": "Ganaste un descuento de 10%",
+    "NUEVA_PARTIDA": "Nueva partida",
+    "BIEN": "¡Muy bien!",
+    "DESCUENTO15": "Has conseguido mas de 700 puntos!!! Ganaste un descuento de 15%!!!",
+    "CONSEGUIDO": "Has conseguido",
+    "SUERTE": "mejor suerte la próxima",
+    "IMPECABLE": "¡Impecable!",
+    "DESCUENTO30": "¡Ganaste un 30% de descuento en tu pedido!",
+    "JUGAR_NUEVO": "Jugar de nuevo",
+    "VOLVER_MENU": "Volver al Menú",
+    "GANASTE": "¡Muy bien Ganaste!",
+    "ENTREGADO": "Pedido entregado con éxito."
+  },
+
+  "SWAL_ESPERA": {
+    "COMER": "¡A comer!",
+    "CONFIRMASTE": "Confirmaste la recepción.",
+    "MESA": "Mesa Correcta",
+    "NLLEGA": "Pero tu pedido aún no llega.",
+    "NMESA": "Mesa Incorrecta",
+    "NASIGNADA": "Esta no es tu mesa asignada"
+  },
+  
+  "SWAL_ENCUESTA": {
+    "ENCUESTA": "Encuesta registrada"
+  },
+
+  "SWAL_PEDIDO": {
+    "PROPINA": "Propina Agregada",
+    "AGREGA": "Se agregó un",
+    "INCORRECTO": "QR Incorrecto",
+    "ESCANEAR": "Escanee un código de propina válido.",
+    "EXITOSO": "¡Pago Exitoso!",
+    "GRACIAS": "Gracias por su visita."
+  },
+
+  "SWAL_CLIENTED": {
+    "ENCUESTA": "Encuesta ya completada",
+    "RESULTADOS": "¿Quieres ver los resultados?"
+  },
+
+  "SWAL_MAPA": {
+    "CONFIRMAR": "¿Confirmar entrega?",
+    "ENTREGADO": "El pedido pasará a estado entregado.",
+    "SI": "Sí, entregar",
+    "ENTREGA_EXITOSA": "¡Entrega Exitosa!"
+  },
+
+  "NOTIFICACIONES_PRODUCTOS": {
+    "NUEVO_PEDIDO": "Nuevo Pedido",
+    "MESA": "Mesa",
+    "ESPERA": "espera comida",
+    "NUEVA_BEBIDA": "Nueva Bebida",
+    "ESPERA2": "espera bebida",
+    "RECHAZADO": "Pedido Rechazado",
+    "MOTIVO": "Motivo",
+    "INDICAR_MOTIVO": "Por favor modifique su pedido",
+    "PEDIDO": "Cliente realizó un pedido en la mesa"
+  },
+
+  "NOTIFICACIONES_COCINA": {
+    "FINALIZADO": "Cocina finalizado",
+    "LISTAS": "Comidas listas para enviar"
+  },
+
+  "NOTIFICACIONES_PAGO": {
+    "CONFIRMADA": "Cuenta Confirmada",
+    "COBRADO": "El delivery ha sido cobrado y finalizado.",
+    "MESA": "La mesa",
+    "CERRO": "cerró la cuenta"
+  },
+
+  "NOTIFICACION_PEDIR": {
+    "RECIBIDO": "Pago Recibido",
+    "CLIENTE": "Cliente",
+    "ABONO": "abonó"
+  },
+
+  "NOTIFICACIONES_DELIVERY": {
+    "NUEVO_DELIVER": "Nuevo Delivery",
+    "CUERPO": "Hay un pedido de delivery para preparar",
+    "BEBIDAS": "Hay bebidas de delivery para preparar",
+    "RECHAZADO": "Pedido Rechazado",
+    "MOTIVO": "Motivo",
+    "MODIFIQUE": "Por favor modifique su pedido",
+    "LISTO": "¡Pedido Listo!",
+    "ENTREGAR": "Tienes un pedido nuevo para retirar y entregar a",
+    "CAMINO": "¡Pedido en Camino!",
+    "LLEVANDO": "está llevando tu pedido"
+  },
+
+  "NOTIFICACIONES_COCINA_DELIVERY": {
+    "LISTO": "Pedido Listo para Entregar",
+    "CUERPO1": "El pedido de",
+    "CUERPO2": "está listo en cocina y barra",
+    "CUERPO3": "está listo"
+  },
+
+  "NOTIFICACIONES_CLIDEL": {
+    "CUENTA": "Cuenta solicitada",
+    "CLIENTE": "El cliente",
+    "SOLICITO": "solicitó la cuenta"
+  },
+
+  "NOTIFICACIONES_CHAT": {
+    "MENSAJE_CLIENTE": "Mensaje del Cliente",
+    "MENSAJE_DELIVERY": "Mensaje del Repartidor",
+    "NUEVO_MENSAJE": "Nuevo mensaje",
+    "CONSULTO": "Cliente consultó en la mesa",
+    "RESPONDIO": "Mesero respondió en mesa"
+  },
+
+  "NOTIFICACIONES_MAPA": {
+    "ENTREGADO": "¡Pedido Entregado!",
+    "DISFRUTES": "Gracias por elegirnos. ¡Que lo disfrutes!"
+  },
+
+  "NOTIFICACIONES_MESA": {
+    "ASIGNADA": "Mesa asignada",
+    "MESA": "Se le asigno la mesa"
+  },
+
+  "NOTIFICACIONES_BAR": {
+    "BAR": "Bar Finalizado",
+    "LISTAS": "Bebidas listas"
+  },
+
+  "NOTIFICACIONES_ACLIENTE": {
+    "NUEVO_CLIENTE": "Nuevo cliente",
+    "REGISTRO": "Se registró un nuevo cliente"
+  },
+
+  "NOTIFICACIONES_CDUENO": {
+    "NUEVO_EMPLEADO": "Nuevo empleado",
+    "REGISTRO": "Se registró un"
+  },
+
+  "NOTIFICACION_RESERVA": {
+    "CUENTA": "Cuenta confirmada",
+    "PIDIO": "pidió una reserva para el"
   }
 }

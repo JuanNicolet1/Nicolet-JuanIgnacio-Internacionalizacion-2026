@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { AfterViewInit, Component, CUSTOM_ELEMENTS_SCHEMA, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -12,6 +12,7 @@ import Swal from 'sweetalert2';
 import * as L from 'leaflet';
 import { pushService } from 'src/app/services/serviciosPush/push-notifications.service';
 import { ViewDidLeave } from '@ionic/angular';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 
 delete (L.Icon.Default.prototype as any)._getIconUrl;
@@ -26,11 +27,11 @@ L.Icon.Default.mergeOptions({
   templateUrl: './mapa-delivery.component.html',
   styleUrls: ['./mapa-delivery.component.scss'],
   standalone: true,
-  imports: [CommonModule, FormsModule, FontAwesomeModule],
+  imports: [CommonModule, FormsModule, FontAwesomeModule, TranslateModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class MapaDeliveryComponent implements AfterViewInit, ViewDidLeave {
-  
+  private translate = inject(TranslateService)
 
   faArrowLeft = faArrowLeft;
   faCommentDots = faCommentDots;
@@ -198,11 +199,11 @@ export class MapaDeliveryComponent implements AfterViewInit, ViewDidLeave {
     if(!this.pedidoSeleccionado) return;
 
     const confirm = await Swal.fire({
-        title: '¿Confirmar entrega?',
-        text: 'El pedido pasará a estado entregado.',
+        title: this.translate.instant('SWAL_MAPA.CONFIRMAR'),
+        text: this.translate.instant('SWAL_MAPA.ENTREGADO'),
         icon: 'warning',
         showCancelButton: true,
-        confirmButtonText: 'Sí, entregar',
+        confirmButtonText: this.translate.instant('SWAL_MAPA.SI'),
         confirmButtonColor: '#4caf50',
         cancelButtonColor: '#d33',
         background: '#333',
@@ -221,15 +222,15 @@ export class MapaDeliveryComponent implements AfterViewInit, ViewDidLeave {
     this.pedidoService.setMostrarInfo(false);
 
     await this.db.enviarNotificacion('cliente', {
-        titulo: '¡Pedido Entregado!',
-        cuerpo: 'Gracias por elegirnos. ¡Que lo disfrutes!',
+        titulo: this.translate.instant('NOTIFICACIONES_MAPA.ENTREGADO'),
+        cuerpo: this.translate.instant('NOTIFICACIONES_MAPA.DISFRUTES'),
     });
 
     this.isLoading = false;
     this.toggleModalEntrega(); 
 
     Swal.fire({
-      title: '¡Entrega Exitosa!',
+      title: this.translate.instant('SWAL_MAPA.ENTREGA_EXITOSA'),
       icon: 'success',
       timer: 2000,
       showConfirmButton: false,

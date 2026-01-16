@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnDestroy, OnInit, ViewChild, HostListener } from '@angular/core';
+import { Component, ElementRef, OnDestroy, OnInit, ViewChild, HostListener, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
@@ -30,6 +30,7 @@ export class JuegoEsquivarComponent  implements ViewDidLeave, ViewWillEnter {
     private db: DatabaseService,
     private pedidoService: PedidoService
   ) {}
+  private translate = inject(TranslateService)
 
   gameState: 'start' | 'playing' | 'win' | 'lose' = 'start';
   isPlaying = false;
@@ -174,8 +175,8 @@ export class JuegoEsquivarComponent  implements ViewDidLeave, ViewWillEnter {
         }
 
         Swal.fire({
-          title: '¡Impecable!',
-          text: '¡Ganaste un 30% de descuento en tu pedido!',
+          title: this.translate.instant('SWAL_JUEGOS.IMPECABLE'),
+          text: this.translate.instant('SWAL_JUEGOS.DESCUENTO30'),
           icon: 'success',
           heightAuto: false,
           
@@ -199,14 +200,14 @@ export class JuegoEsquivarComponent  implements ViewDidLeave, ViewWillEnter {
       } else {
 
         Swal.fire({
-          title: '¡Muy bien Ganaste!',
-          text: 'Pedido entregado con éxito.',
+          title: this.translate.instant('SWAL_JUEGOS.GANASTE'),
+          text: this.translate.instant('SWAL_JUEGOS.ENTREGADO'),
           icon: 'success',
           heightAuto: false,
 
           showCancelButton: true,
-          confirmButtonText: 'Jugar de nuevo',
-          cancelButtonText: 'Volver al Menú',
+          confirmButtonText: this.translate.instant('SWAL_JUEGOS.JUGAR_NUEVO'),
+          cancelButtonText: this.translate.instant('SWAL_JUEGOS.VOLVER_MENU'),
           confirmButtonColor: '#4caf50',
           cancelButtonColor: '#d33',
           reverseButtons: true

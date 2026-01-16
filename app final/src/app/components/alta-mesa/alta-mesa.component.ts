@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, inject, ViewChild } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -35,6 +35,8 @@ export class AltaMesaComponent {
   isLoading: boolean = true; 
   faArrowLeft = faArrowLeft;
   faCamera = faCamera;
+  
+  private translate = inject(TranslateService)
 
   fotoUrl: string = 'assets/faceless-businessman-user-profile-icon-business-leader-profile-picture-portrait-user-member-people-i.png';
   selectedImage: string = '';
@@ -90,7 +92,7 @@ export class AltaMesaComponent {
 
   async crearMesa() {
     if (!this.selectedImage || !this.nuevaMesa.numero || !this.nuevaMesa.cantidadComensales) {
-       Swal.fire({ icon: 'error', title: 'Faltan datos', text: 'Complete todos los campos y la foto.', heightAuto: false, background: '#333', color: '#fff' });
+       Swal.fire({ icon: 'error', title: this.translate.instant('SWAL_DUENO.FALTAN'), text: this.translate.instant('SWAL_DUENO.COMPLETAR'), heightAuto: false, background: '#333', color: '#fff' });
        return;
     }
 
@@ -129,8 +131,8 @@ export class AltaMesaComponent {
       this.isLoading = false;
 
       Swal.fire({
-        title: 'Mesa Creada',
-        text: `Mesa ${mesaData.numero} registrada con éxito.`,
+        title: this.translate.instant('SWAL_DUENO.MESA_CREADA'),
+        text: `${this.translate.instant('SWAL_DUENO.MESA')} ${mesaData.numero} ${this.translate.instant('SWAL_DUENO.TEXTO_MESA')}.`,
         icon: 'success',
         background: '#333',
         color: '#fff',
@@ -143,7 +145,7 @@ export class AltaMesaComponent {
     } catch (error) {
       console.error('Error:', error);
       this.isLoading = false;
-      Swal.fire({ title: 'Error', text: 'No se pudo crear la mesa.', icon: 'error', background: '#333', color: '#fff' });
+      Swal.fire({ title: this.translate.instant('SWAL_GENERAL.ERROR'), text: this.translate.instant('SWAL_DUENO.NMESA'), icon: 'error', background: '#333', color: '#fff' });
     }
   }
 

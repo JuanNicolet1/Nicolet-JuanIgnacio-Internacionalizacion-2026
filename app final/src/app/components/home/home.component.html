@@ -38,7 +38,7 @@
 <div *ngIf="isLoading" class="spinner-overlay">
   <div class="spinner-container">
     <img src="assets/icono.png" class="spinning-logo">
-    <p>Cargando...</p>
+    <p>{{ 'SOLICITUD.CARGANDO2' | translate }}...</p>
   </div>
 </div>
 
@@ -133,7 +133,7 @@
       >
         <img src="assets/iconos/listado_clientes.png" alt="" />
       </button>
-  <a [routerLink]="['/listado-clientes-solicitando-mesa']">Asignar mesa</a>
+  <a [routerLink]="['/listado-clientes-solicitando-mesa']">{{ 'MAITRE.ASIGNAR_MESA' | translate }}</a>
   </div>
 
   }@else if (this.auth.usuarioIngresado.tipoCliente === "mesero"){

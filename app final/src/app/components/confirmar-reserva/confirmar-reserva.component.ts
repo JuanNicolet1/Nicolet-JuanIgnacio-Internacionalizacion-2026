@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faArrowLeft, faCalendarCheck, faBan, faCheckCircle, faUsers, faClock } from '@fortawesome/free-solid-svg-icons';
@@ -20,7 +20,8 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   imports: [FontAwesomeModule, RouterLink, CommonModule, DatePipe, TranslateModule],
 })
 export class ConfirmarReservaComponent implements OnInit {
- 
+  private translate = inject(TranslateService)
+  
   faArrowLeft = faArrowLeft;
   faCalendarCheck = faCalendarCheck;
   faBan = faBan;
@@ -111,11 +112,11 @@ actualizarEstadosDeMesas(resultado: any[]) {
  
   async rechazarReserva(cliente: any) {
     const { value: motivo } = await Swal.fire({
-      title: 'Rechazar Reserva',
+      title: this.translate.instant('SWAL_DUENO.RECHAZAR_RESERVA'),
       input: 'textarea',
-      inputPlaceholder: 'Indique el motivo (ej: Sin disponibilidad)',
+      inputPlaceholder: this.translate.instant('SWAL_DUENO.INDIQUE_MOTIVO'),
       showCancelButton: true,
-      confirmButtonText: 'Rechazar',
+      confirmButtonText: this.translate.instant('SWAL_GENERAL.RECHAZAR'),
       confirmButtonColor: '#d33',
       background: '#333', color: '#fff'
     });
@@ -134,7 +135,7 @@ actualizarEstadosDeMesas(resultado: any[]) {
     this.isLoading = false;
 
     Swal.fire({
-      title: 'Reserva Rechazada',
+      title: this.translate.instant('SWAL_DUENO.RESERVA_RECHAZADA'),
       icon: 'success',
       timer: 1500,
       showConfirmButton: false,
@@ -185,8 +186,8 @@ actualizarEstadosDeMesas(resultado: any[]) {
       this.cerrarSelectorMesa();
 
       Swal.fire({
-        title: 'Reserva Confirmada',
-        text: `Mesa ${mesa.numero} asignada a ${this.usuarioSeleccionado.nombre}`,
+        title: this.translate.instant('SWAL_DUENO.RESERVA_CONFIRMADA'),
+        text: `${this.translate.instant('SWAL_DUENO.MESA')} ${mesa.numero} ${this.translate.instant('SWAL_DUENO.ASIGNADA')} ${this.usuarioSeleccionado.nombre}`,
         icon: 'success',
         background: '#333', color: '#fff'
       });

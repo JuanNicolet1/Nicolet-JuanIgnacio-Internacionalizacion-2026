@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import { FormsModule } from '@angular/forms';
@@ -10,6 +10,7 @@ import { AuthService } from 'src/app/services/auth.service';
 import { DatabaseService } from 'src/app/services/database.service';
 import Swal from 'sweetalert2';
 import { getDownloadURL, getStorage, ref, uploadString } from 'firebase/storage';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-alta-bebida',
@@ -22,9 +23,12 @@ import { getDownloadURL, getStorage, ref, uploadString } from 'firebase/storage'
     IonicModule,
     FontAwesomeModule,
     RouterLink,
+    TranslateModule
   ],
 })
 export class AltaBebidaComponent implements OnInit {
+  private translate = inject(TranslateService)
+  
   isLoading: boolean = true; 
   faArrowLeft = faArrowLeft;
   faCamera = faCamera;
@@ -82,7 +86,7 @@ export class AltaBebidaComponent implements OnInit {
 
   async guardarProducto() {
     if (!this.nuevoProducto.name || !this.nuevoProducto.precio || !this.nuevoProducto.tiempoEstimado) {
-        Swal.fire({ icon: 'error', title: 'Faltan datos', text: 'Complete los campos obligatorios.', heightAuto: false, background: '#333', color: '#fff' });
+        Swal.fire({ icon: 'error', title: this.translate.instant('SWAL_BARTENDER.FALTAN_DATOS'), text: this.translate.instant('SWAL_CHEF.COMPLETE'), heightAuto: false, background: '#333', color: '#fff' });
         return;
     }
 
@@ -119,7 +123,7 @@ export class AltaBebidaComponent implements OnInit {
       this.isLoading = false;
 
       Swal.fire({
-        title: 'Bebida Creada',
+        title: this.translate.instant('SWAL_BARTENDER.BEBIDA_CREADA'),
         icon: 'success',
         background: '#333',
         color: '#fff',

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { LensFacing } from '@capacitor-mlkit/barcode-scanning';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
@@ -23,7 +23,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   imports: [FontAwesomeModule, RouterLink, CommonModule, FormsModule, IonicModule, TranslateModule],
 })
 export class PedirCuentaComponent implements OnInit {
-  
+  private translate = inject(TranslateService)
 
   faArrowLeft = faArrowLeft;
   faReceipt = faReceipt;
@@ -130,14 +130,14 @@ export class PedirCuentaComponent implements OnInit {
            
            Swal.fire({
              icon: 'success',
-             title: 'Propina Agregada',
-             text: `Se agregó un ${porcentaje}% ($${this.propinaNumber})`,
+             title: this.translate.instant('SWAL_PEDIDO.PROPINA'),
+             text: `${this.translate.instant('SWAL_PEDIDO.AGREGA')} ${porcentaje}% ($${this.propinaNumber})`,
              heightAuto: false,
              background: '#333', color: '#fff'
            });
         }
       } else {
-        Swal.fire({ icon: 'error', title: 'QR Incorrecto', text: 'Escanee un código de propina válido.' });
+        Swal.fire({ icon: 'error', title: this.translate.instant('SWAL_PEDIDO.INCORRECTO'), text: this.translate.instant('SWAL_PEDIDO.ESCANEAR') });
       }
     }
   }
@@ -168,20 +168,20 @@ export class PedirCuentaComponent implements OnInit {
         this.db.ModificarObjeto(this.pedidoActivo, coleccion);
 
         this.db.enviarNotificacion('dueño', {
-            titulo: 'Pago Recibido',
-            cuerpo: `Cliente ${cuenta.cliente} abonó $${cuenta.total}`
+            titulo: this.translate.instant('NOTIFICACION_PEDIR.RECIBIDO'),
+            cuerpo: `${this.translate.instant('NOTIFICACION_PEDIR.CLIENTE')} ${cuenta.cliente} ${this.translate.instant('NOTIFICACION_PEDIR.ABONO')} $${cuenta.total}`
         });
         this.db.enviarNotificacion('mesero', {
-            titulo: 'Pago Recibido',
-            cuerpo: `Cliente ${cuenta.cliente} abonó $${cuenta.total}`
+            titulo: this.translate.instant('NOTIFICACION_PEDIR.RECIBIDO'),
+            cuerpo: `${this.translate.instant('NOTIFICACION_PEDIR.CLIENTE')} ${cuenta.cliente} ${this.translate.instant('NOTIFICACION_PEDIR.ABONO')} $${cuenta.total}`
         });
 
 
         this.isLoading = false;
         Swal.fire({
             icon: 'success',
-            title: '¡Pago Exitoso!',
-            text: 'Gracias por su visita.',
+            title: this.translate.instant('SWAL_PEDIDO.EXITOSO'),
+            text: this.translate.instant('SWAL_PEDIDO.GRACIAS'),
             background: '#333', color: '#fff'
         }).then(() => {
           

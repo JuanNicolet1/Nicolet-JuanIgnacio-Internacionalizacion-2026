@@ -1,5 +1,5 @@
 import { IonicModule, ViewDidEnter, ViewDidLeave, ViewWillEnter, ViewWillLeave } from '@ionic/angular';
-import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit, AfterViewInit } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit, AfterViewInit, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Router, RouterLinkActive } from '@angular/router';
@@ -28,6 +28,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class DeliveryComponent implements  ViewWillEnter, ViewDidLeave {
+  private translate = inject(TranslateService)
 
     clientePoneDireccion:boolean = true;
    isLoading: boolean = true;
@@ -67,7 +68,7 @@ export class DeliveryComponent implements  ViewWillEnter, ViewDidLeave {
 
       this.isLoading = true; 
       
-      this.direccionActual = this.db.direccion || 'Toca para elegir ubicación 📍';
+      this.direccionActual = this.db.direccion || this.translate.instant('CLIENTE_DELIVERY.UBICACION') + ' 📍';
 
       this.db.TraerObjeto('productos').subscribe((productos: any[]) => {
 
@@ -243,12 +244,12 @@ export class DeliveryComponent implements  ViewWillEnter, ViewDidLeave {
   
     async guardarPedido() {
       if (this.carrito.length === 0) {
-        Swal.fire('Carrito vacío', 'Agregá productos antes de pedir.', 'warning');
+        Swal.fire(this.translate.instant('SWAL_CLIENTE_DELIVERY.CARRITO_VACIO'), this.translate.instant('SWAL_CLIENTE_DELIVERY.AGREGAR'), 'warning');
         return;
       }
 
       if (!this.db.direccion) {
-        Swal.fire('Falta dirección', 'Por favor seleccioná tu ubicación en el mapa arriba.', 'warning');
+        Swal.fire(this.translate.instant('SWAL_CLIENTE_DELIVERY.FALTA_DIRECCION'), this.translate.instant('SWAL_CLIENTE_DELIVERY.SELECCIONAR'), 'warning');
         return;
       }
       this.isLoading = true;
@@ -287,8 +288,8 @@ export class DeliveryComponent implements  ViewWillEnter, ViewDidLeave {
         this.auth.usuarioIngresado.direccion = this.db.direccion
         this.db.ModificarObjeto(this.auth.usuarioIngresado, 'clientes')
         Swal.fire({
-          title: 'Pedido Enviado',
-          text: `Tiempo aprox: ${this.tiempoEstimado} min. Esperá la confirmación.`,
+          title: this.translate.instant('SWAL_CLIENTE_DELIVERY.ENVIADO'),
+          text: `${this.translate.instant('SWAL_CLIENTE_DELIVERY.TIEMPO')}: ${this.tiempoEstimado} ${this.translate.instant('SWAL_CLIENTE_DELIVERY.ESPERA')}`,
           icon: 'success',
           confirmButtonColor: '#780000',
           background: '#333',

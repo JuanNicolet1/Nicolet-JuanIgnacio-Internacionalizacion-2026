@@ -17,7 +17,7 @@
 <div *ngIf="isLoading" class="spinner-overlay">
   <div class="spinner-container">
     <img src="assets/icono.png" class="spinning-logo">
-    <p>Guardando...</p>
+    <p>{{ 'CHEF_CREAR.GUARDANDO' | translate }}...</p>
   </div>
 </div>
 
@@ -25,7 +25,7 @@
   <div class="card-container">
     
     <div class="photos-section">
-      <p class="label-photos">Fotos de la Bebida (Toca para agregar)</p>
+      <p class="label-photos">{{ 'BARTENDER_CREAR.FOTO_PRODUCTO' | translate }}</p>
       <div class="photos-grid">
         
         <div class="photo-slot" (click)="tomarFoto(0)">
@@ -49,36 +49,36 @@
     <form (ngSubmit)="guardarProducto()" #formAlta="ngForm" class="custom-form">
       
       <ion-item class="custom-item">
-        <ion-label position="floating">Nombre de la Bebida</ion-label>
+        <ion-label position="floating">{{ 'BARTENDER_CREAR.NOMBRE' | translate }}</ion-label>
         <ion-input type="text" name="name" [(ngModel)]="nuevoProducto.name" required></ion-input>
       </ion-item>
 
       <ion-item class="custom-item">
-        <ion-label position="floating">Descripción</ion-label>
+        <ion-label position="floating">{{ 'CHEF_CREAR.DESCRIPCION' | translate }}</ion-label>
         <ion-textarea name="description" [(ngModel)]="nuevoProducto.description" required rows="2"></ion-textarea>
       </ion-item>
 
       <div class="input-row">
         <ion-item class="custom-item">
-          <ion-label position="floating">Precio ($)</ion-label>
+          <ion-label position="floating">{{ 'CHEF_CREAR.PRECIO' | translate }}</ion-label>
           <ion-input type="number" name="precio" [(ngModel)]="nuevoProducto.precio" required></ion-input>
         </ion-item>
 
         <ion-item class="custom-item">
-          <ion-label position="floating">Tiempo (min)</ion-label>
+          <ion-label position="floating">{{ 'CHEF_CREAR.TIEMPO' | translate }}</ion-label>
           <ion-input type="number" name="tiempoEstimado" [(ngModel)]="nuevoProducto.tiempoEstimado" required></ion-input>
         </ion-item>
       </div>
 
       <ion-item class="custom-item">
-        <ion-label position="floating">Tipo</ion-label>
+        <ion-label position="floating">{{ 'BARTENDER_CREAR.TIPO' | translate }}</ion-label>
         <ion-select name="tipoProducto" [(ngModel)]="nuevoProducto.tipoProducto" required>
-          <ion-select-option value="bebida">Bebida</ion-select-option>
+          <ion-select-option value="bebida">{{ 'BARTENDER_CREAR.BEBIDA' | translate }}</ion-select-option>
         </ion-select>
       </ion-item>
 
       <button class="btn-register" type="submit" [disabled]="!formAlta.form.valid">
-        CREAR BEBIDA
+        {{ 'BARTENDER_CREAR.CREAR_BEBIDA' | translate }}
       </button>
 
     </form>

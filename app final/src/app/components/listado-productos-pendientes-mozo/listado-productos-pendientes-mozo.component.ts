@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faArrowLeft, faUtensils, faCheckCircle, faClock, faClipboardList } from '@fortawesome/free-solid-svg-icons';
@@ -18,6 +18,8 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   imports: [FontAwesomeModule, RouterLink, CommonModule, TranslateModule],
 })
 export class ListadoProductosPendientesMozoComponent implements OnInit {
+  private translate = inject(TranslateService)
+  
   // Iconos
   faArrowLeft = faArrowLeft;
   faUtensils = faUtensils;
@@ -63,8 +65,8 @@ export class ListadoProductosPendientesMozoComponent implements OnInit {
     this.isLoading = false;
 
     Swal.fire({
-      title: '¡Pedido Entregado!',
-      text: `El cliente de la Mesa ${pedido.mesa} ya tiene su pedido.`,
+      title: this.translate.instant('SWAL_MESERO.PEDIDO_ENTREGADO'),
+      text: `${this.translate.instant('SWAL_MESERO.TEXTO1')} ${pedido.mesa} ${this.translate.instant('SWAL_MESERO.TEXTO2')}.`,
       icon: 'success',
       timer: 1500,
       showConfirmButton: false,

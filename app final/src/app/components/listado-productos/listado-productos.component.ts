@@ -1,5 +1,5 @@
 import { IonicModule, ViewWillEnter, ViewDidLeave } from '@ionic/angular';
-import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, inject, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
@@ -27,6 +27,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class ListadoProductosComponent implements OnInit, ViewWillEnter, ViewDidLeave {
+  private translate = inject(TranslateService)
 
   faArrowLeft = faArrowLeft;
   faRightFromBracket = faRightFromBracket;
@@ -270,7 +271,7 @@ export class ListadoProductosComponent implements OnInit, ViewWillEnter, ViewDid
   volverPrimerProducto() {
       if (this.productsComida.length > 0) this.destacarProducto(this.productsComida[0]);
       Swal.fire({ 
-          title: '¡Reset por movimiento!', 
+          title: this.translate.instant('SWAL_PRODUCTOS.MOVIMIENTO'), 
           toast: true, position: 'top-end', timer: 1500, showConfirmButton: false 
       });
   }
@@ -379,7 +380,7 @@ export class ListadoProductosComponent implements OnInit, ViewWillEnter, ViewDid
 
 
     if (!this.db.mesa) {
-        Swal.fire('Error', 'No se detectó el número de mesa. Escanea el QR nuevamente.', 'error');
+        Swal.fire(this.translate.instant('SWAL_RESERVA.ERROR'), this.translate.instant('SWAL_PRODUCTOS.TEXTO1'), 'error');
         this.isLoading = false;
         return;
     }
@@ -400,8 +401,8 @@ export class ListadoProductosComponent implements OnInit, ViewWillEnter, ViewDid
       
 
       await this.db.enviarNotificacion('mesero', {
-        titulo: 'Nuevo pedido',
-        cuerpo: `Cliente realizó un pedido en la mesa ${numero}`,
+        titulo: this.translate.instant('NOTIFICACIONES_PRODUCTOS.NUEVO_PEDIDO'),
+        cuerpo: `${this.translate.instant('NOTIFICACIONES_PRODUCTOS.PEDIDO')} ${numero}`,
         mesa: this.db.mesa,
       });
 
@@ -411,8 +412,8 @@ export class ListadoProductosComponent implements OnInit, ViewWillEnter, ViewDid
       await this.db.ModificarObjeto(this.auth.usuarioIngresado, 'clientes');
 
       Swal.fire({
-          title: '¡Pedido Enviado!',
-          text: 'El mozo lo confirmará pronto.',
+          title: this.translate.instant('SWAL_PRODUCTOS.ENVIADO'),
+          text: this.translate.instant('SWAL_PRODUCTOS.MOZO_CONFIRMAR'),
           icon: 'success',
           background: '#333',
           color: '#fff',
@@ -431,7 +432,7 @@ export class ListadoProductosComponent implements OnInit, ViewWillEnter, ViewDid
       
     } catch (e) {
       console.error(e);
-      Swal.fire('Error', 'Hubo un problema al guardar el pedido.', 'error');
+      Swal.fire(this.translate.instant('SWAL_RESERVA.ERROR'), this.translate.instant('SWAL_PRODUCTOS.PROBLEMA'), 'error');
     } finally {
 
       this.isLoading = false; 
