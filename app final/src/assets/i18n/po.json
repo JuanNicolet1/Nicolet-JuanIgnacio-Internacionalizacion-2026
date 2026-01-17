@@ -2,6 +2,7 @@
   "IDIOMA": {
     "TITULO": "Escolha um idioma"
   },
+  
   "LOGIN": {
     "NOMBRE": "Nome",
     "APELLIDO": "Sobrenome",
@@ -14,6 +15,7 @@
     "GOOGLE": "Entrar com Google",
     "ANONIMO": "Entrar como Anônimo"
   },
+
   "DUENO": {
     "AGREGAR_EMPLEADO": "ADICIONAR FUNCIONÁRIO",
     "AGREGAR_CLIENTE": "ADICIONAR CLIENTE",
@@ -24,12 +26,14 @@
     "REGISTRAR": "Registrar Funcionário",
     "REGISTRAR_MESA": "Registrar Mesa"
   },
+
   "ROL": {
     "ROL": "Função",
     "COCINERO": "Cozinheiro/Bar",
     "MESERO": "Garçom",
     "MAITRE": "Maitre"
   },
+
   "SOLICITUD": {
     "SOLICITUD": "SOLICITAÇÕES DE ACESSO",
     "NSOLICITUD": "Nenhuma solicitação pendente",
@@ -64,6 +68,7 @@
     "PREFERENCIA": "Preferência",
     "CANCELAR": "Cancelar"
   },
+
   "DUENO_DELIVERY": {
     "PEDIDOS": "NOVOS PEDIDOS",
     "NPEDIDOS": "Não há novos pedidos",
@@ -73,17 +78,20 @@
     "NLISTOS": "Nenhum pedido pronto para entrega",
     "ENTREGAR": "ENTREGAR AO DELIVERY"
   },
+
   "MESERO": {
     "CHAT": "CHAT COM CLIENTES",
     "ACEPTAR_PEDIDO": "ACEITAR PEDIDOS",
     "ENTREGAR_PEDIDO": "ENTREGAR PEDIDOS",
     "COBROS": "COBRANÇAS"
   },
+
   "CHEF": {
     "AVISAR": "AVISAR COMIDA PRONTA",
     "COMIDA_DELIVERY": "COMIDA DELIVERY",
     "CREAR": "CRIAR COMIDA"
   },
+
   "CHEF_DELIVERY": {
     "CARGANDO": "Carregando Comandas",
     "COCINA": "COZINHA - DELIVERY",
@@ -92,6 +100,7 @@
     "LISTO": "MARCAR COMO PRONTO",
     "NCOCINA": "Não há pedidos pendentes na cozinha"
   },
+
   "CHEF_CREAR": {
     "GUARDANDO": "Salvando",
     "FOTO_PRODUCTO": "Fotos do Produto (Toque para adicionar)",
@@ -104,9 +113,61 @@
     "Postre": "Sobremesa",
     "CREAR": "CRIAR PRATO"
   },
+
   "BARTENDER": {
     "AVISAR": "AVISAR BEBIDA PRONTA",
     "COMIDA_DELIVERY": "BEBIDA DELIVERY",
     "CREAR": "CRIAR BEBIDA"
+  },
+
+  "MESA_ESTADO": {
+    "BUSCANDO": "Procurando mesa...",
+    "MAITRE": "Aguarde o Maitre...",
+    "ESPERA": "Você está na lista de espera",
+    "MESA": "Sua mesa é a "
+  },
+  "PRODUCTO_ESTADO": {
+    "ENVIANDO": "Enviando pedido...",
+    "COCINA": "Na cozinha! Preparando seus pratos.",
+    "MOZO": "O garçom confirmará seu pedido em breve.",
+    "LISTO": "Pedido na mesa! Aproveite.",
+    "DISFRUTANDO": "Aproveitando a comida.",
+    "RECHAZADO": "Lamentamos, seu pedido foi rejeitado.",
+    "NMOTIVO": "Sem motivo especificado."
+  },
+  "DELIVERY_ESTADO": {
+    "ESPERANDO": "Aguardando confirmação...",
+    "RECHAZADO": "Seu pedido de delivery foi rejeitado.",
+    "NMOTIVO": "Sem motivo especificado.",
+    "REVISANDO": "O estabelecimento está revisando seu pedido.",
+    "COCINANDO": "Mãos à obra! Cozinhando...",
+    "CAMINO": "Seu pedido está a caminho.",
+    "ENTREGADO": "Pedido Entregue! Aproveite."
+  },
+  "ENCUESTA": {
+    "E1": "Como você avaliaria o atendimento?",
+    "E2": "Como você avaliaria o sabor da comida?",
+    "E3": "A comida estava quente?",
+    "E4": "As porções foram adequadas?",
+    "E5": "A apresentação estava boa?",
+    "E6": "Que tipos de menu você prefere no restaurante?",
+    "E7": "Quanto tempo você esperou pela comida?",
+    "COMENTARIOS": "COMENTÁRIOS"
+  },
+  "PRODUCTOS": {
+    "CARGANDO": "Carregando Cardápio",
+    "CARTA": "NOSSO CARDÁPIO",
+    "COMIDA": "COMIDAS",
+    "BEBIDA": "BEBIDAS",
+    "POSTRE": "SOBREMESAS",
+    "ACTIVAR": "Toque para ativar o sensor",
+    "MOVER": "Mova seu dispositivo!",
+    "LISTO": "Pronto",
+    "VOLVER": "Voltar",
+    "TOTAL": "Total",
+    "ESPERAMAX": "Espera máx",
+    "MINUTOS": "minutos",
+    "CONFIRMAR_PEDIDO": "CONFIRMAR PEDIDO"
   }
+
 }

@@ -2,6 +2,7 @@
   "IDIOMA": {
     "TITULO": "Wählen Sie eine Sprache"
   },
+
   "LOGIN": {
     "NOMBRE": "Vorname",
     "APELLIDO": "Nachname",
@@ -14,6 +15,7 @@
     "GOOGLE": "Mit Google anmelden",
     "ANONIMO": "Anonym anmelden"
   },
+
   "DUENO": {
     "AGREGAR_EMPLEADO": "MITARBEITER HINZUFÜGEN",
     "AGREGAR_CLIENTE": "KUNDEN HINZUFÜGEN",
@@ -24,12 +26,14 @@
     "REGISTRAR": "Mitarbeiter registrieren",
     "REGISTRAR_MESA": "Tisch registrieren"
   },
+
   "ROL": {
     "ROL": "Rolle",
     "COCINERO": "Koch/Bar",
     "MESERO": "Kellner",
     "MAITRE": "Maitre"
   },
+
   "SOLICITUD": {
     "SOLICITUD": "ZUGRIFFSANFRAGEN",
     "NSOLICITUD": "Keine ausstehenden Anfragen",
@@ -64,6 +68,7 @@
     "PREFERENCIA": "Präferenz",
     "CANCELAR": "Abbrechen"
   },
+
   "DUENO_DELIVERY": {
     "PEDIDOS": "NEUE BESTELLUNGEN",
     "NPEDIDOS": "Keine neuen Bestellungen",
@@ -73,17 +78,20 @@
     "NLISTOS": "Keine Bestellungen bereit zur Lieferung",
     "ENTREGAR": "AN LIEFERDIENST ÜBERGEBEN"
   },
+
   "MESERO": {
     "CHAT": "KUNDEN-CHAT",
     "ACEPTAR_PEDIDO": "BESTELLUNGEN ANNEHMEN",
     "ENTREGAR_PEDIDO": "BESTELLUNGEN AUSLIEFERN",
     "COBROS": "ZAHLUNGEN"
   },
+
   "CHEF": {
     "AVISAR": "ESSEN BEREIT MELDEN",
     "COMIDA_DELIVERY": "LIEFERESSEN",
     "CREAR": "ESSEN ERSTELLEN"
   },
+
   "CHEF_DELIVERY": {
     "CARGANDO": "Bestellungen werden geladen",
     "COCINA": "KÜCHE - LIEFERUNG",
@@ -92,6 +100,7 @@
     "LISTO": "ALS BEREIT MARKIEREN",
     "NCOCINA": "Keine ausstehenden Bestellungen in der Küche"
   },
+
   "CHEF_CREAR": {
     "GUARDANDO": "Wird gespeichert",
     "FOTO_PRODUCTO": "Produktfotos (Zum Hinzufügen tippen)",
@@ -104,9 +113,65 @@
     "Postre": "Nachtisch",
     "CREAR": "GERICHT ERSTELLEN"
   },
+
   "BARTENDER": {
     "AVISAR": "GETRÄNK BEREIT MELDEN",
     "COMIDA_DELIVERY": "LIEFERGETRÄNK",
     "CREAR": "GETRÄNK ERSTELLEN"
+  },
+
+  "MESA_ESTADO": {
+    "BUSCANDO": "Tisch wird gesucht...",
+    "MAITRE": "Bitte warten Sie auf den Maitre...",
+    "ESPERA": "Sie stehen auf der Warteliste",
+    "MESA": "Ihr Tisch ist Nummer "
+  },
+
+  "PRODUCTO_ESTADO": {
+    "ENVIANDO": "Bestellung wird gesendet...",
+    "COCINA": "In der Küche! Ihre Gerichte werden zubereitet.",
+    "MOZO": "Der Kellner wird Ihre Bestellung bald bestätigen.",
+    "LISTO": "Bestellung am Tisch! Guten Appetit.",
+    "DISFRUTANDO": "Das Essen genießen.",
+    "RECHAZADO": "Es tut uns leid, Ihre Bestellung wurde abgelehnt.",
+    "NMOTIVO": "Kein Grund angegeben."
+  },
+
+  "DELIVERY_ESTADO": {
+    "ESPERANDO": "Warten auf Bestätigung...",
+    "RECHAZADO": "Ihre Lieferbestellung wurde abgelehnt.",
+    "NMOTIVO": "Kein Grund angegeben.",
+    "REVISANDO": "Das Restaurant prüft Ihre Bestellung.",
+    "COCINANDO": "An die Arbeit! Es wird gekocht...",
+    "CAMINO": "Ihre Bestellung ist unterwegs.",
+    "ENTREGADO": "Bestellung geliefert! Lassen Sie es sich schmecken."
+  },
+
+  "ENCUESTA": {
+    "E1": "Wie würden Sie den Service bewerten?",
+    "E2": "Wie würden Sie den Geschmack des Essens bewerten?",
+    "E3": "War das Essen heiß?",
+    "E4": "Waren die Portionen angemessen?",
+    "E5": "War die Präsentation gut?",
+    "E6": "Welche Menüarten bevorzugen Sie im Restaurant?",
+    "E7": "Wie lange haben Sie auf das Essen gewartet?",
+    "COMENTARIOS": "KOMMENTARE"
+  },
+  
+  "PRODUCTOS": {
+    "CARGANDO": "Speisekarte wird geladen",
+    "CARTA": "UNSERE SPEISEKARTE",
+    "COMIDA": "SPEISEN",
+    "BEBIDA": "GETRÄNKE",
+    "POSTRE": "NACHTISCHE",
+    "ACTIVAR": "Tippen, um den Sensor zu aktivieren",
+    "MOVER": "Schütteln Sie Ihr Gerät!",
+    "LISTO": "Fertig",
+    "VOLVER": "Zurück",
+    "TOTAL": "Gesamt",
+    "ESPERAMAX": "Max. Wartezeit",
+    "MINUTOS": "Minuten",
+    "CONFIRMAR_PEDIDO": "BESTELLUNG BESTÄTIGEN"
   }
+
 }

@@ -2,6 +2,7 @@
   "IDIOMA": {
     "TITULO": "Choisissez une langue"
   },
+
   "LOGIN": {
     "NOMBRE": "Prénom",
     "APELLIDO": "Nom",
@@ -14,6 +15,7 @@
     "GOOGLE": "Se connecter avec Google",
     "ANONIMO": "Connexion Anonyme"
   },
+  
   "DUENO": {
     "AGREGAR_EMPLEADO": "AJOUTER EMPLOYÉ",
     "AGREGAR_CLIENTE": "AJOUTER CLIENT",
@@ -79,11 +81,13 @@
     "ENTREGAR_PEDIDO": "LIVRER COMMANDES",
     "COBROS": "PAIEMENTS"
   },
+
   "CHEF": {
     "AVISAR": "SIGNALER REPAS PRÊT",
     "COMIDA_DELIVERY": "REPAS LIVRAISON",
     "CREAR": "CRÉER REPAS"
   },
+
   "CHEF_DELIVERY": {
     "CARGANDO": "Chargement des Bons",
     "COCINA": "CUISINE - LIVRAISON",
@@ -92,6 +96,7 @@
     "LISTO": "MARQUER COMME PRÊT",
     "NCOCINA": "Aucune commande en attente en cuisine"
   },
+
   "CHEF_CREAR": {
     "GUARDANDO": "Enregistrement",
     "FOTO_PRODUCTO": "Photos du Produit (Appuyez pour ajouter)",
@@ -104,9 +109,65 @@
     "Postre": "Dessert",
     "CREAR": "CRÉER PLAT"
   },
+
   "BARTENDER": {
     "AVISAR": "SIGNALER BOISSON PRÊTE",
     "COMIDA_DELIVERY": "BOISSON LIVRAISON",
     "CREAR": "CRÉER BOISSON"
+  },
+
+  "MESA_ESTADO": {
+    "BUSCANDO": "Recherche de table...",
+    "MAITRE": "Veuillez attendre le Maître d'hôtel...",
+    "ESPERA": "Vous êtes sur la liste d'attente",
+    "MESA": "Votre table est la "
+  },
+
+  "PRODUCTO_ESTADO": {
+    "ENVIANDO": "Envoi de la commande...",
+    "COCINA": "En cuisine ! Préparation de vos plats.",
+    "MOZO": "Le serveur confirmera votre commande bientôt.",
+    "LISTO": "Commande sur table ! Bon appétit.",
+    "DISFRUTANDO": "Dégustation du repas.",
+    "RECHAZADO": "Désolé, votre commande a été refusée.",
+    "NMOTIVO": "Aucun motif spécifié."
+  },
+
+  "DELIVERY_ESTADO": {
+    "ESPERANDO": "En attente de confirmation...",
+    "RECHAZADO": "Votre commande de livraison a été refusée.",
+    "NMOTIVO": "Aucun motif spécifié.",
+    "REVISANDO": "L'établissement révise votre commande.",
+    "COCINANDO": "Au travail ! On cuisine...",
+    "CAMINO": "Votre commande est en chemin.",
+    "ENTREGADO": "Commande Livrée ! Bonne dégustation."
+  },
+
+  "ENCUESTA": {
+    "E1": "Comment évalueriez-vous le service ?",
+    "E2": "Comment évalueriez-vous le goût de la nourriture ?",
+    "E3": "La nourriture était-elle chaude ?",
+    "E4": "Les portions étaient-elles adéquates ?",
+    "E5": "La présentation était-elle bonne ?",
+    "E6": "Quels types de menus préférez-vous au restaurant ?",
+    "E7": "Combien de temps avez-vous attendu pour le repas ?",
+    "COMENTARIOS": "COMMENTAIRES"
+  },
+
+  "PRODUCTOS": {
+    "CARGANDO": "Chargement de la Carte",
+    "CARTA": "NOTRE CARTE",
+    "COMIDA": "PLATS",
+    "BEBIDA": "BOISSONS",
+    "POSTRE": "DESSERTS",
+    "ACTIVAR": "Appuyez pour activer le capteur",
+    "MOVER": "Secouez votre appareil !",
+    "LISTO": "Prêt",
+    "VOLVER": "Retour",
+    "TOTAL": "Total",
+    "ESPERAMAX": "Attente max",
+    "MINUTOS": "minutes",
+    "CONFIRMAR_PEDIDO": "CONFIRMER COMMANDE"
   }
+
 }

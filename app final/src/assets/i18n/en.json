@@ -2,6 +2,7 @@
   "IDIOMA": {
     "TITULO": "Choose a language"
   },
+  
   "LOGIN": {
     "NOMBRE": "First Name",
     "APELLIDO": "Last Name",
@@ -14,6 +15,7 @@
     "GOOGLE": "Log In with Google",
     "ANONIMO": "Log In as Guest"
   },
+
   "DUENO": {
     "AGREGAR_EMPLEADO": "ADD EMPLOYEE",
     "AGREGAR_CLIENTE": "ADD CUSTOMER",
@@ -24,12 +26,14 @@
     "REGISTRAR": "Register Employee",
     "REGISTRAR_MESA": "Register Table"
   },
+
   "ROL": {
     "ROL": "Role",
     "COCINERO": "Chef/Bar",
     "MESERO": "Waiter",
     "MAITRE": "Maitre"
   },
+
   "SOLICITUD": {
     "SOLICITUD": "ACCESS REQUESTS",
     "NSOLICITUD": "No pending requests",
@@ -64,6 +68,7 @@
     "PREFERENCIA": "Preference",
     "CANCELAR": "Cancel"
   },
+
   "DUENO_DELIVERY": {
     "PEDIDOS": "NEW ORDERS",
     "NPEDIDOS": "No new orders",
@@ -73,17 +78,20 @@
     "NLISTOS": "No orders ready for delivery",
     "ENTREGAR": "HAND OVER TO DELIVERY"
   },
+
   "MESERO": {
     "CHAT": "CUSTOMER CHAT",
     "ACEPTAR_PEDIDO": "ACCEPT ORDERS",
     "ENTREGAR_PEDIDO": "DELIVER ORDERS",
     "COBROS": "PAYMENTS"
   },
+
   "CHEF": {
     "AVISAR": "NOTIFY FOOD READY",
     "COMIDA_DELIVERY": "DELIVERY FOOD",
     "CREAR": "CREATE FOOD"
   },
+
   "CHEF_DELIVERY": {
     "CARGANDO": "Loading Tickets",
     "COCINA": "KITCHEN - DELIVERY",
@@ -92,6 +100,7 @@
     "LISTO": "MARK AS READY",
     "NCOCINA": "No pending orders in kitchen"
   },
+
   "CHEF_CREAR": {
     "GUARDANDO": "Saving",
     "FOTO_PRODUCTO": "Product Photos (Tap to add)",
@@ -104,9 +113,61 @@
     "Postre": "Dessert",
     "CREAR": "CREATE DISH"
   },
+
   "BARTENDER": {
     "AVISAR": "NOTIFY DRINK READY",
     "COMIDA_DELIVERY": "DELIVERY DRINK",
     "CREAR": "CREATE DRINK"
+  },
+
+  "MESA_ESTADO": {
+    "BUSCANDO": "Looking for table...",
+    "MAITRE": "Please wait for the Maitre...",
+    "ESPERA": "You are on the waiting list",
+    "MESA": "Your table is "
+  },
+  "PRODUCTO_ESTADO": {
+    "ENVIANDO": "Sending order...",
+    "COCINA": "In the kitchen! Preparing your dishes.",
+    "MOZO": "The waiter will confirm your order soon.",
+    "LISTO": "Order on the table! Enjoy.",
+    "DISFRUTANDO": "Enjoying the food.",
+    "RECHAZADO": "Sorry, your order was rejected.",
+    "NMOTIVO": "No reason specified."
+  },
+  "DELIVERY_ESTADO": {
+    "ESPERANDO": "Waiting for confirmation...",
+    "RECHAZADO": "Your delivery order was rejected.",
+    "NMOTIVO": "No reason specified.",
+    "REVISANDO": "The restaurant is reviewing your order.",
+    "COCINANDO": "Getting to work! Cooking...",
+    "CAMINO": "Your order is on the way.",
+    "ENTREGADO": "Order Delivered! Enjoy it."
+  },
+  "ENCUESTA": {
+    "E1": "How would you rate the service?",
+    "E2": "How would you rate the food flavor?",
+    "E3": "Was the food hot?",
+    "E4": "Were the portions adequate?",
+    "E5": "Was the presentation good?",
+    "E6": "What types of menu do you prefer in the restaurant?",
+    "E7": "How long did you wait for the food?",
+    "COMENTARIOS": "COMMENTS"
+  },
+  "PRODUCTOS": {
+    "CARGANDO": "Loading Menu",
+    "CARTA": "OUR MENU",
+    "COMIDA": "FOOD",
+    "BEBIDA": "DRINKS",
+    "POSTRE": "DESSERTS",
+    "ACTIVAR": "Tap to activate the sensor",
+    "MOVER": "Shake your device!",
+    "LISTO": "Ready",
+    "VOLVER": "Back",
+    "TOTAL": "Total",
+    "ESPERAMAX": "Max wait",
+    "MINUTOS": "minutes",
+    "CONFIRMAR_PEDIDO": "CONFIRM ORDER"
   }
+
 }
