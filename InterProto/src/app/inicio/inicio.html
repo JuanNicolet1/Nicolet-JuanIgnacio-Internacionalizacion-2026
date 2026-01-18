@@ -1,9 +1,24 @@
-<div class="container">
-  <h1>{{ 'INICIO.BIENVENIDO' | translate }}</h1>
+<div class="main-screen">
+  <div class="header-section">
+    <h1>{{ 'INICIO.BIENVENIDO' | translate }}</h1>
+    <h3>{{ 'INICIO.TEXTO' | translate }}</h3>
+    <p class="subtitle">{{ 'INICIO.ELEGIR' | translate }}</p>
+  </div>
 
-  <div class="buttons">
-    <button class="btn secondary">Cambiar idioma</button>
-    <button class="btn primary">Pedir Comida</button>
-    <button class="btn accent" routerLink="/mapa">Ver Mapa</button>
+  <div class="menu-grid">
+    <button class="menu-card primary" routerLink="/menu">
+      <div class="icon-circle">🍴</div>
+      <span class="btn-label">{{ 'INICIO.PEDIR_COMIDA' | translate }}</span>
+    </button>
+
+    <button class="menu-card accent" routerLink="/mapa">
+      <div class="icon-circle">📍</div>
+      <span class="btn-label">{{ 'INICIO.VER_MAPA' | translate }}</span>
+    </button>
+
+    <button class="menu-card secondary" routerLink="/idiomas">
+      <div class="icon-circle">🌍</div>
+      <span class="btn-label">{{ 'INICIO.CAMBIAR_IDIOMA' | translate }}</span>
+    </button>
   </div>
 </div>

@@ -141,7 +141,7 @@ export class Mapa implements AfterViewInit {
   
 
   volver() {
-    this.router.navigate(['/delivery']);
+    this.router.navigate(['/inicio']);
   }
 
   mostrarError(msg: string){
@@ -182,13 +182,12 @@ export class Mapa implements AfterViewInit {
 
 cambiarIdiomaPorGps(codigo: string) {
   const mapeo: { [key: string]: string } = {
-    'br': 'pt', 'pt': 'pt',                     // Portugués
+    'br': 'po', 'pt': 'po',                     // Portugués
     'us': 'en', 'gb': 'en', 'ca': 'en',         // Inglés
-    'de': 'de', 'at': 'de',                     // Alemán
+    'de': 'al', 'at': 'de',                     // Alemán
     'fr': 'fr', 'be': 'fr',                     // Francés
     'ru': 'ru', 'by': 'ru',                     // Ruso
-    // Agrega los 10 de América para que el profesor vea la lógica
-    'ar': 'es', 'cl': 'es', 'mx': 'es', 'uy': 'es', 'co': 'es' 
+    'ar': 'es', 'cl': 'es', 'mx': 'es', 'uy': 'es', 'co': 'es' // Español
   };
 
   // Si el país no está en la lista, usa 'es' (español por defecto)

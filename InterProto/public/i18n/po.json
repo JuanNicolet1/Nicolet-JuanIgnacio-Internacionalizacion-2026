@@ -1,0 +1,52 @@
+{
+    "INICIO": {
+        "BIENVENIDO": "Bem-vindo ao InterProto",
+        "TEXTO": "O melhor restaurante virtual",
+        "ELEGIR": "Escolha uma opção",
+        "CAMBIAR_IDIOMA": "Mudar idioma",
+        "PEDIR_COMIDA": "Pedir Comida",
+        "VER_MAPA": "Ver Mapa"
+    },
+
+    "IDIOMA": {
+        "TITULO": "Selecione seu idioma"
+    },
+
+    "MAPA": {
+        "BUSCANDO": "Buscar rua e número"
+    },
+
+    "MENU": {
+        "CARTA": "NOSSO CARDÁPIO",
+        "COMIDA": "COMIDAS",
+        "BEBIDAS": "BEBIDAS",
+        "POSTRES": "SOBREMESAS"
+    },
+
+    "COMIDA": {
+        "POLLO": "Frango",
+        "CARNE": "Carne",
+        "FIDEOS": "Macarrão",
+        "TEXTO1": "Supremo de frango grelhado com ervas finas e acompanhamento",
+        "TEXTO2": "Bife de chorizo macio no ponto certo, acompanhado de batatas rústicas",
+        "TEXTO3": "Massa italiana artesanal com molho filetto ou branco e queijo parmesão"
+    },
+
+    "BEBIDA": {
+        "AGUA": "Água",
+        "COCA_COLA": "Coca Cola",
+        "VINO": "Vinho",
+        "TEXTO1": "Água mineral, frescor natural – com ou sem gás",
+        "TEXTO2": "Refrigerante clássico de 500ml, servido bem gelado com gelo e limão",
+        "TEXTO3": "Taça de Malbec reserva com notas de frutas vermelhas e madeira"
+    },
+
+    "POSTRE": {
+        "FLAN": "Flan",
+        "HELADO": "Sorvete",
+        "VOLCAN_CHOCOLATE": "Bolo Vulcão de Chocolate",
+        "TEXTO1": "Flan caseiro feito com ovos caipira, servido com doce de leite ou creme",
+        "TEXTO2": "Duas bolas artesanais à escolha: chocolate, baunilha ou morango",
+        "TEXTO3": "Bolo quente de chocolate com coração cremoso derretido e sorvete de creme"
+    }
+}

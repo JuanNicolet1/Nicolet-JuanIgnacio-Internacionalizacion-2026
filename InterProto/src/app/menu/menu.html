@@ -1,1 +1,71 @@
-<p>menu works!</p>
+<div class="back-button-container">
+  <button class="btn-back" (click)="moverAlLogin()">
+    <fa-icon [icon]="faArrowLeft"></fa-icon>
+  </button>
+</div>
+
+<div class="main-menu-container">
+  
+  <section class="menu-section">
+    <h1 class="carta">{{ 'MENU.CARTA' | translate }}</h1>
+    <h2 class="titulo-seccion">{{ 'MENU.COMIDA' | translate }}</h2>
+    <div class="scroll-container-horizontal">
+      @for (producto of comidas; track producto.nombre) {
+        <div class="card-producto">
+          <div class="inner-content">
+            <div class="imagen-producto">
+                <img [src]="producto.foto" [alt]="producto.nombre">
+            </div>
+            <span class="nombre">{{producto.nombre}}</span>
+            <p class="descripcion">{{producto.descripcion}}</p>
+            <div class="footer-card">
+              <span class="precio">${{producto.precio}}</span>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </section>
+
+  <section class="menu-section">
+    <h2 class="titulo-seccion">{{ 'MENU.BEBIDAS' | translate }}</h2>
+    <div class="scroll-container-horizontal">
+      @for (producto of bebidas; track producto.nombre) {
+        <div class="card-producto">
+          <div class="inner-content">
+            <div class="imagen-producto">
+                <img [src]="producto.foto" [alt]="producto.nombre">
+            </div>
+            <span class="nombre">{{producto.nombre}}</span>
+            <p class="descripcion">{{producto.descripcion}}</p>
+            <div class="footer-card">
+              <span class="precio">${{producto.precio}}</span>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </section>
+
+  <section class="menu-section">
+    <h2 class="titulo-seccion">{{ 'MENU.POSTRES' | translate }}</h2>
+    <div class="scroll-container-horizontal">
+      @for (producto of postres; track producto.nombre) {
+        <div class="card-producto">
+          <div class="inner-content">
+            <div class="imagen-producto">
+                <img [src]="producto.foto" [alt]="producto.nombre">
+            </div>
+            <span class="nombre">{{producto.nombre}}</span>
+            <p class="descripcion">{{producto.descripcion}}</p>
+            <div class="footer-card">
+              <span class="precio">${{producto.precio}}</span>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </section>
+
+</div>
+

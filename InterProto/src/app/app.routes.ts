@@ -16,4 +16,18 @@ export const routes: Routes = [
          (m) => m.Mapa
        ),
    },
+   {
+     path: 'menu',
+     loadComponent: () =>
+       import('./menu/menu').then(
+         (m) => m.Menu
+       ),
+   },
+   {
+     path: 'idiomas',
+     loadComponent: () =>
+       import('./idiomas/idiomas').then(
+         (m) => m.IdiomasComponent
+       ),
+   },
 ];

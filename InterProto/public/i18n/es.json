@@ -1,14 +1,52 @@
 {
     "INICIO": {
         "BIENVENIDO": "Bienvenido a InterProto",
+        "TEXTO": "El mejor restaurante virtual",
+        "ELEGIR": "Elige una opción",
         "CAMBIAR_IDIOMA": "Cambiar idioma",
         "PEDIR_COMIDA": "Pedir Comida",
         "VER_MAPA": "Ver Mapa"
     },
 
+    "IDIOMA": {
+        "TITULO": "Selecciona tu idioma"
+    },
+
+    "MAPA": {
+        "BUSCANDO": "Buscar calle y altura"
+    },
+
     "MENU": {
+        "CARTA": "NUESTRA CARTA",
         "COMIDA": "COMIDAS",
         "BEBIDAS": "BEBIDAS",
         "POSTRES": "POSTRES"
+    },
+
+    "COMIDA": {
+        "POLLO": "Pollo",
+        "CARNE": "Carne",
+        "FIDEOS": "Fideos",
+        "TEXTO1": "Suprema de pollo a la plancha con finas hierbas y guarnición",
+        "TEXTO2": "Bife de chorizo tierno en su punto justo, acompañado de papas rústicas",
+        "TEXTO3": "Pasta italiana artesanal con salsa fileto o blanca y queso parmesano"
+    },
+
+    "BEBIDA": {
+        "AGUA": "Agua",
+        "COCA_COLA": "Coca Cola",
+        "VINO": "Vino",
+        "TEXTO1": "Agua mineral, frescura natural con o sin gas",
+        "TEXTO2": "Refresco clásico de 500ml, servido bien frío con hielo y limón",
+        "TEXTO3": "Copa de Malbec reserva con notas de frutos rojos y madera"
+    },
+
+    "POSTRE": {
+        "FLAN": "Flan",
+        "HELADO": "Helado",
+        "VOLCAN_CHOCOLATE": "Volcán de Chocolate",
+        "TEXTO1": "Flan casero con huevos de campo, servido con dulce de leche o crema",
+        "TEXTO2": "Dos bochas artesanales a elección: chocolate, vainilla o frutilla",
+        "TEXTO3": "Bizcocho caliente con corazón de chocolate fundido y helado de crema"
     }
 }

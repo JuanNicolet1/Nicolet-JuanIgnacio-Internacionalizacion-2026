@@ -1,0 +1,89 @@
+.main-screen {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #780000 0%, #3a0000 100%);
+  display: flex;
+  flex-direction: column;
+  padding: 40px 20px;
+  color: white;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+.header-section {
+  text-align: center;
+  margin-bottom: 40px;
+
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 5px;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    font-weight: 300;
+    opacity: 0.9;
+  }
+
+  .subtitle {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #ffc107;
+  }
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  width: 100%;
+}
+
+.menu-card {
+  border: none;
+  border-radius: 20px;
+  padding: 25px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  &.primary {
+    grid-column: span 2; 
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+  }
+
+  &.accent, &.secondary {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+  }
+
+  .icon-circle {
+    width: 60px;
+    height: 60px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+
+  .btn-label {
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+    text-align: center;
+  }
+}

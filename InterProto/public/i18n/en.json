@@ -1,14 +1,52 @@
 {
     "INICIO": {
         "BIENVENIDO": "Welcome to InterProto",
-        "CAMBIAR_IDIOMA": "Cambiar idioma",
-        "PEDIR_COMIDA": "Pedir Comida",
-        "VER_MAPA": "Ver Mapa"
+        "TEXTO": "The best virtual restaurant",
+        "ELEGIR": "Choose an option",
+        "CAMBIAR_IDIOMA": "Change language",
+        "PEDIR_COMIDA": "Order Food",
+        "VER_MAPA": "View Map"
+    },
+
+    "IDIOMA": {
+        "TITULO": "Select your language"
+    },
+
+    "MAPA": {
+        "BUSCANDO": "Search street and number"
     },
 
     "MENU": {
-        "COMIDA": "COMIDAS",
-        "BEBIDAS": "BEBIDAS",
-        "POSTRES": "POSTRES"
+        "CARTA": "OUR MENU",
+        "COMIDA": "FOOD",
+        "BEBIDAS": "DRINKS",
+        "POSTRES": "DESSERTS"
+    },
+
+    "COMIDA": {
+        "POLLO": "Chicken",
+        "CARNE": "Beef",
+        "FIDEOS": "Pasta",
+        "TEXTO1": "Grilled chicken breast with fine herbs and side dish",
+        "TEXTO2": "Tender bife de chorizo cooked to perfection, served with rustic potatoes",
+        "TEXTO3": "Handmade Italian pasta with filetto or white sauce and parmesan cheese"
+    },
+
+    "BEBIDA": {
+        "AGUA": "Water",
+        "COCA_COLA": "Coca Cola",
+        "VINO": "Wine",
+        "TEXTO1": "Mineral water, natural freshness – still or sparkling",
+        "TEXTO2": "Classic 500ml soda, served ice cold with ice and lemon",
+        "TEXTO3": "Glass of reserve Malbec with notes of red fruit and oak"
+    },
+
+    "POSTRE": {
+        "FLAN": "Flan",
+        "HELADO": "Ice Cream",
+        "VOLCAN_CHOCOLATE": "Chocolate Lava Cake",
+        "TEXTO1": "Homemade flan made with free-range eggs, served with dulce de leche or cream",
+        "TEXTO2": "Two artisan scoops of your choice: chocolate, vanilla or strawberry",
+        "TEXTO3": "Hot chocolate cake with molten chocolate center and vanilla ice cream"
     }
 }

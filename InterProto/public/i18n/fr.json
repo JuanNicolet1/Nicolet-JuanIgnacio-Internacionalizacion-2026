@@ -1,0 +1,52 @@
+{
+    "INICIO": {
+        "BIENVENIDO": "Bienvenue chez InterProto",
+        "TEXTO": "Le meilleur restaurant virtuel",
+        "ELEGIR": "Choisissez une option",
+        "CAMBIAR_IDIOMA": "Changer de langue",
+        "PEDIR_COMIDA": "Commander à manger",
+        "VER_MAPA": "Voir la carte"
+    },
+
+    "IDIOMA": {
+        "TITULO": "Sélectionnez votre langue"
+    },
+
+    "MAPA": {
+        "BUSCANDO": "Rechercher rue et numéro"
+    },
+
+    "MENU": {
+        "CARTA": "NOTRE CARTE",
+        "COMIDA": "PLATS",
+        "BEBIDAS": "BOISSONS",
+        "POSTRES": "DESSERTS"
+    },
+
+    "COMIDA": {
+        "POLLO": "Poulet",
+        "CARNE": "Viande",
+        "FIDEOS": "Pâtes",
+        "TEXTO1": "Suprême de poulet grillé aux fines herbes et garniture",
+        "TEXTO2": "Bife de chorizo tendre cuit à point, accompagné de pommes de terre rustiques",
+        "TEXTO3": "Pâtes italiennes artisanales avec sauce tomate ou sauce blanche et parmesan"
+    },
+
+    "BEBIDA": {
+        "AGUA": "Eau",
+        "COCA_COLA": "Coca Cola",
+        "VINO": "Vin",
+        "TEXTO1": "Eau minérale, fraîcheur naturelle – plate ou gazeuse",
+        "TEXTO2": "Soda classique 500 ml, servi bien frais avec glaçons et citron",
+        "TEXTO3": "Verre de Malbec réserve avec notes de fruits rouges et boisé"
+    },
+
+    "POSTRE": {
+        "FLAN": "Flan",
+        "HELADO": "Glace",
+        "VOLCAN_CHOCOLATE": "Coulant au chocolat",
+        "TEXTO1": "Flan maison aux œufs de ferme, servi avec dulce de leche ou crème",
+        "TEXTO2": "Deux boules artisanales au choix : chocolat, vanille ou fraise",
+        "TEXTO3": "Gâteau au chocolat chaud avec cœur coulant et glace à la vanille"
+    }
+}

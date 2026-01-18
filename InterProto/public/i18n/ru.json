@@ -1,0 +1,52 @@
+{
+    "INICIO": {
+        "BIENVENIDO": "Добро пожаловать в InterProto",
+        "TEXTO": "Лучший виртуальный ресторан",
+        "ELEGIR": "Выберите опцию",
+        "CAMBIAR_IDIOMA": "Сменить язык",
+        "PEDIR_COMIDA": "Заказать еду",
+        "VER_MAPA": "Посмотреть карту"
+    },
+
+    "IDIOMA": {
+        "TITULO": "Выберите ваш язык"
+    },
+
+    "MAPA": {
+        "BUSCANDO": "Поиск улицы и номера дома"
+    },
+
+    "MENU": {
+        "CARTA": "НАШЕ МЕНЮ",
+        "COMIDA": "БЛЮДА",
+        "BEBIDAS": "НАПИТКИ",
+        "POSTRES": "ДЕСЕРТЫ"
+    },
+
+    "COMIDA": {
+        "POLLO": "Курица",
+        "CARNE": "Говядина",
+        "FIDEOS": "Паста",
+        "TEXTO1": "Куриная грудка на гриле c пряными травами и гарниром (Kurinnaya grudka na grile s pryanymi travami i garnirom)",
+        "TEXTO2": "Нежный бифштекс де чоризо средней прожарки, c деревенским картофелем (Nezhnyy bifshteks de chorizo sredney prozharki, s derevenskim kartofelem)",
+        "TEXTO3": "Ручная итальянская паста c соусом филе или белым соусом и пармезаном (Ruchnaya ital'yanskaya pasta s sousom file ili belym sousom i parmezanom)"
+    },
+
+    "BEBIDA": {
+        "AGUA": "Вода",
+        "COCA_COLA": "Кока-Кола",
+        "VINO": "Вино",
+        "TEXTO1": "Минеральная вода, натуральная свежесть - без газа или газированная (Mineral'naya voda, natural'naya svezhest' - bez gaza ili gazirovannaya)",
+        "TEXTO2": "Классическая кола 500 мл, подаётся сильно охлаждённой co льдом и лимоном (Klassicheskaya kola 500 ml, подаётся sil'no okhlazhdyonnoy so l'dom i limonom)",
+        "TEXTO3": "Бокал резервного Мальбека c нотами красных ягод и дуба (Bokal rezervnogo Mal'beka s notami krasnykh yagod i duba)"
+    },
+
+    "POSTRE": {
+        "FLAN": "Флан",
+        "HELADO": "Мороженое",
+        "VOLCAN_CHOCOLATE": "Шоколадный фондан / Лавовый кекс",
+        "TEXTO1": "Домашний флан из деревенских яиц, подаётся c dulce de leche или сливками (Domashniy flan iz derevenskikh yayts, подаётся s dulce de leche ili slivkami)",
+        "TEXTO2": "Два шарика на выбор: шоколад, ваниль или клубника (Dva sharika na vybor: shokolad, vanil' ili klubnika)",
+        "TEXTO3": "Горячий шоколадный кекс c жидким шоколадным центром и ванильным мороженым (Goryachiy shokoladnyy keks s zhidkim shokoladnym tsentrom i vanil'nym morozhenym)"
+    }
+}

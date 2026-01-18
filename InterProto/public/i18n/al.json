@@ -1,0 +1,52 @@
+{
+    "INICIO": {
+        "BIENVENIDO": "Willkommen bei InterProto",
+        "TEXTO": "Das beste virtuelle Restaurant",
+        "ELEGIR": "Wählen Sie eine Option",
+        "CAMBIAR_IDIOMA": "Sprache ändern",
+        "PEDIR_COMIDA": "Essen bestellen",
+        "VER_MAPA": "Karte anzeigen"
+    },
+
+    "IDIOMA": {
+        "TITULO": "Wählen Sie Ihre Sprache"
+    },
+
+    "MAPA": {
+        "BUSCANDO": "Straße und Hausnummer suchen"
+    },
+
+    "MENU": {
+        "CARTA": "UNSERE KARTE",
+        "COMIDA": "SPEISEN",
+        "BEBIDAS": "GETRÄNKE",
+        "POSTRES": "NACHSPEISEN"
+    },
+
+    "COMIDA": {
+        "POLLO": "Hähnchen",
+        "CARNE": "Rindfleisch",
+        "FIDEOS": "Nudeln",
+        "TEXTO1": "Gegrilltes Hähnchenbrustfilet mit feinen Kräutern und Beilage",
+        "TEXTO2": "Zartes Bife de Chorizo medium gebraten, mit rustikalen Kartoffeln",
+        "TEXTO3": "Handgemachte italienische Pasta mit Filetto- oder Weißweinsauce und Parmesan"
+    },
+
+    "BEBIDA": {
+        "AGUA": "Wasser",
+        "COCA_COLA": "Coca Cola",
+        "VINO": "Wein",
+        "TEXTO1": "Mineralwasser, natürliche Frische – still oder mit Kohlensäure",
+        "TEXTO2": "Klassische 500-ml-Cola, eiskalt serviert mit Eis und Zitrone",
+        "TEXTO3": "Glas Reserve-Malbec mit Noten von roten Früchten und Eiche"
+    },
+
+    "POSTRE": {
+        "FLAN": "Flan",
+        "HELADO": "Eis",
+        "VOLCAN_CHOCOLATE": "Schokoladenlava",
+        "TEXTO1": "Hausgemachter Flan aus Freilandeiern, serviert mit Dulce de Leche oder Sahne",
+        "TEXTO2": "Zwei handwerkliche Kugeln nach Wahl: Schokolade, Vanille oder Erdbeere",
+        "TEXTO3": "Heißer Schokoladenkuchen mit flüssigem Schokoladenkern und Vanilleeis"
+    }
+}

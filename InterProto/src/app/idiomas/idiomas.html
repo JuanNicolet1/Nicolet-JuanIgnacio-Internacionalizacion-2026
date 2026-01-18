@@ -1,1 +1,46 @@
-<p>idiomas works!</p>
+<div class="language-screen">
+  <div class="back-button-container">
+    <button class="btn-back" (click)="moverAlLogin()">
+      <fa-icon [icon]="faArrowLeft"></fa-icon>
+    </button>
+  </div>
+
+  <div class="content-wrapper">
+    <div class="header">
+      <div class="icon-globe">🌍</div>
+      <h2>{{ 'IDIOMA.TITULO' | translate }}</h2>
+    </div>
+
+    <div class="languages-grid">
+      <button class="lang-card" (click)="cambiarIdioma('es')">
+        <span class="flag">🇪🇸</span>
+        <span class="name">Español</span>
+      </button>
+
+      <button class="lang-card" (click)="cambiarIdioma('en')">
+        <span class="flag">🇺🇸</span>
+        <span class="name">English</span>
+      </button>
+
+      <button class="lang-card" (click)="cambiarIdioma('de')">
+        <span class="flag">🇩🇪</span>
+        <span class="name">Deutsch</span>
+      </button>
+
+      <button class="lang-card" (click)="cambiarIdioma('fr')">
+        <span class="flag">🇫🇷</span>
+        <span class="name">Français</span>
+      </button>
+
+      <button class="lang-card" (click)="cambiarIdioma('pt')">
+        <span class="flag">🇧🇷</span>
+        <span class="name">Português</span>
+      </button>
+
+      <button class="lang-card" (click)="cambiarIdioma('ru')">
+        <span class="flag">🇷🇺</span>
+        <span class="name">Русский</span>
+      </button>
+    </div>
+  </div>
+</div>
