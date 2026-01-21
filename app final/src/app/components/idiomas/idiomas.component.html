@@ -1,14 +1,44 @@
-<h2>{{ 'IDIOMA.TITULO' | translate }}</h2>
+<div class="language-container">
+  <div class="back-button-container">
+    <button class="btn-back" (click)="moverAlLogin()">
+      <fa-icon [icon]="faArrowLeft"></fa-icon>
+    </button>
+  </div>
 
-<button (click)="cambiarIdioma('es')">Español</button>
-<button (click)="cambiarIdioma('en')">English</button>
-<button (click)="cambiarIdioma('de')">Deutsch</button>
-<button (click)="cambiarIdioma('fr')">Français</button>
-<button (click)="cambiarIdioma('pt')">Português</button>
-<button (click)="cambiarIdioma('ru')">Русский</button>
+  <div class="header-languages">
+    <div class="globe-icon">🌍</div>
+    <h2>{{ 'IDIOMA.TITULO' | translate }}</h2>
+  </div>
 
-<div class="back-button">
-  <button (click)="moverAlLogin()">
-    <fa-icon [icon]="faArrowLeft"></fa-icon>
-  </button>
+  <div class="languages-grid">
+    <button class="lang-card" (click)="cambiarIdioma('es')">
+      <span class="flag">🇪🇸</span>
+      <span class="lang-name">Español</span>
+    </button>
+
+    <button class="lang-card" (click)="cambiarIdioma('en')">
+      <span class="flag">🇺🇸</span>
+      <span class="lang-name">English</span>
+    </button>
+
+    <button class="lang-card" (click)="cambiarIdioma('de')">
+      <span class="flag">🇩🇪</span>
+      <span class="lang-name">Deutsch</span>
+    </button>
+
+    <button class="lang-card" (click)="cambiarIdioma('fr')">
+      <span class="flag">🇫🇷</span>
+      <span class="lang-name">Français</span>
+    </button>
+
+    <button class="lang-card" (click)="cambiarIdioma('pt')">
+      <span class="flag">🇧🇷</span>
+      <span class="lang-name">Português</span>
+    </button>
+
+    <button class="lang-card" (click)="cambiarIdioma('ru')">
+      <span class="flag">🇷🇺</span>
+      <span class="lang-name">Русский</span>
+    </button>
+  </div>
 </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import {
   IonicModule,
   ModalController,
@@ -31,6 +31,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   imports: [FontAwesomeModule, RouterLink, CommonModule, IonicModule, TranslateModule],
 })
 export class HomeComponent implements ViewWillEnter, ViewDidLeave {
+  private translate = inject(TranslateService)
 
   isLoading: boolean = true;
 
@@ -384,10 +385,10 @@ export class HomeComponent implements ViewWillEnter, ViewDidLeave {
             c.estadoCuenta === 'cuentaConfirmada'
           ) {
             Swal.fire({
-              title: 'Pago exitoso',
-              text: `Su pago se registró con éxito ¡Vuelva pronto!`,
+              title: this.translate.instant('OTROS_SWAL.PAGO_EXITOSO'),
+              text: this.translate.instant('OTROS_SWAL.EXITOSO'),
               icon: 'success',
-              confirmButtonText: 'Aceptar',
+              confirmButtonText: this.translate.instant('SWAL_GENERAL.ACEPTAR'),
               confirmButtonColor: '#780000',
               background: '#333',
               heightAuto: false,
@@ -475,8 +476,8 @@ export class HomeComponent implements ViewWillEnter, ViewDidLeave {
 
             if (ahora >= fechaLimite) {
               Swal.fire({
-                title: 'Reserva vencida',
-                text: 'Tu reserva expiró luego de 45 minutos.',
+                title: this.translate.instant('OTROS_SWAL.RESERVA_VENCIDA'),
+                text: this.translate.instant('OTROS_SWAL.EXPIRO'),
                 icon: 'error',
                 background: '#333',
                 color: '#fff',
@@ -503,8 +504,8 @@ export class HomeComponent implements ViewWillEnter, ViewDidLeave {
 
             if (ahora < fechaReserva) {
               Swal.fire({
-                title: 'Acceso no permitido',
-                text: `Todavía no es la hora de tu reserva (${fechaReserva.toLocaleString()}).`,
+                title: this.translate.instant('OTROS_SWAL.NPERMITIDO'),
+                text: `${this.translate.instant('OTROS_SWAL.NHORA')} (${fechaReserva.toLocaleString()}).`,
                 icon: 'warning',
                 background: '#333',
                 color: '#fff',
@@ -523,11 +524,11 @@ export class HomeComponent implements ViewWillEnter, ViewDidLeave {
           }else if(this.scanResult != `mesa-${this.auth.usuarioIngresado.estadoMesa}`){
             Swal.fire({
               heightAuto: false,
-              title: 'Esta no es la mesa que reservaste',
+              title: this.translate.instant('OTROS_SWAL.NRESERVA'),
               background: '#333',
               color: '#fff',
               confirmButtonColor: '#780000',
-              confirmButtonText: 'Aceptar',
+              confirmButtonText: this.translate.instant('SWAL_GENERAL.ACEPTAR'),
             });
             this.isLoading = false;
           } 
@@ -535,11 +536,11 @@ export class HomeComponent implements ViewWillEnter, ViewDidLeave {
           else if(this.auth.usuarioIngresado.estadoMesa === 'sin-pedir') {
             Swal.fire({
               heightAuto: false,
-              title: 'Debe solicitar mesa primero',
+              title: this.translate.instant('OTROS_SWAL.SOLICITAR'),
               background: '#333',
               color: '#fff',
               confirmButtonColor: '#780000',
-              confirmButtonText: 'Aceptar',
+              confirmButtonText: this.translate.instant('SWAL_GENERAL.ACEPTAR'),
             });
             this.isLoading = false;
           }
@@ -556,8 +557,8 @@ export class HomeComponent implements ViewWillEnter, ViewDidLeave {
         }
 
         await this.db.enviarNotificacion('maitre', {
-          titulo: 'Cliente espera mesa',
-          cuerpo: `Asigne una mesa al cliente ${this.auth.usuarioIngresado.nombre}`,
+          titulo: this.translate.instant('OTRA_NOTIFICACION.ESPERA_MESA'),
+          cuerpo: `${this.translate.instant('OTRA_NOTIFICACION.ASIGNAR_MESA')} ${this.auth.usuarioIngresado.nombre}`,
         });
 
         this.router.navigateByUrl('/cliente-espera-mesa');
@@ -577,15 +578,15 @@ export class HomeComponent implements ViewWillEnter, ViewDidLeave {
         if (notification.actionId === 'entregarCuentaDelivery') {
           
           Swal.fire({
-            title: 'Cobrar Delivery',
-            text: `El cliente ${this.cliente} solicita la cuenta. ¿Confirmar entrega de cuenta?`,
+            title: this.translate.instant('OTROS_SWAL.COBRAR'),
+            text: `${this.translate.instant('NOTIFICACIONES_CLIDEL.CLIENTE')} ${this.cliente} ${this.translate.instant('OTROS_SWAL.TEXTO1')}`,
             icon: 'info',
             background: '#333',
             color: '#fff',
-            confirmButtonText: 'Entregar Cuenta',
+            confirmButtonText: this.translate.instant('OTROS_SWAL.ENVIAR'),
             confirmButtonColor: '#780000',
             showCancelButton: true,
-            cancelButtonText: 'Cancelar',
+            cancelButtonText: this.translate.instant('SWAL_GENERAL.CANCELAR'),
             heightAuto: false,
           }).then((resp) => {
             if (resp.isConfirmed) {
@@ -610,12 +611,12 @@ export class HomeComponent implements ViewWillEnter, ViewDidLeave {
           let numMesa = this.db.mesa; 
           
           Swal.fire({
-            title: 'Enviar cuenta',
-            text: `La mesa ${numMesa} está solicitando la cuenta`,
+            title: this.translate.instant('OTROS_SWAL.ENVIAR'),
+            text: `${this.translate.instant('SWAL_MESERO.LA_MESA')} ${numMesa} ${this.translate.instant('OTROS_SWAL.TEXTO2')}`,
             icon: 'info',
             background: '#333',
             color: '#fff',
-            confirmButtonText: 'Enviar',
+            confirmButtonText: this.translate.instant('SWAL_GENERAL.ENVIAR'),
             confirmButtonColor: '#780000',
             heightAuto: false,
           }).then((resp) => {
@@ -638,10 +639,10 @@ export class HomeComponent implements ViewWillEnter, ViewDidLeave {
               }
 
               Swal.fire({
-                title: 'Cuenta enviada',
-                text: `La mesa ${numMesa} recibirá su cuenta`,
+                title: this.translate.instant('OTROS_SWAL.ENVIADA'),
+                text: `${this.translate.instant('SWAL_MESERO.LA_MESA')} ${numMesa} ${this.translate.instant('OTROS_SWAL.TEXTO3')}`,
                 icon: 'success',
-                confirmButtonText: 'Aceptar',
+                confirmButtonText: this.translate.instant('SWAL_GENERAL.ACEPTAR'),
                 confirmButtonColor: '#780000',
                 heightAuto: false,
                 background: '#333',
@@ -697,9 +698,9 @@ export class HomeComponent implements ViewWillEnter, ViewDidLeave {
     let numMesa = this.db.mesa;
     Swal.fire({
       title: 'Enviar cuenta',
-      text: `La mesa ${numMesa} está solicitando la cuenta`,
+      text: `${this.translate.instant('SWAL_MESERO.LA_MESA')} ${numMesa} ${this.translate.instant('OTROS_SWAL.TEXTO4')}`,
       icon: 'info',
-      confirmButtonText: 'Enviar',
+      confirmButtonText: this.translate.instant('SWAL_GENERAL.ENVIAR'),
       confirmButtonColor: '#780000',
       heightAuto: false,
     }).then((resp) => {
@@ -713,10 +714,10 @@ export class HomeComponent implements ViewWillEnter, ViewDidLeave {
         this.pedido.estadoPedido = 'cuentaEntregada';
         this.db.ModificarObjeto(this.pedido, 'pedidos');
         Swal.fire({
-          title: 'Cuenta enviada',
-          text: `La mesa ${numMesa} recibirá su cuenta`,
+          title: this.translate.instant('OTROS_SWAL.ENVIADA'),
+          text: `${this.translate.instant('SWAL_MESERO.LA_MESA')} ${numMesa} ${this.translate.instant('OTROS_SWAL.TEXTO3')}`,
           icon: 'success',
-          confirmButtonText: 'Aceptar',
+          confirmButtonText: this.translate.instant('SWAL_GENERAL.ACEPTAR'),
           confirmButtonColor: '#780000',
           heightAuto: false,
         });

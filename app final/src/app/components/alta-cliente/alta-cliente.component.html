@@ -89,11 +89,11 @@
       </div>
       
       <div class="error-msg" *ngIf="clienteForm.hasError('passwordsMismatch') && clienteForm.get('repetir_contraseña')?.touched">
-        Las contraseñas no coinciden
+        {{ 'LOGIN.ERROR' | translate }}
       </div>
 
       <button class="btn-register" type="submit" [disabled]="!clienteForm.valid">
-        REGISTRARSE
+        {{ 'LOGIN.REGISTRARSE' | translate }}
       </button>
 
     </form>

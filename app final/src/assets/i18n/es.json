@@ -1,6 +1,19 @@
 {
   "IDIOMA": {
+    "IDIOMAS": "Cambiar Idiomas",
     "TITULO": "Elige un idioma"
+  },
+
+  "CORREO": {
+    "TEXTO1": "Ingrese su Correo",
+    "TEXTO2": "Ingrese un correo válido",
+    "TEXTO3": "Correo incompleto",
+    "TEXTO4": "Correo inválido",
+    "TEXTO5": "Contraseña incompleta",
+    "TEXTO6": "Contraseña Incorrecta",
+    "NUSUARIO": "Usuario no encontrado",
+    "NUEVAMENTE": "Ingrese los datos nuevamente",
+    "TEXTO7": "Ingrese su contraseña"
   },
 
   "LOGIN": {
@@ -13,7 +26,9 @@
     "CREAR": "Registrarse",
     "INICIAR": "Iniciar Sesión",
     "GOOGLE": "Iniciar Sesión con Google",
-    "ANONIMO": "Iniciar Anónimo"
+    "ANONIMO": "Iniciar Anónimo",
+    "REGISTRARSE": "REGISTRARSE",
+    "ERROR": "Las contraseñas no coinciden"
   },
 
   "DUENO": {
@@ -402,7 +417,8 @@
     "RECHAZAR": "Rechazar",
     "TOTAL": "Total",
     "CANCELAR": "Cancelar",
-    "CONFIRMAR": "Confirmar"
+    "CONFIRMAR": "Confirmar",
+    "ENVIAR": "Enviar"
   },
 
   "SWAL_LOGIN": {
@@ -587,6 +603,25 @@
     "ENTREGA_EXITOSA": "¡Entrega Exitosa!"
   },
 
+  "OTROS_SWAL": {
+    "TEXTO1": "solicita la cuenta. ¿Confirmar entrega de cuenta?",
+    "TEXTO2": "está solicitando la cuenta",
+    "TEXTO3": "recibirá su cuenta",
+    "TEXTO4": "está solicitando la cuenta",
+    "SOLICITAR": "Debe solicitar mesa primero",
+    "NRESERVA": "Esta no es la mesa que reservaste",
+    "NPERMITIDO": "Acceso no permitido",
+    "NHORA": "Todavía no es la hora de tu reserva",
+    "RESERVA_VENCIDA": "Reserva vencida",
+    "EXPIRO": "Tu reserva expiró luego de 45 minutos.",
+    "PAGO_EXITOSO": "Pago exitoso",
+    "EXITOSO": "Su pago se registró con éxito ¡Vuelva pronto!",
+    "COBRAR": "Cobrar Delivery",
+    "ENVIADA": "Cuenta enviada",
+    "ENVIAR": "Enviar cuenta",
+    "ENTREGAR": "Entregar Cuenta"
+  },
+
   "NOTIFICACIONES_PRODUCTOS": {
     "NUEVO_PEDIDO": "Nuevo Pedido",
     "MESA": "Mesa",
@@ -684,6 +719,11 @@
   "NOTIFICACION_DELIVERY": {
     "NUEVO_PEDIDO": "Nuevo Pedido",
     "DELIVERY": "Cliente realizo un delivery"
+  },
+
+  "OTRA_NOTIFICACION": {
+    "ESPERA_MESA": "Cliente espera mesa",
+    "ASIGNAR_MESA": "Asigne una mesa al cliente"
   },
 
   "INFO": {

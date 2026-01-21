@@ -125,30 +125,30 @@ export class IniciarSesionComponent {
           switch (error.code) {
             case 'auth/missing-email':
               this.mailError = true;
-              this.mensajeMail = 'Correo incompleto';
+              this.mensajeMail = this.translate.instant('CORREO.TEXTO3');
               break;
             case 'auth/invalid-email':
               this.mailError = true;
-              this.mensajeMail = 'Correo inválido';
+              this.mensajeMail = this.translate.instant('CORREO.TEXTO4');
               break;
             case 'auth/missing-password':
               this.contrasenaError = true;
-              this.mensajeContrasena = 'Contraseña incompleta';
+              this.mensajeContrasena = this.translate.instant('CORREO.TEXTO5');
               break;
             case 'auth/wrong-password':
               this.contrasenaError = true;
-              this.mensajeContrasena = 'Contraseña Incorrecta';
+              this.mensajeContrasena = this.translate.instant('CORREO.TEXTO6');
               break;
             case 'auth/user-not-found':
             case 'auth/invalid-credential':
-              this.mensajeUsuario = 'Usuario no encontrado';
+              this.mensajeUsuario = this.translate.instant('CORREO.NUSUARIO');
               this.usuarioNoEncontrado = true;
               if (this.intentosInicioSesion > 2) {
                 this.formInicioSesion.patchValue({
                   email: '',
                   contraseña: '',
                 });
-                this.mensajeUsuario = 'Ingrese los datos nuevamente';
+                this.mensajeUsuario = this.translate.instant('CORREO.NUEVAMENTE');
               }
               this.intentosInicioSesion++;
               break;
@@ -189,9 +189,9 @@ export class IniciarSesionComponent {
       camposValidados = false;
       this.mailError = true;
       if (controlMail.errors!['required']) {
-        this.mensajeMail = 'Ingrese su Correo';
+        this.mensajeMail = this.translate.instant('CORREO.TEXTO1');
       } else if (controlMail.errors!['email']) {
-        this.mensajeMail = 'Ingrese un Correo válido';
+        this.mensajeMail = this.translate.instant('CORREO.TEXTO2');
       }
     }
 
@@ -199,7 +199,7 @@ export class IniciarSesionComponent {
       camposValidados = false;
       this.contrasenaError = true;
       if (controlContrasena.errors!['required']) {
-        this.mensajeContrasena = 'Ingrese su contraseña';
+        this.mensajeContrasena = this.translate.instant('CORREO.TEXTO7');
       }
     }
 

@@ -12,6 +12,7 @@ import { CommonModule } from '@angular/common';
 import { GoogleAuth } from '@codetrix-studio/capacitor-google-auth';
 import { InfoPedidoComponent } from './components/info-pedido/info-pedido.component';
 import { PedidoService } from './services/pedido.service';
+import { TranslateService } from '@ngx-translate/core';
 
 GoogleAuth.initialize();
 
@@ -35,8 +36,12 @@ export class AppComponent implements OnInit, OnDestroy {
     protected pushService: pushService,
     protected router: Router,
     public pedidoService: PedidoService, 
-    private ngZone: NgZone
-  ) {}
+    private ngZone: NgZone,
+    private translate: TranslateService
+  ) {
+    this.translate.setDefaultLang('es');
+    this.translate.use('es');
+  }
 
   ngOnInit(): void {
     

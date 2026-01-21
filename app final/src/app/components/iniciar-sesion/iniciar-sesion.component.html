@@ -1,14 +1,19 @@
 <div class="container">
   <div class="screen">
     <div class="screen__content">
-      <a routerLink="/idiomas">Idiomas</a>
+      <button class="lang-selector-btn" routerLink="/idiomas">
+    <div class="lang-content">
+      <fa-icon [icon]="['fas', 'globe']"></fa-icon>
+      <span>{{ 'LOGIN.IDIOMA_SHORT' | translate }}</span> 
+    </div>
+  </button>
       <form class="login" [formGroup]="formInicioSesion">
         <div class="login__field">
           <fa-icon [icon]="['fas', 'user']" class="login__icon"></fa-icon>
           <input
             type="email"
             class="login__input"
-            placeholder="Correo"
+            [placeholder]="'LOGIN.EMAIL' | translate"
             name="email"
             formControlName="email"
           />
@@ -23,7 +28,7 @@
           <input
             type="password"
             class="login__input"
-            placeholder="Contraseña"
+            [placeholder]="'LOGIN.CONTRASENA' | translate"
             name="contrasena"
             formControlName="contrasena"
           />

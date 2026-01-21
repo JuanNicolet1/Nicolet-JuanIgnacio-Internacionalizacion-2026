@@ -1,0 +1,730 @@
+{
+  "IDIOMA": {"IDIOMAS": "Sprache ändern",
+    "TITULO": "Wählen Sie eine Sprache"
+  },
+
+  "CORREO": {
+    "TEXTO1": "Geben Sie Ihre E-Mail ein",
+    "TEXTO2": "Geben Sie eine gültige E-Mail ein",
+    "TEXTO3": "E-Mail unvollständig",
+    "TEXTO4": "Ungültige E-Mail",
+    "TEXTO5": "Passwort unvollständig",
+    "TEXTO6": "Falsches Passwort",
+    "NUSUARIO": "Benutzer nicht gefunden",
+    "NUEVAMENTE": "Geben Sie die Daten erneut ein",
+    "TEXTO7": "Geben Sie Ihr Passwort ein"
+  },
+
+  "LOGIN": {
+    "NOMBRE": "Vorname",
+    "APELLIDO": "Nachname",
+    "DOCUMENTO_IDENTIDAD": "Ausweis / Personalausweis",
+    "EMAIL": "E-Mail",
+    "CONTRASENA": "Passwort",
+    "REPETIR": "Passwort wiederholen",
+    "CREAR": "Registrieren",
+    "INICIAR": "Anmelden",
+    "GOOGLE": "Mit Google anmelden",
+    "ANONIMO": "Als Gast fortfahren",
+    "REGISTRARSE": "REGISTRIEREN",
+    "ERROR": "Die Passwörter stimmen nicht überein"
+  },
+
+  "DUENO": {
+    "AGREGAR_EMPLEADO": "MITARBEITER HINZUFÜGEN",
+    "AGREGAR_CLIENTE": "KUNDEN HINZUFÜGEN",
+    "ACEPTAR": "KUNDEN GENEHMIGEN",
+    "MESA": "Tisch erstellen",
+    "RESERVA": "Reservierung annehmen",
+    "DELIVERY": "Lieferung",
+    "REGISTRAR": "Mitarbeiter registrieren",
+    "REGISTRAR_MESA": "Tisch registrieren"
+  },
+
+  "ROL": {
+    "ROL": "Rolle",
+    "COCINERO": "Koch/Bar",
+    "MESERO": "Kellner",
+    "MAITRE": "Maitre d'hôtel / Oberkellner"
+  },
+
+  "SOLICITUD": {
+    "SOLICITUD": "ZUGANGSANFRAGEN",
+    "NSOLICITUD": "Keine ausstehenden Anfragen",
+    "PENDIENTE": "Ausstehend",
+    "PERMITIR": "Genehmigen",
+    "DENEGAR": "Ablehnen",
+    "MESA": "Tischnummer",
+    "COMENSALES": "Gäste",
+    "TIPO_MESA": "Tischtyp",
+    "ESTANDAR": "Standard",
+    "VIP": "VIP",
+    "MOVILIDAD": "Eingeschränkte Mobilität",
+    "SOLICITUDES_MESA": "TISCHANFRAGEN",
+    "ESPERANDO": "Wartet auf Tisch",
+    "NESPERANDO": "Keine wartenden Gäste",
+    "ASIGNAR": "TISCH ZUWEISEN",
+    "ELEGIR": "Tisch auswählen",
+    "PARA": "Für",
+    "CANCELAR": "Abbrechen",
+    "CARGANDO": "Liste wird geladen",
+    "CARGANDO2": "Laden"
+  },
+
+  "DUENO_RESERVA": {
+    "RESERVA": "AUSSTEHENDE RESERVIERUNGEN",
+    "NRESERVA": "Keine ausstehenden Reservierungen",
+    "ACEPTAR": "RESERVIERUNG ANNEHMEN",
+    "RECHAZAR": "RESERVIERUNG ABLEHNEN",
+    "ASIGNAR": "Tisch zuweisen",
+    "PARA": "Für",
+    "COMENSALES": "Gäste",
+    "PREFERENCIA": "Präferenz",
+    "CANCELAR": "Abbrechen"
+  },
+
+  "DUENO_DELIVERY": {
+    "PEDIDOS": "NEUE BESTELLUNGEN",
+    "NPEDIDOS": "Keine neuen Bestellungen",
+    "ACEPTAR": "BESTELLUNG ANNEHMEN",
+    "RECHAZAR": "BESTELLUNG ABLEHNEN",
+    "LISTOS": "BEREIT ZUR LIEFERUNG",
+    "NLISTOS": "Keine Bestellungen bereit zur Auslieferung",
+    "ENTREGAR": "AN FAHRER ÜBERGEBEN"
+  },
+
+  "MESERO": {
+    "CHAT": "CHAT MIT GÄSTEN",
+    "ACEPTAR_PEDIDO": "BESTELLUNGEN ANNEHMEN",
+    "ENTREGAR_PEDIDO": "BESTELLUNGEN SERVIEREN",
+    "COBROS": "ZAHLUNGEN"
+  },
+
+  "CHEF": {
+    "AVISAR": "ESSEN FERTIG MELDEN",
+    "COMIDA_DELIVERY": "LIEFERESSEN",
+    "CREAR": "GERICHT ERSTELLEN"
+  },
+
+  "CHEF_DELIVERY": {
+    "CARGANDO": "Bestellungen werden geladen",
+    "COCINA": "KÜCHE - LIEFERUNG",
+    "Cliente": "Kunde",
+    "Preparar": "Zubereiten",
+    "LISTO": "ALS FERTIG MARKIEREN",
+    "NCOCINA": "Keine ausstehenden Küchenbestellungen"
+  },
+
+  "CHEF_CREAR": {
+    "GUARDANDO": "Speichern",
+    "FOTO_PRODUCTO": "Produktfotos (Tippen zum Hinzufügen)",
+    "NOMBRE_PLATO": "Gerichtname",
+    "DESCRIPCION": "Beschreibung",
+    "PRECIO": "Preis",
+    "TIEMPO": "Zeit (Min)",
+    "TIPO": "Produkttyp",
+    "COMIDA": "Essen",
+    "Postre": "Dessert",
+    "CREAR": "GERICHT ERSTELLEN"
+  },
+
+  "BARTENDER": {
+    "AVISAR": "GETRÄNK FERTIG MELDEN",
+    "COMIDA_DELIVERY": "GETRÄNKE LIEFERUNG",
+    "CREAR": "GETRÄNK ERSTELLEN"
+  },
+
+  "BARTENDER_DELIVERY": {
+    "CARGANDO": "Bestellungen werden geladen",
+    "BARRA": "THEKE - LIEFERUNG",
+    "NBARRA": "Keine ausstehenden Getränke"
+  },
+
+  "BARTENDER_CREAR": {
+    "FOTO_PRODUCTO": "Getränkefotos (Tippen zum Hinzufügen)",
+    "NOMBRE": "Getränkename",
+    "TIPO": "Typ",
+    "BEBIDA": "Getränk",
+    "CREAR_BEBIDA": "GETRÄNK ERSTELLEN"
+  },
+
+  "MAITRE": {
+    "ASIGNAR_MESA": "TISCH ZUWEISEN"
+  },
+
+  "DELIVERY": {
+    "ENVIOS": "AUSSTEHENDE LIEFERUNGEN",
+    "COBROS": "ZAHLUNGEN"
+  },
+
+  "DELIVERY_ENVIOS": {
+    "BUSCANDO": "Lieferungen werden gesucht",
+    "ENVIOS": "AUSSTEHENDE LIEFERUNGEN",
+    "COBRAR": "Zu kassieren",
+    "TOMAR": "LIEFERUNG ANNEHMEN",
+    "NENVIOS": "Momentan keine Lieferungen zum Abholen"
+  },
+
+  "MENU_DELIVERY": {
+    "ENVIAR": "Senden an",
+    "CAMBIAR": "Ändern"
+  },
+
+  "MAPA_CLIENTE": {
+    "UBICACION_SELECCIONADA": "Ausgewählter Standort"
+  },
+
+  "CLIENTE": {
+    "PEDIR_MESA": "TISCH ANFRAGEN",
+    "RESERVAR_MESA": "TISCH RESERVIEREN",
+    "PEDIR_DELIVERY": "LIEFERUNG BESTELLEN"
+  },
+
+  "CLIENTE_RESERVA": {
+    "SELECCIONAR": "Datum und Uhrzeit auswählen",
+    "COMENSALES": "Anzahl der Gäste",
+    "CONFIRMAR": "Bestätigen"
+  },
+
+  "CLIENTE_ESPERA": {
+    "ESPERA": "Auf Warteliste",
+    "MESA_ASIGNADA": "Tisch zugewiesen",
+    "CONFIRMAR": "Bestätigen (QR)",
+    "ESCANEAR": "Tisch-QR scannen",
+    "ENCUESTAS": "Umfragen ansehen"
+  },
+
+  "MESA_ESTADO": {
+    "BUSCANDO": "Tisch wird gesucht...",
+    "MAITRE": "Bitte warten Sie auf den Maitre...",
+    "ESPERA": "Sie sind auf der Warteliste",
+    "MESA": "Ihr Tisch ist der "
+  },
+
+  "PRODUCTO_ESTADO": {
+    "ENVIANDO": "Bestellung wird gesendet...",
+    "COCINA": "In der Küche! Ihre Gerichte werden zubereitet.",
+    "MOZO": "Der Kellner bestätigt Ihre Bestellung gleich.",
+    "LISTO": "Bestellung am Tisch! Guten Appetit.",
+    "DISFRUTANDO": "Genießen Sie Ihr Essen.",
+    "RECHAZADO": "Leider wurde Ihre Bestellung abgelehnt.",
+    "NMOTIVO": "Kein Grund angegeben."
+  },
+
+  "DELIVERY_ESTADO": {
+    "ESPERANDO": "Wartet auf Bestätigung...",
+    "RECHAZADO": "Ihre Lieferbestellung wurde abgelehnt.",
+    "NMOTIVO": "Kein Grund angegeben.",
+    "REVISANDO": "Das Restaurant prüft Ihre Bestellung.",
+    "COCINANDO": "In Zubereitung!",
+    "CAMINO": "Ihre Bestellung ist unterwegs.",
+    "ENTREGADO": "Bestellung geliefert! Guten Appetit."
+  },
+
+  "CLIENTE_DELIVERY": {
+    "ACTUALIZANDO": "Status wird aktualisiert",
+    "MOTIVO_RECHAZO": "Ablehnungsgrund",
+    "VOLVER_LISTADO": "Zurück zur Produktliste",
+    "PEDIDO_ENVIADO": "Bestellung gesendet",
+    "PREPARACION": "In Zubereitung",
+    "CAMINO": "Unterwegs",
+    "UBICACION": "Tippen, um Standort zu wählen",
+    "ENTREGADO": "Geliefert",
+    "CHAT": "Chat mit Fahrer",
+    "PEDIR": "Rechnung anfragen",
+    "ENCUESTA": "Umfrage",
+    "ABURRIDO": "Warten langweilig",
+    "JUGAR": "Ein Spiel spielen"
+  },
+
+  "ENCUESTA": {
+    "E1": "Wie würden Sie den Service bewerten?",
+    "E2": "Wie würden Sie den Geschmack bewerten?",
+    "E3": "War das Essen heiß?",
+    "E4": "Waren die Portionen angemessen?",
+    "E5": "War die Präsentation gut?",
+    "E6": "Welche Menüarten bevorzugen Sie im Restaurant?",
+    "E7": "Wie lange haben Sie auf das Essen gewartet?",
+    "COMENTARIOS": "KOMMENTARE"
+  },
+
+  "PRODUCTOS": {
+    "CARGANDO": "Karte wird geladen",
+    "CARTA": "UNSERE KARTE",
+    "COMIDA": "SPEISEN",
+    "BEBIDA": "GETRÄNKE",
+    "POSTRE": "DESSERTS",
+    "ACTIVAR": "Tippen, um Sensor zu aktivieren",
+    "MOVER": "Bewegen Sie Ihr Gerät!",
+    "LISTO": "Fertig",
+    "VOLVER": "Zurück",
+    "TOTAL": "Gesamt",
+    "ESPERAMAX": "Max. Wartezeit",
+    "MINUTOS": "Minuten",
+    "CONFIRMAR_PEDIDO": "BESTELLUNG BESTÄTIGEN"
+  },
+
+  "CLIENTE_PEDIDO": {
+    "RECHAZO": "BESTELLUNG ABGELEHNT",
+    "NPROCESAR": "Der Kellner konnte Ihre Bestellung nicht bearbeiten",
+    "MOTIVO": "Grund",
+    "ENIVADO": "Gesendet",
+    "COCINANDO": "In Zubereitung",
+    "ENTREGADO": "Geliefert",
+    "DISFRUTANDO": "Genießen",
+    "CONFIRAMR_RECEPCION": "Empfang bestätigen (QR)",
+    "JUGAR": "Spielen während des Wartens"
+  },
+
+  "CONFIRMAR_PEDIDOS": {
+    "BUSCANDO": "BESTELLUNGEN WERDEN GESUCHT",
+    "PEDIDOS": "TISCHBESTELLUNGEN",
+    "MESA": "Tisch",
+    "ACEPTAR": "ANNEHMEN",
+    "RECHAZAR": "ABLEHNEN",
+    "NPEDIDOS": "Keine ausstehenden Bestellungen zur Bestätigung"
+  },
+
+  "COCINA": {
+    "CARGANDO": "Bestellungen werden geladen",
+    "COCINA": "KÜCHE - SAAL",
+    "PREPARAR": "ZUBEREITEN",
+    "FINALIZAR": "FERTIGSTELLEN",
+    "NCOCINA": "Keine ausstehenden Küchenbestellungen"
+  },
+
+  "BAR": {
+    "CARGANDO": "Getränke werden geladen",
+    "BARRA": "THEKE - SAAL",
+    "MARCAR": "ALS FERTIG MARKIEREN",
+    "NBEBIDAS": "Keine ausstehenden Getränke"
+  },
+
+  "ENTREGAR_PEDIDOS": {
+    "LISTO": "BEREIT ZUM SERVIEREN",
+    "BUSCANDO": "Bereite Bestellungen werden gesucht",
+    "PEDIDO": "Bestellung",
+    "ENTREGAR": "AN TISCH SERVIEREN",
+    "NLISTO": "Keine Bestellungen bereit zum Servieren"
+  },
+
+  "COBROS": {
+    "PROCESANDO": "Zahlung wird verarbeitet",
+    "CAJA": "KASSE - ZAHLUNGEN",
+    "DELIVERY": "Lieferung",
+    "CONSUMO": "Verzehr",
+    "SUBTOTAL": "Zwischensumme",
+    "DESCUENTO": "Rabatt",
+    "PROPINA": "Trinkgeld",
+    "CONFIRMAR": "Zahlung bestätigen",
+    "NCOBROS": "Keine ausstehenden Zahlungen"
+  },
+
+  "JUEGOS": {
+    "AHORCADO": "Galgenmännchen",
+    "MAYOR": "HÖHER ODER TIEFER",
+    "SUPERHEROE": "SUPERHELDEN-SPIEL",
+    "MOZO": "HILFE FÜR DEN KELLNER",
+    "COMENZAR": "Starten",
+    "PERDDISTE": "Sie haben verloren. Das Wort war",
+    "ALTA": "Höher",
+    "BAJA": "Tiefer"
+  },
+
+  "MOZO": {
+    "TITULO": "Hilfe für den Kellner",
+    "OBJETIVO": "Bringen Sie die Pizza zum Tisch, indem Sie das Handy neigen",
+    "GANASTE": "Bestellung geliefert",
+    "PERDISTE": "Die Bestellung ist heruntergefallen"
+  },
+
+  "RECIBE_PEDIDO": {
+    "ENCUESTA": "UMFRAGE",
+    "PEDIR": "RECHNUNG ANFRAGEN",
+    "JUEGOS": "SPIELE",
+    "NMESA": "Das ist nicht Ihr zugewiesener Tisch, Ihr Tisch ist",
+    "ACEPTAR": "Akzeptieren",
+    "ENCUESTA_COMPLETADA": "Sie haben die Umfrage bereits ausgefüllt",
+    "RESULTADOS": "Ergebnisse ansehen"
+  },
+
+  "CHAT": {
+    "MESA": "Tisch",
+    "CHAT": "Chat mit dem Personal"
+  },
+
+  "CLIENTE_ENCUESTAS": {
+    "TITULO": "Zufriedenheitsumfrage",
+    "P1": "Wie würden Sie den Service bewerten",
+    "P2": "Wie würden Sie den Geschmack bewerten",
+    "P3": "War das Essen heiß",
+    "P4": "Waren die Portionen angemessen",
+    "P5": "War die Präsentation der Gerichte gut",
+    "P6": "Welche Menüarten bevorzugen Sie im Restaurant",
+    "P7": "Wie lange haben Sie auf das Essen gewartet",
+    "COMENTARIOS": "Zusätzliche Kommentare",
+    "SI": "Ja",
+    "NO": "Nein",
+    "GRANDES": "Zu groß",
+    "ADECUADAS": "Angemessen",
+    "PEQUENAS": "Zu klein",
+    "VEGETARIANO": "Vegetarisch",
+    "VEGANO": "Vegan",
+    "GLUTEN": "Glutenfrei",
+    "ORGANICO": "Bio",
+    "SELECCIONE": "Auswählen",
+    "MENOS": "Weniger als 15 Minuten",
+    "MIN15": "15–30 Minuten",
+    "MIN30": "30–45 Minuten",
+    "MAS45": "Mehr als 45 Minuten",
+    "ENVIAR": "Senden"
+  },
+
+  "CUENTA": {
+    "PROCESANDO": "Wird verarbeitet",
+    "CUENTA": "Rechnung angefordert",
+    "PREPARANDO": "Wir bereiten Ihre Rechnung vor",
+    "BREVE": "Der Kellner oder Fahrer sendet Ihnen die Details gleich",
+    "DESCUENTO": "Rabatt",
+    "PROPINA": "Trinkgeld (Scannen)",
+    "PAGAR": "JETZT BEZAHLEN",
+    "FINALIZADA": "Lieferung abgeschlossen",
+    "REGISTRADO": "Die Zahlung der Lieferung wurde erfolgreich registriert."
+  },
+
+  "MAPA_DELIVERY": {
+    "CALCULANDO_RUTA": "Route wird berechnet",
+    "DESTINO": "Aktuelles Ziel",
+    "CHAT": "Chat",
+    "FINALIZAR": "Beenden",
+    "CONFIRMAR": "Lieferung bestätigen",
+    "SELECCIONAR": "Wählen Sie die zu liefernde Bestellung aus",
+    "TOTAL": "Gesamt",
+    "ENTREGAR": "BESTELLUNG LIEFERN",
+    "CANCELAR": "Abbrechen",
+    "BUSCANDO": "Straßenname wird gesucht...",
+    "UBICACION": "Standort gespeichert!",
+    "MAPA": "Standort auf Karte",
+    "NUBICACION": "Standort ohne exakten Namen",
+    "ERROR": "Serververbindungsfehler",
+    "UBMAP": "Standort auf Karte"
+  },
+
+  "SWAL_GENERAL": {
+    "ACEPTAR": "Akzeptieren",
+    "ERROR": "Fehler",
+    "RECHAZAR": "Ablehnen",
+    "TOTAL": "Gesamt",
+    "CANCELAR": "Abbrechen",
+    "CONFIRMAR": "Bestätigen",
+    "ENVIAR": "Senden"
+  },
+
+  "SWAL_LOGIN": {
+    "CUENTA_PENDIENTE": "Ihr Konto wartet noch auf Genehmigung",
+    "ACEPTAR": "Akzeptieren",
+    "DENEGADO": "Ihr Zugang wurde verweigert",
+    "CANCELAR": "Abbrechen",
+    "SI": "Ja"
+  },
+
+  "SWAL_DUENO": {
+    "REGISTRADO": "Mitarbeiter registriert!",
+    "CLIENTE_CREADO": "Kunde erfolgreich erstellt",
+    "CLIENTE": "Kunde",
+    "ACCESO": "Zugang",
+    "ACCESO2": "Zugang",
+    "PERMITIR": "Genehmigen",
+    "DENEGAR": "Ablehnen",
+    "FALTAN": "Daten fehlen",
+    "COMPLETAR": "Bitte alle Felder und Foto ausfüllen",
+    "MESA_CREADA": "Tisch erstellt",
+    "MESA": "Tisch",
+    "TEXTO_MESA": "erfolgreich registriert",
+    "NMESA": "Tisch konnte nicht erstellt werden",
+    "RECHAZAR_RESERVA": "Reservierung ablehnen",
+    "INDIQUE_MOTIVO": "Bitte Grund angeben (z.B. Keine Verfügbarkeit)",
+    "RESERVA_RECHAZADA": "Reservierung abgelehnt",
+    "RESERVA_CONFIRMADA": "Reservierung bestätigt",
+    "ASIGNADA": "zugewiesen an",
+    "ACEPTAR_PEDIDO": "Bestellung annehmen?",
+    "PEDIDO_ENVIADO": "Bestellung an Küche gesendet!",
+    "RECHAZAR_DELIVERY": "Lieferung ablehnen",
+    "INPUT": "z.B. Ausverkauft / Küche geschlossen",
+    "ENTREGAR_PREGUNTA": "An Fahrer übergeben?",
+    "TEXTO_DELIVERY1": "Die Bestellung von",
+    "TEXTO_DELIVERY2": "ist fertig",
+    "ENTREGAR": "Übergeben",
+    "ENTREGADO": "An Fahrer übergeben!"
+  },
+
+  "SWAL_ANONIMO": {
+    "CREADO": "Gastkunde erfolgreich erstellt",
+    "ACEPTAR": "Akzeptieren"
+  },
+
+  "SWAL_CHEF": {
+    "COMIDAS_NOTIFICADAS": "Gerichte gemeldet",
+    "PEDIDO_FINALIZADO": "Bestellung abgeschlossen",
+    "NOTIFICO_DUENO": "Der Inhaber wurde für die Auslieferung benachrichtigt.",
+    "COCINA_FINALIZADA": "Küche abgeschlossen",
+    "ESPERANDO_BEBIDAS": "Warte auf Bar-Bereich...",
+    "FALTAN_DATOS": "Daten fehlen",
+    "COMPLETE": "Bitte alle Pflichtfelder ausfüllen.",
+    "CREADO": "Produkt erstellt",
+    "NCREADO": "Speichern fehlgeschlagen."
+  },
+
+  "SWAL_BARTENDER": {
+    "BEBIDAS_LISTAS": "Getränke fertig!",
+    "PEDIDO_FINALIZADO": "Bestellung abgeschlossen",
+    "NOTIFICADO": "Der Inhaber wurde für die Auslieferung benachrichtigt.",
+    "BEBIDAS_FINALIZADAS": "Getränke abgeschlossen",
+    "ESPERANDO": "Warte auf Küchen-Bereich...",
+    "FALTAN_DATOS": "Daten fehlen",
+    "BEBIDA_CREADA": "Getränk erstellt"
+  },
+
+  "SWAL_MESERO": {
+    "ACEPTAR_PEDIDO": "Bestellung annehmen",
+    "CONFIRMAR_PEDIDO": "Wartezeit bestätigen",
+    "MINUTOS": "Minuten",
+    "ENVIADO": "An Küche gesendet!",
+    "RECHAZAR": "Bestellung ablehnen",
+    "MOTIVO": "z.B. Ausverkauft / Küche geschlossen",
+    "PEDIDO_ENTREGADO": "Bestellung serviert!",
+    "TEXTO1": "Der Gast am Tisch",
+    "TEXTO2": "hat seine Bestellung bereits erhalten",
+    "MESA_LIBERADA": "Tisch freigegeben",
+    "LA_MESA": "Der Tisch",
+    "TEXTO3": "hat bezahlt und wurde freigegeben",
+    "ERROR": "Fehler bei der Zahlungsverarbeitung"
+  },
+
+  "SWAL_MAITRE": {
+    "MESA_ASIGNADA": "Tisch zugewiesen",
+    "MESA": "Tisch",
+    "PARA": "für"
+  },
+
+  "SWAL_DELIVERY": {
+    "TOMAR": "Diese Lieferung annehmen?",
+    "LLEVAR": "Liefern an",
+    "VOY": "Ja, ich übernehme"
+  },
+
+  "SWAL_RESERVA": {
+    "FECHA_INVALIDA": "Ungültiges Datum",
+    "FUTURO": "Die Reservierung muss in der Zukunft liegen.",
+    "RESERVA_INVALIDA": "Ungültige Reservierung",
+    "RESERVADA": "Der Tisch ist bereits reserviert.",
+    "SOLICITUD": "Anfrage gesendet für den",
+    "ESPERA": "Warten Sie auf die Bestätigung des Restaurants.",
+    "ERROR": "Fehler",
+    "PROBLEMA": "Bei der Reservierung ist ein Problem aufgetreten"
+  },
+
+  "SWAL_CLIENTE_DELIVERY": {
+    "CARRITO_VACIO": "Warenkorb leer",
+    "AGREGAR": "Fügen Sie Produkte hinzu, bevor Sie bestellen.",
+    "FALTA_DIRECCION": "Adresse fehlt",
+    "SELECCIONAR": "Bitte wählen Sie Ihren Standort auf der Karte oben aus.",
+    "ENVIADO": "Bestellung gesendet",
+    "TIEMPO": "Geschätzte Zeit",
+    "ESPERA": "Min. Warten auf Bestätigung."
+  },
+
+  "SWAL_MESA": {
+    "MESA_ASIGNADA": "Tisch zugewiesen!",
+    "TEXTO1": "Bitte begeben Sie sich zum Tisch",
+    "CONFIRMADA": "Tisch bestätigt!",
+    "ACCEDIENDO": "Menü wird geladen...",
+    "INCORRECTA": "Falscher Tisch",
+    "ERROR": "Sie scannen einen anderen Tisch. Ihr Tisch ist der"
+  },
+
+  "SWAL_PRODUCTOS": {
+    "MOVIMIENTO": "Zurücksetzung durch Bewegung!",
+    "TEXTO1": "Tischnummer nicht erkannt. Bitte QR erneut scannen.",
+    "ENVIADO": "Bestellung gesendet!",
+    "MOZO_CONFIRMAR": "Der Kellner bestätigt gleich.",
+    "PROBLEMA": "Problem beim Speichern der Bestellung."
+  },
+
+  "SWAL_JUEGOS": {
+    "FELICIDADES": "Herzlichen Glückwunsch!",
+    "ADIVINADO": "Sie haben das Wort erraten",
+    "DESCUENTO": "Sie haben 10% Rabatt gewonnen",
+    "NUEVA_PARTIDA": "Neues Spiel",
+    "BIEN": "Sehr gut!",
+    "DESCUENTO15": "Sie haben mehr als 700 Punkte erreicht!!! Sie haben 15% Rabatt gewonnen!!!",
+    "CONSEGUIDO": "Sie haben erreicht",
+    "SUERTE": "viel Glück nächstes Mal",
+    "IMPECABLE": "Perfekt!",
+    "DESCUENTO30": "Sie haben 30% Rabatt auf Ihre Bestellung gewonnen!",
+    "JUGAR_NUEVO": "Nochmal spielen",
+    "VOLVER_MENU": "Zurück zum Menü",
+    "GANASTE": "Super! Sie haben gewonnen!",
+    "ENTREGADO": "Bestellung erfolgreich geliefert."
+  },
+
+  "SWAL_ESPERA": {
+    "COMER": "Guten Appetit!",
+    "CONFIRMASTE": "Sie haben den Empfang bestätigt.",
+    "MESA": "Richtiger Tisch",
+    "NLLEGA": "Aber Ihre Bestellung ist noch nicht da.",
+    "NMESA": "Falscher Tisch",
+    "NASIGNADA": "Das ist nicht Ihr zugewiesener Tisch"
+  },
+
+  "SWAL_ENCUESTA": {
+    "ENCUESTA": "Umfrage registriert"
+  },
+
+  "SWAL_PEDIDO": {
+    "PROPINA": "Trinkgeld hinzugefügt",
+    "AGREGA": "Ein",
+    "INCORRECTO": "Ungültiger QR",
+    "ESCANEAR": "Bitte scannen Sie einen gültigen Trinkgeld-QR-Code.",
+    "EXITOSO": "Zahlung erfolgreich!",
+    "GRACIAS": "Vielen Dank für Ihren Besuch."
+  },
+
+  "SWAL_CLIENTED": {
+    "ENCUESTA": "Umfrage bereits abgeschlossen",
+    "RESULTADOS": "Möchten Sie die Ergebnisse sehen?"
+  },
+
+  "SWAL_MAPA": {
+    "CONFIRMAR": "Lieferung bestätigen?",
+    "ENTREGADO": "Die Bestellung wird als geliefert markiert.",
+    "SI": "Ja, liefern",
+    "ENTREGA_EXITOSA": "Lieferung erfolgreich!"
+  },
+
+  "OTROS_SWAL": {
+    "TEXTO1": "fordert die Rechnung an. Rechnungsübergabe bestätigen?",
+    "TEXTO2": "fordert die Rechnung an",
+    "TEXTO3": "erhält gleich seine Rechnung",
+    "TEXTO4": "fordert die Rechnung an",
+    "SOLICITAR": "Sie müssen zuerst einen Tisch anfragen",
+    "NRESERVA": "Das ist nicht der Tisch, den Sie reserviert haben",
+    "NPERMITIDO": "Zugang nicht gestattet",
+    "NHORA": "Es ist noch nicht die Zeit Ihrer Reservierung",
+    "RESERVA_VENCIDA": "Reservierung abgelaufen",
+    "EXPIRO": "Ihre Reservierung ist nach 45 Minuten abgelaufen.",
+    "PAGO_EXITOSO": "Zahlung erfolgreich",
+    "EXITOSO": "Ihre Zahlung wurde erfolgreich registriert! Kommen Sie bald wieder!",
+    "COBRAR": "Delivery abrechnen",
+    "ENVIADA": "Rechnung gesendet",
+    "ENVIAR": "Rechnung senden",
+    "ENTREGAR": "Rechnung übergeben"
+  },
+
+  "NOTIFICACIONES_PRODUCTOS": {
+    "NUEVO_PEDIDO": "Neue Bestellung",
+    "MESA": "Tisch",
+    "ESPERA": "wartet auf Essen",
+    "NUEVA_BEBIDA": "Neues Getränk",
+    "ESPERA2": "wartet auf Getränke",
+    "RECHAZADO": "Bestellung abgelehnt",
+    "MOTIVO": "Grund",
+    "INDICAR_MOTIVO": "Bitte ändern Sie Ihre Bestellung",
+    "PEDIDO": "Gast hat am Tisch bestellt"
+  },
+
+  "NOTIFICACIONES_COCINA": {
+    "FINALIZADO": "Küche abgeschlossen",
+    "LISTAS": "Gerichte bereit zum Servieren"
+  },
+
+  "NOTIFICACIONES_PAGO": {
+    "CONFIRMADA": "Rechnung bestätigt",
+    "COBRADO": "Die Lieferung wurde bezahlt und abgeschlossen.",
+    "MESA": "Der Tisch",
+    "CERRO": "hat die Rechnung geschlossen"
+  },
+
+  "NOTIFICACION_PEDIR": {
+    "RECIBIDO": "Zahlung eingegangen",
+    "CLIENTE": "Gast",
+    "ABONO": "hat bezahlt"
+  },
+
+  "NOTIFICACIONES_DELIVERY": {
+    "NUEVO_DELIVER": "Neue Lieferung",
+    "CUERPO": "Es gibt eine Lieferbestellung zum Zubereiten",
+    "BEBIDAS": "Es gibt Liefergetränke zum Zubereiten",
+    "RECHAZADO": "Bestellung abgelehnt",
+    "MOTIVO": "Grund",
+    "MODIFIQUE": "Bitte ändern Sie Ihre Bestellung",
+    "LISTO": "Bestellung fertig!",
+    "ENTREGAR": "Sie haben eine neue Bestellung zum Abholen und Ausliefern an",
+    "CAMINO": "Bestellung unterwegs!",
+    "LLEVANDO": "bringt Ihre Bestellung"
+  },
+
+  "NOTIFICACIONES_COCINA_DELIVERY": {
+    "LISTO": "Bestellung bereit zur Auslieferung",
+    "CUERPO1": "Die Bestellung von",
+    "CUERPO2": "ist in Küche und Theke fertig",
+    "CUERPO3": "ist fertig"
+  },
+
+  "NOTIFICACIONES_CLIDEL": {
+    "CUENTA": "Rechnung angefordert",
+    "CLIENTE": "Der Gast",
+    "SOLICITO": "hat die Rechnung angefordert"
+  },
+
+  "NOTIFICACIONES_CHAT": {
+    "MENSAJE_CLIENTE": "Nachricht vom Gast",
+    "MENSAJE_DELIVERY": "Nachricht vom Fahrer",
+    "NUEVO_MENSAJE": "Neue Nachricht",
+    "CONSULTO": "Gast hat am Tisch gefragt",
+    "RESPONDIO": "Kellner hat am Tisch geantwortet"
+  },
+
+  "NOTIFICACIONES_MAPA": {
+    "ENTREGADO": "Bestellung geliefert!",
+    "DISFRUTES": "Vielen Dank, dass Sie uns gewählt haben. Guten Appetit!"
+  },
+
+  "NOTIFICACIONES_MESA": {
+    "ASIGNADA": "Tisch zugewiesen",
+    "MESA": "Ihnen wurde der Tisch zugewiesen"
+  },
+
+  "NOTIFICACIONES_BAR": {
+    "BAR": "Theke abgeschlossen",
+    "LISTAS": "Getränke bereit"
+  },
+
+  "NOTIFICACIONES_ACLIENTE": {
+    "NUEVO_CLIENTE": "Neuer Gast",
+    "REGISTRO": "Ein neuer Gast hat sich registriert"
+  },
+
+  "NOTIFICACIONES_CDUENO": {
+    "NUEVO_EMPLEADO": "Neuer Mitarbeiter",
+    "REGISTRO": "Ein neuer"
+  },
+
+  "NOTIFICACION_RESERVA": {
+    "CUENTA": "Rechnung bestätigt",
+    "PIDIO": "hat eine Reservierung angefragt für den"
+  },
+
+  "NOTIFICACION_DELIVERY": {
+    "NUEVO_PEDIDO": "Neue Bestellung",
+    "DELIVERY": "Gast hat eine Lieferbestellung aufgegeben"
+  },
+
+  "INFO": {
+    "PEDIDO": "Ihre Bestellung",
+    "PREPARACION": "In Zubereitung",
+    "ESPERA": "Geschätzte Wartezeit",
+    "DETALLE": "Details",
+    "TOTAL": "GESAMT"
+  }
+}

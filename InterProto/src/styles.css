@@ -1,2 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'leaflet/dist/leaflet.css';
+
+:root {
+  --ion-safe-area-top:    env(safe-area-inset-top);
+  --ion-safe-area-bottom: env(safe-area-inset-bottom);
+  --ion-safe-area-left:   env(safe-area-inset-left);
+  --ion-safe-area-right:  env(safe-area-inset-right);
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #780000;
+}
+
+/* Muy importante para Android */
+ion-app, ion-content {
+  --background: #780000;           /* o tu color principal */
+  background: #780000;
+}
+
+/* Tu .main-screen ya tiene min-height: 100vh → está bien */
+.main-screen {
+  min-height: 100dvh;              /* mejor que 100vh en móviles modernos */
+  height: 100%;
+  margin: 0;
+  padding-top: var(--ion-safe-area-top);
+  padding-bottom: var(--ion-safe-area-bottom);
+  padding-left: var(--ion-safe-area-left);
+  padding-right: var(--ion-safe-area-right);
+  box-sizing: border-box;
+  background: linear-gradient(135deg, #780000 0%, #3a0000 100%);
+}
