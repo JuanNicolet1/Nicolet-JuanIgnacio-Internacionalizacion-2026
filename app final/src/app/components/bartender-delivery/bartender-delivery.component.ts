@@ -60,13 +60,19 @@ export class BartenderDeliveryComponent implements OnInit {
     if (pedido.barFinalizado && cocinaTermino) {
         
         await this.db.enviarNotificacion('dueño', {
-            titulo: this.translate.instant('NOTIFICACIONES_COCINA.FINALIZADO'),
-            cuerpo: `${this.translate.instant('NOTIFICACIONES_COCINA.CUERPO1')} ${pedido.cliente} ${this.translate.instant('NOTIFICACIONES_COCINA.CUERPO2')}.`,
-            pedidoId: pedido.id
+          tituloKey: 'NOTIFICACIONES_COCINA_DELIVERY.LISTO',
+          cuerpoKey: 'NOTIFICACIONES_COCINA_DELIVERY.CUERPO1',
+          params: {
+            cliente: pedido.cliente
+          },
+          pedidoId: pedido.id
         });
         await this.db.enviarNotificacion('supervisor', {
-            titulo: this.translate.instant('NOTIFICACIONES_COCINA.FINALIZADO'),
-            cuerpo: `${this.translate.instant('NOTIFICACIONES_COCINA.CUERPO1')} ${pedido.cliente} ${this.translate.instant('NOTIFICACIONES_COCINA.CUERPO3')}.`,
+          tituloKey: 'NOTIFICACIONES_COCINA_DELIVERY.LISTO',
+          cuerpoKey: 'NOTIFICACIONES_COCINA_DELIVERY.CUERPO1',
+          params: {
+            cliente: pedido.cliente
+          }
         });
 
         Swal.fire({

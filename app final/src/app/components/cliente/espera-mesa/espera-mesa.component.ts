@@ -130,24 +130,41 @@ export class EsperaMesaComponent implements OnInit, ViewDidLeave {
     if (this.subscription4) return;
 
     const observableClientes = this.db.traerNotificacion('cliente');
+
     this.subscription4 = observableClientes.subscribe((resultado) => {
       if (resultado.length > 0) {
         const ultimaNotificacion: any = resultado[0];
-        
+
         if (this.auth.usuarioIngresado.tipoCliente === 'cliente' && this.pasoActual !== -1) {
           console.log(ultimaNotificacion);
+
           if (!ultimaNotificacion.recibida) {
-            
+
+            // ✅ Traducción dinámica
+            const { titulo, cuerpo } = this.traducirNotificacion(ultimaNotificacion);
+
             this.pushService.send(
-              ultimaNotificacion.titulo,
-              ultimaNotificacion.cuerpo,
+              titulo,
+              cuerpo,
               ''
             );
+
             this.db.actualizarNotificacion('cliente', ultimaNotificacion.id, { recibida: true });
           }
         }
       }
     });
+  }
+  private traducirNotificacion(notif: any) {
+  const titulo = notif.tituloKey
+    ? this.translate.instant(notif.tituloKey, notif.params || {})
+    : notif.titulo;
+
+  const cuerpo = notif.cuerpoKey
+    ? this.translate.instant(notif.cuerpoKey, notif.params || {})
+    : notif.cuerpo;
+
+    return { titulo, cuerpo };
   }
 
   ionViewDidLeave(): void {

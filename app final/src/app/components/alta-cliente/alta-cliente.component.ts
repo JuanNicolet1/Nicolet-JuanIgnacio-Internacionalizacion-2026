@@ -237,9 +237,11 @@ export class AltaClienteComponent implements OnInit {
         };
 
         await this.database.GuardarCliente(clienteData);
-         await this.database.enviarNotificacion('dueño', {
-          titulo: this.translate.instant('NOTIFICACIONES_ACLIENTE.NUEVO_CLIENTE'),
-          cuerpo: this.translate.instant('NOTIFICACIONES_ACLIENTE.REGISTRO'),
+
+        await this.database.enviarNotificacion('dueño', {
+          tituloKey: 'NOTIFICACIONES_ACLIENTE.NUEVO_CLIENTE',
+          cuerpoKey: 'NOTIFICACIONES_ACLIENTE.REGISTRO',
+          params: {}
         });
 
         this.isLoading = false;

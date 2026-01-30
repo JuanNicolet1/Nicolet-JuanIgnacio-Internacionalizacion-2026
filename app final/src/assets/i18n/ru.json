@@ -23,12 +23,22 @@
     "EMAIL": "Электронная почта",
     "CONTRASENA": "Пароль",
     "REPETIR": "Повторить пароль",
-    "CREAR": "Зарегистрироваться",
+    "CREAR": "Создать",
     "INICIAR": "Войти",
     "GOOGLE": "Войти через Google",
     "ANONIMO": "Продолжить как гость",
     "REGISTRARSE": "ЗАРЕГИСТРИРОВАТЬСЯ",
     "ERROR": "Пароли не совпадают"
+  },
+
+  "CARGANDO": {
+    "CARGANDO": "Загрузка",
+    "VERIFICANDO": "Проверка смены",
+    "ACTUALIZANDO": "Обновление статуса",
+    "CLIENTES": "Загрузка клиентов",
+    "PROCESANDO": "Обработка",
+    "MESA": "Создание стола",
+    "CARTA": "Загрузка меню"
   },
 
   "DUENO": {
@@ -87,6 +97,7 @@
   "DUENO_DELIVERY": {
     "PEDIDOS": "НОВЫЕ ЗАКАЗЫ",
     "NPEDIDOS": "Нет новых заказов",
+    "COCINA": "Кухня готова",
     "ACEPTAR": "ПРИНЯТЬ ЗАКАЗ",
     "RECHAZAR": "ОТКЛОНИТЬ ЗАКАЗ",
     "LISTOS": "ГОТОВЫ K ДОСТАВКЕ",
@@ -161,8 +172,8 @@
   "DELIVERY_ENVIOS": {
     "BUSCANDO": "Поиск доставок",
     "ENVIOS": "ОЖИДАЮЩИЕ ДОСТАВКИ",
-    "COBRAR": "К оплате",
-    "TOMAR": "ВЗЯТЬ ЗАКАЗ",
+    "COBRAR": "K оплате",
+    "TOMAR": "ВЗЯТЬ ЗAKAЗ",
     "NENVIOS": "Пока нет заказов на доставку"
   },
 
@@ -178,7 +189,7 @@
   "CLIENTE": {
     "PEDIR_MESA": "ЗАПРОСИТЬ СТОЛ",
     "RESERVAR_MESA": "ЗАБРОНИРОВАТЬ СТОЛ",
-    "PEDIR_DELIVERY": "ЗАКАЗАТЬ ДОСТАВКУ"
+    "PEDIR_DELIVERY": "3AKA3ATЬ ДОСТАВКУ"
   },
 
   "CLIENTE_RESERVA": {
@@ -188,7 +199,7 @@
   },
 
   "CLIENTE_ESPERA": {
-    "ESPERA": "В списке ожидания",
+    "ESPERA": "B списке ожидания",
     "MESA_ASIGNADA": "Стол назначен",
     "CONFIRMAR": "Подтвердить (QR)",
     "ESCANEAR": "Сканировать QR стола",
@@ -202,13 +213,21 @@
     "MESA": "Ваш стол — "
   },
 
+  "MESA_TIPO": {
+    "ESTANDAR": "Стандартный",
+    "MOVILIDAD": "Ограниченная мобильность",
+    "VIP": "VIP",
+    "LIBRE": "Свободно",
+    "OCUPADA": "Занято"
+  },
+
   "PRODUCTO_ESTADO": {
     "ENVIANDO": "Отправка заказа...",
-    "COCINA": "На кухне! Готовим ваши блюда.",
+    "COCINA": "Ha кухне! Готовим ваши блюда.",
     "MOZO": "Официант скоро подтвердит заказ.",
     "LISTO": "Заказ у стола! Приятного аппетита.",
     "DISFRUTANDO": "Наслаждаетесь едой.",
-    "RECHAZADO": "К сожалению, заказ отклонён.",
+    "RECHAZADO": "K сожалению, заказ отклонён.",
     "NMOTIVO": "Причина не указана."
   },
 
@@ -262,24 +281,24 @@
     "TOTAL": "Итого",
     "ESPERAMAX": "Макс. ожидание",
     "MINUTOS": "минут",
-    "CONFIRMAR_PEDIDO": "ПОДТВЕРДИТЬ ЗАКАЗ"
+    "CONFIRMAR_PEDIDO": "ПОДТВЕРДИТЬ ЗAKAЗ"
   },
 
   "CLIENTE_PEDIDO": {
-    "RECHAZO": "ЗАКАЗ ОТКЛОНЁН",
+    "RECHAZO": "ЗAKAЗ ОТКЛОНЁН",
     "NPROCESAR": "Официант не смог обработать ваш заказ",
     "MOTIVO": "Причина",
-    "ENIVADO": "Отправлен",
+    "ENVIADO": "Отправлен",
     "COCINANDO": "Готовится",
     "ENTREGADO": "Доставлен",
     "DISFRUTANDO": "Наслаждаетесь",
-    "CONFIRAMR_RECEPCION": "Подтвердить получение (QR)",
+    "CONFIRMAR_RECEPCION": "Подтвердить получение (QR)",
     "JUGAR": "Поиграть в ожидании"
   },
 
   "CONFIRMAR_PEDIDOS": {
     "BUSCANDO": "ПОИСК ЗАКАЗОВ",
-    "PEDIDOS": "ЗАКАЗЫ СО СТОЛОВ",
+    "PEDIDOS": "ЗАКАЗЫ CO СТОЛОВ",
     "MESA": "Стол",
     "ACEPTAR": "ПРИНЯТЬ",
     "RECHAZAR": "ОТКЛОНИТЬ",
@@ -289,7 +308,7 @@
   "COCINA": {
     "CARGANDO": "Загрузка заказов",
     "COCINA": "КУХНЯ - ЗАЛ",
-    "PREPARAR": "К ПРИГОТОВЛЕНИЮ",
+    "PREPARAR": "K ПРИГОТОВЛЕНИЮ",
     "FINALIZAR": "ЗАВЕРШИТЬ",
     "NCOCINA": "Нет ожидающих заказов на кухне"
   },
@@ -332,8 +351,49 @@
     "BAJA": "Ниже"
   },
 
+  "AHORCADO": {
+    "VIDA": "Жизнь",
+    "FIDEO": "МАКАРОНЫ",
+    "MILANESA": "МИЛАНЕЗЕ",
+    "CARNE": "ГОВЯДИНА",
+    "POLLO": "КУРИЦА",
+    "POLENTA": "ПОЛЕНТА",
+    "ARROZ": "РИС"
+  },
+
+  "LETRAS": {
+    "A": "А",
+    "B": "Б",
+    "C": "В",
+    "D": "Г",
+    "E": "Д",
+    "F": "Е",
+    "G": "Ж",
+    "H": "З",
+    "I": "И",
+    "J": "Й",
+    "K": "К",
+    "L": "Л",
+    "M": "М",
+    "N": "Н",
+    "O": "О",
+    "P": "П",
+    "Q": "Кью",
+    "R": "Р",
+    "S": "С",
+    "T": "Т",
+    "U": "У",
+    "V": "В",
+    "W": "Я",
+    "X": "Х",
+    "Y": "Ы",
+    "Z": "З"
+  },
+
   "MOZO": {
     "TITULO": "Помоги официанту",
+    "COMENZAR": "Начать",
+    "REINTENTAR": "Попробовать снова",
     "OBJETIVO": "Доставьте пиццу к столу, наклоняя телефон",
     "GANASTE": "Заказ доставлен",
     "PERDISTE": "Заказ упал"
@@ -351,7 +411,12 @@
 
   "CHAT": {
     "MESA": "Стол",
-    "CHAT": "Чат с персоналом"
+    "CHAT": "Чат c персоналом",
+    "ESCRIBIR": "Напишите сообщение",
+    "CLIENTE": "Клиент",
+    "DESTINO": "Адрес доставки",
+    "REPARTIDOR": "Курьер",
+    "CAMINO": "B пути"
   },
 
   "CLIENTE_ENCUESTAS": {
@@ -378,7 +443,8 @@
     "MIN15": "15-30 минут",
     "MIN30": "30-45 минут",
     "MAS45": "Более 45 минут",
-    "ENVIAR": "Отправить"
+    "ENVIAR": "Отправить",
+    "VOTOS": "Голоса"
   },
 
   "CUENTA": {
@@ -386,6 +452,7 @@
     "CUENTA": "Счёт запрошен",
     "PREPARANDO": "Мы готовим ваш счёт",
     "BREVE": "Официант или курьер пришлёт детали в ближайшее время",
+    "TU_CUENTA": "Ваш счёт",
     "DESCUENTO": "Скидка",
     "PROPINA": "Чаевые (сканирование)",
     "PAGAR": "ОПЛАТИТЬ СЕЙЧАС",
@@ -394,6 +461,7 @@
   },
 
   "MAPA_DELIVERY": {
+    "BUSCAR": "Найти улицу и номер дома",
     "CALCULANDO_RUTA": "Расчёт маршрута",
     "DESTINO": "Текущее место назначения",
     "CHAT": "Чат",
@@ -625,13 +693,13 @@
   "NOTIFICACIONES_PRODUCTOS": {
     "NUEVO_PEDIDO": "Новый заказ",
     "MESA": "Стол",
-    "ESPERA": "ждёт еду",
+    "ESPERA": "Стол {{mesa}} ждёт еду",
     "NUEVA_BEBIDA": "Новый напиток",
-    "ESPERA2": "ждёт напитки",
+    "ESPERA2": "Стол {{mesa}} ждёт напитки",
     "RECHAZADO": "Заказ отклонён",
     "MOTIVO": "Причина",
-    "INDICAR_MOTIVO": "Пожалуйста, измените заказ",
-    "PEDIDO": "Клиент сделал заказ за столом"
+    "INDICAR_MOTIVO": "Причина: {{motivo}}. Пожалуйста, измените заказ",
+    "PEDIDO": "Клиент сделал заказ за столом {{numero}}"
   },
 
   "NOTIFICACIONES_COCINA": {
@@ -639,51 +707,62 @@
     "LISTAS": "Блюда готовы к подаче"
   },
 
+  "NOTIFICACION_PEDIDO": {
+    "TITULO_LISTO": "Заказ готов",
+    "MENSAJE_LISTO": "Вы можете отнести заказ к столу {{mesa}}"
+  },
+
   "NOTIFICACIONES_PAGO": {
     "CONFIRMADA": "Счёт подтверждён",
     "COBRADO": "Доставка оплачена и завершена.",
     "MESA": "Стол",
-    "CERRO": "закрыл счёт"
+    "CERRO": "Стол {{mesa}} закрыл счёт"
+  },
+
+  "NOTIFICACIONES_FACTURA": {
+    "DISPONIBLE": "Счет доступен",
+    "DESCARGAR": "Скачайте ваш счет здесь"
   },
 
   "NOTIFICACION_PEDIR": {
-    "RECIBIDO": "Оплата получена",
-    "CLIENTE": "Клиент",
-    "ABONO": "оплатил"
+    "RECIBIDO": "Платёж получен",
+    "CLIENTE_ABONO": "Клиент {{cliente}} оплатил {{total}}$"
   },
 
   "NOTIFICACIONES_DELIVERY": {
-    "NUEVO_DELIVER": "Новая доставка",
+    "NUEVO_DELIVERY": "Новая доставка",
     "CUERPO": "Есть заказ на доставку для приготовления",
     "BEBIDAS": "Есть напитки на доставку для приготовления",
     "RECHAZADO": "Заказ отклонён",
     "MOTIVO": "Причина",
-    "MODIFIQUE": "Пожалуйста, измените заказ",
+    "MODIFIQUE": "Причина: {{motivo}}. Пожалуйста, измените заказ",
     "LISTO": "Заказ готов!",
-    "ENTREGAR": "У вас новый заказ для получения и доставки",
+    "ENTREGAR": "У вас новый заказ для получения и доставки {{cliente}}",
     "CAMINO": "Заказ в пути!",
-    "LLEVANDO": "доставляет ваш заказ"
+    "LLEVANDO": "{{nombre}} доставляет ваш заказ"
   },
 
   "NOTIFICACIONES_COCINA_DELIVERY": {
     "LISTO": "Заказ готов к выдаче",
-    "CUERPO1": "Заказ от",
-    "CUERPO2": "готов на кухне и баре",
+    "CUERPO1": "Заказ от {{cliente}} готов на кухне и бape",
+    "CUERPO2": "готов на кухне и бape",
     "CUERPO3": "готов"
   },
 
   "NOTIFICACIONES_CLIDEL": {
     "CUENTA": "Счёт запрошен",
     "CLIENTE": "Клиент",
-    "SOLICITO": "запросил счёт"
+    "SOLICITO": "запросил счёт",
+    "SOLICITO_MESA": "Стол {{mesa}} запросил счёт.",
+    "MENSAJE": "Клиент {{cliente}} запросил счёт"
   },
 
   "NOTIFICACIONES_CHAT": {
     "MENSAJE_CLIENTE": "Сообщение от клиента",
     "MENSAJE_DELIVERY": "Сообщение от курьера",
     "NUEVO_MENSAJE": "Новое сообщение",
-    "CONSULTO": "Клиент спросил за столом",
-    "RESPONDIO": "Официант ответил за столом"
+    "CONSULTO": "Клиент спросил за столом {{mesa}}",
+    "RESPONDIO": "Официант ответил за столом {{mesa}}"
   },
 
   "NOTIFICACIONES_MAPA": {
@@ -693,12 +772,13 @@
 
   "NOTIFICACIONES_MESA": {
     "ASIGNADA": "Стол назначен",
-    "MESA": "Вам назначен стол"
+    "MESA": "Вам назначен стол {{mesa}}"
   },
 
   "NOTIFICACIONES_BAR": {
     "BAR": "Бар завершён",
-    "LISTAS": "Напитки готовы"
+    "LISTAS": "Напитки готовы",
+    "MESA_LISTA": "Стол {{mesa}}: Напитки готовы."
   },
 
   "NOTIFICACIONES_ACLIENTE": {
@@ -708,12 +788,12 @@
 
   "NOTIFICACIONES_CDUENO": {
     "NUEVO_EMPLEADO": "Новый сотрудник",
-    "REGISTRO": "Зарегистрирован новый"
+    "REGISTRO": "Зарегистрирован новый {{tipo}}"
   },
 
   "NOTIFICACION_RESERVA": {
     "CUENTA": "Счёт подтверждён",
-    "PIDIO": "запросил бронирование на"
+    "PIDIO": "{{nombre}} запросил бронирование на {{fecha}}"
   },
 
   "NOTIFICACION_DELIVERY": {
@@ -723,7 +803,7 @@
 
   "OTRA_NOTIFICACION": {
     "ESPERA_MESA": "Клиент ждёт стол",
-    "ASIGNAR_MESA": "Назначьте стол клиенту"
+    "ASIGNAR_MESA": "Назначьте стол клиенту {{nombre}}"
   },
 
   "INFO": {
@@ -732,5 +812,65 @@
     "ESPERA": "Примерное ожидание",
     "DETALLE": "Детали",
     "TOTAL": "ИТОГО"
+  },
+
+  "PRODUCTS": {
+    "09EZzxiqo1q57F7Otlms": "Равиоли c рикоттой",
+    "5wvHwgO9wuy29VonzWls": "Омлет",
+    "GhnGX6dFdWnCNcsIFkJT": "Миланеза",
+    "KJoe8SiVokkUWeCVfnFy": "Энтpaña",
+    "VX7JzjHsGrQsBsKObv47": "Дезодорант",
+    "bbrRMHvqX1l9NOT3rvIC": "Бургер",
+    "d2tPim8afJpC3Tk92M18": "Помидор",
+    "fGzZU8arK8rq6L3VE5jA": "Белый",
+    "fz7H4mlQgWpuXxNzMBKC": "Белый 2",
+    "qbco3jmmUiLHcLrqSOz2": "Тушёная курица",
+    "v5SpTgfFUtCIqMj9QO3l": "Хот-дог",
+    "7s9GqL1g2NHkkrxL2pTF": "Кофе",
+    "D1ihmWu2KXKSolD3ad3w": "Дайкири",
+    "FLTKNQ0TcshoXPH1Rr4l": "Coca-Cola",
+    "NfyhLhae8RrWxo4159pk": "Pepsi",
+    "RxPj5HrTQZN3uTVeVpeG": "Дезодорант",
+    "UGTsAhY7das09kjP6VZA": "Чёрный",
+    "XPi7UNXME5AcCpQo16xQ": "Patagonia",
+    "YHgTMiVOxzxaKy2eBKfx": "Пиво Heineken",
+    "dFdPAuHhO38cnvwaBw5C": "Вода",
+    "eJKdWPoiaMVXjnkfM2Kq": "Вино",
+    "yYmc0HSQCxlKIaozTjye": "Чёрный",
+    "1YHcSLyWph4PrgBmlr1S": "Флан",
+    "RBWCdanCVi2MHAD9KswW": "Чизкейк",
+    "t88CDv5y0pUzWCgGYIjy": "Мороженое",
+    "xA9EuV3gTkqbc8JEqJh2": "Брауни c мороженым",
+    "zRgghMowW98CaNXea9g8": "Чокоторта"
+  },
+
+  "DESCRIPCION": {
+    "09EZzxiqo1q57F7Otlms": "Вид пасты c начинкой из рикотты, завёрнутой в тонкое тесто.",
+    "5wvHwgO9wuy29VonzWls": "Вкусно.",
+    "GhnGX6dFdWnCNcsIFkJT": "Панированная говяжья котлета, подаётся c картошкой фри или салатом на выбор.",
+    "KJoe8SiVokkUWeCVfnFy": "Грильованная энтpaña, подаётся c чимичурри и деревенским картофелем.",
+    "VX7JzjHsGrQsBsKObv47": "Вещь",
+    "bbrRMHvqX1l9NOT3rvIC": "Бургер c чеддером, салатом, помидором и специальным соусом в кунжутной булочке.",
+    "d2tPim8afJpC3Tk92M18": "Полезно",
+    "fGzZU8arK8rq6L3VE5jA": "Ничего",
+    "fz7H4mlQgWpuXxNzMBKC": "Очень белый",
+    "qbco3jmmUiLHcLrqSOz2": "Тушёное блюдо из курицы. Фрикасе. Кусочки курицы или другого мяса, тушёные в соусе.",
+    "v5SpTgfFUtCIqMj9QO3l": "Вкусно.",
+    "7s9GqL1g2NHkkrxL2pTF": "Горький.",
+    "D1ihmWu2KXKSolD3ad3w": "Тропический коктейль на основе рома, лимона и caxapa — освежающий и сладкий.",
+    "FLTKNQ0TcshoXPH1Rr4l": "Классический кола-напиток, идеально подходит к любой еде.",
+    "NfyhLhae8RrWxo4159pk": "Очень холодный газированный напиток для освежения и сопровождения любого блюда.",
+    "RxPj5HrTQZN3uTVeVpeG": "Очень хорошо",
+    "UGTsAhY7das09kjP6VZA": "Чёрный",
+    "XPi7UNXME5AcCpQo16xQ": "Крафтовое пиво средней плотности c фруктовыми нотами и мягкой горечью.",
+    "YHgTMiVOxzxaKy2eBKfx": "Светлое пиво, освежающее и сбалансированное по вкусу.",
+    "dFdPAuHhO38cnvwaBw5C": "Натуральная минеральная вода без газа, идеальна для гидратации.",
+    "eJKdWPoiaMVXjnkfM2Kq": "Вино, идеально подходящее к мясу, пасте или основным блюдам.",
+    "yYmc0HSQCxlKIaozTjye": "Чёрный",
+    "1YHcSLyWph4PrgBmlr1S": "Домашний флан, подаётся c dulce de leche или взбитыми сливками.",
+    "RBWCdanCVi2MHAD9KswW": "Чизкейк известен своим насыщенным кремовым вкусом и нежной текстурой.",
+    "t88CDv5y0pUzWCgGYIjy": "Ремесленное мороженое в разных вкусах: ваниль, шоколад, клубника.",
+    "xA9EuV3gTkqbc8JEqJh2": "Брауни c dulce de leche, подаётся c шариком сливочного мороженого.",
+    "zRgghMowW98CaNXea9g8": "Аргентинский десерт из шоколадного печенья и крема из dulce de leche."
   }
 }

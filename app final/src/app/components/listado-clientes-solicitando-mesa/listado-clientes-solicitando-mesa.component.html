@@ -61,7 +61,7 @@
         <span class="table-number">{{ mesa.numero }}</span>
         <img src={{mesa.foto}} class="table-icon">
         <span class="table-status">
-          {{ mesa.estado === 'ocupada' ? 'Ocupada' : 'Libre' }}
+          {{ ('MESA_TIPO.' + (mesa.estado === 'ocupada' || mesa.estado === 'reservada' ? 'OCUPADA' : 'LIBRE')) | translate }}
         </span>
       </div>
     </div>

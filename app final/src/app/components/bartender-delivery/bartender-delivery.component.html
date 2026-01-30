@@ -30,7 +30,7 @@
             <ng-container *ngFor="let prod of p.productos">
                 <li *ngIf="prod.tipoProducto === 'bebida'">
                     <span class="qty">x{{ prod.cantidad }}</span>
-                    <span class="name">{{ prod.name }}</span>
+                    <span class="name">{{ ('PRODUCTS.' + prod.id) | translate }}</span>
                 </li>
             </ng-container>
         </ul>

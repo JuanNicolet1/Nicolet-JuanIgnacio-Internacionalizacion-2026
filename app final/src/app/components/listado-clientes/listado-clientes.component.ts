@@ -71,7 +71,7 @@ export class ListadoClientesComponent {
       text: this.translate.instant('SWAL_DUENO.CLIENTE') + `: ${cliente.nombre} ${cliente.apellido}`,
       icon: 'question',
       showCancelButton: true,
-      confirmButtonText: this.translate.instant('SWAL_GENERAL.SI') +`, ${texto}`,
+      confirmButtonText: this.translate.instant('CLIENTE_ENCUESTAS.SI') +`, ${texto}`,
       confirmButtonColor: colorBtn,
       cancelButtonText: this.translate.instant('SWAL_GENERAL.CANCELAR'),
       background: '#333',

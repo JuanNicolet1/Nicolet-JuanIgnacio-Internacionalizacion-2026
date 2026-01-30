@@ -47,7 +47,7 @@
         [(ngModel)]="mensajeInput"
         (keyup.enter)="EnviarMensaje()"
         type="text"
-        placeholder="Escribe un mensaje..."
+        [placeholder]="'CHAT.ESCRIBIR' | translate"
         class="input-message"
       />
       <button (click)="EnviarMensaje()" class="send-btn">

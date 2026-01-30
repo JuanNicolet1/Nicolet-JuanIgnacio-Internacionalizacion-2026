@@ -84,7 +84,7 @@
       <h2>{{ 'DUENO_RESERVA.ASIGNAR' | translate }}</h2>
       <p>{{ 'DUENO_RESERVA.PARA' | translate }} {{ usuarioSeleccionado?.nombre }}</p>
       <p class="preference" *ngIf="usuarioSeleccionado?.tipoMesa">
-         {{ 'DUENO_RESERVA.PREFERENCIA' | translate }}: <strong style="color: #f7b267;">{{ usuarioSeleccionado?.tipoMesa | titlecase }}</strong>
+         {{ 'DUENO_RESERVA.PREFERENCIA' | translate }}: <strong style="color: #f7b267;">{{ ('MESA_TIPO.' + usuarioSeleccionado?.tipoMesa.toUpperCase()) | translate }}</strong>
       </p>
     </div>
 
@@ -100,9 +100,9 @@
         >
         <img src={{mesa.foto}} class="table-icon">
           <span class="table-number">{{ mesa.numero }}</span>
-          <span class="table-type">{{ mesa.tipo | titlecase }}</span>
+          <span class="table-type">{{ ('MESA_TIPO.' + mesa.tipo.toUpperCase()) | translate }}</span>
           <span class="table-status">
-            {{ (mesa.estado === 'ocupada' || mesa.estado === 'reservada') ? 'Ocupada' : 'Libre' }}
+            {{ ('MESA_TIPO.' + (mesa.estado === 'ocupada' || mesa.estado === 'reservada' ? 'OCUPADA' : 'LIBRE')) | translate }}
           </span>
         </div>
 

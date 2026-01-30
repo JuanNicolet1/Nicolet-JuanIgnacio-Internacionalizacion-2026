@@ -11,14 +11,14 @@ import { faArrowLeft, faLocationArrow, faPaperPlane } from '@fortawesome/free-so
 import { ChatService } from 'src/app/services/chat.service';
 import { IonicModule } from '@ionic/angular';
 import { pushService } from 'src/app/services/serviciosPush/push-notifications.service';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-chat-delivery',
   templateUrl: './chat-delivery.component.html',
   styleUrls: ['./chat-delivery.component.scss'],
   standalone: true,
-  imports: [CommonModule, FormsModule, IonicModule, FontAwesomeModule],
+  imports: [CommonModule, FormsModule, IonicModule, FontAwesomeModule, TranslateModule],
 })
 export class ChatDeliveryComponent implements OnInit {
   private translate = inject(TranslateService)
@@ -47,11 +47,11 @@ export class ChatDeliveryComponent implements OnInit {
 
   ngOnInit() {
     if (this.auth.usuarioIngresado.tipoCliente === 'delivery') {
-        this.tituloChat = this.db.direccion || 'Cliente'; 
-        this.subtituloChat = 'Destino del pedido';
+        this.tituloChat = this.db.direccion || this.translate.instant('CHAT.CLIENTE'); 
+        this.subtituloChat = this.translate.instant('CHAT.DESTINO');
     } else {
-        this.tituloChat = 'Repartidor';
-        this.subtituloChat = 'En camino';
+        this.tituloChat = this.translate.instant('CHAT.REPARTIDOR');
+        this.subtituloChat = this.translate.instant('CHAT.CAMINO');
     }
 
 
@@ -96,15 +96,16 @@ export class ChatDeliveryComponent implements OnInit {
     );
 
     if (this.auth.usuarioIngresado.tipoCliente === 'cliente') {
-        await this.db.enviarNotificacion('delivery', {
-          titulo: this.translate.instant('NOTIFICACIONES_CHAT.MENSAJE_CLIENTE'),
-          cuerpo: this.mensajeInput,
-        });
-    } else if (this.auth.usuarioIngresado.tipoCliente === 'delivery') {
-        await this.db.enviarNotificacion('cliente', {
-          titulo: this.translate.instant('NOTIFICACIONES_CHAT.MENSAJE_Z'),
-          cuerpo: this.mensajeInput,
-        });
+      await this.db.enviarNotificacion('delivery', {
+        tituloKey: 'NOTIFICACIONES_CHAT.MENSAJE_CLIENTE',
+        cuerpo: this.mensajeInput,
+      });
+    } 
+    else if (this.auth.usuarioIngresado.tipoCliente === 'delivery') {
+      await this.db.enviarNotificacion('cliente', {
+        tituloKey: 'NOTIFICACIONES_CHAT.MENSAJE_DELIVERY',
+        cuerpo: this.mensajeInput,
+      });
     }
 
     this.chat.AgregarMensaje(nuevoMensaje);

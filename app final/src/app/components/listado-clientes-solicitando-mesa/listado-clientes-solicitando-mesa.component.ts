@@ -133,13 +133,16 @@ export class ListadoClientesSolicitandoMesaComponent implements OnInit {
     this.cerrarModalMesas(); 
 
     await this.db.enviarNotificacion('cliente', {
-        titulo: this.translate.instant('NOTIFICACIONES_MESA.ASIGNADA'),
-        cuerpo: `${this.translate.instant('NOTIFICACIONES_MESA.DISFRUTES')} ${mesa.numero}`,
+      tituloKey: 'NOTIFICACIONES_MESA.ASIGNADA',
+      cuerpoKey: 'NOTIFICACIONES_MESA.MESA',
+      params: {
+        mesa: mesa.numero
+      }
     });
 
     Swal.fire({
-      title: this.translate.instant('SWAL_MAITRE.ASIGNAR_MESA'),
-      text: `${this.translate.instant('SWAL_MAITRE.MESA')} ${mesa.numero} ${this.translate.instant('SWAL_MAITRE_PARA')} ${nombreCliente}`, 
+      title: this.translate.instant('SWAL_MAITRE.MESA_ASIGNADA'),
+      text: `${this.translate.instant('SWAL_MAITRE.MESA')} ${mesa.numero} ${this.translate.instant('SWAL_MAITRE.PARA')} ${nombreCliente}`, 
       icon: 'success',
       timer: 2000,
       showConfirmButton: false,

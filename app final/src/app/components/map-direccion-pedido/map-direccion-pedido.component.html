@@ -10,7 +10,7 @@
     <div class="search-box">
       <input 
         type="text" 
-        placeholder="Buscar calle y altura..." 
+        [placeholder]="'MAPA_DELIVERY.BUSCAR' | translate"
         [(ngModel)]="direccion" 
         (keyup.enter)="buscarDireccion()"
       >

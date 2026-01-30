@@ -103,6 +103,18 @@ export class EsperaPedidoComponent implements ViewWillEnter, ViewDidLeave {
     });
   }
 
+  private traducirNotificacion(notif: any) {
+  const titulo = notif.tituloKey
+    ? this.translate.instant(notif.tituloKey, notif.params || {})
+    : notif.titulo;
+
+  const cuerpo = notif.cuerpoKey
+    ? this.translate.instant(notif.cuerpoKey, notif.params || {})
+    : notif.cuerpo;
+
+    return { titulo, cuerpo };
+  }
+
   ionViewDidLeave(): void {
     if (this.subscription) this.subscription.unsubscribe();
     if (this.subscription4) this.subscription4.unsubscribe();
@@ -150,29 +162,32 @@ export class EsperaPedidoComponent implements ViewWillEnter, ViewDidLeave {
     const obsNotif = this.db.traerNotificacion(rol);
 
     this.auth.usuarioIngresado.estadoMesa = '';
-    this.db.ModificarObjeto(this.auth.usuarioIngresado, 'clientes')
-    
-    if(!this.subscription4) {
-        this.subscription4 = obsNotif.subscribe((res: any[]) => {
-            if(res && res.length > 0) {
-                const notif = res[0];
-                
-                if(!notif.recibida && this.mostrarNotificacion) {
-                    
-                    this.pushService.send(
-                        notif.titulo,
-                        notif.cuerpo,
-                        '/listado-productos', 
-                        true,
-                        '',
-                        'abrirListado'
-                    );
+    this.db.ModificarObjeto(this.auth.usuarioIngresado, 'clientes');
 
-                    this.db.actualizarNotificacion(rol, notif.id, { recibida: true });
-                    this.mostrarNotificacion = false;
-                }
-            }
-        });
+    if (!this.subscription4) {
+      this.subscription4 = obsNotif.subscribe((res: any[]) => {
+        if (res && res.length > 0) {
+          const notif = res[0];
+
+          if (!notif.recibida && this.mostrarNotificacion) {
+
+            // ✅ Traducción dinámica
+            const { titulo, cuerpo } = this.traducirNotificacion(notif);
+
+            this.pushService.send(
+              titulo,
+              cuerpo,
+              '/listado-productos',
+              true,
+              '',
+              'abrirListado'
+            );
+
+            this.db.actualizarNotificacion(rol, notif.id, { recibida: true });
+            this.mostrarNotificacion = false;
+          }
+        }
+      });
     }
   }
 

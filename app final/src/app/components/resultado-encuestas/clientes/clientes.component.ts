@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -37,6 +37,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   styleUrls: ['./clientes.component.scss'],
 })
 export class ClientesComponent implements OnInit {
+  private translate = inject(TranslateService)
   faArrowLeft = faArrowLeft;
 
   chart: any;
@@ -193,19 +194,27 @@ export class ClientesComponent implements OnInit {
       '5',
     ]);
     this.crearCanvaBar('myPieChart2', listaSabor, ['1', '2', '3', '4', '5']);
-    this.crearCanva('myPieChart3', listaComidaCaliente, ['Si', 'No']);
+    this.translate.get([
+      'CLIENTE_ENCUESTAS.SI',
+      'CLIENTE_ENCUESTAS.NO'
+        ]).subscribe(tr => {
+          this.crearCanva('myPieChart3', listaComidaCaliente, [
+            tr['CLIENTE_ENCUESTAS.SI'],
+            tr['CLIENTE_ENCUESTAS.NO']
+          ]);
+        });
     this.crearCanvaBar('myPieChart4', listaPorcionesAdecuadas, [
-      'Muy grandes',
-      'Adecuadas',
-      'Muy pequeñas',
+      this.translate.instant('CLIENTE_ENCUESTAS.GRANDES'),
+      this.translate.instant('CLIENTE_ENCUESTAS.ADECUADAS'),
+      this.translate.instant('CLIENTE_ENCUESTAS.PEQUENAS'),
     ]);
-    this.crearCanva('myPieChart5', listaPresentacionAtractiva, ['Si', 'No']);
+    this.crearCanva('myPieChart5', listaPresentacionAtractiva, [this.translate.instant('CLIENTE_ENCUESTAS.SI'), this.translate.instant('CLIENTE_ENCUESTAS.NO')]);
     this.crearCanvaRadar('myPieChart6', listaValoresMenu, listaClavesMenu);
     this.crearCanvaBar('myPieChart7', listaTiempo, [
-      'Menos de 45 minutos',
-      '15-30 Minutos',
-      '30-45 Minutos',
-      'Más de 45 minutos',
+      this.translate.instant('CLIENTE_ENCUESTAS.MENOS'),
+      this.translate.instant('CLIENTE_ENCUESTAS.MIN15'),
+      this.translate.instant('CLIENTE_ENCUESTAS.MIN30'),
+      this.translate.instant('CLIENTE_ENCUESTAS.MAS45'),
     ]);
 
     this.isLoading = false;
@@ -221,7 +230,7 @@ export class ClientesComponent implements OnInit {
           labels: etiquetas,
           datasets: [
             {
-              label: 'votos',
+              label: this.translate.instant('CLIENTE_ENCUESTAS.VOTOS'),
               data: datos,
               backgroundColor: [
                 'rgba(75, 0, 130, 0.6)', // Indigo oscuro
@@ -269,7 +278,7 @@ export class ClientesComponent implements OnInit {
           labels: etiquetas,
           datasets: [
             {
-              label: 'votos',
+              label: this.translate.instant('CLIENTE_ENCUESTAS.VOTOS'),
               data: datos,
               backgroundColor: [
                 'rgba(75, 0, 130, 0.6)', // Indigo oscuro
@@ -341,7 +350,7 @@ export class ClientesComponent implements OnInit {
           labels: etiquetas,
           datasets: [
             {
-              label: 'votos',
+              label: this.translate.instant('CLIENTE_ENCUESTAS.VOTOS'),
               data: datos,
               backgroundColor: [
                 'rgba(75, 0, 130, 0.6)', // Indigo oscuro

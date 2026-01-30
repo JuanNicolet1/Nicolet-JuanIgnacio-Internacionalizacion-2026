@@ -63,7 +63,7 @@ export class ConfirmarDeliveryComponent implements OnInit {
 
     const confirm = await Swal.fire({
         title: this.translate.instant('SWAL_DUENO.ACEPTAR_PEDIDO'),
-        text: `${this.translate.instant('SWAL_DUENO.CLIENTE')}: ${pedido.cliente} - ${this.translate.instant('SWAL_DUENO.TOTAL')}: $${pedido.total}`,
+        text: `${this.translate.instant('SWAL_DUENO.CLIENTE')}: ${pedido.cliente} - ${this.translate.instant('SWAL_GENERAL.TOTAL')}: $${pedido.total}`,
         icon: 'question',
         showCancelButton: true,
         confirmButtonText: this.translate.instant('SWAL_LOGIN.SI')+ ', ' + this.translate.instant('SWAL_GENERAL.ACEPTAR'),
@@ -82,22 +82,21 @@ export class ConfirmarDeliveryComponent implements OnInit {
     try {
         
         await this.db.enviarNotificacion('chef', {
-            titulo: this.translate.instant('NOTIFICACIONES_DELIVERY.NUEVO_DELIVERY'),
-            cuerpo: `${this.translate.instant('NOTIFICACIONES_DELIVERY.CUERPO')}.`,
+          tituloKey: 'NOTIFICACIONES_DELIVERY.NUEVO_DELIVERY',
+          cuerpoKey: 'NOTIFICACIONES_DELIVERY.CUERPO',
         });
 
-        
         await this.db.enviarNotificacion('bartender', {
-            titulo: this.translate.instant('NOTIFICACIONES_DELIVERY.NUEVO_DELIVERY'),
-            cuerpo: `${this.translate.instant('NOTIFICACIONES_DELIVERY.BEBIDAS')}.`,
+          tituloKey: 'NOTIFICACIONES_DELIVERY.NUEVO_DELIVERY',
+          cuerpoKey: 'NOTIFICACIONES_DELIVERY.BEBIDAS',
         });
 
-       
+       /*
         await this.pushService.send(
              'Pedido Aceptado',
              `Tu pedido está en preparación. Tiempo aprox: ${pedido.tiempoEstimado} min.`,
              '', 
-        );
+        ); */
 
        
         pedido.estadoPedido = 'enPreparacion'; 
@@ -137,10 +136,13 @@ export class ConfirmarDeliveryComponent implements OnInit {
       this.isLoading = true;
 
       await this.db.enviarNotificacion('cliente', {
-        titulo: this.translate.instant('NOTIFICACIONES_DELIVERY.RECHAZADO'),
-        cuerpo: `${this.translate.instant('NOTIFICACIONES_DELIVERY.MOTIVO')}: ${motivo}. ${this.translate.instant('NOTIFICACIONES_DELIVERY.MODIFIQUE')}.`,
-        cliente: pedido.cliente 
-    });
+        tituloKey: 'NOTIFICACIONES_DELIVERY.RECHAZADO',
+        cuerpoKey: 'NOTIFICACIONES_DELIVERY.MODIFIQUE',
+        params: {
+          motivo: motivo
+        },
+        cliente: pedido.cliente
+      });
 
       pedido.productos = []; 
       pedido.estadoDelivery = 'cancelado';
@@ -206,8 +208,11 @@ export class ConfirmarDeliveryComponent implements OnInit {
 
        
         await this.db.enviarNotificacion('delivery', {
-            titulo: this.translate.instant('NOTIFICACIONES_DELIVERY.LISTO'),
-            cuerpo: `${this.translate.instant('NOTIFICACIONES_DELIVERY.ENTREGAR')} ${pedido.cliente}.`,
+          tituloKey: 'NOTIFICACIONES_DELIVERY.LISTO',
+          cuerpoKey: 'NOTIFICACIONES_DELIVERY.ENTREGAR',
+          params: {
+            cliente: pedido.cliente
+          }
         });
 
         Swal.fire({

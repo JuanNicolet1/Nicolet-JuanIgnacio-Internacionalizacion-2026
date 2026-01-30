@@ -30,6 +30,16 @@
     "ERROR": "Die Passwörter stimmen nicht überein"
   },
 
+  "CARGANDO": {
+    "CARGANDO": "Laden",
+    "VERIFICANDO": "Schicht prüfen",
+    "ACTUALIZANDO": "Status aktualisieren",
+    "CLIENTES": "Kunden laden",
+    "PROCESANDO": "Verarbeiten",
+    "MESA": "Tisch erstellen",
+    "CARTA": "Karte laden"
+  },
+
   "DUENO": {
     "AGREGAR_EMPLEADO": "MITARBEITER HINZUFÜGEN",
     "AGREGAR_CLIENTE": "KUNDEN HINZUFÜGEN",
@@ -86,6 +96,7 @@
   "DUENO_DELIVERY": {
     "PEDIDOS": "NEUE BESTELLUNGEN",
     "NPEDIDOS": "Keine neuen Bestellungen",
+    "COCINA": "Die Küche ist fertig",
     "ACEPTAR": "BESTELLUNG ANNEHMEN",
     "RECHAZAR": "BESTELLUNG ABLEHNEN",
     "LISTOS": "BEREIT ZUR LIEFERUNG",
@@ -201,6 +212,14 @@
     "MESA": "Ihr Tisch ist der "
   },
 
+  "MESA_TIPO": {
+    "ESTANDAR": "Standard",
+    "MOVILIDAD": "Eingeschränkte Mobilität",
+    "VIP": "VIP",
+    "LIBRE": "Frei",
+    "OCUPADA": "Besetzt"
+  },
+
   "PRODUCTO_ESTADO": {
     "ENVIANDO": "Bestellung wird gesendet...",
     "COCINA": "In der Küche! Ihre Gerichte werden zubereitet.",
@@ -268,7 +287,7 @@
     "RECHAZO": "BESTELLUNG ABGELEHNT",
     "NPROCESAR": "Der Kellner konnte Ihre Bestellung nicht bearbeiten",
     "MOTIVO": "Grund",
-    "ENIVADO": "Gesendet",
+    "ENVIADO": "Gesendet",
     "COCINANDO": "In Zubereitung",
     "ENTREGADO": "Geliefert",
     "DISFRUTANDO": "Genießen",
@@ -331,8 +350,49 @@
     "BAJA": "Tiefer"
   },
 
+  "AHORCADO": {
+    "VIDA": "Leben",
+    "FIDEO": "NUDELN",
+    "MILANESA": "WIENER SCHNITZEL",
+    "CARNE": "RINDFLEISCH",
+    "POLLO": "HÄHNCHEN",
+    "POLENTA": "POLENTA",
+    "ARROZ": "REIS"
+  },
+
+  "LETRAS": {
+    "A": "A",
+    "B": "B",
+    "C": "C",
+    "D": "D",
+    "E": "E",
+    "F": "F",
+    "G": "G",
+    "H": "H",
+    "I": "I",
+    "J": "J",
+    "K": "K",
+    "L": "L",
+    "M": "M",
+    "N": "N",
+    "O": "O",
+    "P": "P",
+    "Q": "Q",
+    "R": "R",
+    "S": "S",
+    "T": "T",
+    "U": "U",
+    "V": "V",
+    "W": "W",
+    "X": "X",
+    "Y": "Y",
+    "Z": "Z"
+  },
+
   "MOZO": {
     "TITULO": "Hilfe für den Kellner",
+    "COMENZAR": "Starten",
+    "REINTENTAR": "Erneut versuchen",
     "OBJETIVO": "Bringen Sie die Pizza zum Tisch, indem Sie das Handy neigen",
     "GANASTE": "Bestellung geliefert",
     "PERDISTE": "Die Bestellung ist heruntergefallen"
@@ -350,7 +410,12 @@
 
   "CHAT": {
     "MESA": "Tisch",
-    "CHAT": "Chat mit dem Personal"
+    "CHAT": "Chat mit dem Personal",
+    "ESCRIBIR": "Schreibe eine Nachricht",
+    "CLIENTE": "Kunde",
+    "DESTINO": "Lieferadresse",
+    "REPARTIDOR": "Zusteller",
+    "CAMINO": "Unterwegs"
   },
 
   "CLIENTE_ENCUESTAS": {
@@ -377,7 +442,8 @@
     "MIN15": "15–30 Minuten",
     "MIN30": "30–45 Minuten",
     "MAS45": "Mehr als 45 Minuten",
-    "ENVIAR": "Senden"
+    "ENVIAR": "Senden",
+    "VOTOS": "Stimmen"
   },
 
   "CUENTA": {
@@ -385,6 +451,7 @@
     "CUENTA": "Rechnung angefordert",
     "PREPARANDO": "Wir bereiten Ihre Rechnung vor",
     "BREVE": "Der Kellner oder Fahrer sendet Ihnen die Details gleich",
+    "TU_CUENTA": "Ihre Rechnung",
     "DESCUENTO": "Rabatt",
     "PROPINA": "Trinkgeld (Scannen)",
     "PAGAR": "JETZT BEZAHLEN",
@@ -393,6 +460,7 @@
   },
 
   "MAPA_DELIVERY": {
+    "BUSCAR": "Straße und Hausnummer suchen",
     "CALCULANDO_RUTA": "Route wird berechnet",
     "DESTINO": "Aktuelles Ziel",
     "CHAT": "Chat",
@@ -624,13 +692,13 @@
   "NOTIFICACIONES_PRODUCTOS": {
     "NUEVO_PEDIDO": "Neue Bestellung",
     "MESA": "Tisch",
-    "ESPERA": "wartet auf Essen",
+    "ESPERA": "Tisch {{mesa}} wartet auf Essen",
     "NUEVA_BEBIDA": "Neues Getränk",
-    "ESPERA2": "wartet auf Getränke",
+    "ESPERA2": "Tisch {{mesa}} wartet auf Getränke",
     "RECHAZADO": "Bestellung abgelehnt",
     "MOTIVO": "Grund",
-    "INDICAR_MOTIVO": "Bitte ändern Sie Ihre Bestellung",
-    "PEDIDO": "Gast hat am Tisch bestellt"
+    "INDICAR_MOTIVO": "Grund: {{motivo}}. Bitte ändern Sie Ihre Bestellung",
+    "PEDIDO": "Gast hat am Tisch bestellt {{numero}}"
   },
 
   "NOTIFICACIONES_COCINA": {
@@ -638,35 +706,45 @@
     "LISTAS": "Gerichte bereit zum Servieren"
   },
 
+  "NOTIFICACION_PEDIDO": {
+    "TITULO_LISTO": "Die Bestellung ist fertig",
+    "MENSAJE_LISTO": "Sie können die Bestellung an Tisch {{mesa}} bringen"
+  },
+
+
   "NOTIFICACIONES_PAGO": {
     "CONFIRMADA": "Rechnung bestätigt",
     "COBRADO": "Die Lieferung wurde bezahlt und abgeschlossen.",
     "MESA": "Der Tisch",
-    "CERRO": "hat die Rechnung geschlossen"
+    "CERRO": "Der Tisch {{mesa}} hat die Rechnung geschlossen"
+  },
+
+  "NOTIFICACIONES_FACTURA": {
+    "DISPONIBLE": "Rechnung verfügbar",
+    "DESCARGAR": "Laden Sie Ihre Rechnung hier herunter"
   },
 
   "NOTIFICACION_PEDIR": {
-    "RECIBIDO": "Zahlung eingegangen",
-    "CLIENTE": "Gast",
-    "ABONO": "hat bezahlt"
+    "RECIBIDO": "Zahlung erhalten",
+    "CLIENTE_ABONO": "Der Kunde {{cliente}} hat {{total}}$ bezahlt"
   },
 
   "NOTIFICACIONES_DELIVERY": {
-    "NUEVO_DELIVER": "Neue Lieferung",
+    "NUEVO_DELIVERY": "Neue Lieferung",
     "CUERPO": "Es gibt eine Lieferbestellung zum Zubereiten",
     "BEBIDAS": "Es gibt Liefergetränke zum Zubereiten",
     "RECHAZADO": "Bestellung abgelehnt",
     "MOTIVO": "Grund",
-    "MODIFIQUE": "Bitte ändern Sie Ihre Bestellung",
+    "MODIFIQUE": "Grund: {{motivo}}. Bitte ändern Sie Ihre Bestellung",
     "LISTO": "Bestellung fertig!",
-    "ENTREGAR": "Sie haben eine neue Bestellung zum Abholen und Ausliefern an",
+    "ENTREGAR": "Sie haben eine neue Bestellung zum Abholen und Ausliefern an {{cliente}}",
     "CAMINO": "Bestellung unterwegs!",
-    "LLEVANDO": "bringt Ihre Bestellung"
+    "LLEVANDO": "{{nombre}} bringt Ihre Bestellung"
   },
 
   "NOTIFICACIONES_COCINA_DELIVERY": {
     "LISTO": "Bestellung bereit zur Auslieferung",
-    "CUERPO1": "Die Bestellung von",
+    "CUERPO1": "Die Bestellung von {{cliente}} ist in Küche und Theke fertig",
     "CUERPO2": "ist in Küche und Theke fertig",
     "CUERPO3": "ist fertig"
   },
@@ -674,15 +752,17 @@
   "NOTIFICACIONES_CLIDEL": {
     "CUENTA": "Rechnung angefordert",
     "CLIENTE": "Der Gast",
-    "SOLICITO": "hat die Rechnung angefordert"
+    "SOLICITO": "hat die Rechnung angefordert",
+    "SOLICITO_MESA": "Die Tisch {{mesa}} hat die Rechnung angefordert.",
+    "MENSAJE": "Der Kunde {{cliente}} hat die Rechnung angefordert"
   },
 
   "NOTIFICACIONES_CHAT": {
     "MENSAJE_CLIENTE": "Nachricht vom Gast",
     "MENSAJE_DELIVERY": "Nachricht vom Fahrer",
     "NUEVO_MENSAJE": "Neue Nachricht",
-    "CONSULTO": "Gast hat am Tisch gefragt",
-    "RESPONDIO": "Kellner hat am Tisch geantwortet"
+    "CONSULTO": "Gast hat am Tisch gefragt {{mesa}}",
+    "RESPONDIO": "Kellner hat am Tisch geantwortet {{mesa}}"
   },
 
   "NOTIFICACIONES_MAPA": {
@@ -692,12 +772,13 @@
 
   "NOTIFICACIONES_MESA": {
     "ASIGNADA": "Tisch zugewiesen",
-    "MESA": "Ihnen wurde der Tisch zugewiesen"
+    "MESA": "Ihnen wurde der Tisch zugewiesen {{mesa}}"
   },
 
   "NOTIFICACIONES_BAR": {
     "BAR": "Theke abgeschlossen",
-    "LISTAS": "Getränke bereit"
+    "LISTAS": "Getränke bereit",
+    "MESA_LISTA": "Tisch {{mesa}}: Getränke bereit"
   },
 
   "NOTIFICACIONES_ACLIENTE": {
@@ -707,12 +788,12 @@
 
   "NOTIFICACIONES_CDUENO": {
     "NUEVO_EMPLEADO": "Neuer Mitarbeiter",
-    "REGISTRO": "Ein neuer"
+    "REGISTRO_TIPO": "Ein {{tipo}} wurde registriert"
   },
 
   "NOTIFICACION_RESERVA": {
     "CUENTA": "Rechnung bestätigt",
-    "PIDIO": "hat eine Reservierung angefragt für den"
+    "PIDIO": "{{nombre}} hat eine Reservierung angefragt für den {{fecha}}"
   },
 
   "NOTIFICACION_DELIVERY": {
@@ -720,11 +801,76 @@
     "DELIVERY": "Gast hat eine Lieferbestellung aufgegeben"
   },
 
+  "OTRA_NOTIFICACION": {
+    "ESPERA_MESA": "Kunde wartet auf Tisch",
+    "ASIGNAR_MESA": "Weisen Sie dem Kunden einen Tisch zu {{nombre}}"
+  },  
+
   "INFO": {
     "PEDIDO": "Ihre Bestellung",
     "PREPARACION": "In Zubereitung",
     "ESPERA": "Geschätzte Wartezeit",
     "DETALLE": "Details",
     "TOTAL": "GESAMT"
+  },
+
+  "PRODUCTS": {
+    "09EZzxiqo1q57F7Otlms": "Ricotta-Ravioli",
+    "5wvHwgO9wuy29VonzWls": "Omelette",
+    "GhnGX6dFdWnCNcsIFkJT": "Schnitzel (Milanesa)",
+    "KJoe8SiVokkUWeCVfnFy": "Bavette-Steak (Entraña)",
+    "VX7JzjHsGrQsBsKObv47": "Deodorant",
+    "bbrRMHvqX1l9NOT3rvIC": "Burger",
+    "d2tPim8afJpC3Tk92M18": "Tomate",
+    "fGzZU8arK8rq6L3VE5jA": "Weiß",
+    "fz7H4mlQgWpuXxNzMBKC": "Weiß 2",
+    "qbco3jmmUiLHcLrqSOz2": "Hühner-Eintopf",
+    "v5SpTgfFUtCIqMj9QO3l": "Hot Dog",
+    "7s9GqL1g2NHkkrxL2pTF": "Kaffee",
+    "D1ihmWu2KXKSolD3ad3w": "Daiquiri",
+    "FLTKNQ0TcshoXPH1Rr4l": "Coca-Cola",
+    "NfyhLhae8RrWxo4159pk": "Pepsi",
+    "RxPj5HrTQZN3uTVeVpeG": "Deodorant",
+    "UGTsAhY7das09kjP6VZA": "Schwarz",
+    "XPi7UNXME5AcCpQo16xQ": "Patagonia Bier",
+    "YHgTMiVOxzxaKy2eBKfx": "Heineken Bier",
+    "dFdPAuHhO38cnvwaBw5C": "Wasser",
+    "eJKdWPoiaMVXjnkfM2Kq": "Wein",
+    "yYmc0HSQCxlKIaozTjye": "Schwarz",
+    "1YHcSLyWph4PrgBmlr1S": "Flan",
+    "RBWCdanCVi2MHAD9KswW": "Käsekuchen",
+    "t88CDv5y0pUzWCgGYIjy": "Eis",
+    "xA9EuV3gTkqbc8JEqJh2": "Brownie mit Eis",
+    "zRgghMowW98CaNXea9g8": "Chocotorta"
+  },
+
+  "DESCRIPCION": {
+    "09EZzxiqo1q57F7Otlms": "Art von gefüllter Pasta mit Ricotta-Füllung, umhüllt von dünnem Teig.",
+    "5wvHwgO9wuy29VonzWls": "Lecker.",
+    "GhnGX6dFdWnCNcsIFkJT": "Panierter Rindfleischschnitzel, serviert mit Pommes oder Salat nach Wahl.",
+    "KJoe8SiVokkUWeCVfnFy": "Gegrilltes Bavette-Steak, serviert mit Chimichurri und rustikalen Kartoffeln.",
+    "VX7JzjHsGrQsBsKObv47": "Ding",
+    "bbrRMHvqX1l9NOT3rvIC": "Burger mit Cheddar-Käse, Salat, Tomate und Spezialsauce im Sesambrötchen.",
+    "d2tPim8afJpC3Tk92M18": "Gesund",
+    "fGzZU8arK8rq6L3VE5jA": "Nichts",
+    "fz7H4mlQgWpuXxNzMBKC": "Sehr weiß",
+    "qbco3jmmUiLHcLrqSOz2": "Ein Eintopf aus Huhn. Frikassee. Hühner- oder Fleischstücke in Soße geschmort.",
+    "v5SpTgfFUtCIqMj9QO3l": "Lecker.",
+    "7s9GqL1g2NHkkrxL2pTF": "Bitter.",
+    "D1ihmWu2KXKSolD3ad3w": "Tropischer Cocktail aus Rum, Zitrone und Zucker – erfrischend und süß.",
+    "FLTKNQ0TcshoXPH1Rr4l": "Klassisches Cola-Getränk, perfekt zu jeder Mahlzeit.",
+    "NfyhLhae8RrWxo4159pk": "Sehr kaltes Sprudelgetränk zum Erfrischen und Begleiten jedes Gerichts.",
+    "RxPj5HrTQZN3uTVeVpeG": "Sehr gut",
+    "UGTsAhY7das09kjP6VZA": "Schwarz",
+    "XPi7UNXME5AcCpQo16xQ": "Mittelschwere Craft-Bier mit fruchtigen Noten und sanftem Bittergeschmack.",
+    "YHgTMiVOxzxaKy2eBKfx": "Helles Lagerbier, erfrischend und ausgewogen im Geschmack.",
+    "dFdPAuHhO38cnvwaBw5C": "Natürliches stilles Mineralwasser, ideal zur Hydration.",
+    "eJKdWPoiaMVXjnkfM2Kq": "Wein, ideal zu Fleisch, Pasta oder Hauptgerichten.",
+    "yYmc0HSQCxlKIaozTjye": "Schwarz",
+    "1YHcSLyWph4PrgBmlr1S": "Hausgemachter Flan, serviert mit Dulce de Leche oder Schlagsahne.",
+    "RBWCdanCVi2MHAD9KswW": "Cheesecake ist bekannt für seinen reichen cremigen Geschmack und weiche Textur.",
+    "t88CDv5y0pUzWCgGYIjy": "Handwerkliches Eis in Geschmacksrichtungen wie Vanille, Schokolade und Erdbeere.",
+    "xA9EuV3gTkqbc8JEqJh2": "Dulce-de-Leche-Brownie mit einer Kugel Vanilleeis.",
+    "zRgghMowW98CaNXea9g8": "Argentinisches Dessert aus Schokoladenkeksen und Dulce-de-Leche-Creme."
   }
 }

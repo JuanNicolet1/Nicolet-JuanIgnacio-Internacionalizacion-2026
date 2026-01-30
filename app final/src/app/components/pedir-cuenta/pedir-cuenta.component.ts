@@ -66,9 +66,13 @@ export class PedirCuentaComponent implements OnInit {
       
  
       const pedidoEncontrado = lista.find(p => 
-        (esDelivery ? p.nombre : p.cliente) === this.auth.usuarioIngresado.nombre &&
-        (p.estadoPedido === 'cuentaSolicitada' || p.estadoPedido === 'cuentaEntregada')
-      );
+      (esDelivery ? p.nombre : p.cliente) === this.auth.usuarioIngresado.nombre &&
+      (
+        p.estadoPedido === 'cuentaSolicitada' ||
+        p.estadoPedido === 'cuentaEntregada' ||
+        p.estadoPedido === 'cuentaPagada'
+      )
+    );
 
       if (pedidoEncontrado) {
         this.pedidoActivo = pedidoEncontrado;
@@ -156,7 +160,7 @@ export class PedirCuentaComponent implements OnInit {
         tipoCliente: this.auth.usuarioIngresado.tipoCliente,
         tipoPedido: this.auth.usuarioIngresado.tipoPedido,
         mesa: this.pedidoActivo.mesa || 0,
-        estadoCuenta: 'haConfirmar',
+        estadoCuenta: 'cuentaConfirmada',
         fecha: new Date().getTime()
     };
 
@@ -168,12 +172,21 @@ export class PedirCuentaComponent implements OnInit {
         this.db.ModificarObjeto(this.pedidoActivo, coleccion);
 
         this.db.enviarNotificacion('dueño', {
-            titulo: this.translate.instant('NOTIFICACION_PEDIR.RECIBIDO'),
-            cuerpo: `${this.translate.instant('NOTIFICACION_PEDIR.CLIENTE')} ${cuenta.cliente} ${this.translate.instant('NOTIFICACION_PEDIR.ABONO')} $${cuenta.total}`
+          tituloKey: 'NOTIFICACION_PEDIR.RECIBIDO',
+          cuerpoKey: 'NOTIFICACION_PEDIR.CLIENTE_ABONO',
+          params: {
+            cliente: cuenta.cliente,
+            total: cuenta.total
+          }
         });
+
         this.db.enviarNotificacion('mesero', {
-            titulo: this.translate.instant('NOTIFICACION_PEDIR.RECIBIDO'),
-            cuerpo: `${this.translate.instant('NOTIFICACION_PEDIR.CLIENTE')} ${cuenta.cliente} ${this.translate.instant('NOTIFICACION_PEDIR.ABONO')} $${cuenta.total}`
+          tituloKey: 'NOTIFICACION_PEDIR.RECIBIDO',
+          cuerpoKey: 'NOTIFICACION_PEDIR.CLIENTE_ABONO',
+          params: {
+            cliente: cuenta.cliente,
+            total: cuenta.total
+          }
         });
 
 

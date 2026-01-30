@@ -113,14 +113,19 @@ export class RecibePedidoComponent {
     });
     this.auth.usuarioIngresado.estadoPedido = 'cuentaSolicitada';
     this.db.ModificarObjeto(this.auth.usuarioIngresado, 'clientes');
-      this.db.enviarNotificacion('mesero', {
-                    titulo: this.translate.instant('NOTIFICACIONES_CLIDEL.CUENTA'),
-                    cuerpo: `${this.translate.instant('NOTIFICACIONES_PAGO.MESA')} ${this.auth.usuarioIngresado.estadoMesa} ${this.translate.instant('NOTIFICACIONES_CLIDEL.SOLICITO')}`,
-                    mesa: this.auth.usuarioIngresado.estadoMesa,
-                    noRedirigir: true,
-                    cliente: this.auth.usuarioIngresado,
-                    pedido: pedidoCliente
-                  })
+
+    this.db.enviarNotificacion('mesero', {
+      tituloKey: 'NOTIFICACIONES_CLIDEL.CUENTA',
+      cuerpoKey: 'NOTIFICACIONES_CLIDEL.SOLICITO_MESA',
+      params: {
+        mesa: this.auth.usuarioIngresado.estadoMesa
+      },
+
+      mesa: this.auth.usuarioIngresado.estadoMesa,
+      noRedirigir: true,
+      cliente: this.auth.usuarioIngresado,
+      pedido: pedidoCliente
+    })
       .then((resp) => {
         this.router.navigateByUrl('/pedir-cuenta');
       });

@@ -79,11 +79,13 @@ export class ListadoDeliveryComponent implements OnInit {
         await this.db.ModificarObjeto(pedido, 'delivery');
         
         await this.db.enviarNotificacion('cliente', {
-            titulo: this.translate.instant('NOTIFICACIONES_DELIVERY.CAMINO'),
-            cuerpo: `${this.auth.usuarioIngresado.nombre} ${this.translate.instant('NOTIFICACIONES_DELIVERY.LLEVANDO')}.`,
-            pedidoId: pedido.id
+          tituloKey: 'NOTIFICACIONES_DELIVERY.CAMINO',
+          cuerpoKey: 'NOTIFICACIONES_DELIVERY.LLEVANDO',
+          params: {
+            nombre: this.auth.usuarioIngresado.nombre
+          },
+          pedidoId: pedido.id
         });
-
 
         this.router.navigate(['/mapa-delivery'], {
             queryParams: { 

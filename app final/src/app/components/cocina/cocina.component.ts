@@ -65,11 +65,13 @@ export class CocinaComponent implements OnInit {
 
     
     await this.db.enviarNotificacion('mesero', {
-      titulo: this.translate.instant('NOTIFICACIONES_COCINA.FINALIZADO'),
-      cuerpo: `${this.translate.instant('NOTIFICACIONES_COCINA.LISTAS')}`,
+      tituloKey: 'NOTIFICACIONES_COCINA.FINALIZADO',
+      cuerpoKey: 'NOTIFICACIONES_COCINA.LISTAS',
+      params: { mesa: pedido.mesa },
+
       pedidoEnProduccion: true,
       cocinaFinalizada: true,
-      barFinalizado: barFinalizado, 
+      barFinalizado: barFinalizado,
       noRedirigir: true,
       mesa: pedido.mesa,
     });

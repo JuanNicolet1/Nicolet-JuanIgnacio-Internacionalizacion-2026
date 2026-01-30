@@ -31,6 +31,16 @@
     "ERROR": "Passwords do not match"
   },
 
+  "CARGANDO": {
+    "CARGANDO": "Loading",
+    "VERIFICANDO": "Verifying shift",
+    "ACTUALIZANDO": "Updating status",
+    "CLIENTES": "Loading Customers",
+    "PROCESANDO": "Processing",
+    "MESA": "Creating Table",
+    "CARTA": "Loading Menu"
+  },
+
   "DUENO": {
     "AGREGAR_EMPLEADO": "ADD EMPLOYEE",
     "AGREGAR_CLIENTE": "ADD CLIENT",
@@ -87,6 +97,7 @@
   "DUENO_DELIVERY": {
     "PEDIDOS": "NEW ORDERS",
     "NPEDIDOS": "No new orders",
+    "COCINA": "The kitchen is ready",
     "ACEPTAR": "ACCEPT ORDER",
     "RECHAZAR": "REJECT ORDER",
     "LISTOS": "READY FOR DELIVERY",
@@ -202,6 +213,14 @@
     "MESA": "Your table is "
   },
 
+  "MESA_TIPO": {
+    "ESTANDAR": "Standard",
+    "MOVILIDAD": "Reduced Mobility",
+    "VIP": "VIP",
+    "LIBRE": "Free",
+    "OCUPADA": "Occupied"
+  },  
+
   "PRODUCTO_ESTADO": {
     "ENVIANDO": "Sending order...",
     "COCINA": "In the kitchen! Preparing your dishes.",
@@ -269,11 +288,11 @@
     "RECHAZO": "ORDER REJECTED",
     "NPROCESAR": "The waiter could not process your order",
     "MOTIVO": "Reason",
-    "ENIVADO": "Sent",
+    "ENVIADO": "Sent",
     "COCINANDO": "Cooking",
     "ENTREGADO": "Delivered",
     "DISFRUTANDO": "Enjoying",
-    "CONFIRAMR_RECEPCION": "Confirm Receipt (QR)",
+    "CONFIRMAR_RECEPCION": "Confirm Receipt (QR)",
     "JUGAR": "Play while you wait"
   },
 
@@ -332,8 +351,49 @@
     "BAJA": "Lower"
   },
 
+  "AHORCADO": {
+    "VIDA": "Life",
+    "FIDEO": "PASTA",
+    "MILANESA": "MILANESE",
+    "CARNE": "BEEF",
+    "POLLO": "CHICKEN",
+    "POLENTA": "POLENTA",
+    "ARROZ": "RICE"
+  },
+
+  "LETRAS": {
+    "A": "A",
+    "B": "B",
+    "C": "C",
+    "D": "D",
+    "E": "E",
+    "F": "F",
+    "G": "G",
+    "H": "H",
+    "I": "I",
+    "J": "J",
+    "K": "K",
+    "L": "L",
+    "M": "M",
+    "N": "N",
+    "O": "O",
+    "P": "P",
+    "Q": "Q",
+    "R": "R",
+    "S": "S",
+    "T": "T",
+    "U": "U",
+    "V": "V",
+    "W": "W",
+    "X": "X",
+    "Y": "Y",
+    "Z": "Z"
+  },
+
   "MOZO": {
     "TITULO": "Help the Waiter",
+    "COMENZAR": "Start",
+    "REINTENTAR": "Try again",
     "OBJETIVO": "Deliver the pizza to the table by tilting your phone",
     "GANASTE": "Order Delivered",
     "PERDISTE": "The order fell"
@@ -351,7 +411,12 @@
 
   "CHAT": {
     "MESA": "Table",
-    "CHAT": "Chat with staff"
+    "CHAT": "Chat with staff",
+    "ESCRIBIR": "Write a message",
+    "CLIENTE": "Customer",
+    "DESTINO": "Delivery Destination",
+    "REPARTIDOR": "Delivery Driver",
+    "CAMINO": "On the way"
   },
 
   "CLIENTE_ENCUESTAS": {
@@ -378,7 +443,8 @@
     "MIN15": "15-30 minutes",
     "MIN30": "30-45 minutes",
     "MAS45": "More than 45 minutes",
-    "ENVIAR": "Send"
+    "ENVIAR": "Send",
+    "VOTOS": "Votes"
   },
 
   "CUENTA": {
@@ -386,6 +452,7 @@
     "CUENTA": "Bill Requested",
     "PREPARANDO": "We are preparing your bill",
     "BREVE": "The waiter or driver will send you the details shortly",
+    "TU_CUENTA": "Your Bill",
     "DESCUENTO": "Discount",
     "PROPINA": "Tip (Scan)",
     "PAGAR": "PAY NOW",
@@ -394,6 +461,7 @@
   },
 
   "MAPA_DELIVERY": {
+    "BUSCAR": "Search street and number",
     "CALCULANDO_RUTA": "Calculating route",
     "DESTINO": "Current Destination",
     "CHAT": "Chat",
@@ -625,13 +693,13 @@
   "NOTIFICACIONES_PRODUCTOS": {
     "NUEVO_PEDIDO": "New Order",
     "MESA": "Table",
-    "ESPERA": "is waiting for food",
+    "ESPERA": "Table {{mesa}} is waiting for food",
     "NUEVA_BEBIDA": "New Drink",
-    "ESPERA2": "is waiting for drinks",
+    "ESPERA2": "Table {{mesa}} is waiting for drinks",
     "RECHAZADO": "Order Rejected",
     "MOTIVO": "Reason",
-    "INDICAR_MOTIVO": "Please modify your order",
-    "PEDIDO": "Customer placed an order at the table"
+    "INDICAR_MOTIVO": "Reason: {{motivo}}. Please modify your order",
+    "PEDIDO": "Customer placed an order at the table {{numero}}"
   },
 
   "NOTIFICACIONES_COCINA": {
@@ -639,35 +707,44 @@
     "LISTAS": "Food ready to be sent"
   },
 
+  "NOTIFICACION_PEDIDO": {
+    "TITULO_LISTO": "The order is ready",
+    "MENSAJE_LISTO": "You can now take the order to table {{mesa}}"
+  },
+
   "NOTIFICACIONES_PAGO": {
     "CONFIRMADA": "Bill Confirmed",
     "COBRADO": "The delivery has been paid and completed.",
     "MESA": "Table",
-    "CERRO": "closed the bill"
+    "CERRO": "Table {{mesa}} closed the bill"
+  },
+
+  "NOTIFICACIONES_FACTURA": {
+    "DISPONIBLE": "Invoice available",
+    "DESCARGAR": "Download your invoice here"
   },
 
   "NOTIFICACION_PEDIR": {
-    "RECIBIDO": "Payment Received",
-    "CLIENTE": "Customer",
-    "ABONO": "paid"
+    "RECIBIDO": "Payment received",
+    "CLIENTE_ABONO": "Customer {{cliente}} paid ${{total}}"
   },
 
   "NOTIFICACIONES_DELIVERY": {
-    "NUEVO_DELIVER": "New Delivery",
+    "NUEVO_DELIVERY": "New Delivery",
     "CUERPO": "There is a delivery order to prepare",
     "BEBIDAS": "There are delivery drinks to prepare",
     "RECHAZADO": "Order Rejected",
     "MOTIVO": "Reason",
-    "MODIFIQUE": "Please modify your order",
+    "MODIFIQUE": "Reason: {{motivo}}. Please modify your order",
     "LISTO": "Order Ready!",
-    "ENTREGAR": "You have a new order to pick up and deliver to",
+    "ENTREGAR": "You have a new order to pick up and deliver to {{cliente}}",
     "CAMINO": "Order On The Way!",
-    "LLEVANDO": "is delivering your order"
+    "LLEVANDO": "{{nombre}} is delivering your order"
   },
 
   "NOTIFICACIONES_COCINA_DELIVERY": {
     "LISTO": "Order Ready for Delivery",
-    "CUERPO1": "The order from",
+    "CUERPO1": "The order from {{cliente}} is ready in kitchen and bar",
     "CUERPO2": "is ready in kitchen and bar",
     "CUERPO3": "is ready"
   },
@@ -675,15 +752,17 @@
   "NOTIFICACIONES_CLIDEL": {
     "CUENTA": "Bill requested",
     "CLIENTE": "The customer",
-    "SOLICITO": "requested the bill"
+    "SOLICITO": "requested the bill",
+    "SOLICITO_MESA": "The table {{mesa}} requested the bill.",
+    "MENSAJE": "The customer {{cliente}} requested the bill"
   },
 
   "NOTIFICACIONES_CHAT": {
     "MENSAJE_CLIENTE": "Customer Message",
     "MENSAJE_DELIVERY": "Driver Message",
     "NUEVO_MENSAJE": "New message",
-    "CONSULTO": "Customer asked at the table",
-    "RESPONDIO": "Waiter replied at table"
+    "CONSULTO": "Customer asked at the table {{mesa}}",
+    "RESPONDIO": "Waiter replied at table {{mesa}}"
   },
 
   "NOTIFICACIONES_MAPA": {
@@ -693,12 +772,13 @@
 
   "NOTIFICACIONES_MESA": {
     "ASIGNADA": "Table assigned",
-    "MESA": "You have been assigned table"
+    "MESA": "You have been assigned table {{mesa}}"
   },
 
   "NOTIFICACIONES_BAR": {
     "BAR": "Bar Completed",
-    "LISTAS": "Drinks ready"
+    "LISTAS": "Drinks ready",
+    "MESA_LISTA": "Table {{mesa}}: drinks ready."
   },
 
   "NOTIFICACIONES_ACLIENTE": {
@@ -708,12 +788,12 @@
 
   "NOTIFICACIONES_CDUENO": {
     "NUEVO_EMPLEADO": "New employee",
-    "REGISTRO": "A new"
+    "REGISTRO_TIPO": "A {{tipo}} was registered"
   },
 
   "NOTIFICACION_RESERVA": {
     "CUENTA": "Bill confirmed",
-    "PIDIO": "requested a reservation for"
+    "PIDIO": "{{nombre}} requested a reservation for {{fecha}}"
   },
 
   "NOTIFICACION_DELIVERY": {
@@ -722,9 +802,9 @@
   },
 
   "OTRA_NOTIFICACION": {
-    "ESPERA_MESA": "Kunde wartet auf Tisch",
-    "ASIGNAR_MESA": "Weisen Sie dem Kunden einen Tisch zu"
-  },  
+    "ESPERA_MESA": "Customer waiting for table",
+    "ASIGNAR_MESA": "Assign a table to customer {{nombre}}"
+  },
 
   "INFO": {
     "PEDIDO": "Your Order",
@@ -732,5 +812,65 @@
     "ESPERA": "Estimated wait",
     "DETALLE": "Details",
     "TOTAL": "TOTAL"
+  },
+
+  "PRODUCTS": {
+    "09EZzxiqo1q57F7Otlms": "Ricotta Ravioli",
+    "5wvHwgO9wuy29VonzWls": "Omelette",
+    "GhnGX6dFdWnCNcsIFkJT": "Breaded Steak (Milanesa)",
+    "KJoe8SiVokkUWeCVfnFy": "Skirt Steak (Entraña)",
+    "VX7JzjHsGrQsBsKObv47": "Deodorant",
+    "bbrRMHvqX1l9NOT3rvIC": "Burger",
+    "d2tPim8afJpC3Tk92M18": "Tomato",
+    "fGzZU8arK8rq6L3VE5jA": "White",
+    "fz7H4mlQgWpuXxNzMBKC": "White 2",
+    "qbco3jmmUiLHcLrqSOz2": "Chicken Stew",
+    "v5SpTgfFUtCIqMj9QO3l": "Hot Dog",
+    "7s9GqL1g2NHkkrxL2pTF": "Coffee",
+    "D1ihmWu2KXKSolD3ad3w": "Daiquiri",
+    "FLTKNQ0TcshoXPH1Rr4l": "Coca-Cola",
+    "NfyhLhae8RrWxo4159pk": "Pepsi",
+    "RxPj5HrTQZN3uTVeVpeG": "Deodorant",
+    "UGTsAhY7das09kjP6VZA": "Black",
+    "XPi7UNXME5AcCpQo16xQ": "Patagonia Beer",
+    "YHgTMiVOxzxaKy2eBKfx": "Heineken Beer",
+    "dFdPAuHhO38cnvwaBw5C": "Water",
+    "eJKdWPoiaMVXjnkfM2Kq": "Wine",
+    "yYmc0HSQCxlKIaozTjye": "Black",
+    "1YHcSLyWph4PrgBmlr1S": "Flan",
+    "RBWCdanCVi2MHAD9KswW": "Cheesecake",
+    "t88CDv5y0pUzWCgGYIjy": "Ice Cream",
+    "xA9EuV3gTkqbc8JEqJh2": "Brownie with Ice Cream",
+    "zRgghMowW98CaNXea9g8": "Chocotorta"
+  },
+
+  "DESCRIPCION": {
+    "09EZzxiqo1q57F7Otlms": "Type of stuffed pasta with a ricotta filling wrapped in thin dough.",
+    "5wvHwgO9wuy29VonzWls": "Delicious.",
+    "GhnGX6dFdWnCNcsIFkJT": "Breaded beef cutlet, served with french fries or salad of your choice.",
+    "KJoe8SiVokkUWeCVfnFy": "Grilled skirt steak, served with chimichurri and rustic potatoes.",
+    "VX7JzjHsGrQsBsKObv47": "Thing",
+    "bbrRMHvqX1l9NOT3rvIC": "Burger with cheddar cheese, lettuce, tomato, and special sauce on sesame bun.",
+    "d2tPim8afJpC3Tk92M18": "Healthy",
+    "fGzZU8arK8rq6L3VE5jA": "Nothing",
+    "fz7H4mlQgWpuXxNzMBKC": "Very white",
+    "qbco3jmmUiLHcLrqSOz2": "A stew made with chicken. Fricassee. Pieces of chicken or other meat stewed in sauce.",
+    "v5SpTgfFUtCIqMj9QO3l": "Delicious.",
+    "7s9GqL1g2NHkkrxL2pTF": "Bitter.",
+    "D1ihmWu2KXKSolD3ad3w": "Tropical cocktail made with rum, lemon, and sugar — refreshing and sweet.",
+    "FLTKNQ0TcshoXPH1Rr4l": "Classic cola soft drink, perfect to accompany any meal.",
+    "NfyhLhae8RrWxo4159pk": "Very cold fizzy drink to refresh and pair with any dish.",
+    "RxPj5HrTQZN3uTVeVpeG": "Very good",
+    "UGTsAhY7das09kjP6VZA": "Black",
+    "XPi7UNXME5AcCpQo16xQ": "Medium-bodied craft beer with fruity notes and a smooth bitter touch.",
+    "YHgTMiVOxzxaKy2eBKfx": "Light lager beer, refreshing with a balanced flavor.",
+    "dFdPAuHhO38cnvwaBw5C": "Natural still mineral water, ideal for hydration.",
+    "eJKdWPoiaMVXjnkfM2Kq": "Wine ideal to pair with meats, pastas, or main courses.",
+    "yYmc0HSQCxlKIaozTjye": "Black",
+    "1YHcSLyWph4PrgBmlr1S": "Homemade flan served with dulce de leche or whipped cream.",
+    "RBWCdanCVi2MHAD9KswW": "Cheesecake is known for its rich, creamy flavor and smooth texture.",
+    "t88CDv5y0pUzWCgGYIjy": "Artisanal ice cream available in flavors like vanilla, chocolate, and strawberry.",
+    "xA9EuV3gTkqbc8JEqJh2": "Dulce de leche brownie served with a scoop of cream ice cream.",
+    "zRgghMowW98CaNXea9g8": "Argentine dessert made of chocolate cookies and dulce de leche cream."
   }
 }

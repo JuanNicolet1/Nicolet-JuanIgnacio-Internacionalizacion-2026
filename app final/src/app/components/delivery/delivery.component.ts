@@ -59,10 +59,19 @@ export class DeliveryComponent implements  ViewWillEnter, ViewDidLeave {
       private auth: AuthService,
       private db: DatabaseService,
       private pushService:pushService 
-    ) {
-        
-  
-    }
+    ) {}
+
+    private traducirNotificacion(notif: any) {
+  const titulo = notif.tituloKey
+    ? this.translate.instant(notif.tituloKey, notif.params || {})
+    : notif.titulo;
+
+  const cuerpo = notif.cuerpoKey
+    ? this.translate.instant(notif.cuerpoKey, notif.params || {})
+    : notif.cuerpo;
+
+    return { titulo, cuerpo };
+  }
 
     ionViewWillEnter(): void {
 
@@ -89,12 +98,13 @@ export class DeliveryComponent implements  ViewWillEnter, ViewDidLeave {
             this.subscription4 = observableClientes.subscribe((resultado) => {
           if (resultado.length > 0) {
             const ultimaNotificacion: any = resultado[0];
-            console.log(ultimaNotificacion);
+            console.log('🔥 NOTIF REAL:', ultimaNotificacion);
             if (this.auth.usuarioIngresado.tipoCliente === 'cliente') {
               if (!ultimaNotificacion.recibida) {
+                const { titulo, cuerpo } = this.traducirNotificacion(ultimaNotificacion);
                 this.pushService.send(
-                  ultimaNotificacion.titulo,
-                  ultimaNotificacion.cuerpo,
+                  titulo,
+                  cuerpo,
                   '/chat-delivery'
                 );
 
@@ -275,14 +285,17 @@ export class DeliveryComponent implements  ViewWillEnter, ViewDidLeave {
       try{
         this.db.guardarObjeto(pedido, 'delivery')
         await this.db.enviarNotificacion('dueño', {
-            titulo: this.translate.instant('NOTIFICACION_DELIVERY.NUEVO_PEDIDO'),
-            cuerpo: `${this.translate.instant('NOTIFICACION_DELIVERY.DELIVERY')}`,
+          tituloKey: 'NOTIFICACION_DELIVERY.NUEVO_PEDIDO',
+          cuerpoKey: 'NOTIFICACION_DELIVERY.DELIVERY',
+          params: {}
           });
 
-        await this.db.enviarNotificacion('supervisor', {
-              titulo: this.translate.instant('NOTIFICACION_DELIVERY.NUEVO_PEDIDO'),
-              cuerpo: `${this.translate.instant('NOTIFICACION_DELIVERY.DELIVERY')}`,
-            });
+
+          await this.db.enviarNotificacion('supervisor', {
+          tituloKey: 'NOTIFICACION_DELIVERY.NUEVO_PEDIDO',
+          cuerpoKey: 'NOTIFICACION_DELIVERY.DELIVERY',
+          params: {}
+          });
 
         this.auth.usuarioIngresado.tipoPedido = 'delivery';
         this.auth.usuarioIngresado.direccion = this.db.direccion

@@ -185,9 +185,21 @@ export class AuthService {
     return signInWithEmailAndPassword(this.auth, email, contrasena);
   }
 
-  CerrarSesion() {
+  async CerrarSesion() {
   this.limpiarSuscripciones();
-  return signOut(this.auth);
+
+  // Limpieza inmediata (muy importante)
+  this.usuarioIngresado = null;
+  this.tipoDeUsuarioIngresado = null;
+  this.usuarioEncontrado = false;
+  this.usuarioDeDB = null;
+
+  try {
+    await signOut(this.auth);
+    await this.router.navigateByUrl('/login', { replaceUrl: true });
+  } catch (e) {
+    console.error(e);
+  }
 }
 private suscripciones: any[] = [];
 

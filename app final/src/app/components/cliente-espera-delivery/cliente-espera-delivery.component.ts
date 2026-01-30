@@ -53,6 +53,18 @@ export class ClienteEsperaDeliveryComponent  implements ViewWillEnter, ViewDidLe
     private pedidoService: PedidoService
   ) { }
 
+  private traducirNotificacion(notif: any) {
+  const titulo = notif.tituloKey
+    ? this.translate.instant(notif.tituloKey, notif.params || {})
+    : notif.titulo;
+
+  const cuerpo = notif.cuerpoKey
+    ? this.translate.instant(notif.cuerpoKey, notif.params || {})
+    : notif.cuerpo;
+
+    return { titulo, cuerpo };
+  }
+
   ionViewWillEnter(): void {
     this.isLoading = true; 
     this.mostrarNotificacion = true;
@@ -99,11 +111,11 @@ export class ClienteEsperaDeliveryComponent  implements ViewWillEnter, ViewDidLe
         if (this.auth.usuarioIngresado.tipoCliente === 'cliente' && this.pasoActual !== -1) {
           console.log(ultimaNotificacion);
           if (!ultimaNotificacion.recibida) {
-            
+            const { titulo, cuerpo } = this.traducirNotificacion(ultimaNotificacion);
             this.pushService.send(
-              ultimaNotificacion.titulo,
-              ultimaNotificacion.cuerpo,
-              '/chat-delivery' 
+              titulo,
+              cuerpo,
+              ''
             );
             this.db.actualizarNotificacion('cliente', ultimaNotificacion.id, { recibida: true });
           }
@@ -166,47 +178,52 @@ export class ClienteEsperaDeliveryComponent  implements ViewWillEnter, ViewDidLe
     const obsNotif = this.db.traerNotificacion(rol);
     
     if (this.subscriptionRechazo) {
-        this.subscriptionRechazo.unsubscribe();
-    }
-    
-    this.subscriptionRechazo = obsNotif.subscribe((res: any[]) => {
-        if(res && res.length > 0) {
-            const notif = res[0];
-            
-            if(!notif.recibida && this.mostrarNotificacion) {
-                
-                this.pushService.send(
-                    notif.titulo,
-                    notif.cuerpo,
-                    '/delivery', 
-                    true,
-                    '',
-                    'abrirDelivery'
-                );
+  this.subscriptionRechazo.unsubscribe();
+}
 
-                this.db.actualizarNotificacion(rol, notif.id, { recibida: true });
-                this.mostrarNotificacion = false;
-            }
+this.subscriptionRechazo = obsNotif.subscribe((res: any[]) => {
+  if (res && res.length > 0) {
+    const notif = res[0];
+
+    if (!notif.recibida && this.mostrarNotificacion) {
+        const { titulo, cuerpo } = this.traducirNotificacion(notif);
+
+        this.pushService.send(
+          titulo,
+          cuerpo,
+          '/delivery',
+          true,
+          '',
+          'abrirDelivery'
+        );
+
+        this.db.actualizarNotificacion(rol, notif.id, { recibida: true });
+        this.mostrarNotificacion = false;
         }
+      }
     });
   }
-
 
   pedirCuenta() {
     if(!this.delivery) return;
     
     this.auth.usuarioIngresado.estadoPedido = 'cuentaSolicitada';
     this.isLoading = true;
+    this.db.ModificarObjeto({
+        ...this.delivery,
+        estadoPedido: 'cuentaSolicitada',
+        fechaCuentaSolicitada: new Date()
+      }, 'delivery');
 
     this.db.ModificarObjeto(this.auth.usuarioIngresado, 'clientes');
-    
+    console.log(this.translate.instant('NOTIFICACIONES_CLIDEL.CUENTA'));
     this.db.enviarNotificacion('delivery', {
-        titulo: this.translate.instant('NOTIFICACIONES_CLIDEL.CUENTA'),
-        cuerpo: `${this.translate.instant('NOTIFICACIONES_CLIDEL.CLIENTE')} ${this.auth.usuarioIngresado.nombre} ${this.translate.instant('NOTIFICACIONES_CLIDEL.SOLICITO')}`,
-        noRedirigir: true,
-        cliente: this.auth.usuarioIngresado.nombre,
-        pedido: this.delivery
-    })
+      tituloKey: 'NOTIFICACIONES_CLIDEL.CUENTA',
+      cuerpoKey: 'NOTIFICACIONES_CLIDEL.MENSAJE',
+      cliente: this.auth.usuarioIngresado.nombre,
+      pedidoId: this.delivery.id, 
+      pedido: this.delivery
+      })
     .then(() => {
         this.isLoading = false;
         this.ngZone.run(() => {

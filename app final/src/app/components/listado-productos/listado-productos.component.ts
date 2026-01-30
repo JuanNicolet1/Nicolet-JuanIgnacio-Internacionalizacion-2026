@@ -91,7 +91,7 @@ export class ListadoProductosComponent implements OnInit, ViewWillEnter, ViewDid
       this.productsBebida = prods.filter(p => p.tipoProducto === 'bebida');
       this.productsPostres = prods.filter(p => p.tipoProducto === 'postre');
       
-      
+      console.log(productos);
       if (this.productsComida.length > 0) {
         this.destacarProducto(this.productsComida[0]);
       }
@@ -113,6 +113,18 @@ export class ListadoProductosComponent implements OnInit, ViewWillEnter, ViewDid
 
     producto.cantidad += operacion;
     this.actualizarCarrito(producto);
+  }
+
+  private traducirNotificacion(notif: any) {
+  const titulo = notif.tituloKey
+    ? this.translate.instant(notif.tituloKey, notif.params || {})
+    : notif.titulo;
+
+  const cuerpo = notif.cuerpoKey
+    ? this.translate.instant(notif.cuerpoKey, notif.params || {})
+    : notif.cuerpo;
+
+    return { titulo, cuerpo };
   }
 
   actualizarCarrito(producto: any) {
@@ -318,10 +330,11 @@ export class ListadoProductosComponent implements OnInit, ViewWillEnter, ViewDid
       
 
       if (!ultimaNotificacion.recibida && debeMostrarPush) {
+        const { titulo, cuerpo } = this.traducirNotificacion(ultimaNotificacion);
 
         this.pushService.send(
-          ultimaNotificacion.titulo,
-          ultimaNotificacion.cuerpo,
+          titulo,
+          cuerpo,
           '/chat', 
           true,
           '',
@@ -401,9 +414,12 @@ export class ListadoProductosComponent implements OnInit, ViewWillEnter, ViewDid
       
 
       await this.db.enviarNotificacion('mesero', {
-        titulo: this.translate.instant('NOTIFICACIONES_PRODUCTOS.NUEVO_PEDIDO'),
-        cuerpo: `${this.translate.instant('NOTIFICACIONES_PRODUCTOS.PEDIDO')} ${numero}`,
-        mesa: this.db.mesa,
+        tituloKey: 'NOTIFICACIONES_PRODUCTOS.NUEVO_PEDIDO',
+        cuerpoKey: 'NOTIFICACIONES_PRODUCTOS.PEDIDO',
+        params: {
+          numero: numero,
+          mesa: this.db.mesa
+        }
       });
 
       await this.db.guardarObjeto(pedido, 'pedidos');

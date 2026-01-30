@@ -86,16 +86,22 @@ export class ConfirmarPedidoComponent implements OnInit {
     try {
 
         await this.db.enviarNotificacion('chef', {
-            titulo: this.translate.instant('NOTIFICACIONES_PRODUCTOS.NUEVO_PEDIDO'),
-            cuerpo: `${this.translate.instant('NOTIFICACIONES_PRODUCTOS.MESA')} ${pedido.mesa} ${this.translate.instant('NOTIFICACIONES_PRODUCTOS.ESPERA')}.`,
+          tituloKey: 'NOTIFICACIONES_PRODUCTOS.NUEVO_PEDIDO',
+          cuerpoKey: 'NOTIFICACIONES_PRODUCTOS.ESPERA',
+          params: {
+            mesa: pedido.mesa
+          }
         });
 
         const hayBebidas = pedido.productos.some((p:any) => p.tipoProducto === 'bebida');
         if(hayBebidas) {
             await this.db.enviarNotificacion('bartender', {
-                titulo: this.translate.instant('NOTIFICACIONES_PRODUCTOS.NUEVA_BEBIDA'),
-                cuerpo: `${this.translate.instant('NOTIFICACIONES_PRODUCTOS.MESA')} ${pedido.mesa} ${this.translate.instant('NOTIFICACIONES_PRODUCTOS.ESPERA2')}.`,
-            });
+            tituloKey: 'NOTIFICACIONES_PRODUCTOS.NUEVA_BEBIDA',
+            cuerpoKey: 'NOTIFICACIONES_PRODUCTOS.ESPERA2',
+            params: {
+              mesa: pedido.mesa
+            }
+          });
         }
   
 
@@ -137,9 +143,12 @@ export class ConfirmarPedidoComponent implements OnInit {
     this.isLoading = true;
 
     await this.db.enviarNotificacion('cliente', {
-        titulo: this.translate.instant('NOTIFICACIONES_PRODUCTOS.RECHAZADO'),
-        cuerpo: `${this.translate.instant('NOTIFICACIONES_PRODUCTOS.MOTIVO')}: ${motivo}. ${this.translate.instant('NOTIFICACIONES_PRODUCTOS.INDICAR_MOTIVO')}.`,
-        cliente: pedido.cliente 
+      tituloKey: 'NOTIFICACIONES_PRODUCTOS.RECHAZADO',
+      cuerpoKey: 'NOTIFICACIONES_PRODUCTOS.INDICAR_MOTIVO',
+      params: {
+        motivo: motivo
+      },
+      cliente: pedido.cliente
     });
 
    

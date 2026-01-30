@@ -19,7 +19,7 @@
 
   <div class="ticket-view" *ngIf="!esperandoCuenta">
     
-    <h2 class="title">Tu Cuenta</h2>
+    <h2 class="title">{{ 'CUENTA.TU_CUENTA' | translate }}</h2>
 
     <div class="ticket-card">
       <div class="ticket-header">
@@ -35,7 +35,7 @@
           <img [src]="p.image1" class="thumb-img" alt="prod">
 
           <span class="qty">{{ p.cantidad }}x</span>
-          <span class="name">{{ p.name }}</span>
+          <span class="name">{{ ('PRODUCTS.' + p.id) | translate }}</span>
           <span class="price">{{ (p.precio * (p.cantidad || 1)) | currency }}</span>
         
         </div>

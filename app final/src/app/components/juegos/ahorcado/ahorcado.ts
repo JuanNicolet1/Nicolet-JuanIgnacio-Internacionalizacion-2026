@@ -13,7 +13,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 @Component({
   selector: 'app-ahorcado',
   standalone:true,
-  imports: [RouterLink, FontAwesomeModule],
+  imports: [RouterLink, FontAwesomeModule, TranslateModule],
   templateUrl: './ahorcado.html',
   styleUrl: './ahorcado.scss'
 })
@@ -25,7 +25,7 @@ export class Ahorcado implements ViewWillEnter, ViewDidLeave {
 //primero fijarme que hacer con el icono
 //arreglar el problema con volver a empezar el juego
 
-  palabras = ['FIDEOS', 'MILANESA', 'CARNE', 'POLLO', 'POLENTA', 'ARROZ'];
+  palabras = [this.translate.instant('AHORCADO.FIDEO'), this.translate.instant('AHORCADO.MILANESA'), this.translate.instant('AHORCADO.CARNE'), this.translate.instant('AHORCADO.POLLO'), this.translate.instant('AHORCADO.POLENTA'), this.translate.instant('AHORCADO.ARROZ')];
   vida = 6;
   vida_descuento = 1;
   mensaje = '';
@@ -56,6 +56,7 @@ export class Ahorcado implements ViewWillEnter, ViewDidLeave {
   puestoX = false;
   puestoY = false;
   puestoZ = false;
+  puestoLetra = false;
 
   usuario = '';
   letras_usadas = 0;
@@ -134,7 +135,7 @@ export class Ahorcado implements ViewWillEnter, ViewDidLeave {
         title: this.translate.instant('SWAL_JUEGOS.BIEN'),
         text: this.translate.instant('SWAL_JUEGOS.ADIVINADO') + ': ' + this.palabra,
         icon: 'success',
-        confirmButtonText: 'Nueva partida',
+        confirmButtonText: this.translate.instant('SWAL_JUEGOS.NUEVA_PARTIDA'),
         allowOutsideClick: false,
         allowEscapeKey: false
         }).then(() => {
@@ -153,13 +154,24 @@ export class Ahorcado implements ViewWillEnter, ViewDidLeave {
     this.vida_descuento -= 1;
     this.mensaje = this.translate.instant('JUEGOS.PERDISTE') + " " + this.palabra;
     this.reiniciar = true;
+    Swal.fire({
+      title: this.translate.instant('JUEGOS.PERDISTE'),
+      text: this.palabra,
+      icon: 'error',
+      confirmButtonText: this.translate.instant('SWAL_JUEGOS.NUEVA_PARTIDA'),
+      allowOutsideClick: false,
+      allowEscapeKey: false
+    }).then(() => {
+      this.reiniciarPartida();
+    });
+    return;
     //this.guardarAhorcado();
   }
 }
 
 
   a(){
-    this.letra = "A";
+    this.letra = this.translate.instant('LETRAS.A');
     this.letrasUsadas.push(this.letra);
     this.letras_usadas += 1;
     this.comprobarLetra();
@@ -167,7 +179,7 @@ export class Ahorcado implements ViewWillEnter, ViewDidLeave {
   }
 
   b(){
-    this.letra = "B";
+    this.letra = this.translate.instant('LETRAS.B');
     this.letrasUsadas.push(this.letra);
     this.letras_usadas += 1;
     this.comprobarLetra();
@@ -175,7 +187,7 @@ export class Ahorcado implements ViewWillEnter, ViewDidLeave {
   }
 
   c(){
-    this.letra = "C";
+    this.letra = this.translate.instant('LETRAS.C');
     this.letrasUsadas.push(this.letra);
     this.letras_usadas += 1;
     this.comprobarLetra();
@@ -183,7 +195,7 @@ export class Ahorcado implements ViewWillEnter, ViewDidLeave {
   }
 
   d(){
-    this.letra = "D";
+    this.letra = this.translate.instant('LETRAS.D');
     this.letrasUsadas.push(this.letra);
     this.letras_usadas += 1;
     this.comprobarLetra();
@@ -191,7 +203,7 @@ export class Ahorcado implements ViewWillEnter, ViewDidLeave {
   }
 
   e(){
-    this.letra = "E";
+    this.letra = this.translate.instant('LETRAS.E');
     this.letrasUsadas.push(this.letra);
     this.letras_usadas += 1;
     this.comprobarLetra();
@@ -199,7 +211,7 @@ export class Ahorcado implements ViewWillEnter, ViewDidLeave {
   }
 
   f(){
-    this.letra = "F";
+    this.letra = this.translate.instant('LETRAS.F');
     this.letrasUsadas.push(this.letra);
     this.letras_usadas += 1;
     this.comprobarLetra();
@@ -207,7 +219,7 @@ export class Ahorcado implements ViewWillEnter, ViewDidLeave {
   }
 
   g(){
-    this.letra = "G";
+    this.letra = this.translate.instant('LETRAS.G');
     this.letrasUsadas.push(this.letra);
     this.letras_usadas += 1;
     this.comprobarLetra();
@@ -215,7 +227,7 @@ export class Ahorcado implements ViewWillEnter, ViewDidLeave {
   }
 
   h(){
-    this.letra = "H";
+    this.letra = this.translate.instant('LETRAS.H');
     this.letrasUsadas.push(this.letra);
     this.letras_usadas += 1;
     this.comprobarLetra();
@@ -223,7 +235,7 @@ export class Ahorcado implements ViewWillEnter, ViewDidLeave {
   }
 
   i(){
-    this.letra = "I";
+    this.letra = this.translate.instant('LETRAS.I');
     this.letrasUsadas.push(this.letra);
     this.letras_usadas += 1;
     this.comprobarLetra();
@@ -231,7 +243,7 @@ export class Ahorcado implements ViewWillEnter, ViewDidLeave {
   }
 
   j(){  
-    this.letra = "J";
+    this.letra = this.translate.instant('LETRAS.J');
     this.letrasUsadas.push(this.letra);
     this.letras_usadas += 1;
     this.comprobarLetra();
@@ -239,7 +251,7 @@ export class Ahorcado implements ViewWillEnter, ViewDidLeave {
   }
 
   k(){
-    this.letra = "K";
+    this.letra = this.translate.instant('LETRAS.K');
     this.letrasUsadas.push(this.letra);
     this.letras_usadas += 1;
     this.comprobarLetra();
@@ -247,7 +259,7 @@ export class Ahorcado implements ViewWillEnter, ViewDidLeave {
   }
 
   l(){
-    this.letra = "L";
+    this.letra = this.translate.instant('LETRAS.L');
     this.letrasUsadas.push(this.letra);
     this.letras_usadas += 1;
     this.comprobarLetra();
@@ -255,7 +267,7 @@ export class Ahorcado implements ViewWillEnter, ViewDidLeave {
   }
 
   m(){
-    this.letra = "M";
+    this.letra = this.translate.instant('LETRAS.M');
     this.letrasUsadas.push(this.letra);
     this.letras_usadas += 1;
     this.comprobarLetra();
@@ -263,7 +275,7 @@ export class Ahorcado implements ViewWillEnter, ViewDidLeave {
   }
 
   n(){
-    this.letra = "N";
+    this.letra = this.translate.instant('LETRAS.N');
     this.letrasUsadas.push(this.letra);
     this.letras_usadas += 1;
     this.comprobarLetra();
@@ -279,7 +291,7 @@ export class Ahorcado implements ViewWillEnter, ViewDidLeave {
   }
 
   o(){
-    this.letra = "O";
+    this.letra = this.translate.instant('LETRAS.O');
     this.letrasUsadas.push(this.letra);
     this.letras_usadas += 1;
     this.comprobarLetra();
@@ -287,7 +299,7 @@ export class Ahorcado implements ViewWillEnter, ViewDidLeave {
   }
 
   p(){
-    this.letra = "P";
+    this.letra = this.translate.instant('LETRAS.P');
     this.letrasUsadas.push(this.letra);
     this.letras_usadas += 1;
     this.comprobarLetra();
@@ -295,7 +307,7 @@ export class Ahorcado implements ViewWillEnter, ViewDidLeave {
   }
 
   q(){
-    this.letra = "Q";
+    this.letra = this.translate.instant('LETRAS.Q');
     this.letrasUsadas.push(this.letra);
     this.letras_usadas += 1;
     this.comprobarLetra();
@@ -303,7 +315,7 @@ export class Ahorcado implements ViewWillEnter, ViewDidLeave {
   }
 
   r(){
-    this.letra = "R";
+    this.letra = this.translate.instant('LETRAS.R');
     this.letrasUsadas.push(this.letra);
     this.letras_usadas += 1;
     this.comprobarLetra();
@@ -311,7 +323,7 @@ export class Ahorcado implements ViewWillEnter, ViewDidLeave {
   }
 
   s(){
-    this.letra = "S";
+    this.letra = this.translate.instant('LETRAS.S');
     this.letrasUsadas.push(this.letra);
     this.letras_usadas += 1;
     this.comprobarLetra();
@@ -319,7 +331,7 @@ export class Ahorcado implements ViewWillEnter, ViewDidLeave {
   }
 
   t(){
-    this.letra = "T";
+    this.letra = this.translate.instant('LETRAS.T');
     this.letrasUsadas.push(this.letra);
     this.letras_usadas += 1;
     this.comprobarLetra();
@@ -327,7 +339,7 @@ export class Ahorcado implements ViewWillEnter, ViewDidLeave {
   }
 
   u(){
-    this.letra = "U";
+    this.letra = this.translate.instant('LETRAS.U');
     this.letrasUsadas.push(this.letra);
     this.letras_usadas += 1;
     this.comprobarLetra();
@@ -335,7 +347,7 @@ export class Ahorcado implements ViewWillEnter, ViewDidLeave {
   }
 
   v(){
-    this.letra = "V";
+    this.letra = this.translate.instant('LETRAS.V');
     this.letrasUsadas.push(this.letra);
     this.letras_usadas += 1;
     this.comprobarLetra();
@@ -343,7 +355,7 @@ export class Ahorcado implements ViewWillEnter, ViewDidLeave {
   }
 
   w(){
-    this.letra = "W";
+    this.letra = this.translate.instant('LETRAS.W');
     this.letrasUsadas.push(this.letra);
     this.letras_usadas += 1;
     this.comprobarLetra();
@@ -351,7 +363,7 @@ export class Ahorcado implements ViewWillEnter, ViewDidLeave {
   }
 
   x(){
-    this.letra = "X";
+    this.letra = this.translate.instant('LETRAS.X');
     this.letrasUsadas.push(this.letra);
     this.letras_usadas += 1;
     this.comprobarLetra();
@@ -359,7 +371,7 @@ export class Ahorcado implements ViewWillEnter, ViewDidLeave {
   }
 
   y(){
-    this.letra = "Y";
+    this.letra = this.translate.instant('LETRAS.Y');
     this.letrasUsadas.push(this.letra);
     this.letras_usadas += 1;
     this.comprobarLetra();
@@ -367,11 +379,19 @@ export class Ahorcado implements ViewWillEnter, ViewDidLeave {
   }
 
   z(){
-    this.letra = "Z";
+    this.letra = this.translate.instant('LETRAS.Z');
     this.letrasUsadas.push(this.letra);
     this.letras_usadas += 1;
     this.comprobarLetra();
     this.puestoZ = true;
+  }
+
+  letraRusa(){
+    this.letra = "Ц";
+    this.letrasUsadas.push(this.letra);
+    this.letras_usadas += 1;
+    this.comprobarLetra();
+    this.puestoLetra = true;
   }
 
   reiniciarPartida(){
@@ -407,9 +427,17 @@ export class Ahorcado implements ViewWillEnter, ViewDidLeave {
     this.puestoX = false;
     this.puestoY = false;
     this.puestoZ = false;
+    this.puestoLetra = false;
     this.mensaje = ''
   }
 
+  get esEspanol(): boolean {
+    return this.translate.currentLang === 'es';
+  }
+
+  get esRuso(): boolean {
+    return this.translate.currentLang === 'ru';
+  }
 
   cerrarSesion() {
     this.router.navigateByUrl('/juego');

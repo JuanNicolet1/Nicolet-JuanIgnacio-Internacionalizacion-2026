@@ -132,11 +132,14 @@ async confirmarReserva() {
       confirmButtonColor: '#780000',
     });
 
-    await this.db.guardarObjeto(reserva, 'reserva');
-      await this.db.enviarNotificacion('dueño', {
-        titulo: this.translate.instant('NOTIFICACIONES_RESERVA.CUENTA'),
-        cuerpo: `${this.auth.usuarioIngresado.nombre} ${this.translate.instant('NOTIFICACIONES_RESERVA.PIDIO')} ${fechaReserva.toLocaleString()}`,
-      });
+    await this.db.enviarNotificacion('dueño', {
+      tituloKey: 'NOTIFICACION_RESERVA.CUENTA',
+      cuerpoKey: 'NOTIFICACION_RESERVA.PIDIO',
+      params: {
+        nombre: this.auth.usuarioIngresado.nombre,
+        fecha: fechaReserva.toLocaleString()
+      }
+    });
 
 
     this.router.navigate(['/home']);

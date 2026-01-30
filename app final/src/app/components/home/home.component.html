@@ -93,7 +93,7 @@
   } 
   <!-- Repetí lo mismo con <div class="card-opcion"> para cliente, mesero, chef, etc. -->
   
- @else if (this.auth.usuarioIngresado.tipoCliente === "cliente"){
+ @else if (this.auth.usuarioIngresado?.tipoCliente === "cliente"){
 
   <div class="card-opcion">
     <button class="custom-button" (click)="starScan()">
@@ -116,7 +116,7 @@
     <a [routerLink]="['/delivery']">{{ 'CLIENTE.PEDIR_DELIVERY' | translate }}</a>
   </div>
   
-  } @else if (this.auth.usuarioIngresado.tipoCliente === "anonimo"){
+  } @else if (this.auth.usuarioIngresado?.tipoCliente === "anonimo"){
     <div class="card-opcion">
       <button class="custom-button" (click)="starScan()">
         <img src="assets/iconos/dinner-table.png" alt="" />
@@ -124,7 +124,7 @@
       <a (click)="starScan()">{{ 'CLIENTE.PEDIR_MESA' | translate }}</a>
     </div>
 
-  } @else if (this.auth.usuarioIngresado.tipoCliente === "maitre"){
+  } @else if (this.auth.usuarioIngresado?.tipoCliente === "maitre"){
 
     <div class="card-opcion">
       <button
@@ -136,7 +136,7 @@
   <a [routerLink]="['/listado-clientes-solicitando-mesa']">{{ 'MAITRE.ASIGNAR_MESA' | translate }}</a>
   </div>
 
-  }@else if (this.auth.usuarioIngresado.tipoCliente === "mesero"){
+  }@else if (this.auth.usuarioIngresado?.tipoCliente === "mesero"){
     <div class="card-opcion">
   <button (click)="starScan()" class="custom-button">
     <img src="assets/iconos/chat.png" alt="" />
@@ -171,7 +171,7 @@
   <a [routerLink]="['/confirmar-pago']">{{ 'MESERO.COBROS' | translate }}</a>
   </div>
 
-  } @else if (this.auth.usuarioIngresado.tipoCliente === "chef"){
+  } @else if (this.auth.usuarioIngresado?.tipoCliente === "chef"){
 
    <div class="card-opcion"> 
   <button [routerLink]="['/cocina']" class="custom-button">
@@ -194,7 +194,7 @@
   <a [routerLink]="['/alta-comida']">{{ 'CHEF.CREAR' | translate }}</a>
   </div>
   
-  } @else if (this.auth.usuarioIngresado.tipoCliente === "bartender"){
+  } @else if (this.auth.usuarioIngresado?.tipoCliente === "bartender"){
 
   <div class="card-opcion">
   <button [routerLink]="['/bar']" class="custom-button">
@@ -217,7 +217,7 @@
   <a [routerLink]="['/alta-bebida']">{{ 'BARTENDER.CREAR' | translate }}</a>
   </div>
   
-  }@else if (this.auth.usuarioIngresado.tipoCliente === "delivery"){
+  }@else if (this.auth.usuarioIngresado?.tipoCliente === "delivery"){
 
     <div class="card-opcion">
   <button [routerLink]="['/listado-delivery']" class="custom-button">

@@ -1,7 +1,7 @@
 <div *ngIf="isLoading" class="spinner-overlay">
   <div class="spinner-container">
     <img src="assets/icono.png" class="spinning-logo">
-    <p>Procesando...</p>
+    <p>{{ 'CARGANDO.PROCESANDO' | translate }}...</p>
   </div>
 </div>
 
@@ -33,7 +33,7 @@
             <div class="items-list">
                 <ul>
                     <li *ngFor="let prod of p.productos">
-                        <strong>x{{ prod.cantidad }}</strong> {{ prod.name }}
+                        <strong>x{{ prod.cantidad }}</strong> {{ ('PRODUCTS.' + prod.id) | translate }}
                     </li>
                 </ul>
             </div>
@@ -62,7 +62,7 @@
           <img [src]="p.foto" class="avatar">
           <div>
             <h3>{{ p.cliente }}</h3>
-            <span class="status-badge">✅ Cocina Terminó</span>
+            <span class="status-badge">✅ {{ 'DUENO_DELIVERY.COCINA' | translate }}</span>
           </div>
         </div>
       </div>

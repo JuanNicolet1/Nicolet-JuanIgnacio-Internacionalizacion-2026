@@ -53,8 +53,8 @@
                 </div>
             </div>
             <div class="card-content">
-              <h3>{{ p.name }}</h3>
-              <p class="desc">{{ p.description }}</p>
+              <h3>{{ ('PRODUCTS.' + p.id) | translate }}</h3>
+              <p class="desc">{{ ('DESCRIPCION.' + p.id) | translate }}</p>
               <div class="meta-info">
                 <span class="time">⏱ {{ p.tiempoEstimado }}'</span>
                 <span class="price">${{ p.precio }}</span>
@@ -93,8 +93,8 @@
           ›
         </button>          </div>
           <div class="card-content">
-            <h3>{{ p.name }}</h3>
-            <p class="desc">{{ p.description }}</p>
+            <h3>{{ ('PRODUCTS.' + p.id) | translate }}</h3>
+            <p class="desc">{{ ('DESCRIPCION.' + p.id) | translate }}</p>
             <div class="meta-info">
               <span class="time">⏱ {{ p.tiempoEstimado }}'</span>
               <span class="price">${{ p.precio }}</span>
@@ -132,8 +132,8 @@
           ›
         </button>          </div>
           <div class="card-content">
-            <h3>{{ p.name }}</h3>
-            <p class="desc">{{ p.description }}</p>
+            <h3>{{ ('PRODUCTS.' + p.id) | translate }}</h3>
+            <p class="desc">{{ ('DESCRIPCION.' + p.id) | translate }}</p>
             <div class="meta-info">
               <span class="time">⏱ {{ p.tiempoEstimado }}'</span>
               <span class="price">${{ p.precio }}</span>

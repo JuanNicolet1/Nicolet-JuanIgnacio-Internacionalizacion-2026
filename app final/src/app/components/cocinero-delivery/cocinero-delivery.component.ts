@@ -62,13 +62,19 @@ export class CocineroDeliveryComponent implements OnInit {
         
         
         await this.db.enviarNotificacion('dueño', {
-            titulo: this.translate.instant('NOTIFICACIONES_COCINA_DELIVERY.LISTO'),
-            cuerpo: `${this.translate.instant('NOTIFICACIONES_COCINA_DELIVERY.CUERPO1')} ${pedido.cliente} ${this.translate.instant('NOTIFICACIONES_COCINA_DELIVERY.CUERPO2')}.`,
-            pedidoId: pedido.id
+          tituloKey: 'NOTIFICACIONES_COCINA_DELIVERY.LISTO',
+          cuerpoKey: 'NOTIFICACIONES_COCINA_DELIVERY.CUERPO1',
+          params: {
+            cliente: pedido.cliente
+          },
+          pedidoId: pedido.id
         });
         await this.db.enviarNotificacion('supervisor', {
-            titulo: this.translate.instant('NOTIFICACIONES_COCINA_DELIVERY.LISTO'),
-            cuerpo: `${this.translate.instant('NOTIFICACIONES_COCINA_DELIVERY.CUERPO1')} ${pedido.cliente} ${this.translate.instant('NOTIFICACIONES_COCINA_DELIVERY.CUERPO3')}.`,
+          tituloKey: 'NOTIFICACIONES_COCINA_DELIVERY.LISTO',
+          cuerpoKey: 'NOTIFICACIONES_COCINA_DELIVERY.CUERPO1',
+          params: {
+            cliente: pedido.cliente
+          }
         });
 
         Swal.fire({

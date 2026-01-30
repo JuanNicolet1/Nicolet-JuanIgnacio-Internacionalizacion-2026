@@ -52,6 +52,7 @@ export class HomeComponent implements ViewWillEnter, ViewDidLeave {
   clientes: any;
   cliente: any;
   pedido: any;
+  delivery: any = null;
 
   mostrarNotificacion = true;
 
@@ -89,6 +90,18 @@ export class HomeComponent implements ViewWillEnter, ViewDidLeave {
     this.cancelarSuscripciones();
   }
 
+  private traducirNotificacion(notif: any) {
+  const titulo = notif.tituloKey
+    ? this.translate.instant(notif.tituloKey, notif.params || {})
+    : notif.titulo;
+
+  const cuerpo = notif.cuerpoKey
+    ? this.translate.instant(notif.cuerpoKey, notif.params || {})
+    : notif.cuerpo;
+
+    return { titulo, cuerpo };
+  }
+
   iniciarSuscripciones(){
     if (this.auth.usuarioIngresado.tipoCliente === 'chef') {
       const observableChef = this.db.traerNotificacion('chef');
@@ -101,9 +114,10 @@ export class HomeComponent implements ViewWillEnter, ViewDidLeave {
           if (!ultimaNotificacion.recibida) {
             if (this.mostrarNotificacion) {
               console.log('LLEGO UNA NOTIFICACION');
+              const { titulo, cuerpo } = this.traducirNotificacion(ultimaNotificacion);
               this.pushService.send(
-                ultimaNotificacion.titulo,
-                ultimaNotificacion.cuerpo,
+                titulo,
+                cuerpo,
                 '' 
               );
               this.mostrarNotificacion = false;
@@ -133,9 +147,10 @@ export class HomeComponent implements ViewWillEnter, ViewDidLeave {
           if (!ultimaNotificacion.recibida) {
             if (this.mostrarNotificacion) {
               console.log('LLEGO UNA NOTIFICACION');
+              const { titulo, cuerpo } = this.traducirNotificacion(ultimaNotificacion);
               this.pushService.send(
-                ultimaNotificacion.titulo,
-                ultimaNotificacion.cuerpo,
+                titulo,
+                cuerpo,
                 '' 
               );
 
@@ -169,11 +184,13 @@ export class HomeComponent implements ViewWillEnter, ViewDidLeave {
             if (ultimaNotificacion.cocinaFinalizada && ultimaNotificacion.barFinalizado) {
               if (this.mostrarNotificacion) {
                 console.log('LLEGO UNA NOTIFICACION - Pedido listo');
-                this.pushService.send(
-                  'El pedido está listo',
-                  `Ya puede llevar el pedido a la mesa ${ultimaNotificacion.mesa}`,
-                  ''
-                );
+                const titulo = this.translate.instant('NOTIFICACION_PEDIDO.TITULO_LISTO');
+                const mensaje = this.translate.instant('NOTIFICACION_PEDIDO.MENSAJE_LISTO', {
+                  mesa: ultimaNotificacion.mesa
+                });
+
+                this.pushService.send(titulo, mensaje, '');
+
                 this.mostrarNotificacion = false;
               }
             }
@@ -184,9 +201,10 @@ export class HomeComponent implements ViewWillEnter, ViewDidLeave {
               if (this.mostrarNotificacion) {
                 this.mostrarNotificacion = false;
                 console.log('LLEGO UNA NOTIFICACION - Sin redirigir');
+                const { titulo, cuerpo } = this.traducirNotificacion(ultimaNotificacion);
                 this.pushService.send(
-                  ultimaNotificacion.titulo,
-                  ultimaNotificacion.cuerpo,
+                  titulo,
+                  cuerpo,
                   '',
                   false,
                   ultimaNotificacion.mesa
@@ -201,9 +219,10 @@ export class HomeComponent implements ViewWillEnter, ViewDidLeave {
 
             if (this.mostrarNotificacion) {
               console.log('LLEGO UNA NOTIFICACION - Chat');
+              const { titulo, cuerpo } = this.traducirNotificacion(ultimaNotificacion);
               this.pushService.send(
-                ultimaNotificacion.titulo,
-                ultimaNotificacion.cuerpo,
+                titulo,
+                cuerpo,
                 '/chat',
                 true,
                 '',
@@ -235,10 +254,11 @@ export class HomeComponent implements ViewWillEnter, ViewDidLeave {
 
         if (!ultimaNotificacion.recibida && this.mostrarNotificacion) {
           console.log('LLEGO UNA NOTIFICACION - Maitre');
+          const { titulo, cuerpo } = this.traducirNotificacion(ultimaNotificacion);
 
           this.pushService.send(
-            ultimaNotificacion.titulo,
-            ultimaNotificacion.cuerpo,
+            titulo,
+            cuerpo,
             ''
           );
 
@@ -266,16 +286,16 @@ export class HomeComponent implements ViewWillEnter, ViewDidLeave {
         if (!ultimaNotificacion.recibida && this.mostrarNotificacion) {
           
 
-          if (ultimaNotificacion.titulo === 'Cuenta solicitada') {
+          if (ultimaNotificacion.tituloKey === 'NOTIFICACIONES_CLIDEL.CUENTA') {
             console.log('--- ES UNA SOLICITUD DE CUENTA ---');
             
 
             this.cliente = ultimaNotificacion.cliente; 
             this.pedido = ultimaNotificacion.pedido;
-
+            const { titulo, cuerpo } = this.traducirNotificacion(ultimaNotificacion);
             this.pushService.send(
-              ultimaNotificacion.titulo,
-              ultimaNotificacion.cuerpo,
+              titulo,
+              cuerpo,
               '',    
               true,   
               '',     
@@ -285,9 +305,10 @@ export class HomeComponent implements ViewWillEnter, ViewDidLeave {
           
           else {
             console.log('--- NOTIFICACION GENERICA ---');
+            const { titulo, cuerpo } = this.traducirNotificacion(ultimaNotificacion);
             this.pushService.send(
-              ultimaNotificacion.titulo,
-              ultimaNotificacion.cuerpo,
+              titulo,
+              cuerpo,
               '', 
               true
             );
@@ -305,9 +326,10 @@ export class HomeComponent implements ViewWillEnter, ViewDidLeave {
       });
     }
 
-    if (this.auth.usuarioIngresado.tipoCliente === 'dueño' || 
-    this.auth.usuarioIngresado.tipoCliente === 'supervisor') {
-
+    if (
+      this.auth.usuarioIngresado.tipoCliente === 'dueño' ||
+      this.auth.usuarioIngresado.tipoCliente === 'supervisor'
+    ) {
       const rol = this.auth.usuarioIngresado.tipoCliente;
       const observableRol = this.db.traerNotificacion(rol);
 
@@ -320,13 +342,15 @@ export class HomeComponent implements ViewWillEnter, ViewDidLeave {
         if (!ultimaNotificacion.recibida && this.mostrarNotificacion) {
           console.log('LLEGO UNA NOTIFICACION -', rol);
 
+          // ✅ TRADUCCIÓN DINÁMICA SEGÚN IDIOMA ACTUAL
+          const { titulo, cuerpo } = this.traducirNotificacion(ultimaNotificacion);
+
           this.pushService.send(
-            ultimaNotificacion.titulo,
-            ultimaNotificacion.cuerpo,
-            '' 
+            titulo,
+            cuerpo,
+            ''
           );
 
-          
           this.db.actualizarNotificacion(
             rol,
             ultimaNotificacion.id,
@@ -348,10 +372,10 @@ export class HomeComponent implements ViewWillEnter, ViewDidLeave {
       if (this.auth.usuarioIngresado.tipoCliente === 'anonimo') {
         if (!ultimaNotificacion.recibida && this.mostrarNotificacion) {
           console.log('LLEGO UNA NOTIFICACION');
-
+          const { titulo, cuerpo } = this.traducirNotificacion(ultimaNotificacion);
           this.pushService.send(
-            ultimaNotificacion.titulo,
-            ultimaNotificacion.cuerpo,
+            titulo,
+            cuerpo,
             ultimaNotificacion.pdfUrl, 
             true,
             '',
@@ -557,8 +581,11 @@ export class HomeComponent implements ViewWillEnter, ViewDidLeave {
         }
 
         await this.db.enviarNotificacion('maitre', {
-          titulo: this.translate.instant('OTRA_NOTIFICACION.ESPERA_MESA'),
-          cuerpo: `${this.translate.instant('OTRA_NOTIFICACION.ASIGNAR_MESA')} ${this.auth.usuarioIngresado.nombre}`,
+          tituloKey: 'OTRA_NOTIFICACION.ESPERA_MESA',
+          cuerpoKey: 'OTRA_NOTIFICACION.ASIGNAR_MESA',
+          params: {
+            nombre: this.auth.usuarioIngresado.nombre
+          }
         });
 
         this.router.navigateByUrl('/cliente-espera-mesa');
@@ -570,90 +597,124 @@ export class HomeComponent implements ViewWillEnter, ViewDidLeave {
   }
 
   escucharClickNotificacion() {
-    LocalNotifications.addListener(
-      'localNotificationActionPerformed',
-      (notification) => {
-        
-       
-        if (notification.actionId === 'entregarCuentaDelivery') {
-          
-          Swal.fire({
-            title: this.translate.instant('OTROS_SWAL.COBRAR'),
-            text: `${this.translate.instant('NOTIFICACIONES_CLIDEL.CLIENTE')} ${this.cliente} ${this.translate.instant('OTROS_SWAL.TEXTO1')}`,
-            icon: 'info',
-            background: '#333',
-            color: '#fff',
-            confirmButtonText: this.translate.instant('OTROS_SWAL.ENVIAR'),
-            confirmButtonColor: '#780000',
-            showCancelButton: true,
-            cancelButtonText: this.translate.instant('SWAL_GENERAL.CANCELAR'),
-            heightAuto: false,
-          }).then((resp) => {
-            if (resp.isConfirmed) {
-              if(this.pedido) {
-                console.log(this.pedido)
-                this.pedido.estadoPedido = 'cuentaEntregada';
-                this.db.ModificarObjeto(this.pedido, 'delivery')
+  LocalNotifications.addListener(
+    'localNotificationActionPerformed',
+    (notification) => {
+      
+      // --- CASO 1: DELIVERY ---
+      if (notification.actionId === 'entregarCuentaDelivery') {
+        Swal.fire({
+          title: this.translate.instant('OTROS_SWAL.COBRAR'),
+          text: `${this.translate.instant('NOTIFICACIONES_CLIDEL.CLIENTE')} ${this.cliente} ${this.translate.instant('OTROS_SWAL.TEXTO1')}`,
+          icon: 'info',
+          background: '#333',
+          color: '#fff',
+          confirmButtonText: this.translate.instant('OTROS_SWAL.ENVIAR'),
+          confirmButtonColor: '#780000',
+          showCancelButton: true,
+          cancelButtonText: this.translate.instant('SWAL_GENERAL.CANCELAR'),
+          heightAuto: false,
+        }).then((resp) => {
+          if (resp.isConfirmed && this.pedido) {
+            // Usamos take(1) implícito al desuscribirnos para evitar bucles
+            const sub = this.db.traerDelivery().subscribe((lista: any[]) => {
+              const idPedido = this.pedido?.id || this.pedido;
+              const pedidoReal = lista.find(p => p.id === idPedido);
+
+              if (pedidoReal) {
+                this.db.ModificarObjeto({
+                  ...pedidoReal,
+                  estadoPedido: 'cuentaEntregada',
+                  fechaCuentaEntregada: new Date()
+                }, 'delivery');
+                console.log('✅ Pedido de delivery actualizado');
               }
-            }
-          });
+              sub.unsubscribe(); 
+            });
+          }
+        });
+      } 
+      
+      // --- CASO 2: MESERO (Local) ---
+      else {
+  // 1. LÓGICA DE MESA (Solo si NO es delivery)
+  const esDelivery = this.auth.usuarioIngresado.tipoCliente === 'delivery';
 
-        } 
-        else {
-
-          this.mesas.forEach((m: any) => {
-
-            if (m.estado === 'ocupada' && m.ocupadaPor === this.cliente.nombre) { 
-              this.mesa = m;
-            }
-          });
-
-          let numMesa = this.db.mesa; 
-          
-          Swal.fire({
-            title: this.translate.instant('OTROS_SWAL.ENVIAR'),
-            text: `${this.translate.instant('SWAL_MESERO.LA_MESA')} ${numMesa} ${this.translate.instant('OTROS_SWAL.TEXTO2')}`,
-            icon: 'info',
-            background: '#333',
-            color: '#fff',
-            confirmButtonText: this.translate.instant('SWAL_GENERAL.ENVIAR'),
-            confirmButtonColor: '#780000',
-            heightAuto: false,
-          }).then((resp) => {
-            if (resp.isConfirmed) {
-             
-              if(this.cliente && this.cliente.estadoPedido) {
-                  this.cliente.estadoPedido = 'cuentaEntregada';
-                  this.db.ModificarObjeto(this.cliente, 'clientes');
-              }
-              
-              if(this.mesa) {
-                  this.mesa.estado = 'desocupada';
-                  this.mesa.ocupadaPor = '';
-                  this.db.ModificarObjeto(this.mesa, 'mesas');
-              }
-              
-              if(this.pedido) {
-                  this.pedido.estadoPedido = 'cuentaEntregada';
-                  this.db.ModificarObjeto(this.pedido, 'pedidos');
-              }
-
-              Swal.fire({
-                title: this.translate.instant('OTROS_SWAL.ENVIADA'),
-                text: `${this.translate.instant('SWAL_MESERO.LA_MESA')} ${numMesa} ${this.translate.instant('OTROS_SWAL.TEXTO3')}`,
-                icon: 'success',
-                confirmButtonText: this.translate.instant('SWAL_GENERAL.ACEPTAR'),
-                confirmButtonColor: '#780000',
-                heightAuto: false,
-                background: '#333',
-                color: '#fff',
-              });
-            }
-          });
-        }
-      }
-    );
+  if (!esDelivery && this.mesas && this.cliente) {
+    // Buscamos la mesa solo si el rol la utiliza
+    const nombreCliente = typeof this.cliente === 'string' ? this.cliente : this.cliente.nombre;
+    this.mesa = this.mesas.find((m: any) => m.ocupadaPor === nombreCliente);
   }
+
+  let numMesa = this.db.mesa; 
+  
+  Swal.fire({
+    title: this.translate.instant('OTROS_SWAL.ENVIAR'),
+    text: esDelivery 
+      ? this.translate.instant('¿Confirmar entrega de cuenta al cliente?') 
+      : `${this.translate.instant('SWAL_MESERO.LA_MESA')} ${numMesa} ${this.translate.instant('OTROS_SWAL.TEXTO2')}`,
+    icon: 'info',
+    background: '#333',
+    color: '#fff',
+    confirmButtonText: this.translate.instant('SWAL_GENERAL.ENVIAR'),
+    confirmButtonColor: '#780000',
+    heightAuto: false,
+  }).then((resp) => {
+    if (resp.isConfirmed) {
+      
+      // --- PASO A: ACTUALIZAR CLIENTE ---
+      // Si el cliente es un string 'yu', no hacemos nada aquí, ya que no tenemos el objeto.
+      // Si es un objeto, lo actualizamos.
+      if (this.cliente && typeof this.cliente === 'object') {
+          this.cliente.estadoPedido = 'cuentaEntregada';
+          this.db.ModificarObjeto(this.cliente, 'clientes');
+      }
+
+      // --- PASO B: LIBERAR MESA (Solo Mesero) ---
+      if (!esDelivery && this.mesa) {
+          this.mesa.estado = 'desocupada';
+          this.mesa.ocupadaPor = '';
+          this.db.ModificarObjeto(this.mesa, 'mesas');
+      }
+      
+      // --- PASO C: ACTUALIZAR PEDIDO (Ambos) ---
+      if (this.pedido) {
+          const coleccion = esDelivery ? 'delivery' : 'pedidos';
+          
+          // Si pedido es objeto, actualizamos; si es string ID, hay que buscarlo.
+          if (typeof this.pedido === 'object') {
+              this.pedido.estadoPedido = 'cuentaEntregada';
+              this.db.ModificarObjeto(this.pedido, coleccion);
+          } else {
+              // Si solo tenemos el ID (string), lo buscamos en la colección correcta
+              const obs = esDelivery ? this.db.traerDelivery() : this.db.traerPedidos();
+              const sub = obs.subscribe((lista: any[]) => {
+                  const pedidoReal = lista.find(p => p.id === this.pedido);
+                  if (pedidoReal) {
+                      pedidoReal.estadoPedido = 'cuentaEntregada';
+                      this.db.ModificarObjeto(pedidoReal, coleccion);
+                  }
+                  sub.unsubscribe();
+              });
+          }
+      }
+
+            Swal.fire({
+              title: this.translate.instant('OTROS_SWAL.ENVIADA'),
+              text: `${this.translate.instant('SWAL_MESERO.LA_MESA')} ${numMesa} ${this.translate.instant('OTROS_SWAL.TEXTO3')}`,
+              icon: 'success',
+              confirmButtonText: this.translate.instant('SWAL_GENERAL.ACEPTAR'),
+              confirmButtonColor: '#780000',
+              heightAuto: false,
+              background: '#333',
+              color: '#fff',
+            });
+          }
+        });
+      }
+    }
+  );
+}
 
   ngAfterViewInit() {
   const container = document.getElementById('snapContainer');
@@ -697,7 +758,7 @@ export class HomeComponent implements ViewWillEnter, ViewDidLeave {
     console.log(this.pedido);
     let numMesa = this.db.mesa;
     Swal.fire({
-      title: 'Enviar cuenta',
+      title: this.translate.instant('OTROS_SWAL.ENVIAR'),
       text: `${this.translate.instant('SWAL_MESERO.LA_MESA')} ${numMesa} ${this.translate.instant('OTROS_SWAL.TEXTO4')}`,
       icon: 'info',
       confirmButtonText: this.translate.instant('SWAL_GENERAL.ENVIAR'),

@@ -31,6 +31,16 @@
     "ERROR": "Las contraseñas no coinciden"
   },
 
+  "CARGANDO": {
+    "CARGANDO": "Cargando",
+    "VERIFICANDO": "Verificando turno",
+    "ACTUALIZANDO": "Actualizando estado",
+    "CLIENTES": "Cargando Clientes",
+    "PROCESANDO": "Procesando",
+    "MESA": "Creando Mesa",
+    "CARTA": "Cargando Carta"
+  },
+
   "DUENO": {
     "AGREGAR_EMPLEADO": "AGREGAR EMPLEADO",
     "AGREGAR_CLIENTE": "AGREGAR CLIENTE",
@@ -87,6 +97,7 @@
   "DUENO_DELIVERY": {
     "PEDIDOS": "NUEVOS PEDIDOS",
     "NPEDIDOS": "No hay pedidos nuevos",
+    "COCINA": "Cocina Terminó",
     "ACEPTAR": "ACEPTAR PEDIDO",
     "RECHAZAR": "RECHAZAR PEDIDO",
     "LISTOS": "LISTOS PARA REPARTIR",
@@ -110,7 +121,7 @@
   "CHEF_DELIVERY": {
     "CARGANDO": "Cargando Comandas",
     "COCINA": "COCINA - DELIVERY",
-    "Cliente": "Cliente",
+    "CLIENTE": "Cliente",
     "Preparar": "A Preparar",
     "LISTO": "MARCAR COMO LISTO",
     "NCOCINA": "No hay pedidos pendientes en cocina"
@@ -202,6 +213,14 @@
     "MESA": "Tu mesa es la "
   },
 
+  "MESA_TIPO": {
+    "ESTANDAR": "Estandar",
+    "MOVILIDAD": "Movilidad Reducida",
+    "VIP": "VIP",
+    "LIBRE": "Libre",
+    "OCUPADA": "Ocupada"
+  },
+
   "PRODUCTO_ESTADO": {
     "ENVIANDO": "Enviando pedido...",
     "COCINA": "¡En la cocina! Preparando tus platos.",
@@ -269,11 +288,11 @@
     "RECHAZO": "PEDIDO RECHAZADO",
     "NPROCESAR": "El mozo no pudo procesar tu pedido",
     "MOTIVO": "Motivo",
-    "ENIVADO": "Enviado",
+    "ENVIADO": "Enviado",
     "COCINANDO": "Cocinando",
     "ENTREGADO": "Entregado",
     "DISFRUTANDO": "Disfrutando",
-    "CONFIRAMR_RECEPCION": "Confirmar Recepción (QR)",
+    "CONFIRMAR_RECEPCION": "Confirmar Recepción (QR)",
     "JUGAR": "Jugar mientras espero"
   },
 
@@ -327,13 +346,54 @@
     "SUPERHEROE": "JUEGO SUPERHEROE",
     "MOZO": "AYUDA AL MOZO",
     "COMENZAR": "Comenzar",
-    "PERDDISTE": "Perdiste. La palabra era",
+    "PERDISTE": "Perdiste. La palabra era",
     "ALTA": "Mas alta",
     "BAJA": "Mas baja"
   },
 
+  "AHORCADO": {
+    "VIDA": "Vida",
+    "FIDEO": "FIDEOS",
+    "MILANESA": "MILANESA",
+    "CARNE": "CARNE",
+    "POLLO": "POLLO",
+    "POLENTA": "POLENTA",
+    "ARROZ": "ARROZ"
+  },
+
+  "LETRAS": {
+    "A": "A",
+    "B": "B",
+    "C": "C",
+    "D": "D",
+    "E": "E",
+    "F": "F",
+    "G": "G",
+    "H": "H",
+    "I": "I",
+    "J": "J",
+    "K": "K",
+    "L": "L",
+    "M": "M",
+    "N": "N",
+    "O": "O",
+    "P": "P",
+    "Q": "Q",
+    "R": "R",
+    "S": "S",
+    "T": "T",
+    "U": "U",
+    "V": "V",
+    "W": "W",
+    "X": "X",
+    "Y": "Y",
+    "Z": "Z"
+  },
+
   "MOZO": {
     "TITULO": "Ayuda al Mozo",
+    "COMENZAR": "COMENZAR",
+    "REINTENTAR": "INTENTAR DE NUEVO",
     "OBJETIVO": "Lleva la pizza a la mesa inclinando el celular",
     "GANASTE": "Pedido Entregado",
     "PERDISTE": "Se cayó el pedido"
@@ -351,7 +411,12 @@
 
   "CHAT": {
     "MESA": "Mesa",
-    "CHAT": "Chat con el personal"
+    "CHAT": "Chat con el personal",
+    "ESCRIBIR": "Escribe un mensaje",
+    "CLIENTE": "Cliente",
+    "DESTINO": "Destino del pedido", 
+    "REPARTIDOR": "Repartidor",
+    "CAMINO": "En camino"
   },
 
   "CLIENTE_ENCUESTAS": {
@@ -378,7 +443,8 @@
     "MIN15": "15-30 minutos",
     "MIN30": "30-45 minutos",
     "MAS45": "Más de 45 minutos",
-    "ENVIAR": "Enviar"
+    "ENVIAR": "Enviar",
+    "VOTOS": "Votos"
   },
   
   "CUENTA": {
@@ -386,6 +452,7 @@
     "CUENTA": "Cuenta Solicitada",
     "PREPARANDO": "Estamos preparando tu cuenta",
     "BREVE": "El mozo o repartidor te enviará el detalle en breve",
+    "TU_CUENTA": "Tu Cuenta",
     "DESCUENTO": "Descuento",
     "PROPINA": "Propina (Scan)",
     "PAGAR": "PAGAR AHORA",
@@ -394,6 +461,7 @@
   },
 
   "MAPA_DELIVERY": {
+    "BUSCAR": "Buscar calle y altura",
     "CALCULANDO_RUTA": "Calculando ruta",
     "DESTINO": "Destino Actual",
     "CHAT": "Chat",
@@ -625,13 +693,13 @@
   "NOTIFICACIONES_PRODUCTOS": {
     "NUEVO_PEDIDO": "Nuevo Pedido",
     "MESA": "Mesa",
-    "ESPERA": "espera comida",
+    "ESPERA": "Mesa {{mesa}} espera comida",
     "NUEVA_BEBIDA": "Nueva Bebida",
-    "ESPERA2": "espera bebida",
+    "ESPERA2": "Mesa {{mesa}} espera bebida",
     "RECHAZADO": "Pedido Rechazado",
     "MOTIVO": "Motivo",
-    "INDICAR_MOTIVO": "Por favor modifique su pedido",
-    "PEDIDO": "Cliente realizó un pedido en la mesa"
+    "INDICAR_MOTIVO": "Motivo: {{motivo}}. Por favor modifique su pedido",
+    "PEDIDO": "Cliente realizó un pedido en la mesa {{numero}}"
   },
 
   "NOTIFICACIONES_COCINA": {
@@ -639,35 +707,44 @@
     "LISTAS": "Comidas listas para enviar"
   },
 
+  "NOTIFICACION_PEDIDO": {
+    "TITULO_LISTO": "El pedido está listo",
+    "MENSAJE_LISTO": "Ya puede llevar el pedido a la mesa {{mesa}}"
+  },
+
   "NOTIFICACIONES_PAGO": {
     "CONFIRMADA": "Cuenta Confirmada",
     "COBRADO": "El delivery ha sido cobrado y finalizado.",
     "MESA": "La mesa",
-    "CERRO": "cerró la cuenta"
+    "CERRO": "La mesa {{mesa}} cerró la cuenta"
+  },
+
+  "NOTIFICACIONES_FACTURA": {
+    "DISPONIBLE": "Factura disponible",
+    "DESCARGAR": "Descarga tu factura aquí"
   },
 
   "NOTIFICACION_PEDIR": {
     "RECIBIDO": "Pago Recibido",
-    "CLIENTE": "Cliente",
-    "ABONO": "abonó"
+    "CLIENTE_ABONO": "Cliente {{cliente}} abonó ${{total}}"
   },
 
   "NOTIFICACIONES_DELIVERY": {
-    "NUEVO_DELIVER": "Nuevo Delivery",
+    "NUEVO_DELIVERY": "Nuevo Delivery",
     "CUERPO": "Hay un pedido de delivery para preparar",
     "BEBIDAS": "Hay bebidas de delivery para preparar",
     "RECHAZADO": "Pedido Rechazado",
     "MOTIVO": "Motivo",
-    "MODIFIQUE": "Por favor modifique su pedido",
+    "MODIFIQUE": "Motivo: {{motivo}}. Por favor modifique su pedido",
     "LISTO": "¡Pedido Listo!",
-    "ENTREGAR": "Tienes un pedido nuevo para retirar y entregar a",
+    "ENTREGAR": "Tienes un pedido nuevo para retirar y entregar a {{cliente}}",
     "CAMINO": "¡Pedido en Camino!",
-    "LLEVANDO": "está llevando tu pedido"
+    "LLEVANDO": "{{nombre}} está llevando tu pedido"
   },
 
   "NOTIFICACIONES_COCINA_DELIVERY": {
     "LISTO": "Pedido Listo para Entregar",
-    "CUERPO1": "El pedido de",
+    "CUERPO1": "El pedido de {{cliente}} está listo en cocina y barra",
     "CUERPO2": "está listo en cocina y barra",
     "CUERPO3": "está listo"
   },
@@ -675,15 +752,17 @@
   "NOTIFICACIONES_CLIDEL": {
     "CUENTA": "Cuenta solicitada",
     "CLIENTE": "El cliente",
-    "SOLICITO": "solicitó la cuenta"
+    "SOLICITO": "solicitó la cuenta",
+    "SOLICITO_MESA": "La mesa {{mesa}} solicitó la cuenta.",
+    "MENSAJE": "El cliente {{cliente}} solicitó la cuenta"
   },
 
   "NOTIFICACIONES_CHAT": {
     "MENSAJE_CLIENTE": "Mensaje del Cliente",
     "MENSAJE_DELIVERY": "Mensaje del Repartidor",
     "NUEVO_MENSAJE": "Nuevo mensaje",
-    "CONSULTO": "Cliente consultó en la mesa",
-    "RESPONDIO": "Mesero respondió en mesa"
+    "CONSULTO": "Cliente consultó en la mesa {{mesa}}",
+    "RESPONDIO": "Mesero respondió en mesa {{mesa}}"
   },
 
   "NOTIFICACIONES_MAPA": {
@@ -693,12 +772,13 @@
 
   "NOTIFICACIONES_MESA": {
     "ASIGNADA": "Mesa asignada",
-    "MESA": "Se le asigno la mesa"
+    "MESA": "Se le asigno la mesa {{mesa}}"
   },
 
   "NOTIFICACIONES_BAR": {
     "BAR": "Bar Finalizado",
-    "LISTAS": "Bebidas listas"
+    "LISTAS": "Bebidas listas",
+    "MESA_LISTA": "Mesa {{mesa}}: Bebidas listas."
   },
 
   "NOTIFICACIONES_ACLIENTE": {
@@ -708,12 +788,12 @@
 
   "NOTIFICACIONES_CDUENO": {
     "NUEVO_EMPLEADO": "Nuevo empleado",
-    "REGISTRO": "Se registró un"
+    "REGISTRO_TIPO": "Se registró un {{tipo}}"
   },
 
   "NOTIFICACION_RESERVA": {
     "CUENTA": "Cuenta confirmada",
-    "PIDIO": "pidió una reserva para el"
+    "PIDIO": "{{nombre}} pidió una reserva para el {{fecha}}"
   },
 
   "NOTIFICACION_DELIVERY": {
@@ -723,7 +803,7 @@
 
   "OTRA_NOTIFICACION": {
     "ESPERA_MESA": "Cliente espera mesa",
-    "ASIGNAR_MESA": "Asigne una mesa al cliente"
+    "ASIGNAR_MESA": "Asigne una mesa al cliente {{nombre}}"
   },
 
   "INFO": {
@@ -732,5 +812,65 @@
     "ESPERA": "Espera estimada",
     "DETALLE": "Detalle",
     "TOTAL": "TOTAL"
+  },
+
+  "PRODUCTS": {
+    "09EZzxiqo1q57F7Otlms": "Ravioles de Ricota",
+    "5wvHwgO9wuy29VonzWls": "Omelette",
+    "GhnGX6dFdWnCNcsIFkJT": "Milanesa",
+    "KJoe8SiVokkUWeCVfnFy": "Entraña",
+    "VX7JzjHsGrQsBsKObv47": "Desodorante",
+    "bbrRMHvqX1l9NOT3rvIC": "Hamburguesa",
+    "d2tPim8afJpC3Tk92M18": "Tomate",
+    "fGzZU8arK8rq6L3VE5jA": "Blanco",
+    "fz7H4mlQgWpuXxNzMBKC": "Blanco 2",
+    "qbco3jmmUiLHcLrqSOz2": "Estofado de Pollo",
+    "v5SpTgfFUtCIqMj9QO3l": "Pancho",
+    "7s9GqL1g2NHkkrxL2pTF": "Cafe",
+    "D1ihmWu2KXKSolD3ad3w": "Daikiri",
+    "FLTKNQ0TcshoXPH1Rr4l": "Coca-Cola",
+    "NfyhLhae8RrWxo4159pk": "Pepsi",
+    "RxPj5HrTQZN3uTVeVpeG": "Desodorante",
+    "UGTsAhY7das09kjP6VZA": "Negro",
+    "XPi7UNXME5AcCpQo16xQ": "Patagonia",
+    "YHgTMiVOxzxaKy2eBKfx": "Cerveza Heineken",
+    "dFdPAuHhO38cnvwaBw5C": "Agua",
+    "eJKdWPoiaMVXjnkfM2Kq": "Vino",
+    "yYmc0HSQCxlKIaozTjye": "Negro",
+    "1YHcSLyWph4PrgBmlr1S": "Flan",
+    "RBWCdanCVi2MHAD9KswW": "Torta de Queso",
+    "t88CDv5y0pUzWCgGYIjy": "Helado",
+    "xA9EuV3gTkqbc8JEqJh2": "Brownie con Helado",
+    "zRgghMowW98CaNXea9g8": "Chocotorta"
+  },
+
+  "DESCRIPCION": {
+    "09EZzxiqo1q57F7Otlms": "Tipo de pasta rellena que comprende un relleno de ricota envuelto en una masa fina.",
+    "5wvHwgO9wuy29VonzWls": "Rico.",
+    "GhnGX6dFdWnCNcsIFkJT": "Milanesa de carne empanizada, acompañada de papas fritas o ensalada a elección.",
+    "KJoe8SiVokkUWeCVfnFy": "Corte de entraña asado a la parrilla, servido con chimichurri y papas rústicas.",
+    "VX7JzjHsGrQsBsKObv47": "Cosa",
+    "bbrRMHvqX1l9NOT3rvIC": "Hamburguesa con queso cheddar, lechuga, tomate y salsa especial en pan de sésamo.",
+    "d2tPim8afJpC3Tk92M18": "Saludable",
+    "fGzZU8arK8rq6L3VE5jA": "Nada",
+    "fz7H4mlQgWpuXxNzMBKC": "Muy blanco",
+    "qbco3jmmUiLHcLrqSOz2": "Un guiso hecho con pollo . fricasé . trozos de pollo u otra carne guisados ​​en salsa",
+    "v5SpTgfFUtCIqMj9QO3l": "Rico.",
+    "7s9GqL1g2NHkkrxL2pTF": "Amargo.",
+    "D1ihmWu2KXKSolD3ad3w": "Cóctel tropical a base de ron, limón y azúcar, refrescante y dulce.",
+    "FLTKNQ0TcshoXPH1Rr4l": "Refresco de cola clásico, ideal para acompañar cualquier comida.",
+    "NfyhLhae8RrWxo4159pk": "Bebida gaseosa bien fría para refrescar y acompañar cualquier plato.",
+    "RxPj5HrTQZN3uTVeVpeG": "Muy bueno",
+    "UGTsAhY7das09kjP6VZA": "Negro",
+    "XPi7UNXME5AcCpQo16xQ": "Cerveza artesanal de cuerpo medio, con notas frutales y un suave toque de amargor.",
+    "YHgTMiVOxzxaKy2eBKfx": "Cerveza rubia, refrescante y con un sabor equilibrado.",
+    "dFdPAuHhO38cnvwaBw5C": "Agua mineral natural sin gas, ideal para hidratarse.",
+    "eJKdWPoiaMVXjnkfM2Kq": "Vino ideal para acompañar carnes, pastas o platos principales",
+    "yYmc0HSQCxlKIaozTjye": "Negro",
+    "1YHcSLyWph4PrgBmlr1S": "Flan casero servido con dulce de leche o crema chantilly.",
+    "RBWCdanCVi2MHAD9KswW": "La tarta de queso es conocida por su sabor rico y cremoso y su textura suave.",
+    "t88CDv5y0pUzWCgGYIjy": "Helado artesanal disponible en varios sabores como vainilla, chocolate y fresa.",
+    "xA9EuV3gTkqbc8JEqJh2": "Brownie de dulce de leche acompañado con una bocha de helado de crema.",
+    "zRgghMowW98CaNXea9g8": "Postre argentino de galletas de chocolate y crema de dulce de leche."
   }
 }

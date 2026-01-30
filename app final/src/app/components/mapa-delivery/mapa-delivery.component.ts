@@ -99,11 +99,12 @@ export class MapaDeliveryComponent implements AfterViewInit, ViewDidLeave {
         console.log(ultimaNotificacion);
 
         if (!ultimaNotificacion.recibida && this.mostrarNotificacion) {
+          const { titulo, cuerpo } = this.traducirNotificacion(ultimaNotificacion);
           console.log('LLEGO UNA NOTIFICACION - Delivery');
 
              this.pushService.send(
-              ultimaNotificacion.titulo,
-              ultimaNotificacion.cuerpo,
+              titulo,
+              cuerpo,
               '/chat-delivery', 
               true,
               '',
@@ -120,6 +121,18 @@ export class MapaDeliveryComponent implements AfterViewInit, ViewDidLeave {
           this.mostrarNotificacion = false;
         }
       });
+  }
+
+  private traducirNotificacion(notif: any) {
+  const titulo = notif.tituloKey
+    ? this.translate.instant(notif.tituloKey, notif.params || {})
+    : notif.titulo;
+
+  const cuerpo = notif.cuerpoKey
+    ? this.translate.instant(notif.cuerpoKey, notif.params || {})
+    : notif.cuerpo;
+
+    return { titulo, cuerpo };
   }
 
   ionViewDidLeave(): void {
@@ -222,8 +235,9 @@ export class MapaDeliveryComponent implements AfterViewInit, ViewDidLeave {
     this.pedidoService.setMostrarInfo(false);
 
     await this.db.enviarNotificacion('cliente', {
-        titulo: this.translate.instant('NOTIFICACIONES_MAPA.ENTREGADO'),
-        cuerpo: this.translate.instant('NOTIFICACIONES_MAPA.DISFRUTES'),
+      tituloKey: 'NOTIFICACIONES_MAPA.ENTREGADO',
+      cuerpoKey: 'NOTIFICACIONES_MAPA.DISFRUTES',
+      params: {}
     });
 
     this.isLoading = false;

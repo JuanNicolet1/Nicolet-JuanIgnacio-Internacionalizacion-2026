@@ -233,8 +233,11 @@ export class AgregarEmpleadoComponent implements OnInit {
       }
 
       await this.database.enviarNotificacion('dueño', {
-        titulo: this.translate.instant('NOTIFICACIONES_CDUENO.NUEVO_EMPLEADO'),
-        cuerpo: `${this.translate.instant('NOTIFICACIONES_CDUENO.REGISTRO')} ${empleadoData.tipoCliente}.`,
+        tituloKey: 'NOTIFICACIONES_CDUENO.NUEVO_EMPLEADO',
+        cuerpoKey: 'NOTIFICACIONES_CDUENO.REGISTRO_TIPO',
+        params: {
+          tipo: empleadoData.tipoCliente
+        }
       });
 
       this.isLoading = false; 
