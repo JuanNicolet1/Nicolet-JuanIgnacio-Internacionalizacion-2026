@@ -160,7 +160,7 @@ export class PedirCuentaComponent implements OnInit {
         tipoCliente: this.auth.usuarioIngresado.tipoCliente,
         tipoPedido: this.auth.usuarioIngresado.tipoPedido,
         mesa: this.pedidoActivo.mesa || 0,
-        estadoCuenta: 'cuentaConfirmada',
+        estadoCuenta: 'haConfirmar',
         fecha: new Date().getTime()
     };
 

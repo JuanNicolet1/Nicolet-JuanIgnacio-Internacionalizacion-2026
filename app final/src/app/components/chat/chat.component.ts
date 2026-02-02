@@ -85,31 +85,35 @@ export class ChatComponent implements OnInit {
 
     if (['anonimo', 'cliente'].includes(this.auth.usuarioIngresado.tipoCliente)) {
       await this.db.enviarNotificacion('mesero', {
-        titulo: this.translate.instant('NOTIFICACIONES_CHAT.NUEVO_MENSAJE'),
-        cuerpo: this.translate.instant('NOTIFICACIONES_CHAT.CONSULTO', {
+        tituloKey: 'NOTIFICACIONES_CHAT.NUEVO_MENSAJE',
+        cuerpoKey: 'NOTIFICACIONES_CHAT.CONSULTO',
+        params: {
           mesa: this.db.mesa,
           numero: numero,
-        }),
+        },
         mesa: this.db.mesa,
       });
 
     } else if (this.auth.usuarioIngresado.tipoCliente === 'mesero') {
 
       await this.db.enviarNotificacion('cliente', {
-        titulo: this.translate.instant('NOTIFICACIONES_CHAT.NUEVO_MENSAJE'),
-        cuerpo: this.translate.instant('NOTIFICACIONES_CHAT.RESPONDIO', {
+        tituloKey: 'NOTIFICACIONES_CHAT.NUEVO_MENSAJE',
+        cuerpoKey: 'NOTIFICACIONES_CHAT.RESPONDIO',
+        params: {
           mesa: this.db.mesa,
           numero: numero,
-        }),
+        },
         mesa: this.db.mesa,
       });
 
+
       await this.db.enviarNotificacion('anonimo', {
-        titulo: this.translate.instant('NOTIFICACIONES_CHAT.NUEVO_MENSAJE'),
-        cuerpo: this.translate.instant('NOTIFICACIONES_CHAT.RESPONDIO', {
+        tituloKey: 'NOTIFICACIONES_CHAT.NUEVO_MENSAJE',
+        cuerpoKey: 'NOTIFICACIONES_CHAT.RESPONDIO',
+        params: {
           mesa: this.db.mesa,
           numero: numero,
-        }),
+        },
         mesa: this.db.mesa,
       });
     }

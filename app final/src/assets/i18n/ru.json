@@ -293,11 +293,13 @@
     "ENTREGADO": "Доставлен",
     "DISFRUTANDO": "Наслаждаетесь",
     "CONFIRMAR_RECEPCION": "Подтвердить получение (QR)",
-    "JUGAR": "Поиграть в ожидании"
+    "JUGAR": "Поиграть в ожидании",
+    "CERRAR": "Закрыть",
+    "GRAFICOS": "Посмотреть графики"
   },
 
   "CONFIRMAR_PEDIDOS": {
-    "BUSCANDO": "ПОИСК ЗАКАЗОВ",
+    "BUSCANDO": "ПОИСК ЗAKAЗOB",
     "PEDIDOS": "ЗАКАЗЫ CO СТОЛОВ",
     "MESA": "Стол",
     "ACEPTAR": "ПРИНЯТЬ",
@@ -716,7 +718,7 @@
     "CONFIRMADA": "Счёт подтверждён",
     "COBRADO": "Доставка оплачена и завершена.",
     "MESA": "Стол",
-    "CERRO": "Стол {{mesa}} закрыл счёт"
+    "CERRO": "Стол {{numeroMesa}} закрыл счёт"
   },
 
   "NOTIFICACIONES_FACTURA": {
@@ -846,7 +848,7 @@
 
   "DESCRIPCION": {
     "09EZzxiqo1q57F7Otlms": "Вид пасты c начинкой из рикотты, завёрнутой в тонкое тесто.",
-    "5wvHwgO9wuy29VonzWls": "Вкусно.",
+    "5wvHwgO9wuy29VonzWls": "Классический омлет из фермерских яиц c начинкой из плавленого сыра и пряных трав.",
     "GhnGX6dFdWnCNcsIFkJT": "Панированная говяжья котлета, подаётся c картошкой фри или салатом на выбор.",
     "KJoe8SiVokkUWeCVfnFy": "Грильованная энтpaña, подаётся c чимичурри и деревенским картофелем.",
     "VX7JzjHsGrQsBsKObv47": "Вещь",

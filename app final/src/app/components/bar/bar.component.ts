@@ -56,15 +56,19 @@ export class BarComponent implements OnInit {
     const tieneComida = pedido.productos.some((p: any) => p.tipoProducto === 'comida');
     const cocinaTermino = pedido.cocinaFinalizada || !tieneComida;
 
-    await this.db.enviarNotificacion('mesero', {
-      titulo: this.translate.instant('NOTIFICACIONES_BAR.BAR'),
-      cuerpo: `${this.translate.instant('CHAT.MESA')} ${pedido.mesa}: ${this.translate.instant('NOTIFICACIONES_BAR.LISTAS')}.`,
+   await this.db.enviarNotificacion('mesero', {
+      tituloKey: 'NOTIFICACIONES_BAR.BAR',
+      cuerpoKey: 'NOTIFICACIONES_BAR.MESA_LISTA',
+      params: {
+        mesa: pedido.mesa,
+      },
       pedidoEnProduccion: true,
       barFinalizado: true,
       cocinaFinalizada: pedido.cocinaFinalizada,
       noRedirigir: true,
       mesa: pedido.mesa,
     });
+
 
     if (pedido.barFinalizado && cocinaTermino) {
       pedido.estadoPedido = 'porEntregar';

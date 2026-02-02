@@ -220,10 +220,12 @@ this.subscriptionRechazo = obsNotif.subscribe((res: any[]) => {
     this.db.enviarNotificacion('delivery', {
       tituloKey: 'NOTIFICACIONES_CLIDEL.CUENTA',
       cuerpoKey: 'NOTIFICACIONES_CLIDEL.MENSAJE',
-      cliente: this.auth.usuarioIngresado.nombre,
-      pedidoId: this.delivery.id, 
+      params: {
+        cliente: this.auth.usuarioIngresado.nombre
+      },
+      pedidoId: this.delivery.id,
       pedido: this.delivery
-      })
+    })
     .then(() => {
         this.isLoading = false;
         this.ngZone.run(() => {
@@ -251,9 +253,9 @@ this.subscriptionRechazo = obsNotif.subscribe((res: any[]) => {
         background: '#333',
         color: '#fff',
         confirmButtonColor: '#d84f45',
-        confirmButtonText: 'Ver Gráficos',
+        confirmButtonText: this.translate.instant('CLIENTE_PEDIDO.GRAFICOS'),
         showCancelButton: true,
-        cancelButtonText: 'Cerrar'
+        cancelButtonText: this.translate.instant('CLIENTE_PEDIDO.CANCELAR')
       }).then((resp) => {
         if (resp.isConfirmed) {
             this.ngZone.run(() => this.router.navigateByUrl('/resultado-encuestas-cliente'));

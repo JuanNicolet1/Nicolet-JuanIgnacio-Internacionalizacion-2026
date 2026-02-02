@@ -293,7 +293,9 @@
     "ENTREGADO": "Livrée",
     "DISFRUTANDO": "En train de déguster",
     "CONFIRMAR_RECEPCION": "Confirmer la réception (QR)",
-    "JUGAR": "Jouer en attendant"
+    "JUGAR": "Jouer en attendant",
+    "CERRAR": "Fermer",
+    "GRAFICOS": "Voir les graphiques"
   },
 
   "CONFIRMAR_PEDIDOS": {
@@ -716,7 +718,7 @@
     "CONFIRMADA": "Addition confirmée",
     "COBRADO": "La livraison a été payée et terminée.",
     "MESA": "La table",
-    "CERRO": "La table {{mesa}} a fermé l'addition"
+    "CERRO": "La table {{numeroMesa}} a fermé l'addition"
   },
 
   "NOTIFICACIONES_FACTURA": {
@@ -846,7 +848,7 @@
 
   "DESCRIPCION": {
     "09EZzxiqo1q57F7Otlms": "Type de pâte farcie avec une garniture de ricotta enveloppée dans une pâte fine.",
-    "5wvHwgO9wuy29VonzWls": "Délicieux.",
+    "5wvHwgO9wuy29VonzWls": "Omelette classique préparée avec des œufs fermiers, farcie de fromage fondu et de fines herbes.",
     "GhnGX6dFdWnCNcsIFkJT": "Escalope de bœuf panée, servie avec frites ou salade au choix.",
     "KJoe8SiVokkUWeCVfnFy": "Entraña grillée, servie avec chimichurri et pommes de terre rustiques.",
     "VX7JzjHsGrQsBsKObv47": "Chose",

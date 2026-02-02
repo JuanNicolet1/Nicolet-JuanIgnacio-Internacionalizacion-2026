@@ -293,7 +293,9 @@
     "ENTREGADO": "Entregue",
     "DISFRUTANDO": "Aproveitando",
     "CONFIRMAR_RECEPCION": "Confirmar Recebimento (QR)",
-    "JUGAR": "Jogar enquanto espera"
+    "JUGAR": "Jogar enquanto espera",
+    "CERRAR": "Fechar",
+    "GRAFICOS": "Ver Gráficos"
   },
 
   "CONFIRMAR_PEDIDOS": {
@@ -716,7 +718,7 @@
     "CONFIRMADA": "Conta Confirmada",
     "COBRADO": "O delivery foi cobrado e finalizado.",
     "MESA": "A mesa",
-    "CERRO": "A mesa {{mesa}} fechou a conta"
+    "CERRO": "A mesa {{numeroMesa}} fechou a conta"
   },
 
   "NOTIFICACIONES_FACTURA": {
@@ -846,7 +848,7 @@
 
   "DESCRIPCION": {
     "09EZzxiqo1q57F7Otlms": "Tipo de massa recheada com ricota envolvida em uma massa fina.",
-    "5wvHwgO9wuy29VonzWls": "Delicioso.",
+    "5wvHwgO9wuy29VonzWls": "Omelete clássico preparado com ovos caipiras, recheado com queijo derretido e ervas finas.",
     "GhnGX6dFdWnCNcsIFkJT": "Milanesa de carne empanada, acompanhada de batata frita ou salada à escolha.",
     "KJoe8SiVokkUWeCVfnFy": "Entraña grelhada na parrilla, servida com chimichurri e batatas rústicas.",
     "VX7JzjHsGrQsBsKObv47": "Coisa",

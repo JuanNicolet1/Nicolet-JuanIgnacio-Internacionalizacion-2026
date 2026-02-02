@@ -120,14 +120,31 @@ export class ConfirmarPagoComponent {
         mensajeTitulo = this.translate.instant('CUENTA.FINALIZADA');
         mensajeCuerpo = this.translate.instant('CUENTA.REGISTRADO');
         
-        await this.enviarNotificaciones(['dueño', 'supervisor', 'delivery'], this.translate.instant('NOTIFICACIONES_PAGO.CONFIRMADA'), this.translate.instant('NOTIFICACIONES_PAGO.COBRADO'));
+        const roles = ['dueño', 'supervisor', 'delivery'];
 
+        for (const rol of roles) {
+          await this.db.enviarNotificacion(rol, {
+            tituloKey: 'NOTIFICACIONES_PAGO.CONFIRMADA',
+            cuerpoKey: 'NOTIFICACIONES_PAGO.COBRADO',
+            params: {}
+          });
+        }
       } else {
 
         mensajeTitulo = this.translate.instant('SWAL_MESERO.MESA_LIBERADA');
         mensajeCuerpo = `${this.translate.instant('SWAL_MESERO.LA_MESA')} ${this.pedidoSeleccionado.mesa} ${this.translate.instant('SWAL_MESERO.TEXTO3')}.`;
 
-        await this.enviarNotificaciones(['dueño', 'supervisor', 'mesero'], this.translate.instant('NOTIFICACIONES_PAGO.CONFIRMADA'), `${this.translate.instant('NOTIFICACIONES_PAGO.MESA')} ${this.pedidoSeleccionado.mesa} ${this.translate.instant('NOTIFICACIONES_PAGO.CERRO')}.`);
+        const roles = ['dueño', 'supervisor', 'mesero'];
+
+        await Promise.all(roles.map(rol => 
+          this.db.enviarNotificacion(rol, {
+            tituloKey: 'NOTIFICACIONES_PAGO.CONFIRMADA',
+            cuerpoKey: 'NOTIFICACIONES_PAGO.CERRO',
+            params: { 
+              numeroMesa: this.pedidoSeleccionado.mesa 
+            }
+          })
+        ));
         
 
         this.liberarMesa(this.pedidoSeleccionado.cliente);
@@ -142,7 +159,7 @@ export class ConfirmarPagoComponent {
         background: '#333',
         color: '#fff',
         confirmButtonColor: '#4caf50',
-        confirmButtonText: 'Aceptar',
+        confirmButtonText: this.translate.instant('RECIBE_PEDIDO.ACEPTAR'),
       });
 
     } catch (error) {
@@ -256,9 +273,9 @@ export class ConfirmarPagoComponent {
                           { text: 'ORIGINAL', alignment: 'center', bold: true, margin: [0, 0, 0, 10] }, 
                           { text: empresa.nombre, style: 'headerEmpresa' },
                           { text: '\n' },
-                          { text: `Razon Social: ${empresa.nombre}`, style: 'labelBold' },
-                          { text: `Domicilio Comercial: ${empresa.domicilio}`, style: 'labelBold' },
-                          { text: `Condición frente al IVA: ${empresa.condicionIva}`, style: 'labelBold' },
+                          { text: `${this.translate.instant('FACTURA.RAZON_SOCIAL')}: ${empresa.nombre}`, style: 'labelBold' },
+                          { text: `${this.translate.instant('FACTURA.DOMICILIO')}: ${empresa.domicilio}`, style: 'labelBold' },
+                          { text: `${this.translate.instant('FACTURA.CONDICIONES')}: ${empresa.condicionIva}`, style: 'labelBold' },
                         ]
                       },
 
@@ -288,11 +305,11 @@ export class ConfirmarPagoComponent {
                         width: '*',
                         stack: [
                           { text: 'FACTURA', fontSize: 22, bold: true, alignment: 'left', margin: [10, 15, 0, 5] },
-                          { text: `Punto de Venta: ${empresa.ptoVenta}    Comp. Nro: ${empresa.compNro}`, style: 'labelNormal', margin: [10, 0, 0, 0] },
-                          { text: `Fecha de Emisión: ${fechaEmision}`, style: 'labelNormal', margin: [10, 0, 0, 5] },
+                          { text: `${this.translate.instant('FACTURA.VENTA')}: ${empresa.ptoVenta}    Comp. Nro: ${empresa.compNro}`, style: 'labelNormal', margin: [10, 0, 0, 0] },
+                          { text: `${this.translate.instant('FACTURA.EMISION')}: ${fechaEmision}`, style: 'labelNormal', margin: [10, 0, 0, 5] },
                           { text: `CUIT: ${empresa.cuit}`, style: 'labelNormal', margin: [10, 0, 0, 0] },
-                          { text: `Ingresos Brutos: ${empresa.ingBrutos}`, style: 'labelNormal', margin: [10, 0, 0, 0] },
-                          { text: `Fecha de Inicio de Actividades: ${empresa.inicioAct}`, style: 'labelNormal', margin: [10, 0, 0, 0] }
+                          { text: `${this.translate.instant('FACTURA.INGRESOS_BRUTOS')}: ${empresa.ingBrutos}`, style: 'labelNormal', margin: [10, 0, 0, 0] },
+                          { text: `${this.translate.instant('FACTURA.INICIO_ACTIVIDADES')}: ${empresa.inicioAct}`, style: 'labelNormal', margin: [10, 0, 0, 0] }
                         ]
                       }
                     ]
@@ -314,9 +331,9 @@ export class ConfirmarPagoComponent {
                 [
                   {
                     columns: [
-                      { text: `Período Facturado Desde: ${fechaEmision}`, style: 'labelNormal' },
-                      { text: `Hasta: ${fechaEmision}`, style: 'labelNormal' },
-                      { text: `Fecha de Vto. para el pago: ${fechaEmision}`, style: 'labelNormal' }
+                      { text: `${this.translate.instant('FACTURA.PERIODO')}: ${fechaEmision}`, style: 'labelNormal' },
+                      { text: `${this.translate.instant('FACTURA.HASTA')}: ${fechaEmision}`, style: 'labelNormal' },
+                      { text: `${this.translate.instant('FACTURA.VENCIMIENTO')}: ${fechaEmision}`, style: 'labelNormal' }
                     ]
                   }
                 ]
@@ -337,20 +354,20 @@ export class ConfirmarPagoComponent {
                       {
                         columns: [
                           { text: `CUIT: ${cliente.dni}`, style: 'labelNormal', width: 'auto', margin: [0,0,20,0] },
-                          { text: `Apellido y Nombre / Razón Social: ${cliente.nombre}`, style: 'labelNormal' }
+                          { text: `${this.translate.instant('FACTURA.DATOS')}: ${cliente.nombre}`, style: 'labelNormal' }
                         ],
                         margin: [0, 2]
                       },
                       {
                         columns: [
-                          { text: `Condición frente al IVA: ${cliente.condicionIva}`, style: 'labelNormal', width: 'auto', margin: [0,0,20,0] },
-                          { text: `Domicilio: ${cliente.domicilio}`, style: 'labelNormal' }
+                          { text: `${this.translate.instant('FACTURA.CONDICIONES')}Condición frente al IVA: ${cliente.condicionIva}`, style: 'labelNormal', width: 'auto', margin: [0,0,20,0] },
+                          { text: `${this.translate.instant('FACTURA.DOMICILIO2')}: ${cliente.domicilio}`, style: 'labelNormal' }
                         ],
                         margin: [0, 2]
                       },
                       {
                         columns: [
-                          { text: `Condición de venta: ${cliente.condicionVenta}`, style: 'labelNormal' }
+                          { text: `${this.translate.instant('FACTURA.CONDICION_VENTA')}: ${cliente.condicionVenta}`, style: 'labelNormal' }
                         ],
                         margin: [0, 2]
                       }
@@ -386,15 +403,15 @@ export class ConfirmarPagoComponent {
               widths: ['*', 100],
               body: [
                 [
-                   { text: 'Subtotal: $', alignment: 'right', bold: true }, 
+                   { text: `${this.translate.instant('FACTURA.SUBTOTAL')}: $`, alignment: 'right', bold: true }, 
                    { text: subTotal.toString(), alignment: 'right' }
                 ],
                 [
-                   { text: 'Importe Otros Tributos: $', alignment: 'right', bold: true }, 
+                   { text: `${this.translate.instant('FACTURA.IMPORTE')}: $`, alignment: 'right', bold: true }, 
                    { text: '0.00', alignment: 'right' }
                 ],
                 [
-                   { text: 'Importe Total: $', alignment: 'right', bold: true, fontSize: 12 }, 
+                   { text: `${this.translate.instant('FACTURA.IMPORTE_TOTAL')}: $`, alignment: 'right', bold: true, fontSize: 12 }, 
                    { text: total.toString(), alignment: 'right', bold: true, fontSize: 12 }
                 ]
               ]
@@ -432,13 +449,13 @@ export class ConfirmarPagoComponent {
                   {
                     stack: [
                       { text: `CAE N°: 70123456789012`, alignment: 'right', bold: true },
-                      { text: `Fecha de Vto. de CAE: ${fechaVtoStr}`, alignment: 'right', bold: true }
+                      { text: `${this.translate.instant('FACTURA.VTO_CAE')}: ${fechaVtoStr}`, alignment: 'right', bold: true }
                     ],
                     margin: [0, 20, 0, 0]
                   }
                 ],
                 [
-                  { text: 'Comprobante Autorizado', colSpan: 2, alignment: 'center', italics: true, fontSize: 10, margin: [0, 5, 0, 0] },
+                  { text: `${this.translate.instant('FACTURA.COMPROBANTE')}`, colSpan: 2, alignment: 'center', italics: true, fontSize: 10, margin: [0, 5, 0, 0] },
                   {}
                 ]
               ]
@@ -474,10 +491,11 @@ export class ConfirmarPagoComponent {
             await this.sendEmail(this.pedidoSeleccionado.cliente, clienteEmail, pdfUrl);
           } else if (clienteTipo === 'anonimo') {
              await this.db.enviarNotificacion('anonimo', {
-               titulo: 'Factura Disponible',
-               cuerpo: 'Descarga tu factura aquí.',
-               pdfUrl: pdfUrl
-             });
+              tituloKey: 'NOTIFICACIONES_FACTURA.DISPONIBLE',
+              cuerpoKey: 'NOTIFICACIONES_FACTURA.DESCARGAR',
+              params: {},
+              pdfUrl: pdfUrl
+            });
           }
           resolve(); 
         } catch (error) {

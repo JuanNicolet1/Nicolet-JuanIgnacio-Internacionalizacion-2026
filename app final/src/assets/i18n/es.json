@@ -293,7 +293,9 @@
     "ENTREGADO": "Entregado",
     "DISFRUTANDO": "Disfrutando",
     "CONFIRMAR_RECEPCION": "Confirmar Recepción (QR)",
-    "JUGAR": "Jugar mientras espero"
+    "JUGAR": "Jugar mientras espero",
+    "CERRAR": "Cerrar",
+    "GRAFICOS": "Ver Gráficos"
   },
 
   "CONFIRMAR_PEDIDOS": {
@@ -477,6 +479,27 @@
     "NUBICACION": "Ubicación sin nombre exacto",
     "ERROR": "Error de conexión con el servidor",
     "UBMAP": "Ubicación Mapa"
+  },
+
+  "FACTURA": {
+    "RAZON_SOCIAL": "Razon Social",
+    "DOMICILIO": "Domicilio Comercial",
+    "CONDICIONES": "Condición frente al IVA",
+    "VENTA": "Punto de Venta",
+    "EMISION": "Fecha de Emisión",
+    "INGRESOS_BRUTOS": "Ingresos Brutos",
+    "INICIO_ACTIVIDADES": "Fecha de Inicio de Actividades",
+    "PERIODO": "Período Facturado Desde",
+    "HASTA": "Hasta",
+    "VENCIMIENTO": "Fecha de Vto. para el pago",
+    "DATOS": "Apellido y Nombre / Razón Social",
+    "DOMICILIO2": "Domicilio",
+    "CONDICION_VENTA": "Condición de venta",
+    "SUBTOTAL": "Subtotal",
+    "IMPORTE": "Importe Otros Tributos",
+    "IMPORTE_TOTAL": "Importe Total",
+    "VTO_CAE": "Fecha de Vto. de CAE",
+    "COMPROBANTE": "Comprobante Autorizado"
   },
 
   "SWAL_GENERAL": {
@@ -716,7 +739,7 @@
     "CONFIRMADA": "Cuenta Confirmada",
     "COBRADO": "El delivery ha sido cobrado y finalizado.",
     "MESA": "La mesa",
-    "CERRO": "La mesa {{mesa}} cerró la cuenta"
+    "CERRO": "La mesa {{numeroMesa}} cerró la cuenta"
   },
 
   "NOTIFICACIONES_FACTURA": {
@@ -846,7 +869,7 @@
 
   "DESCRIPCION": {
     "09EZzxiqo1q57F7Otlms": "Tipo de pasta rellena que comprende un relleno de ricota envuelto en una masa fina.",
-    "5wvHwgO9wuy29VonzWls": "Rico.",
+    "5wvHwgO9wuy29VonzWls": "Omelette clásico preparado con huevos de campo, relleno de queso fundido y finas hierbas.",
     "GhnGX6dFdWnCNcsIFkJT": "Milanesa de carne empanizada, acompañada de papas fritas o ensalada a elección.",
     "KJoe8SiVokkUWeCVfnFy": "Corte de entraña asado a la parrilla, servido con chimichurri y papas rústicas.",
     "VX7JzjHsGrQsBsKObv47": "Cosa",
@@ -854,7 +877,7 @@
     "d2tPim8afJpC3Tk92M18": "Saludable",
     "fGzZU8arK8rq6L3VE5jA": "Nada",
     "fz7H4mlQgWpuXxNzMBKC": "Muy blanco",
-    "qbco3jmmUiLHcLrqSOz2": "Un guiso hecho con pollo . fricasé . trozos de pollo u otra carne guisados ​​en salsa",
+    "qbco3jmmUiLHcLrqSOz2": "Un guiso hecho con pollo . fricasé . trozos de pollo u otra carne guisados en salsa",
     "v5SpTgfFUtCIqMj9QO3l": "Rico.",
     "7s9GqL1g2NHkkrxL2pTF": "Amargo.",
     "D1ihmWu2KXKSolD3ad3w": "Cóctel tropical a base de ron, limón y azúcar, refrescante y dulce.",

@@ -292,7 +292,9 @@
     "ENTREGADO": "Geliefert",
     "DISFRUTANDO": "Genießen",
     "CONFIRAMR_RECEPCION": "Empfang bestätigen (QR)",
-    "JUGAR": "Spielen während des Wartens"
+    "JUGAR": "Spielen während des Wartens",
+    "CERRAR": "Schließen",
+    "GRAFICOS": "Diagramme anzeigen"
   },
 
   "CONFIRMAR_PEDIDOS": {
@@ -716,7 +718,7 @@
     "CONFIRMADA": "Rechnung bestätigt",
     "COBRADO": "Die Lieferung wurde bezahlt und abgeschlossen.",
     "MESA": "Der Tisch",
-    "CERRO": "Der Tisch {{mesa}} hat die Rechnung geschlossen"
+    "CERRO": "Der Tisch {{numeroMesa}} hat die Rechnung geschlossen"
   },
 
   "NOTIFICACIONES_FACTURA": {
@@ -846,7 +848,7 @@
 
   "DESCRIPCION": {
     "09EZzxiqo1q57F7Otlms": "Art von gefüllter Pasta mit Ricotta-Füllung, umhüllt von dünnem Teig.",
-    "5wvHwgO9wuy29VonzWls": "Lecker.",
+    "5wvHwgO9wuy29VonzWls": "Klassisches Omelett aus frischen Freilandeiern, gefüllt mit geschmolzenem Käse und feinen Kräutern.",
     "GhnGX6dFdWnCNcsIFkJT": "Panierter Rindfleischschnitzel, serviert mit Pommes oder Salat nach Wahl.",
     "KJoe8SiVokkUWeCVfnFy": "Gegrilltes Bavette-Steak, serviert mit Chimichurri und rustikalen Kartoffeln.",
     "VX7JzjHsGrQsBsKObv47": "Ding",

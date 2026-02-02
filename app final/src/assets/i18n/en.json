@@ -293,7 +293,9 @@
     "ENTREGADO": "Delivered",
     "DISFRUTANDO": "Enjoying",
     "CONFIRMAR_RECEPCION": "Confirm Receipt (QR)",
-    "JUGAR": "Play while you wait"
+    "JUGAR": "Play while you wait",
+    "CERRAR": "Close",
+    "GRAFICOS": "View Charts"
   },
 
   "CONFIRMAR_PEDIDOS": {
@@ -716,7 +718,7 @@
     "CONFIRMADA": "Bill Confirmed",
     "COBRADO": "The delivery has been paid and completed.",
     "MESA": "Table",
-    "CERRO": "Table {{mesa}} closed the bill"
+    "CERRO": "Table {{numeroMesa}} closed the bill"
   },
 
   "NOTIFICACIONES_FACTURA": {
@@ -846,7 +848,7 @@
 
   "DESCRIPCION": {
     "09EZzxiqo1q57F7Otlms": "Type of stuffed pasta with a ricotta filling wrapped in thin dough.",
-    "5wvHwgO9wuy29VonzWls": "Delicious.",
+    "5wvHwgO9wuy29VonzWls": "Classic omelet made with farm-fresh eggs, filled with melted cheese and fine herbs.",
     "GhnGX6dFdWnCNcsIFkJT": "Breaded beef cutlet, served with french fries or salad of your choice.",
     "KJoe8SiVokkUWeCVfnFy": "Grilled skirt steak, served with chimichurri and rustic potatoes.",
     "VX7JzjHsGrQsBsKObv47": "Thing",

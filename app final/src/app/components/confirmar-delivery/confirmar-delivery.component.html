@@ -37,12 +37,12 @@
                     </li>
                 </ul>
             </div>
-            <div class="wait-time">Est: <strong>{{ p.tiempoEstimado }} min</strong></div>
+            <div class="wait-time">Est: <strong>{{ p.tiempoEstimado }} {{ 'PRODUCTOS.MINUTOS' | translate }}</strong></div>
         </div>
 
         <div class="card-actions">
-            <button class="btn-reject" (click)="rechazarPedido(p)">RECHAZAR</button>
-            <button class="btn-accept" (click)="aceptarPedido(p)">ACEPTAR</button>
+            <button class="btn-reject" (click)="rechazarPedido(p)">{{ 'CONFIRMAR_PEDIDOS.RECHAZAR' | translate }}</button>
+            <button class="btn-accept" (click)="aceptarPedido(p)">{{ 'CONFIRMAR_PEDIDOS.ACEPTAR' | translate }}</button>
         </div>
 
     </div>
