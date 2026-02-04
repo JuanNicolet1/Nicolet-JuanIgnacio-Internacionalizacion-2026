@@ -205,10 +205,10 @@ export class MapDireccionPedidoComponent implements AfterViewInit {
     let nuevoIdioma = 'es'; // Por defecto español
 
     switch (codigo) {
-      case 'us': case 'gb': case 'ca': case 'au':
+      case 'us': case 'gb': case 'ca': case 'au': case 'za': case 'nz': case 'bz': case 'bs':
         nuevoIdioma = 'en';
         break;
-      case 'br': case 'pt':
+      case 'br': case 'pt': case 'ao': case 'tl':
         nuevoIdioma = 'pt';
         break;
       case 'ru': case 'by': case 'kz':
