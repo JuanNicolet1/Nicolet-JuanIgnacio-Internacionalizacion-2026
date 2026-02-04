@@ -182,9 +182,10 @@ export class Mapa implements AfterViewInit {
 
 cambiarIdiomaPorGps(codigo: string) {
   const mapeo: { [key: string]: string } = {
-    'br': 'po', 'pt': 'po',                     // Portugués
-    'us': 'en', 'gb': 'en', 'ca': 'en',         // Inglés
-    'de': 'al', 'at': 'de',                     // Alemán
+    'br': 'pt', 'pt': 'pt', 'ao': 'pt',         // Portugués
+    'us': 'en', 'gb': 'en', 'ca': 'en', 'bz': 'en', 'za': 'en', 'au': 'en',   // Inglés
+    'nz': 'en', 'bs': 'en',                     // Inglés
+    'de': 'de', 'at': 'de',                     // Alemán
     'fr': 'fr', 'be': 'fr',                     // Francés
     'ru': 'ru', 'by': 'ru',                     // Ruso
     'ar': 'es', 'cl': 'es', 'mx': 'es', 'uy': 'es', 'co': 'es' // Español

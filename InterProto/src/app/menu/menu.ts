@@ -29,7 +29,7 @@ export class Menu {
 
   "postres"= [
     {"nombre": this.translate1.instant('POSTRE.FLAN'), "descripcion": this.translate1.instant('POSTRE.TEXTO1'), "precio": 4500, "foto": 'flan.jpg'},
-    {"nombre": this.translate1.instant('POSTRE.HELDADO'), "descripcion": this.translate1.instant('POSTRE.TEXTO2'), "precio": 5000, "foto": 'helado.jpg'},
+    {"nombre": this.translate1.instant('POSTRE.HELADO'), "descripcion": this.translate1.instant('POSTRE.TEXTO2'), "precio": 5000, "foto": 'helado.jpg'},
     {"nombre": this.translate1.instant('POSTRE.VOLCAN_CHOCOLATE'), "descripcion": this.translate1.instant('POSTRE.TEXTO3'), "precio": 9500, "foto": 'volcan.jpg'}
   ]
 

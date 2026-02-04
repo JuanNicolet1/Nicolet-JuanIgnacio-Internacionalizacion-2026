@@ -406,8 +406,11 @@ export class HomeComponent implements ViewWillEnter, ViewDidLeave {
         cuentas.forEach((c: any) => {
           if (
             c.cliente === this.auth.usuarioIngresado.nombre &&
-            c.estadoCuenta === 'cuentaConfirmada'
+            c.estadoCuenta === 'cuentaConfirmada' &&
+            !c.notificado
           ) {
+            c.notificado = true;
+            this.db.ModificarObjeto(c, 'cuenta');
             Swal.fire({
               title: this.translate.instant('OTROS_SWAL.PAGO_EXITOSO'),
               text: this.translate.instant('OTROS_SWAL.EXITOSO'),
@@ -635,13 +638,10 @@ export class HomeComponent implements ViewWillEnter, ViewDidLeave {
         });
       } 
       
-      // --- CASO 2: MESERO (Local) ---
       else {
-  // 1. LÓGICA DE MESA (Solo si NO es delivery)
   const esDelivery = this.auth.usuarioIngresado.tipoCliente === 'delivery';
 
   if (!esDelivery && this.mesas && this.cliente) {
-    // Buscamos la mesa solo si el rol la utiliza
     const nombreCliente = typeof this.cliente === 'string' ? this.cliente : this.cliente.nombre;
     this.mesa = this.mesas.find((m: any) => m.ocupadaPor === nombreCliente);
   }
@@ -662,22 +662,17 @@ export class HomeComponent implements ViewWillEnter, ViewDidLeave {
   }).then((resp) => {
     if (resp.isConfirmed) {
       
-      // --- PASO A: ACTUALIZAR CLIENTE ---
-      // Si el cliente es un string 'yu', no hacemos nada aquí, ya que no tenemos el objeto.
-      // Si es un objeto, lo actualizamos.
       if (this.cliente && typeof this.cliente === 'object') {
           this.cliente.estadoPedido = 'cuentaEntregada';
           this.db.ModificarObjeto(this.cliente, 'clientes');
       }
 
-      // --- PASO B: LIBERAR MESA (Solo Mesero) ---
       if (!esDelivery && this.mesa) {
           this.mesa.estado = 'desocupada';
           this.mesa.ocupadaPor = '';
           this.db.ModificarObjeto(this.mesa, 'mesas');
       }
       
-      // --- PASO C: ACTUALIZAR PEDIDO (Ambos) ---
       if (this.pedido) {
           const coleccion = esDelivery ? 'delivery' : 'pedidos';
           

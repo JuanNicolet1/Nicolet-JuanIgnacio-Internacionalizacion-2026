@@ -215,7 +215,7 @@
 
   "MESA_TIPO": {
     "ESTANDAR": "Estandar",
-    "MOVILIDAD": "Movilidad Reducida",
+    "MOVILIDAD REDUCIDA": "Movilidad Reducida",
     "VIP": "VIP",
     "LIBRE": "Libre",
     "OCUPADA": "Ocupada"
